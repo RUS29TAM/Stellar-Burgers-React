@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
-import { Tab } from '@ya.praktikum/react-developer-burger-ui-components';
+import {Tab} from '@ya.praktikum/react-developer-burger-ui-components';
 import styleIngredients from '../BurgerIngredients/BurgerIngredients.module.css';
 import data from '../../utils/data'
 import {ListBasket} from "../ListBusket/ListBasket";
-import { InferProps, Validator } from 'prop-types';
+import {InferProps, Validator} from 'prop-types';
 
 export const BurgerIngredients = () => {
     const [currentTab, setCurrentTab] = useState('one');
@@ -37,7 +37,7 @@ export const BurgerIngredients = () => {
                 <Tab value='two' active={currentTab === 'two'} onClick={setCurrentTab}>
                     Соусы
                 </Tab>
-                <Tab value='three' active={currentTab === 'three'}  onClick={setCurrentTab}
+                <Tab value='three' active={currentTab === 'three'} onClick={setCurrentTab}
                 >
                     Начинки
                 </Tab>
