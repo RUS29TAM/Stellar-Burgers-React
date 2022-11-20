@@ -2,6 +2,10 @@
     display: flex;
 }
 
+.tabs > * {
+    flex-grow: 1;
+}
+
 .ingredients {
     height: calc(100vh - 323px);
     overflow-y: scroll;

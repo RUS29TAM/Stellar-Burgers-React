@@ -1,0 +1,36 @@
+.constructorWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.constructorWrapper > *:not(:last-of-type) {
+    margin-bottom: 16px;
+}
+
+
+.dragWrapper {
+    max-height: calc(100vh - 525px);
+    overflow-y: scroll;
+}
+
+.dragWrapper::-webkit-scrollbar {
+    width: 8px;
+}
+
+.dragWrapper::-webkit-scrollbar-track {
+    background: var(--background-element);
+}
+
+.dragWrapper::-webkit-scrollbar-thumb {
+    background: var(--text-inactive-color);
+}
+
+.dragWrapper > *:not(:last-of-type) {
+    margin-bottom: 16px;
+}
+
+.footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
