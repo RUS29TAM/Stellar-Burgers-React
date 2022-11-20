@@ -1,21 +1,10 @@
-.App {
-  max-width: 1920px;
-  min-height: 100vh;
-  box-sizing: border-box;
-  margin: 0 auto;
-  background-color: #131316;
-  display: flex;
-  flex-direction: column;
-}
-
-.root {
-  flex: 1;
+.main {
   display: flex;
   max-width: 100%;
+  height: calc(100vh - 88px - 40px);
   overflow-y: hidden;
-  position: relative;
 }
 
-.root > * {
+.main > * {
   flex: 1;
 }
