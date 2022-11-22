@@ -10,9 +10,9 @@ export const BurgerConstructor = () => {
     const fillingBurger = data.filter(item => item.type === 'main' || item.type === 'sauce');
 
     return (
-        <section className="ml-5 mr-5">
+        <section className={`burg ml-5 mr-5`}>
             <div
-                className={`${styleConstructor.constructorWrapper} mt-25 ml-4 mb-10`}
+                className={`${styleConstructor.constructorWrapper} mb-10 mt-25 ml-4 `}
             >
                 <FixedBun
                     type='top'

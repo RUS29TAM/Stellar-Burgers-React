@@ -18,10 +18,10 @@ export const BurgerIngredients = () => {
                 buns.push(ingredient);
                 break;
             case 'main':
-                sauces.push(ingredient);
+                filling.push(ingredient);
                 break;
             case 'sauce':
-                filling.push(ingredient);
+                sauces.push(ingredient);
                 break;
             default:
                 return;
