@@ -6,9 +6,9 @@ export const AppHeader = () => {
 
     return (
         <header className={`header ${stylesHeader.header}`}>
-            <div className={`headerContainer ${stylesHeader.headerContainer} pt-4 pb-4`}>
+            <div className={`headerContainer ${stylesHeader.headerContainer}`}>
                 <nav className={`navigationList ${stylesHeader.navigationList} mb-4`}>
-                    <ul className={stylesHeader.navigationList}>
+                    <ul className={`${stylesHeader.navigationList} pl-3`}>
                         <li>
                             <a href="#" className={`navigationLink ${stylesHeader.navigationLink} pt-4 pr-5`}>
                                 <BurgerIcon type="primary"/>
@@ -18,7 +18,7 @@ export const AppHeader = () => {
                             </a>
                         </li>
                         <li>
-                            <a href="#" className={`navigationLink ${stylesHeader.navigationLink} pt-4 pr-5`}>
+                            <a href="#" className={`navigationLink ${stylesHeader.navigationLink} pt-4 pl-5`}>
                                 <ListIcon type="secondary"/>
                                 <span className="text text_type_main-default text_color_inactive ml-2">
                   Летна заказов
@@ -27,11 +27,11 @@ export const AppHeader = () => {
                         </li>
                     </ul>
                 </nav>
-                <div className={stylesHeader.logo}>
+                <div className={`${stylesHeader.logo} pl-3`}>
                     <Logo/>
                 </div>
-                <div className={`personalAccount ${stylesHeader.personalAccount} pr-4`}>
-                    <a href="#" className={stylesHeader.navigationLink}>
+                <div className={`personalAccount ${stylesHeader.personalAccount} pr-8`}>
+                    <a href="#" className={`${stylesHeader.navigationLink}`}>
                         <ProfileIcon type="secondary"/>
                         <span className="text text_type_main-default text_color_inactive ml-2">
               Личный кабинет

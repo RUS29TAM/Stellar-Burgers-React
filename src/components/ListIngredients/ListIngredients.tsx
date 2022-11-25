@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import stylesListBasket from './ListBasket.module.css'
-import { IngredientGroupType } from '../ingredientGroupType/ingredientGroupType'
+import stylesListBasket from './ListIngredients.module.css'
+import {IngredientCard} from '../IngredientCard/IngredientCard';
 
 // @ts-ignore
-export const ListBasket = ({ heading, list }) => {
+export const ListIngredients = ({ heading, list }) => {
     return (
         <>
             <h3 className='text text_type_main-medium mt-10 mb-6'>
@@ -12,7 +12,7 @@ export const ListBasket = ({ heading, list }) => {
             </h3>
             <div className={`${stylesListBasket.list} ml-4 mr-2`}>
                 {list.map((item: { _id: React.Key | null | undefined; name: string; price: number; image: string; }) => (
-                    <IngredientGroupType
+                    <IngredientCard
                         key={item._id}
                         name={item.name}
                         price={item.price}
@@ -24,7 +24,7 @@ export const ListBasket = ({ heading, list }) => {
     );
 };
 
-ListBasket.propTypes = {
+ListIngredients.propTypes = {
     heading: PropTypes.string.isRequired,
     list: PropTypes.arrayOf(PropTypes.shape({
         _id: PropTypes.string.isRequired,

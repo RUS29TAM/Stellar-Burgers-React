@@ -1,0 +1,48 @@
+.constructorWrapper {
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+}
+
+.constructorWrapper > *:not(:last-of-type) {
+    margin-bottom: 16px;
+}
+
+.dragWrapper {
+    max-height: calc(100vh - 473px);
+    overflow-y: scroll;
+}
+
+.dragWrapper::-webkit-scrollbar {
+    width: 8px;
+}
+
+.dragWrapper::-webkit-scrollbar-track {
+    background: var(--background-element);
+}
+
+.dragWrapper::-webkit-scrollbar-thumb {
+    background: var(--text-inactive-color);
+}
+
+.dragWrapper > *:not(:last-of-type) {
+    margin-bottom: 16px;
+}
+
+.basket {
+    max-width: 600px;
+    user-select: none;
+}
+
+.totalPrice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.acceptOrder {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 40px;
+}

@@ -1,9 +1,14 @@
+.burgerIngredients {
+    max-width: 600px;
+    user-select: none;
+}
+
 .tabs {
     display: flex;
 }
 
 .ingredients {
-    height: calc(100vh - 323px);
+    height: calc(100vh - 248px);
     overflow-y: scroll;
 }
 
@@ -18,3 +23,4 @@
 .ingredients::-webkit-scrollbar-track {
     background: var(--background-element);
 }
+
