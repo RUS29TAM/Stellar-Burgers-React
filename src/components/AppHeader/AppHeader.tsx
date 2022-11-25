@@ -5,7 +5,7 @@ import stylesHeader from './AppHeader.module.css';
 export const AppHeader = () => {
 
     return (
-        <header className={stylesHeader.header}>
+        <header className={`header ${stylesHeader.header}`}>
             <div className={`headerContainer ${stylesHeader.headerContainer} pt-4 pb-4`}>
                 <nav className={`navigationList ${stylesHeader.navigationList} mb-4`}>
                     <ul className={stylesHeader.navigationList}>
