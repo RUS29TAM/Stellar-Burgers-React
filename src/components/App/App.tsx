@@ -1,15 +1,15 @@
 import React from 'react';
 import {AppHeader} from '../AppHeader/AppHeader';
 import appStyle from './App.module.css';
-import {BurgerIngredients} from "../BurgerIngredients/BurgerIngredients";
-import {BurgerConstructor} from "../BurgerConstructor/BurgerConstructor";
+import {BurgerIngredients} from '../BurgerIngredients/BurgerIngredients';
+import {BurgerConstructor} from '../BurgerConstructor/BurgerConstructor';
 
 export const App = () => {
     return (
         <>
-            <main className={`page ${appStyle.page}`}>
+            <main className={`${appStyle.page}`}>
                 <AppHeader/>
-                <div className={`appContainer ${appStyle.main}`}>
+                <div className={`${appStyle.main}`}>
                     <BurgerIngredients/>
                     <BurgerConstructor/>
                 </div>

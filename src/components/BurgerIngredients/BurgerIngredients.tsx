@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {Tab} from '@ya.praktikum/react-developer-burger-ui-components';
 import styleIngredients from '../BurgerIngredients/BurgerIngredients.module.css';
 import data from '../../utils/data'
-import {ListBasket} from "../ListBusket/ListBasket";
+import {ListIngredients} from '../ListIngredients/ListIngredients';
 import {InferProps, Validator} from 'prop-types';
 
 export const BurgerIngredients = () => {
@@ -28,9 +28,9 @@ export const BurgerIngredients = () => {
         }
     })
     return (
-        <section className={`ml-5 mr-5`}>
+        <section className={`burgerIngredients ${styleIngredients.burgerIngredients} ml-2`}>
             <h2 className={`text text_type_main-large mt-10 mb-5`}>Соберите бургер</h2>
-            <div className={`createBurger ${styleIngredients.tabs} mt-5 mb-10`}>
+            <div className={`createBurger ${styleIngredients.tabs} mt-5`}>
                 <Tab value='one' active={currentTab === 'one'} onClick={setCurrentTab}>
                     Булки
                 </Tab>
@@ -43,9 +43,9 @@ export const BurgerIngredients = () => {
                 </Tab>
             </div>
             <div className={styleIngredients.ingredients}>
-                <ListBasket heading='Булки' list={buns}/>
-                <ListBasket heading='Соусы' list={sauces}/>
-                <ListBasket heading='Начинки' list={filling}/>
+                <ListIngredients heading='Булки' list={buns}/>
+                <ListIngredients heading='Соусы' list={sauces}/>
+                <ListIngredients heading='Начинки' list={filling}/>
             </div>
         </section>
     );

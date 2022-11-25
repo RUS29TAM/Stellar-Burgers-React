@@ -1,9 +1,9 @@
 import React from 'react';
-import { ConstructorElement } from '@ya.praktikum/react-developer-burger-ui-components';
+import {ConstructorElement} from '@ya.praktikum/react-developer-burger-ui-components';
 import PropTypes from 'prop-types';
 
 // @ts-ignore
-export const FixedBun = ({ type, text, price, image }) => {
+export const HalfBun = ({type, text, price, image}) => {
 
     return (
         <div className='ml-8 mr-4'>
@@ -18,7 +18,7 @@ export const FixedBun = ({ type, text, price, image }) => {
     );
 };
 
-FixedBun.propTypes = {
+HalfBun.propTypes = {
     type: PropTypes.oneOf(['top', 'bottom']),
     bun: PropTypes.shape({
         name: PropTypes.string,
