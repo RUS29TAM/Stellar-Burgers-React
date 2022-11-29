@@ -7,13 +7,13 @@ import {BurgerConstructor} from '../BurgerConstructor/BurgerConstructor';
 export const App = () => {
     return (
         <>
-            <main className={`${appStyle.page}`}>
-                <AppHeader/>
-                <div className={`${appStyle.main}`}>
+            <AppHeader/>
+            <div className={`${appStyle.page}`}>
+                <main className={`${appStyle.main}`}>
                     <BurgerIngredients/>
                     <BurgerConstructor/>
-                </div>
-            </main>
+                </main>
+            </div>
         </>
     )
 };

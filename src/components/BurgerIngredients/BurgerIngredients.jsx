@@ -3,14 +3,14 @@ import {Tab} from '@ya.praktikum/react-developer-burger-ui-components';
 import styleIngredients from '../BurgerIngredients/BurgerIngredients.module.css';
 import data from '../../utils/data'
 import {ListIngredients} from '../ListIngredients/ListIngredients';
-import {InferProps, Validator} from 'prop-types';
+
 
 export const BurgerIngredients = () => {
     const [currentTab, setCurrentTab] = useState('one');
 
-    const buns: (InferProps<{ _id: Validator<string>; name: Validator<string>; image: Validator<string>; price: Validator<number>; }> | null | undefined)[] | null | undefined = [];
-    const sauces: (InferProps<{ _id: Validator<string>; name: Validator<string>; image: Validator<string>; price: Validator<number>; }> | null | undefined)[] | null | undefined = [];
-    const filling: (InferProps<{ _id: Validator<string>; name: Validator<string>; image: Validator<string>; price: Validator<number>; }> | null | undefined)[] | null | undefined = [];
+    const buns = [];
+    const sauces = [];
+    const filling = [];
 
     data.forEach((ingredient) => {
         switch (ingredient.type) {

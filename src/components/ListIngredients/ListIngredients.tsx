@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from "prop-types";
 import stylesListBasket from './ListIngredients.module.css'
 import {IngredientCard} from '../IngredientCard/IngredientCard';
+import {ingredientType} from "../../utils/types";
 
 // @ts-ignore
 export const ListIngredients = ({ heading, list }) => {
@@ -26,11 +27,6 @@ export const ListIngredients = ({ heading, list }) => {
 
 ListIngredients.propTypes = {
     heading: PropTypes.string.isRequired,
-    list: PropTypes.arrayOf(PropTypes.shape({
-        _id: PropTypes.string.isRequired,
-        name: PropTypes.string.isRequired,
-        image: PropTypes.string.isRequired,
-        price: PropTypes.number.isRequired,
-    }))
+    list: PropTypes.arrayOf(ingredientType.isRequired)
 };
 
