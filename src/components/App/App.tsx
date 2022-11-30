@@ -20,8 +20,8 @@ export const App = () => {
         ...prevState, isLoading: true,
       }));
       try {
-        const resp = await fetch(CONFIG.baseUrl);
-        const data = await resp.json();
+        const res = await fetch(CONFIG.baseUrl);
+        const data = await res.json();
         setIngredientsData((prevState) => ({
           ...prevState, isLoading: false, ingredient: data.data,
         }));
@@ -31,9 +31,8 @@ export const App = () => {
         }));
       }
     }
-    getIngredientsData().then(resp => {
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    getIngredientsData().then();
+
   }, []);
 
   return (
@@ -45,7 +44,7 @@ export const App = () => {
           {ingredientsData.isError && <Downloader type='error'/>}
           {mustDisplayContent && (
             <>
-              <BurgerIngredients />
+              <BurgerIngredients ingredients={ingredientsData.ingredient}/>
               <BurgerConstructor ingredients={ingredientsData.ingredient}/>
             </>
           )}
