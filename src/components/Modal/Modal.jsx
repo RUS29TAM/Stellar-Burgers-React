@@ -48,3 +48,37 @@ Popup.propsTypes = {
   setOpenPopup: PropTypes.func.isRequired,
   children: PropTypes.element,
 }
+
+
+// const Popup = ({isOpenPopup, setOpenPopup, children}) => {
+//   const closePopup = (event) => {
+//     event.stopPropagation();
+//     setOpenPopup(false);
+//   };
+//
+//   useEffect(() => {
+//     const handleCloseEscape = (event) => {
+//       if (event.key === 'Escape') {
+//         closePopup(event);
+//       }
+//     };
+//
+//     document.addEventListener('keydown', handleCloseEscape);
+//
+//     return () => document.removeEventListener('keydown', handleCloseEscape);
+//   }, []);
+//   return createPortal(
+//     <div>
+//       <ModalOverlay onClick={closePopup}/>
+//       <div className={`${styleModal.popup}`}>
+//         <button className={`${styleModal.closeBtn}`} onClick={closePopup}>
+//           <CloseIcon type="primary"/>
+//         </button>
+//         {children}
+//       </div>
+//     </div>,
+//     popups
+//   );
+// };
+//
+// export default Popup;

@@ -1,6 +1,5 @@
 import React, {useState, useMemo} from 'react';
 import styleConstructor from '../BurgerConstructor/BurgerConstructo.module.css';
-// import data from '../../utils/data'
 import {IngredientGroupType} from '../ingredientGroupType/ingredientGroupType';
 import {Button} from '@ya.praktikum/react-developer-burger-ui-components';
 import {HalfBun} from '../HalfBun/HalfBun';
@@ -10,7 +9,7 @@ import PropTypes from 'prop-types';
 
 export const BurgerConstructor = ({ingredients}) => {
 
-  const fillingBurger = ingredients.filter(item => item.type === 'main' || item.type === 'sauce');
+  const fillingBurger = ingredients.filter((item) => item.type === 'main' || item.type === 'sauce');
   const [isOrderPopupOpen, setOrderDetailsPopupOpen] = useState(false);
   const bun = ingredients.filter((item) => item.type === 'bun')[0];
   const handleOrderPopupOpen = () => {
@@ -38,7 +37,7 @@ export const BurgerConstructor = ({ingredients}) => {
             />
           ))}
         </div>
-        <HalfBun type='bottom' bun={bun}/>
+        <HalfBun type='bottom' bun={bun} />
       </div>
       <div className={`${styleConstructor.acceptOrder} mr-4`}>
         <div className={`${styleConstructor.totalPrice}`}>
@@ -60,21 +59,18 @@ export const BurgerConstructor = ({ingredients}) => {
 BurgerConstructor.propTypes = {
   ingredients: PropTypes.arrayOf(
     PropTypes.shape({
-      calories: PropTypes.number,
-      carbohydrates: PropTypes.number,
-      fat: PropTypes.number,
-      image: PropTypes.string,
-      image_large: PropTypes.string,
-      image_mobile: PropTypes.string,
-      name: PropTypes.string,
-      price: PropTypes.number,
-      proteins: PropTypes.number,
-      type: PropTypes.string,
-      __v: PropTypes.number,
       _id: PropTypes.string,
+      name: PropTypes.string,
+      type: PropTypes.string,
+      proteins: PropTypes.number,
+      fat: PropTypes.number,
+      carbohydrates: PropTypes.number,
+      calories: PropTypes.number,
+      price: PropTypes.number,
+      image: PropTypes.string,
+      image_mobile: PropTypes.string,
+      image_large: PropTypes.string,
+      __v: PropTypes.number,
     })
   ).isRequired,
 };
-
-
-

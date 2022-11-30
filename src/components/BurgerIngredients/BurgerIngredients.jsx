@@ -1,33 +1,19 @@
 import React, {useState} from 'react';
 import {Tab} from '@ya.praktikum/react-developer-burger-ui-components';
 import styleIngredients from '../BurgerIngredients/BurgerIngredients.module.css';
-import data from '../../utils/data'
 import {ListIngredients} from '../ListIngredients/ListIngredients';
+import PropTypes from 'prop-types';
 
 
-export const BurgerIngredients = () => {
+export const BurgerIngredients = ({ingredients}) => {
     const [currentTab, setCurrentTab] = useState('one');
+    const getSameIngredients = (type) => ingredients.filter((ingredient) => ingredient.type === type);
 
-    const buns = [];
-    const sauces = [];
-    const filling = [];
+    const buns = getSameIngredients('bun');
+    const sauces = getSameIngredients('sauce');
+    const filling = getSameIngredients('main');
 
-    data.forEach((ingredient) => {
-        switch (ingredient.type) {
-            case 'bun':
-                buns.push(ingredient);
-                break;
-            case 'main':
-                filling.push(ingredient);
-                break;
-            case 'sauce':
-                sauces.push(ingredient);
-                break;
-            default:
-                return;
-        }
-    })
-    return (
+  return (
         <section className={`burgerIngredients ${styleIngredients.burgerIngredients} ml-2`}>
             <h2 className={`text text_type_main-large mt-10 mb-5`}>Соберите бургер</h2>
             <div className={`createBurger ${styleIngredients.tabs} mt-5`}>
@@ -51,3 +37,21 @@ export const BurgerIngredients = () => {
     );
 };
 
+BurgerIngredients.propTypes = {
+  ingredients: PropTypes.arrayOf(
+    PropTypes.shape({
+      calories: PropTypes.number,
+      carbohydrates: PropTypes.number,
+      fat: PropTypes.number,
+      image: PropTypes.string,
+      image_large: PropTypes.string,
+      image_mobile: PropTypes.string,
+      name: PropTypes.string,
+      price: PropTypes.number,
+      proteins: PropTypes.number,
+      type: PropTypes.string,
+      __v: PropTypes.number,
+      _id: PropTypes.string,
+    })
+  ).isRequired,
+};
