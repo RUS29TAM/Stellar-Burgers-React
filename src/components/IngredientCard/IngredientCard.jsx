@@ -3,7 +3,6 @@ import styleCard from '../IngredientCard/IngredientCard.module.css'
 import {CurrencyIcon, Counter} from '@ya.praktikum/react-developer-burger-ui-components';
 import IngredientDetails from '../IngredientDetails/IngredientDetails';
 
-// @ts-ignore
 export const IngredientCard = (props) => {
   const {name, price, image, ...otherProps} = props;
   const [isIngredientDetailsPopupOpen, setIngredientDetailsPopupOpen] = useState(false);
