@@ -1,4 +1,4 @@
-const CONFIG = {
+export const CONFIG = {
     baseUrl: 'https://norma.nomoreparties.space/api/ingredients'
 }
 
