@@ -5,7 +5,8 @@ import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
 import {ModalOverlay} from '../ModalOverlay/ModalOverlay'
 
-const modalTemplate = document.getElementById('modal-template');
+const modalNode = document.getElementById('modal');
+
 export const Modal = (props) => {
   const {isOpen, setOpen, children} = props;
   const closeModal = (event) => {
@@ -31,7 +32,7 @@ export const Modal = (props) => {
   }
 
   const modal = (
-    <>
+    <div>
       <ModalOverlay onClick={closeModal}/>
       <div className={`${styleModal.popup}`}>
         <button className={`${styleModal.closeBtn}`} onClick={closeModal}>
@@ -39,9 +40,9 @@ export const Modal = (props) => {
         </button>
         {children}
       </div>
-    </>
+    </div>
   );
-  return ReactDOM.createPortal(modal, modalTemplate);
+  return ReactDOM.createPortal(modal, modalNode);
 
 };
 
