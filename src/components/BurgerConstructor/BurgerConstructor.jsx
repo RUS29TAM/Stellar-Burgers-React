@@ -1,6 +1,6 @@
 import React, {useState, useMemo} from 'react';
 import styleConstructor from '../BurgerConstructor/BurgerConstructo.module.css';
-import {IngredientGroupType} from '../ingredientGroupType/ingredientGroupType';
+import {IngredientGroupType} from '../IngredientGroupType/ingredientGroupType';
 import {Button} from '@ya.praktikum/react-developer-burger-ui-components';
 import {HalfBun} from '../HalfBun/HalfBun';
 import currencyIcon from '../../images/icon/currency-icon.svg';

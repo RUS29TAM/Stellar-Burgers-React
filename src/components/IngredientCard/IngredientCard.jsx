@@ -1,12 +1,13 @@
 import React, {useState} from 'react';
 import styleCard from '../IngredientCard/IngredientCard.module.css'
 import {CurrencyIcon, Counter} from '@ya.praktikum/react-developer-burger-ui-components';
-import IngredientDetails from '../IngredientDetails/IngredientDetails';
+import {IngredientDetails} from '../IngredientDetails/IngredientDetails';
+import PropTypes from 'prop-types';
 
 export const IngredientCard = (props) => {
   const {name, price, image, ...otherProps} = props;
   const [isIngredientDetailsPopupOpen, setIngredientDetailsPopupOpen] = useState(false);
-  const handleIngredientsPopupOpen = () => setIngredientDetailsPopupOpen(true);
+  const handleIngredientsPopupOpen = () => {setIngredientDetailsPopupOpen(true)};
 
   return (
     <div className={styleCard.card} onClick={handleIngredientsPopupOpen}>
@@ -27,3 +28,16 @@ export const IngredientCard = (props) => {
     </div>
   );
 };
+
+
+IngredientCard.propTypes = {
+  name: PropTypes.string.isRequired,
+  // proteins: PropTypes.number.isRequired,
+  // fat: PropTypes.number.isRequired,
+  // carbohydrates: PropTypes.number.isRequired,
+  // calories: PropTypes.number.isRequired,
+  price: PropTypes.number.isRequired,
+  image: PropTypes.string.isRequired,
+  // image_large: PropTypes.string.isRequired,
+};
+

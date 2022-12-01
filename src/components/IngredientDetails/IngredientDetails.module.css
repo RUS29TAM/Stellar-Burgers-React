@@ -1,0 +1,19 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heading {
+  width: 100%;
+}
+
+.supplementFactsBlock {
+  display: flex;
+  gap: 20px;
+}
+
+.supplementFact {
+  text-align: center;
+  flex: 1;
+}

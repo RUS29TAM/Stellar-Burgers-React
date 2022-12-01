@@ -2,7 +2,7 @@ import React from 'react';
 import styleDownloader from './Downloader.module.css'
 import PropTypes from "prop-types";
 
-export const Downloader = (type) => {
+export const Downloader = ({type}) => {
   return (
     <div className={`${styleDownloader.message}`}>
       {type === 'loading' && (

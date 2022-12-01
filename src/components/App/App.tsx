@@ -31,8 +31,8 @@ export const App = () => {
         }));
       }
     }
-    getIngredientsData().then();
-
+    getIngredientsData();
+// eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

@@ -4,7 +4,7 @@ import stylesListBasket from './ListIngredients.module.css'
 import {IngredientCard} from '../IngredientCard/IngredientCard';
 import {ingredientType} from "../../utils/types";
 
-// @ts-ignore
+
 export const ListIngredients = ({ heading, list }) => {
     return (
         <>
@@ -12,7 +12,7 @@ export const ListIngredients = ({ heading, list }) => {
                 {heading}
             </h3>
             <div className={`${stylesListBasket.list} ml-4 mr-2`}>
-                {list.map((item: { _id: React.Key | null | undefined; name: string; price: number; image: string; }) => (
+                {list.map((item) => (
                     <IngredientCard
                         key={item._id}
                         name={item.name}

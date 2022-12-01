@@ -1,55 +1,57 @@
 import React, {useEffect} from 'react';
 import styleModal from './Modal.module.css'
 import {CloseIcon} from '@ya.praktikum/react-developer-burger-ui-components';
-import ReactDOM from "react-dom/client";
+import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
 import {ModalOverlay} from '../ModalOverlay/ModalOverlay'
 
-const popups = document.getElementById('popup')
-export const Popup = (props) => {
-  const {isOpenPopup, setOpenPopup, children} = props;
-  const closePopup = (event) => {
+const modalTemplate = document.getElementById('modal-template');
+export const Modal = (props) => {
+  const {isOpen, setOpen, children} = props;
+  const closeModal = (event) => {
     event.stopPropagation();
-    setOpenPopup(false);
+    setOpen(false);
   };
 
   useEffect(() => {
     const handleCloseEscape = (event) => {
       if (event.key === 'Escape') {
-        closePopup(event);
+        closeModal(event);
       }
     };
 
     document.addEventListener('keydown', handleCloseEscape);
 
     return () => document.removeEventListener('keydown', handleCloseEscape);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  if (!isOpenPopup) {
+  if (!isOpen) {
     return null
   }
 
-  const popup = (
+  const modal = (
     <>
-      <ModalOverlay onClick={closePopup}/>
+      <ModalOverlay onClick={closeModal}/>
       <div className={`${styleModal.popup}`}>
-        <button className={`${styleModal.closeBtn}`} onClick={closePopup}>
+        <button className={`${styleModal.closeBtn}`} onClick={closeModal}>
           <CloseIcon type="primary"/>
         </button>
         {children}
       </div>
     </>
   );
+  return ReactDOM.createPortal(modal, modalTemplate);
 
-  return ReactDOM.createPortal(popup, popups);
 };
-Popup.propsTypes = {
+
+Modal.propsTypes = {
   isOpenPopup: PropTypes.bool.isRequired,
   setOpenPopup: PropTypes.func.isRequired,
   children: PropTypes.element,
 }
 
-
+// компонент сделать немного иначе
 // const Popup = ({isOpenPopup, setOpenPopup, children}) => {
 //   const closePopup = (event) => {
 //     event.stopPropagation();
