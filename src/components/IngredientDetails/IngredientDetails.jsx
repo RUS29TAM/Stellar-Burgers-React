@@ -5,26 +5,26 @@ import PropTypes from 'prop-types';
 
 export const IngredientDetails = (props) => {
 const {
-  name, infoProps: { proteins, fat, carbohydrates, calories, image_large, }, ...popupProps} = props;
+  name, infoProps: { proteins, fat, carbohydrates, calories, image_large, }, ...modalProps} = props;
     return (
-      <Modal {...popupProps}>
+      <Modal {...modalProps}>
         <div className={`pt-10 pr-10 pb-15 pl-10 ${styleIngredientDetails.wrapper}`}>
           <h1 className={`text text_type_main-large ${styleIngredientDetails.heading}`}>Детали ингридиета</h1>
           <img className='mb-4' src={image_large} alt={name}/>
-          <div className={`text_color_inactive ${styleIngredientDetails.supplementFactsBlock}`}>
-            <div className={styleIngredientDetails.supplementFact}>
+          <div className={`text_color_inactive ${styleIngredientDetails.extraInfoBlock}`}>
+            <div className={styleIngredientDetails.extraInfo}>
               <p className='text text_type_main-default'>Калории,&nbsp;ккал</p>
               <p className='text text_type_digits-default'>{calories}</p>
             </div>
-            <div className={styleIngredientDetails.supplementFact}>
+            <div className={styleIngredientDetails.extraInfo}>
               <p className='text text_type_main-default'>Белки,&nbsp;г</p>
               <p className='text text_type_digits-default'>{proteins}</p>
             </div>
-            <div className={styleIngredientDetails.supplementFact}>
+            <div className={styleIngredientDetails.extraInfo}>
               <p className='text text_type_main-default'>Жиры,&nbsp;г</p>
               <p className='text text_type_digits-default'>{fat}</p>
             </div>
-            <div className={styleIngredientDetails.supplementFact}>
+            <div className={styleIngredientDetails.extraInfo}>
               <p className='text text_type_main-default'>Углеводы,&nbsp;г</p>
               <p className='text text_type_digits-default'>{carbohydrates}</p>
             </div>

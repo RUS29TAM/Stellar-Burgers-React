@@ -8,12 +8,11 @@
   width: 100%;
 }
 
-.supplementFactsBlock {
+.extraInfoBlock {
   display: flex;
   gap: 20px;
 }
 
-.supplementFact {
+.extraInfo {
   text-align: center;
-  flex: 1;
 }

@@ -11,13 +11,13 @@ export const IngredientCard = (props) => {
 
   return (
     <div className={styleCard.card} onClick={handleIngredientsPopupOpen}>
-      <img className={`mr-4 ml-4`} src={props.image} alt={props.name}/>
+      <img className={`mr-4 ml-4`} src={image} alt={name}/>
       <div className={`mt-1 mb-1 ${styleCard.price}`}>
-        <span className='text text_type_digits-default'>{props.price}</span>
+        <span className='text text_type_digits-default'>{price}</span>
         <CurrencyIcon type="primary"/>
       </div>
       <div className={styleCard.name}>
-        <span className='text text_type_main-default'>{props.name}</span>
+        <span className='text text_type_main-default'>{name}</span>
       </div>
       <Counter count={1} size="default"/>
       <IngredientDetails
@@ -32,12 +32,12 @@ export const IngredientCard = (props) => {
 
 IngredientCard.propTypes = {
   name: PropTypes.string.isRequired,
-  // proteins: PropTypes.number.isRequired,
-  // fat: PropTypes.number.isRequired,
-  // carbohydrates: PropTypes.number.isRequired,
-  // calories: PropTypes.number.isRequired,
+  proteins: PropTypes.number.isRequired,
+  fat: PropTypes.number.isRequired,
+  carbohydrates: PropTypes.number.isRequired,
+  calories: PropTypes.number.isRequired,
   price: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
-  // image_large: PropTypes.string.isRequired,
+  image_large: PropTypes.string.isRequired,
 };
 

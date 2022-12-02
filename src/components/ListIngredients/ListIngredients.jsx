@@ -18,6 +18,11 @@ export const ListIngredients = ({ heading, list }) => {
                         name={item.name}
                         price={item.price}
                         image={item.image}
+                        image_large={item.image_large}
+                        calories={item.calories}
+                        proteins={item.proteins}
+                        fat={item.fat}
+                        carbohydrates={item.carbohydrates}
                     />
                 ))}
             </div>
