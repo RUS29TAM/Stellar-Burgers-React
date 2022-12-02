@@ -2,7 +2,7 @@ import {BurgerIcon, ListIcon, Logo, ProfileIcon} from '@ya.praktikum/react-devel
 import React from 'react';
 import stylesHeader from './AppHeader.module.css';
 
-export const AppHeader = () => {
+const AppHeader = () => {
 
     return (
         <header className={`header ${stylesHeader.header}`}>
@@ -42,3 +42,6 @@ export const AppHeader = () => {
         </header>
     );
 };
+
+export default AppHeader;
+

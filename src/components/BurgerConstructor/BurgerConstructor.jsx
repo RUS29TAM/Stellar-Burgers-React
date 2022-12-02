@@ -1,13 +1,13 @@
 import React, {useState, useMemo} from 'react';
 import styleConstructor from '../BurgerConstructor/BurgerConstructo.module.css';
-import {IngredientGroupType} from '../IngredientGroupType/ingredientGroupType';
+import IngredientGroupType from '../IngredientGroupType/ingredientGroupType';
 import {Button} from '@ya.praktikum/react-developer-burger-ui-components';
-import {HalfBun} from '../HalfBun/HalfBun';
+import HalfBun from '../HalfBun/HalfBun';
 import currencyIcon from '../../images/icon/currency-icon.svg';
-import {OrderDetails} from '../OrderDetails/OrderDetails';
+import OrderDetails from '../OrderDetails/OrderDetails';
 import PropTypes from 'prop-types';
 
-export const BurgerConstructor = ({ingredients}) => {
+const BurgerConstructor = ({ingredients}) => {
 
   const fillingBurger = ingredients.filter((item) => item.type === 'main' || item.type === 'sauce');
   const [isOrderPopupOpen, setOrderDetailsPopupOpen] = useState(false);
@@ -42,7 +42,6 @@ export const BurgerConstructor = ({ingredients}) => {
       <div className={`${styleConstructor.acceptOrder} mr-4`}>
         <div className={`${styleConstructor.totalPrice}`}>
           <span className="text text_type_digits-medium">{burgerPrice}</span>
-          {/*<CurrencyIcon type="primary" />*/}
           <img className={`currencyIcon ml-2`} src={currencyIcon} alt="Валюта"/>
         </div>
         <Button type="primary" size="large" htmlType={"button"} onClick={handleOrderPopupOpen}>
@@ -74,3 +73,5 @@ BurgerConstructor.propTypes = {
     })
   ).isRequired,
 };
+
+export default BurgerConstructor

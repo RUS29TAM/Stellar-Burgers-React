@@ -1,12 +1,12 @@
 import React, {useState, useEffect} from 'react';
-import {AppHeader} from '../AppHeader/AppHeader';
+import AppHeader from '../AppHeader/AppHeader';
 import appStyle from './App.module.css';
-import {BurgerIngredients} from '../BurgerIngredients/BurgerIngredients';
-import {BurgerConstructor} from '../BurgerConstructor/BurgerConstructor';
-import {Downloader} from '../Downloader/Downloader'
+import BurgerIngredients from '../BurgerIngredients/BurgerIngredients';
+import BurgerConstructor from '../BurgerConstructor/BurgerConstructor';
+import Downloader from '../Downloader/Downloader'
 import {CONFIG} from '../Api/Api';
 
-export const App = () => {
+ const App = () => {
   const [ingredientsData, setIngredientsData] = useState({
     ingredient: [],
     isLoading: false,
@@ -54,3 +54,4 @@ export const App = () => {
   )
 };
 
+export default App

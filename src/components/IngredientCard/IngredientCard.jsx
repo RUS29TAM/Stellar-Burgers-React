@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import styleCard from '../IngredientCard/IngredientCard.module.css'
 import {CurrencyIcon, Counter} from '@ya.praktikum/react-developer-burger-ui-components';
-import {IngredientDetails} from '../IngredientDetails/IngredientDetails';
+import IngredientDetails from '../IngredientDetails/IngredientDetails';
 import PropTypes from 'prop-types';
 
-export const IngredientCard = (props) => {
+const IngredientCard = (props) => {
   const {name, price, image, ...otherProps} = props;
   const [isIngredientDetailsPopupOpen, setIngredientDetailsPopupOpen] = useState(false);
   const handleIngredientsPopupOpen = () => {setIngredientDetailsPopupOpen(true)};
@@ -41,3 +41,4 @@ IngredientCard.propTypes = {
   image_large: PropTypes.string.isRequired,
 };
 
+export default IngredientCard

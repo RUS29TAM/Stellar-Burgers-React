@@ -3,11 +3,11 @@ import styleModal from './Modal.module.css'
 import {CloseIcon} from '@ya.praktikum/react-developer-burger-ui-components';
 import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
-import {ModalOverlay} from '../ModalOverlay/ModalOverlay'
+import ModalOverlay from '../ModalOverlay/ModalOverlay'
 
 const modalNode = document.getElementById('modal');
 
-export const Modal = (props) => {
+const Modal = (props) => {
   const {isOpen, setOpen, children} = props;
   const closeModal = (event) => {
     event.stopPropagation();
@@ -52,6 +52,7 @@ Modal.propsTypes = {
   children: PropTypes.element,
 }
 
+export default Modal
 // компонент сделать немного иначе
 // const Popup = ({isOpenPopup, setOpenPopup, children}) => {
 //   const closePopup = (event) => {

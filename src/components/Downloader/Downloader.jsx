@@ -2,7 +2,7 @@ import React from 'react';
 import styleDownloader from './Downloader.module.css'
 import PropTypes from "prop-types";
 
-export const Downloader = ({type}) => {
+const Downloader = ({type}) => {
   return (
     <div className={`${styleDownloader.message}`}>
       {type === 'loading' && (
@@ -22,5 +22,7 @@ export const Downloader = ({type}) => {
 Downloader.propTypes = {
   type: PropTypes.oneOf(['loading', 'error']).isRequired
 }
+
+export default Downloader
 
 

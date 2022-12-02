@@ -2,7 +2,7 @@ import React from 'react';
 import {ConstructorElement} from '@ya.praktikum/react-developer-burger-ui-components';
 import PropTypes from 'prop-types';
 
-export const HalfBun = (props) => {
+const HalfBun = (props) => {
   const {bun, type} = props;
 
   return (
@@ -26,3 +26,5 @@ HalfBun.propTypes = {
     image: PropTypes.string.isRequired,
   })
 };
+
+export default HalfBun

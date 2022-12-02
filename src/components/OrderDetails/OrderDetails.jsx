@@ -2,10 +2,10 @@ import React from 'react';
 import styleOrderDetails from './OrderDetails.module.css';
 import orderAcceptedDone from '../../images/icon/order-accepted-done.svg';
 import PropTypes from 'prop-types';
-import {Modal} from '../Modal/Modal';
+import Modal from '../Modal/Modal';
 
 
-export const OrderDetails = (props) => {
+const OrderDetails = (props) => {
   const {...popupProps} = props;
 
   return (
@@ -25,3 +25,5 @@ OrderDetails.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   setOpen: PropTypes.func.isRequired
 };
+
+export default OrderDetails

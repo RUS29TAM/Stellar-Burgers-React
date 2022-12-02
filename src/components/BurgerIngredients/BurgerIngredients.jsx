@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import {Tab} from '@ya.praktikum/react-developer-burger-ui-components';
 import styleIngredients from '../BurgerIngredients/BurgerIngredients.module.css';
-import {ListIngredients} from '../ListIngredients/ListIngredients';
+import ListIngredients from '../ListIngredients/ListIngredients';
 import PropTypes from 'prop-types';
 
 
-export const BurgerIngredients = ({ingredients}) => {
+const BurgerIngredients = ({ingredients}) => {
     const [currentTab, setCurrentTab] = useState('one');
     const getSameIngredients = (type) => ingredients.filter((ingredient) => ingredient.type === type);
 
@@ -55,3 +55,5 @@ BurgerIngredients.propTypes = {
     })
   ).isRequired,
 };
+
+export default BurgerIngredients

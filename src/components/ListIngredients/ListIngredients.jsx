@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from "prop-types";
 import stylesListBasket from './ListIngredients.module.css'
-import {IngredientCard} from '../IngredientCard/IngredientCard';
-import {ingredientType} from "../../utils/types";
+import IngredientCard from '../IngredientCard/IngredientCard';
+import ingredientType from "../../utils/types";
 
 
-export const ListIngredients = ({ heading, list }) => {
+const ListIngredients = ({ heading, list }) => {
     return (
         <>
             <h3 className='text text_type_main-medium mt-10 mb-6'>
@@ -34,4 +34,6 @@ ListIngredients.propTypes = {
     heading: PropTypes.string.isRequired,
     list: PropTypes.arrayOf(ingredientType.isRequired)
 };
+
+export default ListIngredients
 

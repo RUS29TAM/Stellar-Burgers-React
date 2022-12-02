@@ -3,7 +3,7 @@ import {DragIcon, ConstructorElement,} from '@ya.praktikum/react-developer-burge
 import PropTypes from 'prop-types';
 import styleIconIngredient from './IngredientGroupType.module.css';
 
-export const IngredientGroupType = (props) => {
+const IngredientGroupType = (props) => {
     return (
         <div className={`${styleIconIngredient.container} mr-2`}>
             <div className={`${styleIconIngredient.icon} mr-2`}>
@@ -23,5 +23,6 @@ IngredientGroupType.propTypes = {
     image: PropTypes.string,
     price: PropTypes.number,
 }
+export default IngredientGroupType
 
 
