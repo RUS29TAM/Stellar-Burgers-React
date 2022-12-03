@@ -3,7 +3,7 @@ export const CONFIG = {
 }
 
 export const api = {
-  getIngredientsData: () =>
+  getIngredients: () =>
         fetch(CONFIG.baseUrl).then((res) =>
             res.ok ? res.json() : Promise.reject(`Ошибка ${res.status}`)
         ),

@@ -4,6 +4,7 @@ import {CurrencyIcon, Counter} from '@ya.praktikum/react-developer-burger-ui-com
 import IngredientDetails from '../IngredientDetails/IngredientDetails';
 import PropTypes from 'prop-types';
 
+
 const IngredientCard = (props) => {
   const {name, price, image, ...otherProps} = props;
   const [isIngredientDetailsPopupOpen, setIngredientDetailsPopupOpen] = useState(false);
