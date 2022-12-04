@@ -1,13 +1,14 @@
 import React, {useState, useMemo} from 'react';
 import styleConstructor from '../BurgerConstructor/BurgerConstructo.module.css';
-import {IngredientGroupType} from '../IngredientGroupType/ingredientGroupType';
+import IngredientGroupType from '../IngredientGroupType/ingredientGroupType';
 import {Button} from '@ya.praktikum/react-developer-burger-ui-components';
-import {HalfBun} from '../HalfBun/HalfBun';
+import HalfBun from '../HalfBun/HalfBun';
 import currencyIcon from '../../images/icon/currency-icon.svg';
-import {OrderDetails} from '../OrderDetails/OrderDetails';
+import OrderDetails from '../OrderDetails/OrderDetails';
 import PropTypes from 'prop-types';
+import ingredientType from "../../utils/types";
 
-export const BurgerConstructor = ({ingredients}) => {
+const BurgerConstructor = ({ingredients}) => {
 
   const fillingBurger = ingredients.filter((item) => item.type === 'main' || item.type === 'sauce');
   const [isOrderPopupOpen, setOrderDetailsPopupOpen] = useState(false);
@@ -20,29 +21,23 @@ export const BurgerConstructor = ({ingredients}) => {
     return bun.price * 2 + ingredientPrice
   }, [fillingBurger, bun]);
 
-
   return (
     <section className={`${styleConstructor.basket} mr-7`}>
       <div
         className={`${styleConstructor.constructorWrapper} mb-10 mt-25 ml-4`}
       >
-        <HalfBun type='top' bun={bun} />
+        <HalfBun type='top' bun={bun}/>
         <div className={styleConstructor.dragWrapper}>
           {fillingBurger.map((item) => (
             <IngredientGroupType
-              key={item._id}
-              name={item.name}
-              price={item.price}
-              image={item.image}
-            />
+              key={item._id} ingredient={item}/>
           ))}
         </div>
-        <HalfBun type='bottom' bun={bun} />
+        <HalfBun type='bottom' bun={bun}/>
       </div>
       <div className={`${styleConstructor.acceptOrder} mr-4`}>
         <div className={`${styleConstructor.totalPrice}`}>
           <span className="text text_type_digits-medium">{burgerPrice}</span>
-          {/*<CurrencyIcon type="primary" />*/}
           <img className={`currencyIcon ml-2`} src={currencyIcon} alt="Валюта"/>
         </div>
         <Button type="primary" size="large" htmlType={"button"} onClick={handleOrderPopupOpen}>
@@ -56,21 +51,9 @@ export const BurgerConstructor = ({ingredients}) => {
     </section>
   );
 };
+
 BurgerConstructor.propTypes = {
-  ingredients: PropTypes.arrayOf(
-    PropTypes.shape({
-      _id: PropTypes.string,
-      name: PropTypes.string,
-      type: PropTypes.string,
-      proteins: PropTypes.number,
-      fat: PropTypes.number,
-      carbohydrates: PropTypes.number,
-      calories: PropTypes.number,
-      price: PropTypes.number,
-      image: PropTypes.string,
-      image_mobile: PropTypes.string,
-      image_large: PropTypes.string,
-      __v: PropTypes.number,
-    })
-  ).isRequired,
+  ingredients: PropTypes.arrayOf(ingredientType.isRequired)
 };
+
+export default BurgerConstructor

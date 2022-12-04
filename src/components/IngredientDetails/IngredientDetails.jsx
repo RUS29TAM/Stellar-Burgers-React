@@ -1,47 +1,45 @@
 import React from 'react';
 import styleIngredientDetails from '../IngredientDetails/IngredientDetails.module.css';
-import {Modal} from '../Modal/Modal';
-import PropTypes from 'prop-types';
+import Modal from '../Modal/Modal';
+import ingredientType from '../../utils/types';
 
-export const IngredientDetails = (props) => {
-const {
-  name, infoProps: { proteins, fat, carbohydrates, calories, image_large, }, ...modalProps} = props;
-    return (
-      <Modal {...modalProps}>
-        <div className={`pt-10 pr-10 pb-15 pl-10 ${styleIngredientDetails.wrapper}`}>
-          <h1 className={`text text_type_main-large ${styleIngredientDetails.heading}`}>Детали ингридиета</h1>
-          <img className='mb-4' src={image_large} alt={name}/>
-          <div className={`text_color_inactive ${styleIngredientDetails.extraInfoBlock}`}>
-            <div className={styleIngredientDetails.extraInfo}>
-              <p className='text text_type_main-default'>Калории,&nbsp;ккал</p>
-              <p className='text text_type_digits-default'>{calories}</p>
-            </div>
-            <div className={styleIngredientDetails.extraInfo}>
-              <p className='text text_type_main-default'>Белки,&nbsp;г</p>
-              <p className='text text_type_digits-default'>{proteins}</p>
-            </div>
-            <div className={styleIngredientDetails.extraInfo}>
-              <p className='text text_type_main-default'>Жиры,&nbsp;г</p>
-              <p className='text text_type_digits-default'>{fat}</p>
-            </div>
-            <div className={styleIngredientDetails.extraInfo}>
-              <p className='text text_type_main-default'>Углеводы,&nbsp;г</p>
-              <p className='text text_type_digits-default'>{carbohydrates}</p>
-            </div>
+const IngredientDetails = ({ingredient, isOpen, setOpen}) => {
+
+  return (
+    <Modal isOpen={isOpen} setOpen={setOpen}>
+      <div className={`pt-10 pr-10 pb-10 pl-10 ${styleIngredientDetails.wrapper}`}>
+        <h1 className={`text text_type_main-large pt-2 ${styleIngredientDetails.heading}`}>Детали ингридиета</h1>
+        <img className={`m-4 ${styleIngredientDetails.imageLarge}`} src={ingredient.image_large} alt={ingredient.name}/>
+        <p className={`text text_type_main-medium ${styleIngredientDetails.name}`}>{ingredient.name}</p>
+        <div className={`text_color_inactive p-3 ${styleIngredientDetails.extraInfoBlock}`}>
+          <div className={`p-4 ${styleIngredientDetails.extraInfo}`}>
+            <p
+              className={`text text_type_main-default pb-2 ${styleIngredientDetails.extraInfoWrapper}`}>Калории,&nbsp;ккал</p>
+            <p className='text text_type_digits-default'>{ingredient.calories}</p>
+          </div>
+          <div className={`p-4 ${styleIngredientDetails.extraInfo}`}>
+            <p
+              className={`text text_type_main-default pb-2 ${styleIngredientDetails.extraInfoWrapper}`}>Белки,&nbsp;г</p>
+            <p className='text text_type_digits-default'>{ingredient.proteins}</p>
+          </div>
+          <div className={`p-4 ${styleIngredientDetails.extraInfo}`}>
+            <p
+              className={`text text_type_main-default pb-2 ${styleIngredientDetails.extraInfoWrapper}`}>Жиры,&nbsp;г</p>
+            <p className='text text_type_digits-default'>{ingredient.fat}</p>
+          </div>
+          <div className={`p-4 ${styleIngredientDetails.extraInfo}`}>
+            <p
+              className={`text text_type_main-default pb-2 ${styleIngredientDetails.extraInfoWrapper}`}>Углеводы,&nbsp;г</p>
+            <p className='text text_type_digits-default'>{ingredient.carbohydrates}</p>
           </div>
         </div>
-      </Modal>
-    );
+      </div>
+    </Modal>
+  );
 };
 
 IngredientDetails.propTypes = {
-  isOpen: PropTypes.bool.isRequired,
-  setOpen: PropTypes.func.isRequired,
-  name: PropTypes.string.isRequired,
-  image_large: PropTypes.string,
-  calories: PropTypes.number,
-  proteins: PropTypes.number,
-  fat: PropTypes.number,
-  carbohydrates: PropTypes.number,
+  ingredient: ingredientType.isRequired
 };
 
+export default IngredientDetails

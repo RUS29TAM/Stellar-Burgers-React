@@ -1,9 +1,9 @@
 import React from 'react';
 import {ConstructorElement} from '@ya.praktikum/react-developer-burger-ui-components';
 import PropTypes from 'prop-types';
+import ingredientType from '../../utils/types';
 
-export const HalfBun = (props) => {
-  const {bun, type} = props;
+const HalfBun = ({type, bun}) => {
 
   return (
     <div className='ml-8 mr-4'>
@@ -18,11 +18,10 @@ export const HalfBun = (props) => {
   );
 };
 
+
 HalfBun.propTypes = {
   type: PropTypes.oneOf(['top', 'bottom']).isRequired,
-  bun: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    image: PropTypes.string.isRequired,
-  })
+  bun: ingredientType.isRequired
 };
+
+export default HalfBun

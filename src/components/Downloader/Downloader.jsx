@@ -1,13 +1,10 @@
 import React from 'react';
 import styleDownloader from './Downloader.module.css'
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
-export const Downloader = ({type}) => {
+const Downloader = ({type}) => {
   return (
     <div className={`${styleDownloader.message}`}>
-      {type === 'loading' && (
-        <p className="text text_type_main-large">Загрузка.</p>
-      )}
       {type === 'error' && (
         <>
           <p className="text_type_main-large">Возникла ошибка</p>
@@ -22,5 +19,7 @@ export const Downloader = ({type}) => {
 Downloader.propTypes = {
   type: PropTypes.oneOf(['loading', 'error']).isRequired
 }
+
+export default Downloader
 
 
