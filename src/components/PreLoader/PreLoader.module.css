@@ -1,8 +1,10 @@
 .preLoader {
-  animation: infinite linear 1.2s rotate;
-  width: 200px;
-  height: 200px;
-  fill: #7300ff;
+  animation: infinite linear 0.3s rotate;
+  width: 75px;
+  height: 75px;
+  /*box-shadow: rgb(102, 0, 255) 0 0 150px 15px;*/
+  border-radius: 50%;
+  /*background-color: rgba(10, 0, 28, 0.24);*/
 }
 
 @keyframes rotate {
@@ -10,7 +12,7 @@
     rotate: 0;
   }
   to {
-    rotate: 180deg;
+    rotate: 360deg;
   }
 
 }
@@ -24,4 +26,38 @@
   height: 100%;
   top: 0;
   left: 0;
+}
+
+.a {
+  fill: #6602fb;
+  fill-opacity: 0.9;
+}
+.b {
+  fill: #57fa06;
+  fill-opacity: 0.8;
+}
+.c {
+  fill: #ff020c;
+  fill-opacity: 0.5;
+}
+.d {
+  fill: #faec4f;
+  fill-opacity: 0.9;
+}
+.e {
+  fill: #02defb;
+  fill-opacity: 0.8;
+}
+.f {
+  fill: #fb0266;
+  fill-opacity: 0.7;
+}
+.g {
+  fill: #812ffb;
+
+  fill-opacity: 0.8;
+}
+.h {
+  fill: #ffffff;
+  fill-opacity: 0.7;
 }

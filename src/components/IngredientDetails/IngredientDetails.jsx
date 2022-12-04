@@ -9,24 +9,25 @@ const IngredientDetails = (props) => {
   } = props;
   return (
     <Modal {...modalProps}>
-      <div className={`pt-10 pr-10 pb-15 pl-10 ${styleIngredientDetails.wrapper}`}>
-        <h1 className={`text text_type_main-large ${styleIngredientDetails.heading}`}>Детали ингридиета</h1>
-        <img className='mb-4' src={image_large} alt={name}/>
-        <div className={`text_color_inactive ${styleIngredientDetails.extraInfoBlock}`}>
-          <div className={styleIngredientDetails.extraInfo}>
-            <p className='text text_type_main-default'>Калории,&nbsp;ккал</p>
+      <div className={`pt-10 pr-10 pb-10 pl-10 ${styleIngredientDetails.wrapper}`}>
+        <h1 className={`text text_type_main-large pt-2 ${styleIngredientDetails.heading}`}>Детали ингридиета</h1>
+        <img className={`m-4 ${styleIngredientDetails.imageLarge}`} src={image_large} alt={name}/>
+        <p className={`text text_type_main-medium ${styleIngredientDetails.name}`}>{name}</p>
+        <div className={`text_color_inactive p-3 ${styleIngredientDetails.extraInfoBlock}`}>
+          <div className={`p-4 ${styleIngredientDetails.extraInfo}`}>
+            <p className={`text text_type_main-default pb-2 ${styleIngredientDetails.extraInfoWrapper}`}>Калории,&nbsp;ккал</p>
             <p className='text text_type_digits-default'>{calories}</p>
           </div>
-          <div className={styleIngredientDetails.extraInfo}>
-            <p className='text text_type_main-default'>Белки,&nbsp;г</p>
+          <div className={`p-4 ${styleIngredientDetails.extraInfo}`}>
+            <p className={`text text_type_main-default pb-2 ${styleIngredientDetails.extraInfoWrapper}`}>Белки,&nbsp;г</p>
             <p className='text text_type_digits-default'>{proteins}</p>
           </div>
-          <div className={styleIngredientDetails.extraInfo}>
-            <p className='text text_type_main-default'>Жиры,&nbsp;г</p>
+          <div className={`p-4 ${styleIngredientDetails.extraInfo}`}>
+            <p className={`text text_type_main-default pb-2 ${styleIngredientDetails.extraInfoWrapper}`}>Жиры,&nbsp;г</p>
             <p className='text text_type_digits-default'>{fat}</p>
           </div>
-          <div className={styleIngredientDetails.extraInfo}>
-            <p className='text text_type_main-default'>Углеводы,&nbsp;г</p>
+          <div className={`p-4 ${styleIngredientDetails.extraInfo}`}>
+            <p className={`text text_type_main-default pb-2 ${styleIngredientDetails.extraInfoWrapper}`}>Углеводы,&nbsp;г</p>
             <p className='text text_type_digits-default'>{carbohydrates}</p>
           </div>
         </div>

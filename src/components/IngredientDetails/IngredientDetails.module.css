@@ -16,3 +16,20 @@
 .extraInfo {
   text-align: center;
 }
+
+.imageLarge {
+  max-width: 520px;
+  max-height: 240px;
+}
+
+.extraInfoWrapper {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+
+.name {
+  max-width: 500px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

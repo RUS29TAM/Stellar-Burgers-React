@@ -34,7 +34,7 @@ const Modal = (props) => {
   const modal = (
     <div>
       <ModalOverlay onClick={closeModal}/>
-      <div className={`${styleModal.popup}`}>
+      <div className={` ${styleModal.popup}`}>
         <button className={`${styleModal.closeBtn}`} onClick={closeModal}>
           <CloseIcon type="primary"/>
         </button>
