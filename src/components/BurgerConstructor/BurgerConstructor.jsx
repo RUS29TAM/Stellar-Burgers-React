@@ -6,6 +6,7 @@ import HalfBun from '../HalfBun/HalfBun';
 import currencyIcon from '../../images/icon/currency-icon.svg';
 import OrderDetails from '../OrderDetails/OrderDetails';
 import PropTypes from 'prop-types';
+import ingredientType from "../../utils/types";
 
 const BurgerConstructor = ({ingredients}) => {
 
@@ -26,18 +27,14 @@ const BurgerConstructor = ({ingredients}) => {
       <div
         className={`${styleConstructor.constructorWrapper} mb-10 mt-25 ml-4`}
       >
-        <HalfBun type='top' bun={bun} />
+        <HalfBun type='top' bun={bun}/>
         <div className={styleConstructor.dragWrapper}>
           {fillingBurger.map((item) => (
             <IngredientGroupType
-              key={item._id}
-              name={item.name}
-              price={item.price}
-              image={item.image}
-            />
+              key={item._id} ingredient={item}/>
           ))}
         </div>
-        <HalfBun type='bottom' bun={bun} />
+        <HalfBun type='bottom' bun={bun}/>
       </div>
       <div className={`${styleConstructor.acceptOrder} mr-4`}>
         <div className={`${styleConstructor.totalPrice}`}>
@@ -55,23 +52,10 @@ const BurgerConstructor = ({ingredients}) => {
     </section>
   );
 };
+
 BurgerConstructor.propTypes = {
-  ingredients: PropTypes.arrayOf(
-    PropTypes.shape({
-      _id: PropTypes.string,
-      name: PropTypes.string,
-      type: PropTypes.string,
-      proteins: PropTypes.number,
-      fat: PropTypes.number,
-      carbohydrates: PropTypes.number,
-      calories: PropTypes.number,
-      price: PropTypes.number,
-      image: PropTypes.string,
-      image_mobile: PropTypes.string,
-      image_large: PropTypes.string,
-      __v: PropTypes.number,
-    })
-  ).isRequired,
+  ingredients: PropTypes.arrayOf(ingredientType.isRequired)
 };
+
 
 export default BurgerConstructor

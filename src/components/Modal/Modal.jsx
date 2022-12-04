@@ -49,7 +49,7 @@ const Modal = (props) => {
 Modal.propsTypes = {
   isOpenPopup: PropTypes.bool.isRequired,
   setOpenPopup: PropTypes.func.isRequired,
-  children: PropTypes.element,
+  children: PropTypes.element.isRequired,
 }
 
 export default Modal

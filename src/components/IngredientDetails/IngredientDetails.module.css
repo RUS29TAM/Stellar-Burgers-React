@@ -19,8 +19,13 @@
 
 .imageLarge {
   max-width: 520px;
+  /*max-height: 240px;*/
+  min-height: 240px;
   max-height: 240px;
+
+
 }
+
 
 .extraInfoWrapper {
   overflow: hidden;
@@ -29,7 +34,7 @@
 }
 
 .name {
-  max-width: 500px;
+  max-width: 600px;
   overflow: hidden;
   text-overflow: ellipsis;
 }

@@ -25,7 +25,6 @@ const App = () => {
   return (
     <>
       <AppHeader/>
-      {/*<PreLoader />*/}
       <div className={`${appStyle.page}`}>
         <main className={`${appStyle.main}`}>
           {ingredientsData.isLoading && <Downloader type='loading'/> && <PreLoader/>}

@@ -13,17 +13,7 @@ const ListIngredients = ({ heading, list }) => {
             </h3>
             <div className={`${stylesListBasket.list} ml-4 mr-2`}>
                 {list.map((item) => (
-                    <IngredientCard
-                        key={item._id}
-                        name={item.name}
-                        price={item.price}
-                        image={item.image}
-                        image_large={item.image_large}
-                        calories={item.calories}
-                        proteins={item.proteins}
-                        fat={item.fat}
-                        carbohydrates={item.carbohydrates}
-                    />
+                    <IngredientCard key={item._id} ingredient={item}/>
                 ))}
             </div>
         </>

@@ -1,20 +1,19 @@
 .preLoader {
-  animation: infinite linear 0.3s rotate;
-  width: 75px;
-  height: 75px;
-  /*box-shadow: rgb(102, 0, 255) 0 0 150px 15px;*/
+  animation: infinite linear 1.5s rotate;
+  width: 100px;
+  height: 100px;
+  box-shadow: rgb(153, 0, 255) 0 0 150px 15px;
   border-radius: 50%;
   /*background-color: rgba(10, 0, 28, 0.24);*/
 }
 
 @keyframes rotate {
   from {
-    rotate: 0;
+    rotate: 0deg;
   }
   to {
     rotate: 360deg;
   }
-
 }
 
 .wrapper {
