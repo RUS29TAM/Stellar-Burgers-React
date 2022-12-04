@@ -21,7 +21,6 @@ const BurgerConstructor = ({ingredients}) => {
     return bun.price * 2 + ingredientPrice
   }, [fillingBurger, bun]);
 
-
   return (
     <section className={`${styleConstructor.basket} mr-7`}>
       <div
@@ -56,6 +55,5 @@ const BurgerConstructor = ({ingredients}) => {
 BurgerConstructor.propTypes = {
   ingredients: PropTypes.arrayOf(ingredientType.isRequired)
 };
-
 
 export default BurgerConstructor

@@ -4,7 +4,7 @@ import stylePreLoader from './PreLoader.module.css';
 const PreLoader = () => {
   return (
     <div className={stylePreLoader.wrapper}>
-      <svg className={stylePreLoader.preLoader}  viewBox="0 0 50 50" fill="none"
+      <svg className={stylePreLoader.preLoader} viewBox="0 0 50 50" fill="none"
            xmlns="http://www.w3.org/2000/svg">
         <g filter="url(#filter0_f_57930_1352)">
           <path

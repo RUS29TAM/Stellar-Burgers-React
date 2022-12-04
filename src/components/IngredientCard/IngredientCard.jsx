@@ -2,13 +2,14 @@ import React, {useState} from 'react';
 import styleCard from '../IngredientCard/IngredientCard.module.css'
 import {CurrencyIcon, Counter} from '@ya.praktikum/react-developer-burger-ui-components';
 import IngredientDetails from '../IngredientDetails/IngredientDetails';
-import PropTypes from 'prop-types';
-import ingredientType from "../../utils/types";
+import ingredientType from '../../utils/types';
 
 
 const IngredientCard = ({ingredient}) => {
   const [isIngredientDetailsPopupOpen, setIngredientDetailsPopupOpen] = useState(false);
-  const handleIngredientsPopupOpen = () => {setIngredientDetailsPopupOpen(true)};
+  const handleIngredientsPopupOpen = () => {
+    setIngredientDetailsPopupOpen(true)
+  };
 
   return (
     <div className={styleCard.card} onClick={handleIngredientsPopupOpen}>
@@ -25,7 +26,7 @@ const IngredientCard = ({ingredient}) => {
         isOpen={isIngredientDetailsPopupOpen}
         setOpen={setIngredientDetailsPopupOpen}
         ingredient={ingredient}
-       />
+      />
     </div>
   );
 };

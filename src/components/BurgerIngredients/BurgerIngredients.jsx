@@ -5,7 +5,6 @@ import ListIngredients from '../ListIngredients/ListIngredients';
 import PropTypes from 'prop-types';
 import {useInView} from 'react-intersection-observer';
 import ingredientType from "../../utils/types";
-import BurgerConstructor from "../BurgerConstructor/BurgerConstructor";
 
 const BurgerIngredients = ({ingredients}) => {
   const [currentTab, setCurrentTab] = useState('bun');
@@ -65,7 +64,7 @@ const BurgerIngredients = ({ingredients}) => {
           </div>
         </div>
         <div>
-          <div id='sauce'  ref={sauceRef}>
+          <div id='sauce' ref={sauceRef}>
             <ListIngredients heading='Соусы' list={sauces}/>
           </div>
         </div>

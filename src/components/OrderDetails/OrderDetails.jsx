@@ -5,11 +5,10 @@ import PropTypes from 'prop-types';
 import Modal from '../Modal/Modal';
 
 
-const OrderDetails = (props) => {
-  const {...popupProps} = props;
+const OrderDetails = ({isOpen, setOpen}) => {
 
   return (
-    <Modal {...popupProps}>
+    <Modal isOpen={isOpen} setOpen={setOpen}>
       <div className={`pt-30 pb-30 ${styleOrderDetails.wrapper}`}>
         <p className={`text text_type_digits-large mb-8 ${styleOrderDetails.numOrder}`}>034536</p>
         <p className="text text_type_main-medium mb-15">Идентификатор заказа</p>
