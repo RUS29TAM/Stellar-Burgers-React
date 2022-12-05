@@ -7,6 +7,7 @@ import currencyIcon from '../../images/icon/currency-icon.svg';
 import OrderDetails from '../OrderDetails/OrderDetails';
 import PropTypes from 'prop-types';
 import ingredientType from "../../utils/types";
+import Modal from "../Modal/Modal";
 
 const BurgerConstructor = ({ingredients}) => {
 
@@ -44,10 +45,12 @@ const BurgerConstructor = ({ingredients}) => {
           Оформить заказ
         </Button>
       </div>
-      <OrderDetails
-        isOpen={isOrderPopupOpen}
-        setOpen={setOrderDetailsPopupOpen}
-      />
+      { isOrderPopupOpen &&
+        <Modal
+          setOpen={setOrderDetailsPopupOpen}>
+          <OrderDetails/>
+        </Modal>
+      }
     </section>
   );
 };
