@@ -3,10 +3,13 @@ import styleCard from '../IngredientCard/IngredientCard.module.css'
 import {CurrencyIcon, Counter} from '@ya.praktikum/react-developer-burger-ui-components';
 import IngredientDetails from '../IngredientDetails/IngredientDetails';
 import ingredientType from '../../utils/types';
+import Modal from "../Modal/Modal";
 
 
 const IngredientCard = ({ingredient}) => {
   const [isIngredientDetailsPopupOpen, setIngredientDetailsPopupOpen] = useState(false);
+  const handleIngredientSetOpen = value => setIngredientDetailsPopupOpen(value)
+
   const handleIngredientsPopupOpen = () => {
     setIngredientDetailsPopupOpen(true)
   };
@@ -22,11 +25,13 @@ const IngredientCard = ({ingredient}) => {
         <span className='text text_type_main-default'>{ingredient.name}</span>
       </div>
       <Counter count={1} size="default"/>
-      <IngredientDetails
-        isOpen={isIngredientDetailsPopupOpen}
-        setOpen={setIngredientDetailsPopupOpen}
-        ingredient={ingredient}
-      />
+      {isIngredientDetailsPopupOpen &&
+      <Modal
+        setOpen={handleIngredientSetOpen}
+      >
+        <IngredientDetails ingredient={ingredient}/>
+      </Modal>
+      }
     </div>
   );
 };

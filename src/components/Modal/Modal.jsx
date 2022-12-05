@@ -7,8 +7,7 @@ import ModalOverlay from '../ModalOverlay/ModalOverlay'
 
 const modalNode = document.getElementById('modal');
 
-const Modal = (props) => {
-  const {isOpen, setOpen, children} = props;
+const Modal = ({setOpen, children}) => {
   const closeModal = (event) => {
     event.stopPropagation();
     setOpen(false);
@@ -24,11 +23,9 @@ const Modal = (props) => {
     document.addEventListener('keydown', handleCloseEscape);
 
     return () => document.removeEventListener('keydown', handleCloseEscape);
-  }, []);
+    // eslint-disable-next-line
+  },[]);
 
-  if (!isOpen) {
-    return null
-  }
 
   const modal = (
     <div>
