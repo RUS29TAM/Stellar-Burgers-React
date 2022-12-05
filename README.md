@@ -1,46 +1,66 @@
-# Getting Started with Create React App
+# Реализация проекта **_«Stellar Burgers»_**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Проектная работа по программе обучения "Веб-разработчик плюс" в Яндекс Практикуме.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+### Сведения об образовательном учреждении
 
-### `npm start`
+**АНО ДПО "ШКОЛА АНАЛИЗА ДАННЫХ"**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* ОГРН: 1147799006123 ИНН: 7704282033
+* Место нахождения образовательной организации: 119021, Россия, г. Москва, ул. Тимура Фрунзе, д. 11, корпус 2
+* Почтовый адрес: 115035, город Москва, ул. Садовническая, д. 82, стр. 2
+* Контактный телефон: _+7 (495) 739-70-00_
+* Электронная почта: _shad@yandex-team.ru_
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+---
 
-### `npm test`
+## О проекте:
+![alt text](./src/images/icon/logo.svg)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**_Stellar Burgers — приложением космической бургерной. Сейчас дела там идут не очень, но, надуюсь, у меня
+получится сделать из закусочной на краю света одно из лучших заведений во Вселенной._**
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- _[Этот проект был создан с помощью приложения Create React.
+  В каталоге проекта вы можете запустить: npm start - запускает приложение в режиме разработки.
+  Открыть http://localhost:3000 чтобы просмотреть его в браузере.](https://reactjs.org/)_
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Первая часть работы в ветке: **_month-7/step-1_**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+1.  Создание нового проекта на CRA
+2.  Установка библиотеки UI-компонентов
+3.  Настройка и ведение git
+4.  Организация файловой структуры
+5.  Вёрстка первого экрана проекта. PropTypes
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Вторая часть работы в ветке: **_month-7/step-2_**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+6. Функциональные компоненты
+7. Подключитесь к API
+8. Компоненты главной страницы: Modal и ModalOverlay
+9. Компоненты содержимого модальных окон: IngredientDetails и OrderDetails
+10. Типизация
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Что предстояло сделать:
+- [X]  Изучить историю React и предпосылки к его появлению
+- [X]  Познакомиться с компонентным подходом и возможностью декомпозиции функционала приложения
+- [X]  Изучить синтаксис JSX и декларативный подход к описанию интерфейсов
+- [X]  Узнать о концепции Virtual DOM, которую повсеместно используют не только в React
+- [X]  Разбраться в особенностях одно- и дву- направленных потоков данных в современных приложениях
+- [X]  Изучить создание, настройку и дебаггинг проекта на React
+- [X]  Освоить мощный инструмент в React — хуки
+- [X]  Узнать об особенностях работы с формами в React
+- [X]  Познакомиться со способами оптимизации и повышения производительности приложений, написанных на React.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+---
+![alt text](https://yastatic.net/q/logoaas/v2/Яндекс.svg?circle=black&color=000&first=white "Logo")
 
-## Learn More
+### Об авторe:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**RUS29TAM**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* 15-я когорта
+* Начало обучения 16 мая 2022 г.
