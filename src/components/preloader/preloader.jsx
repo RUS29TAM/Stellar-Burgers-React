@@ -1,7 +1,7 @@
 import React from 'react';
-import stylePreLoader from './PreLoader.module.css';
+import stylePreLoader from './preloader.module.css';
 
-const PreLoader = () => {
+const Preloader = () => {
   return (
     <div className={stylePreLoader.wrapper}>
       <svg className={stylePreLoader.preLoader} viewBox="0 0 50 50" fill="none"
@@ -171,7 +171,7 @@ const PreLoader = () => {
   );
 };
 
-export default PreLoader;
+export default Preloader;
 
 {/*<svg className={stylePreLoader.preLoader} xmlns="http://www.w3.org/2000/svg" width="24" height="24"*/
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import {DragIcon, ConstructorElement,} from '@ya.praktikum/react-developer-burger-ui-components';
-import styleIconIngredient from './IngredientGroupType.module.css';
+import styleIconIngredient from './ingredient-group-type.module.css';
 import ingredientType from '../../utils/types';
 
 const IngredientGroupType = ({ingredient}) => {

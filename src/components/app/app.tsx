@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react';
-import AppHeader from '../AppHeader/AppHeader';
-import appStyle from './App.module.css';
-import BurgerIngredients from '../BurgerIngredients/BurgerIngredients';
-import BurgerConstructor from '../BurgerConstructor/BurgerConstructor';
-import Downloader from '../Downloader/Downloader'
-import {api} from '../Api/Api';
-import PreLoader from "../PreLoader/PreLoader";
+import AppHeader from '../app-header/app-header';
+import appStyle from './app.module.css';
+import BurgerIngredients from '../burger-ingredients/burger-ingredients';
+import BurgerConstructor from '../burger-constructor/burger-constructor';
+import Downloader from '../downloader/downloader'
+import {api} from '../api/api';
+import Preloader from "../preloader/preloader";
 
 const App = () => {
   const [ingredientsData, setIngredientsData] = useState({
@@ -27,7 +27,7 @@ const App = () => {
       <AppHeader/>
       <div className={`${appStyle.page}`}>
         <main className={`${appStyle.main}`}>
-          {ingredientsData.isLoading && <Downloader type='loading'/> && <PreLoader/>}
+          {ingredientsData.isLoading && <Downloader type='loading'/> && <Preloader/>}
           {ingredientsData.isError && <Downloader type='error'/>}
           {mustDisplayContent && (
             <>

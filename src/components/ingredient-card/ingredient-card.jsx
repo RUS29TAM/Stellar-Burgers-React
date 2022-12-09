@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
-import styleCard from '../IngredientCard/IngredientCard.module.css'
+import styleCard from './ingredient-card.module.css'
 import {CurrencyIcon, Counter} from '@ya.praktikum/react-developer-burger-ui-components';
-import IngredientDetails from '../IngredientDetails/IngredientDetails';
+import IngredientDetails from '../ingredient-details/ingredient-details';
 import ingredientType from '../../utils/types';
-import Modal from "../Modal/Modal";
+import Modal from "../modal/modal";
 
 
 const IngredientCard = ({ingredient}) => {

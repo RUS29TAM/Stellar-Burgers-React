@@ -1,13 +1,13 @@
 import React, {useState, useMemo} from 'react';
-import styleConstructor from '../BurgerConstructor/BurgerConstructo.module.css';
-import IngredientGroupType from '../IngredientGroupType/ingredientGroupType';
+import styleConstructor from './burger-constructor.module.css';
+import IngredientGroupType from '../ingredient-group-type/ingredient-group-type';
 import {Button} from '@ya.praktikum/react-developer-burger-ui-components';
-import HalfBun from '../HalfBun/HalfBun';
+import HalfBun from '../half-bun/half-bun';
 import currencyIcon from '../../images/icon/currency-icon.svg';
-import OrderDetails from '../OrderDetails/OrderDetails';
+import OrderDetails from '../order-details/order-details';
 import PropTypes from 'prop-types';
 import ingredientType from "../../utils/types";
-import Modal from "../Modal/Modal";
+import Modal from "../modal/modal";
 
 const BurgerConstructor = ({ingredients}) => {
 

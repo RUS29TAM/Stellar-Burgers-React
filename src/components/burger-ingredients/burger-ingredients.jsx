@@ -1,7 +1,7 @@
 import React, {useState, useMemo} from 'react';
 import {Tab} from '@ya.praktikum/react-developer-burger-ui-components';
-import styleIngredients from '../BurgerIngredients/BurgerIngredients.module.css';
-import ListIngredients from '../ListIngredients/ListIngredients';
+import styleIngredients from './burger-ingredients.module.css';
+import ListIngredients from '../list-ingredients/list-ingredients';
 import PropTypes from 'prop-types';
 import {useInView} from 'react-intersection-observer';
 import ingredientType from "../../utils/types";

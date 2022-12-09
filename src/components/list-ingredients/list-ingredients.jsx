@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import stylesListBasket from './ListIngredients.module.css'
-import IngredientCard from '../IngredientCard/IngredientCard';
+import stylesListBasket from './list-ingredients.module.css'
+import IngredientCard from '../ingredient-card/ingredient-card';
 import ingredientType from '../../utils/types';
 
 

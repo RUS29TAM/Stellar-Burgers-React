@@ -1,5 +1,5 @@
 import React from 'react';
-import styleDownloader from './Downloader.module.css'
+import styleDownloader from './downloader.module.css'
 import PropTypes from 'prop-types';
 
 const Downloader = ({type}) => {

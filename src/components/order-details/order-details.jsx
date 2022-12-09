@@ -1,5 +1,5 @@
 import React from 'react';
-import styleOrderDetails from './OrderDetails.module.css';
+import styleOrderDetails from './order-details.module.css';
 import orderAcceptedDone from '../../images/icon/order-accepted-done.svg';
 
 

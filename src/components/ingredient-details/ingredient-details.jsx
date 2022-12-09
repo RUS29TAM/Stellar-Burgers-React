@@ -1,5 +1,5 @@
 import React from 'react';
-import styleIngredientDetails from '../IngredientDetails/IngredientDetails.module.css';
+import styleIngredientDetails from './ingredient-details.module.css';
 import ingredientType from '../../utils/types';
 
 const IngredientDetails = ({ingredient}) => {
