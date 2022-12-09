@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Stellar-Burgers-React/static/css/main.5bd60224.css",
+    "main.js": "/Stellar-Burgers-React/static/js/main.c33a4e44.js",
+    "static/js/787.20998216.chunk.js": "/Stellar-Burgers-React/static/js/787.20998216.chunk.js",
+    "static/media/JetBrainsMono-Bold.woff": "/Stellar-Burgers-React/static/media/JetBrainsMono-Bold.3914674f1cb2335acf26.woff",
+    "static/media/JetBrainsMono-Regular.woff": "/Stellar-Burgers-React/static/media/JetBrainsMono-Regular.f52bee61d00ce995b89f.woff",
+    "static/media/order-accepted-done.svg": "/Stellar-Burgers-React/static/media/order-accepted-done.53166e96d94f9f52105e09351f976b26.svg",
+    "static/media/JetBrainsMono-Bold.woff2": "/Stellar-Burgers-React/static/media/JetBrainsMono-Bold.c232d532ea5a5189a278.woff2",
+    "static/media/JetBrainsMono-Regular.woff2": "/Stellar-Burgers-React/static/media/JetBrainsMono-Regular.b60380891bcf2eb241ca.woff2",
+    "static/media/iceland.woff": "/Stellar-Burgers-React/static/media/iceland.77ad7fc2baffd9305538.woff",
+    "static/media/iceland.woff2": "/Stellar-Burgers-React/static/media/iceland.4ae67a017a5ff82bbbb7.woff2",
+    "static/media/currency-icon.svg": "/Stellar-Burgers-React/static/media/currency-icon.f44c9915097bc4a7bdc2d353e719fdd4.svg",
+    "index.html": "/Stellar-Burgers-React/index.html",
+    "main.5bd60224.css.map": "/Stellar-Burgers-React/static/css/main.5bd60224.css.map",
+    "main.c33a4e44.js.map": "/Stellar-Burgers-React/static/js/main.c33a4e44.js.map",
+    "787.20998216.chunk.js.map": "/Stellar-Burgers-React/static/js/787.20998216.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5bd60224.css",
+    "static/js/main.c33a4e44.js"
+  ]
+}
