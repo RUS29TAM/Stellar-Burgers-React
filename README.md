@@ -19,14 +19,10 @@
 ## О проекте:
 ![alt text](./src/images/icon/logo.svg)
 ```diff
-Ссылка на проект:
-@@ text in purple (and bold)@@
+ + Ссылка на проект:
 ```
-```diff
 **_[Stellar Burgers — приложением космической бургерной. Сейчас дела там идут не очень, но, надуюсь, у меня
 получится сделать из закусочной на краю света одно из лучших заведений во Вселенной.](https://rus29tam.github.io/Stellar-Burgers-React/)_**
-@@ text in purple (and bold)@@
-```
 
 
 - _[Этот проект был создан с помощью приложения Create React.
