@@ -1,6 +1,4 @@
-
-<span style="color:#08e8de; font-size: 25px; text-shadow: #08e8de 1px 0 10px; ">Реализация проекта **_«Stellar Burgers»_**</span>
-
+# Реализация проекта **_«Stellar Burgers»_**
 
 Проектная работа по программе обучения "Веб-разработчик плюс" в Яндекс Практикуме.
 
@@ -19,16 +17,20 @@
 ---
 
 ## О проекте:
-![alt text](./src/images/icon/logo.svg)    
-<span style="color:#08e8de; font-size: 18px; text-shadow: #08e8de 1px 0 10px; ">**_Stellar Burgers — приложением космической бургерной. Сейчас дела там идут не очень, но, надуюсь, у меня
-получится сделать из закусочной на краю света одно из лучших заведений во Вселенной._**</span>
+![alt text](./src/images/icon/logo.svg)
+
+`Ссылка на проект:`
+
+**__[Stellar Burgers — приложением космической бургерной. Сейчас дела там идут не очень, но, надуюсь, у меня
+получится сделать из закусочной на краю света одно из лучших заведений во Вселенной.](https://rus29tam.github.io/Stellar-Burgers-React/)__**
+
+Этот проект был запущен с [Create React App](https://github.com/facebook/create-react-app).
+В каталоге проекта вы можете запустить: `npm start` - запускает приложение в режиме разработки.
+Открыть [http://localhost:3000](https://reactjs.org/) чтобы просмотреть его в браузере.
 
 
-- _[Этот проект был создан с помощью приложения Create React.
-  В каталоге проекта вы можете запустить: npm start - запускает приложение в режиме разработки.
-  Открыть http://localhost:3000 чтобы просмотреть его в браузере.](https://reactjs.org/)_
 
-Первая часть работы в ветке: <span style="color:orange; text-shadow: #08e8de 1px 0 10px">**_month-7/step-1_**</span>
+Первая часть работы в ветке: `month-7/step-1`
 
 
 1.  Создание нового проекта на CRA
@@ -37,7 +39,7 @@
 4.  Организация файловой структуры
 5.  Вёрстка первого экрана проекта. PropTypes
 
-Вторая часть работы в ветке: <span style="color:orange; text-shadow: #08e8de 1px 0 10px">**_month-7/step-2_**</span>
+Вторая часть работы в ветке: `month-7/step-2`
 
 6. Функциональные компоненты
 7. Подключитесь к API
@@ -59,9 +61,9 @@
 ---
 ![alt text](https://yastatic.net/q/logoaas/v2/Яндекс.svg?circle=black&color=000&first=white "Logo")
 
-### Об авторe:
-<span style="color:#08e8de; font-size: 18px; text-shadow: #08e8de 1px 0 10px; ">**RUS29TAM**</span>    
+### `Об авторe:`
 
+**RUS29TAM**
 
 * 15-я когорта
 * Начало обучения 16 мая 2022 г.
