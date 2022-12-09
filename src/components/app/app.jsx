@@ -5,7 +5,7 @@ import BurgerIngredients from '../burger-ingredients/burger-ingredients';
 import BurgerConstructor from '../burger-constructor/burger-constructor';
 import Downloader from '../downloader/downloader'
 import {api} from '../api/api';
-import Preloader from "../preloader/preloader";
+import Preloader from '../preloader/preloader';
 
 const App = () => {
   const [ingredientsData, setIngredientsData] = useState({
