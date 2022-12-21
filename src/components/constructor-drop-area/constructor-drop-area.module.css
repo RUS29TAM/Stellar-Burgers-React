@@ -1,0 +1,39 @@
+.constructorDropAreaWrapper {
+  flex: 1;
+  overflow-y: auto;
+  scrollbar-color: var(--background-element) var(--text-inactive-color);
+  scrollbar-width: thin;
+}
+
+
+.constructorDropAreaWrapper::-webkit-scrollbar {
+  width: 8px;
+}
+
+.constructorDropAreaWrapper::-webkit-scrollbar-track {
+  background: var(--background-element);
+}
+
+.constructorDropAreaWrapper::-webkit-scrollbar-thumb {
+  background: var(--text-inactive-color);
+}
+
+.constructorDropAreaWrapper > *:not(:last-of-type) {
+  margin-bottom: 16px;
+}
+
+
+.cleanDropArea {
+  border: 1px dashed var(--text-inactive-color);
+  border-radius: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  composes: ml-8 from global;
+  composes: mr-4 from global;
+}
+
+.hoveredCleanDropArea {
+  border-color: var(--colors-interface-accent);
+}

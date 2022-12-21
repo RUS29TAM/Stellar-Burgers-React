@@ -3,6 +3,7 @@ import styleOrderDetails from './order-details.module.css';
 import orderAcceptedDone from '../../images/icon/order-accepted-done.svg';
 
 
+
 const OrderDetails = () => {
 
   return (
