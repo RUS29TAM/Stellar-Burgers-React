@@ -1,0 +1,37 @@
+.constructorDropzoneWrapper {
+  flex: 1;
+  overflow-y: auto;
+  scrollbar-color: var(--background-element) var(--text-inactive-color);
+  scrollbar-width: thin;
+}
+
+.constructorDropzoneWrapper::-webkit-scrollbar {
+  width: 8px;
+}
+
+.constructorDropzoneWrapper::-webkit-scrollbar-track {
+  background: var(--background-element);
+}
+
+.constructorDropzoneWrapper::-webkit-scrollbar-thumb {
+  background: var(--text-inactive-color);
+}
+
+.constructorDropzoneWrapper > *:not(:last-of-type) {
+  margin-bottom: 16px;
+}
+
+.cleanDropzone {
+  border: 1px dashed var(--text-inactive-color);
+  border-radius: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  composes: ml-8 from global;
+  composes: mr-4 from global;
+}
+
+.hoveredCleanDropzone {
+  border-color: var(--colors-interface-accent) !important;
+}
