@@ -5,11 +5,14 @@ import ListIngredients from '../ListIngredients/ListIngredients';
 import PropTypes from 'prop-types';
 import {useInView} from 'react-intersection-observer';
 import ingredientType from "../../utils/types";
+import {useSelector} from "react-redux";
 
 const BurgerIngredients = ({ingredients}) => {
   const [currentTab, setCurrentTab] = useState('bun');
 
-  const getSameIngredients = (type) => ingredients.filter((ingredient) => ingredient.type === type);
+  const { data } = useSelector((store) => store.ingredients);
+
+  const getSameIngredients = (type) => data.filter((ingredient) => ingredient.type === type);
 
   const {buns, sauces, filling} = useMemo(() => {
     return {

@@ -11,12 +11,10 @@ import Downloader from '../Downloader/Downloader'
 import {getIngredients} from "../../services/actions/ingredients";
 import PreLoader from "../PreLoader/PreLoader";
 
-  const App = () => {
+const App = () => {
   const dispatch = useDispatch();
-  // @ts-ignore
-  const { isLoading, isError } = useSelector((store) => store.ingredients);
+  const {isLoading, isError} = useSelector((store) => store.ingredients);
 
-  // загрузка данных при монтировании
   useEffect(() => {
     // @ts-ignore
     dispatch(getIngredients());
@@ -30,10 +28,10 @@ import PreLoader from "../PreLoader/PreLoader";
         <main className={`${appStyle.main}`}>
           {isLoading && <Downloader type='loading'/> && <PreLoader/>}
           {isError && <Downloader type='error'/>}
-          {!isLoading && !isError (
+          {(!isLoading && !isError) && (
             <DndProvider backend={HTML5Backend}>
-              <BurgerIngredients />
-              <BurgerConstructor />
+              <BurgerIngredients/>
+              <BurgerConstructor/>
             </DndProvider>
           )}
         </main>
