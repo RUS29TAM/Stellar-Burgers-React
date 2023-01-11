@@ -5,7 +5,7 @@ import IngredientCard from '../IngredientCard/IngredientCard';
 import ingredientType from '../../utils/types';
 
 
-const ListIngredients = ({heading, list}) => {
+const ListIngredients = ({heading, list, getIngredientCount}) => {
   return (
     <>
       <h3 className='text text_type_main-medium mt-10 mb-6'>
@@ -13,7 +13,7 @@ const ListIngredients = ({heading, list}) => {
       </h3>
       <div className={`${stylesListBasket.list} ml-4 mr-2`}>
         {list.map((item) => (
-          <IngredientCard key={item._id} ingredient={item}/>
+          <IngredientCard getIngredientCount={getIngredientCount} key={item._id} ingredient={item}/>
         ))}
       </div>
     </>

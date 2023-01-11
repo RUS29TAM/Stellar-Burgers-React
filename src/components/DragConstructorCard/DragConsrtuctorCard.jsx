@@ -4,7 +4,7 @@ import {useDispatch} from "react-redux";
 import {useDrop, useDrag} from "react-dnd";
 import {DragIcon, ConstructorElement} from "@ya.praktikum/react-developer-burger-ui-components";
 import ingredientType from "../../utils/types";
-import {swapFillings} from "../../services/actions/burger-constructor";
+import {swapFillings} from "../../services/actions/burgerConstructor";
 import PropTypes from "prop-types";
 
 const DragConstructorCard = (props) => {
@@ -62,7 +62,7 @@ const DragConstructorCard = (props) => {
 };
 
 DragConstructorCard.propTypes = {
-  ingredient: ingredientType.isRequired,
+  data: ingredientType.isRequired,
   index: PropTypes.number.isRequired,
   handleRemove: PropTypes.func.isRequired,
 };

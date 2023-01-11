@@ -1,5 +1,5 @@
 import {CONFIG} from '../../components/Api/Api'
-import { RESET_CONSTRUCTOR } from './burger-constructor';
+import { RESET_CONSTRUCTOR } from './burgerConstructor';
 
 export const UPDATE_CURRENT_ORDER_CONTENT = 'UPDATE_CURRENT_ORDER_CONTENT';
 
@@ -17,11 +17,11 @@ export const updateCurrentOrderContent = (payload) => ({
 
 export const closeOrderDetailsModal = () => ({ type: CLOSE_ORDER_DETAILS_MODAL });
 
-export const createOrder = () => (dispatch, getState) => {
+export const createOrder = (ingredientsID) => (dispatch) => {
   dispatch({ type: CREATE_ORDER_REQUEST });
 
   const requestBody = {
-    ingredients: getState().order.currentOrderContent,
+    ingredients: ingredientsID,
   };
 
   const requestParams = {

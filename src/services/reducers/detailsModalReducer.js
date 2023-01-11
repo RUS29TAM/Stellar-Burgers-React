@@ -1,7 +1,7 @@
 import {
   OPEN_DETAILS_MODAL,
   CLOSE_DETAILS_MODAL,
-} from '../actions/details-modal';
+} from '../actions/detailsModal';
 
 const initialState = {
   isOpen: false,

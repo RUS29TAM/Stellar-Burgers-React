@@ -8,6 +8,8 @@ import ingredientType from "../../utils/types";
 import {useSelector} from "react-redux";
 
 const BurgerIngredients = ({ingredients}) => {
+  const cart = useSelector(state => state.burgerConstructor)
+  const ingredientReducer = useSelector(state => state.ingredients)
   const [currentTab, setCurrentTab] = useState('bun');
 
   const { data } = useSelector((store) => store.ingredients);
@@ -21,6 +23,17 @@ const BurgerIngredients = ({ingredients}) => {
       filling: getSameIngredients('main'),
     };
   }, [ingredients]);
+
+  const ingredientsCounts = useMemo(() => {
+    const ingredientsCount = {}
+    if (ingredientReducer.isError || ingredientReducer.isLoading) return ingredientsCount;
+    ingredientReducer.data.forEach((ingredient) => ingredientsCount[ingredient._id] = cart.filling.filter(cartItem => cartItem._id === ingredient._id).length)
+    // eslint-disable-next-line no-unused-expressions
+    cart.bun ? ingredientsCount[cart.bun._id] = 1 : false
+    console.log(ingredientsCount)
+    return ingredientsCount
+  }, [ingredientReducer, cart])
+  const getIngredientCount = (ingredientId) => ingredientsCounts[ingredientId]
 
   const [bunRef, bunsInView] = useInView({threshold: 0.1});
   const [sauceRef, saucesInView] = useInView({threshold: 0.1});
@@ -63,17 +76,17 @@ const BurgerIngredients = ({ingredients}) => {
       <div className={styleIngredients.ingredients}>
         <div>
           <div id='bun' ref={bunRef}>
-            <ListIngredients heading='Булки' list={buns}/>
+            <ListIngredients getIngredientCount={getIngredientCount} heading='Булки' list={buns}/>
           </div>
         </div>
         <div>
           <div id='sauce' ref={sauceRef}>
-            <ListIngredients heading='Соусы' list={sauces}/>
+            <ListIngredients getIngredientCount={getIngredientCount} heading='Соусы' list={sauces}/>
           </div>
         </div>
         <div>
           <div id='main' ref={mainRef}>
-            <ListIngredients heading='Начинки' list={filling}/>
+            <ListIngredients getIngredientCount={getIngredientCount} heading='Начинки' list={filling}/>
           </div>
         </div>
       </div>
