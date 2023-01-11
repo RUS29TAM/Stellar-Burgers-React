@@ -30,7 +30,7 @@ const IngredientCard = ({ingredient, getIngredientCount}) => {
       <div className={styleCard.name}>
         <span className='text text_type_main-default'>{ingredient.name}</span>
       </div>
-      <Counter count={getIngredientCount(ingredient._id)} size="default"/>
+      {getIngredientCount(ingredient._id) !== 0 &&  <Counter count={getIngredientCount(ingredient._id)} size="default"/>}
       {isIngredientDetailsPopupOpen &&
       <Modal
         setOpen={handleIngredientSetOpen}
