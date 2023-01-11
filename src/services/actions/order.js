@@ -1,4 +1,4 @@
-import {CONFIG} from '../../components/Api/Api'
+import api from '../../components/Api/Api'
 import {RESET_CONSTRUCTOR} from './burgerConstructor';
 
 export const UPDATE_CURRENT_ORDER_CONTENT = 'UPDATE_CURRENT_ORDER_CONTENT';
@@ -14,28 +14,13 @@ export const updateCurrentOrderContent = (payload) => ({
 });
 
 export const closeOrderDetailsModal = () => ({type: CLOSE_ORDER_DETAILS_MODAL});
-
 export const createOrder = (ingredientsID) => (dispatch) => {
-  dispatch({ type: CREATE_ORDER_REQUEST });
-
-  const requestBody = {
-    ingredients: ingredientsID,
-  };
-
-  const requestParams = {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(requestBody),
-  };
-
-  fetch(CONFIG.orderUrl, requestParams)
-    .then((res) => res.json())
+  dispatch({type: CREATE_ORDER_REQUEST});
+  api.createOrder(ingredientsID)
     .then((json) => {
-      dispatch({ type: CREATE_ORDER_SUCCESS, payload: json });
-      dispatch({ type: OPEN_ORDER_DETAILS_MODAL });
-      dispatch({ type: RESET_CONSTRUCTOR });
+      dispatch({type: CREATE_ORDER_SUCCESS, payload: json});
+      dispatch({type: OPEN_ORDER_DETAILS_MODAL});
+      dispatch({type: RESET_CONSTRUCTOR});
     })
-    .catch(() => dispatch({ type: CREATE_ORDER_FAIL }));
+    .catch(() => dispatch({type: CREATE_ORDER_FAIL}));
 };

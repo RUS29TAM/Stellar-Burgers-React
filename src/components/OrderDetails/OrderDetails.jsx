@@ -1,9 +1,6 @@
 import React from 'react';
 import styleOrderDetails from './OrderDetails.module.css';
 import orderAcceptedDone from '../../images/icon/order-accepted-done.svg';
-import {useDispatch, useSelector} from "react-redux";
-import {closeOrderDetailsModal} from "../../services/actions/order";
-
 
 const OrderDetails = ({lastOrder}) => {
 

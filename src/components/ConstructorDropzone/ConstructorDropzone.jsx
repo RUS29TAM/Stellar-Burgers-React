@@ -20,7 +20,7 @@ const ConstructorDropzone = () => {
         return dispatch(addFilling(item))
       }
       if (item.type === 'bun') {
-       return dispatch(addBun(item))
+        return dispatch(addBun(item))
       }
 
     },
@@ -50,7 +50,7 @@ const ConstructorDropzone = () => {
         ref={dropRef}
         className={`${styles.constructorDropzoneWrapper} ${
           !filling.length ? styles.cleanDropzone : ''
-        } ${isHovered ? styles.hoveredCleanDropzone : ''}`}
+        } ${isHovered && !filling.length ? styles.hoveredCleanDropzone : ''}`}
       >
         {!bun && (
           <p className={`text text_type_main-default ${isHovered ? '' : 'text_color_inactive'}`}>
@@ -63,13 +63,13 @@ const ConstructorDropzone = () => {
           </p>
         )}
         {filling.map((item, index) => (
-            <DragConstructorCard
-              key={index}
-              index={index}
-              data={item}
-              handleRemove={handleRemoveFillingFromConstructor}
-            />
-          ))}
+          <DragConstructorCard
+            key={index}
+            index={index}
+            data={item}
+            handleRemove={handleRemoveFillingFromConstructor}
+          />
+        ))}
       </div>
       {bun && <HalfBun type="bottom" bun={bun}/>}
     </>

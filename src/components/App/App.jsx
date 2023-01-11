@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {DndProvider} from "react-dnd";
 import {HTML5Backend} from "react-dnd-html5-backend";
@@ -7,7 +7,6 @@ import appStyle from './App.module.css';
 import BurgerIngredients from '../BurgerIngredients/BurgerIngredients';
 import BurgerConstructor from '../BurgerConstructor/BurgerConstructor';
 import Downloader from '../Downloader/Downloader'
-// import {api} from '../Api/Api';
 import {getIngredients} from "../../services/actions/ingredients";
 import PreLoader from "../PreLoader/PreLoader";
 

@@ -21,6 +21,7 @@ const IngredientGroupType = ({ingredient}) => {
 IngredientGroupType.propTypes = {
   ingredient: ingredientType.isRequired
 };
-export default IngredientGroupType
+
+
 
 

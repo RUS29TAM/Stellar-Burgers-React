@@ -12,7 +12,7 @@ const BurgerIngredients = ({ingredients}) => {
   const ingredientReducer = useSelector(state => state.ingredients)
   const [currentTab, setCurrentTab] = useState('bun');
 
-  const { data } = useSelector((store) => store.ingredients);
+  const {data} = useSelector((store) => store.ingredients);
 
   const getSameIngredients = (type) => data.filter((ingredient) => ingredient.type === type);
 
