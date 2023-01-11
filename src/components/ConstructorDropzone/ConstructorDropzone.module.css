@@ -1,6 +1,7 @@
 .constructorDropzoneWrapper {
   flex: 1;
   overflow-y: auto;
+  padding: 10px 0;
   scrollbar-color: var(--background-element) var(--text-inactive-color);
   scrollbar-width: thin;
 }
@@ -28,9 +29,12 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  composes: ml-8 from global;
-  composes: mr-4 from global;
-}
+  /*composes: ml-8 from global;*/
+  /*composes: mr-4 from global;*/
+  margin: 55px auto;
+  width: 350px;
+  cursor: pointer;
+  }
 
 .hoveredCleanDropzone {
   border-color: var(--colors-interface-accent) !important;

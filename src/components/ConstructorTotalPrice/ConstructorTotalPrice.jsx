@@ -5,7 +5,6 @@ import {CurrencyIcon, Button} from "@ya.praktikum/react-developer-burger-ui-comp
 import{createOrder} from "../../services/actions/order";
 import Modal from "../Modal/Modal";
 import OrderDetails from "../OrderDetails/OrderDetails";
-import {current} from "@reduxjs/toolkit";
 
 const ConstructorTotalPrice = () => {
   const dispatch = useDispatch();
@@ -34,12 +33,11 @@ const ConstructorTotalPrice = () => {
             <span className="text text_type_digits-medium">{costOfBurger}</span>
             <CurrencyIcon type="primary" />
           </div>
-          {bun && filling.length && (
+          {filling.length !== 0 && bun &&
             <Button type="primary" size="large" onClick={handleOrderCreate} htmlType={'button'}>
               Оформить заказ
             </Button>
-          )}
-
+          }
         </div>
       )}
       {modalState && <Modal setOpen={setModalState}>

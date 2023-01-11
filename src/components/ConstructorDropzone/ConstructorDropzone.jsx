@@ -16,7 +16,13 @@ const ConstructorDropzone = () => {
     accept: 'ingredientCard',
 
     drop: (item) => {
-      (item.type === 'bun' ? dispatch(addBun(item)) : dispatch(addFilling(item)))
+      if (bun && item.type !== 'bun') {
+        return dispatch(addFilling(item))
+      }
+      if (item.type === 'bun') {
+       return dispatch(addBun(item))
+      }
+
     },
     collect: (monitor) => ({
       isHovered: monitor.isOver(),

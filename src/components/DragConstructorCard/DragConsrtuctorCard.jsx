@@ -46,7 +46,7 @@ const DragConstructorCard = (props) => {
     <div
       ref={ref}
       className={`mr-2 ${styles.wrapper} ${isDragging ? styles.dragging : ''}`}
-      style={{opacity: isHovered ? .1 : 1}}
+      style={{opacity: isHovered ? 0.1 : 1}}
     >
       <div className={`${styles.dragIcon} mr-2`}>
         <DragIcon type="primary"/>
