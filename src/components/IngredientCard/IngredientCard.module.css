@@ -4,6 +4,8 @@
   width: 272px;
   height: 208px;
   cursor: pointer;
+  overflow: hidden;
+  z-index: 15;
 }
 
 .price {
@@ -13,4 +15,61 @@
 
 .name {
   min-height: 48px;
+}
+
+.span {
+  background-color: rgb(19, 19, 22);
+  position: absolute;
+  text-align: center;
+  top: 1px;
+  left: 1px;
+  z-index: 5;
+  width: 270px;
+  height: 206px;
+}
+
+.card:hover::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  width: 550px;
+  height: 150px;
+  top: 5px;
+  left: -120px;
+  background-image: conic-gradient(transparent, transparent, transparent, #d400d4);
+  -webkit-animation: animate 4s linear infinite;
+  animation: animate 4s linear infinite;
+  -webkit-animation-delay: -2s;
+  animation-delay: -2s;
+}
+
+.card:hover::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  width: 550px;
+  height: 150px;
+  top: 5px;
+  left: -120px;
+  background-image: conic-gradient(transparent, transparent, transparent, #00ccff);
+  -webkit-animation: animate 4s linear infinite;
+  animation: animate 4s linear infinite;
+}
+
+@-webkit-keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

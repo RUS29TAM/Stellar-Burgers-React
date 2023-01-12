@@ -22,6 +22,7 @@ const IngredientCard = ({ingredient, getIngredientCount}) => {
 
   return (
     <div ref={dragRef} className={styleCard.card} onClick={handleIngredientsPopupOpen}>
+      <span className={styleCard.span}>
       <img className={`mr-4 ml-4`} src={ingredient.image} alt={ingredient.name}/>
       <div className={`mt-1 mb-1 ${styleCard.price}`}>
         <span className='text text_type_digits-default'>{ingredient.price}</span>
@@ -38,6 +39,7 @@ const IngredientCard = ({ingredient, getIngredientCount}) => {
           <IngredientDetails ingredient={ingredient}/>
         </Modal>
       }
+      </span>
     </div>
   );
 };

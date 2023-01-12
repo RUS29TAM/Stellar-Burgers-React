@@ -3,9 +3,3 @@
   align-items: center;
   cursor: grab;
 }
-
-.wrapper:active {
-  cursor: grabbing;
-  cursor: -moz-grabbing;
-  cursor: -webkit-grabbing;
-}
