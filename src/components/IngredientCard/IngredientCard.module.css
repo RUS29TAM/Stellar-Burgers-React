@@ -35,7 +35,7 @@
   width: 550px;
   height: 150px;
   top: 5px;
-  left: -120px;
+  left: -140px;
   background-image: conic-gradient(transparent, transparent, transparent, #d400d4);
   -webkit-animation: animate 4s linear infinite;
   animation: animate 4s linear infinite;
@@ -50,7 +50,7 @@
   width: 550px;
   height: 150px;
   top: 5px;
-  left: -120px;
+  left: -140px;
   background-image: conic-gradient(transparent, transparent, transparent, #00ccff);
   -webkit-animation: animate 4s linear infinite;
   animation: animate 4s linear infinite;
