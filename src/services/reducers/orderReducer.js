@@ -4,7 +4,6 @@ import {
   CREATE_ORDER_SUCCESS,
   OPEN_ORDER_DETAILS_MODAL,
   CREATE_ORDER_FAIL,
-  CLOSE_ORDER_DETAILS_MODAL,
 } from '../actions/order';
 
 const initialState = {
@@ -31,8 +30,6 @@ export const orderReducer = (state = initialState, action) => {
       };
     case OPEN_ORDER_DETAILS_MODAL:
       return { ...state, isOrderDetailsModalOpen: true };
-    case CLOSE_ORDER_DETAILS_MODAL:
-      return { ...state, isOrderDetailsModalOpen: false };
     case CREATE_ORDER_FAIL:
       return { ...state, isLoading: false, isError: true };
     default:

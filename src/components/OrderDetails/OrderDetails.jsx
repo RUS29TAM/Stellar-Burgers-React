@@ -3,8 +3,6 @@ import styleOrderDetails from './OrderDetails.module.css';
 import orderAcceptedDone from '../../images/icon/order-accepted-done.svg';
 
 const OrderDetails = ({lastOrder}) => {
-
-
   return (
     <div className={`pt-30 pb-30 ${styleOrderDetails.wrapper}`}>
       <p className={`text text_type_digits-large mb-8 ${styleOrderDetails.numOrder}`}>{lastOrder?.number}</p>

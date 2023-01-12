@@ -4,7 +4,6 @@ import stylesListBasket from './ListIngredients.module.css'
 import IngredientCard from '../IngredientCard/IngredientCard';
 import ingredientType from '../../utils/types';
 
-
 const ListIngredients = ({heading, list, getIngredientCount}) => {
   return (
     <>

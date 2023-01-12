@@ -30,11 +30,11 @@
   margin: 55px auto;
   width: 350px;
   cursor: pointer;
-  }
+}
 
 .cleanDropzone:hover {
   border: 1px solid transparent;
-  box-shadow: rgb(133, 133, 173) 0 0 15px 0;
+  box-shadow: rgb(133, 133, 173) 0 0 15px 1px;
 }
 
 .hoveredCleanDropzone {

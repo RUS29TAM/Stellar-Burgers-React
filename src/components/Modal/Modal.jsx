@@ -24,7 +24,7 @@ const Modal = ({setOpen, children}) => {
 
     return () => document.removeEventListener('keydown', handleCloseEscape);
     // eslint-disable-next-line
-  },[]);
+  }, []);
 
 
   const modal = (

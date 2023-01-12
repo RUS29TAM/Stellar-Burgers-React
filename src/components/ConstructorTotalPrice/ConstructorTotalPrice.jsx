@@ -13,11 +13,11 @@ const ConstructorTotalPrice = () => {
 
   const {bun, filling} = useSelector((store) => store.burgerConstructor);
 
-  const costOfBurger = useMemo(() => {
-    const costOfBun = bun?.price || 0;
-    const costOfFilling = filling.reduce((acc, item) => acc + item.price, 0);
+  const priceOfBurger = useMemo(() => {
+    const priceOfBun = bun?.price || 0;
+    const priceOfFilling = filling.reduce((acc, item) => acc + item.price, 0);
 
-    return costOfBun * 2 + costOfFilling;
+    return priceOfBun * 2 + priceOfFilling;
   }, [filling, bun]);
 
   const handleOrderCreate = () => {
@@ -30,7 +30,7 @@ const ConstructorTotalPrice = () => {
       {bun && (
         <div className={`${styles.totalPrice} mt-10`}>
           <div className="mr-10">
-            <span className="text text_type_digits-medium">{costOfBurger}</span>
+            <span className="text text_type_digits-medium">{priceOfBurger}</span>
             <CurrencyIcon type="primary"/>
           </div>
           {filling.length !== 0 && bun &&
