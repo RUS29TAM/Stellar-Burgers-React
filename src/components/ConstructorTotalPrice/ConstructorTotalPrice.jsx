@@ -40,8 +40,8 @@ const ConstructorTotalPrice = () => {
           }
         </div>
       )}
-      {modalState && <Modal setOpen={setModalState}>
-        <OrderDetails lastOrder={order.createdOrders[0]}/>
+      {modalState && order.createdOrders && <Modal setOpen={setModalState}>
+        <OrderDetails lastOrder={order.createdOrders}/>
       </Modal>}
     </>
   );

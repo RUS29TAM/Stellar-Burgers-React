@@ -15,7 +15,6 @@ const App = () => {
   const {isLoading, isError} = useSelector((store) => store.ingredients);
 
   useEffect(() => {
-    // @ts-ignore
     dispatch(getIngredients());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

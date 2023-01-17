@@ -21,7 +21,8 @@ const ListIngredients = ({heading, list, getIngredientCount}) => {
 
 ListIngredients.propTypes = {
   heading: PropTypes.string.isRequired,
-  list: PropTypes.arrayOf(ingredientType.isRequired)
+  list: PropTypes.arrayOf(ingredientType.isRequired),
+  getIngredientCount: PropTypes.func.isRequired,
 };
 
 export default ListIngredients

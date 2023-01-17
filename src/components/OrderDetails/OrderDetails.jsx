@@ -1,6 +1,7 @@
 import React from 'react';
 import styleOrderDetails from './OrderDetails.module.css';
 import orderAcceptedDone from '../../images/icon/order-accepted-done.svg';
+import PropTypes from "prop-types";
 
 const OrderDetails = ({lastOrder}) => {
   return (
@@ -12,6 +13,10 @@ const OrderDetails = ({lastOrder}) => {
       <p className="text text_type_main-default text_color_inactive">Дождитесь готовности на орбитальной станции</p>
     </div>
   );
+};
+
+OrderDetails.propTypes = {
+  lastOrder: PropTypes.shape({number: PropTypes.number.isRequired}).isRequired
 };
 
 export default OrderDetails

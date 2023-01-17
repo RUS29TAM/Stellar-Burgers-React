@@ -1,13 +1,14 @@
+const apiUrl = 'https://norma.nomoreparties.space/api';
+
 const CONFIG = {
-  baseUrl: 'https://norma.nomoreparties.space/api/ingredients',
-  orderUrl: 'https://norma.nomoreparties.space/api/orders'
+  ingredientsUrl: `${apiUrl}/ingredients`,
+  orderUrl: `${apiUrl}/orders`,
 }
 
+const checkResponce = res => res.ok ? res.json() : Promise.reject(`Ошибка ${res.status}`)
+
 const api = {
-  getIngredients: () =>
-    fetch(CONFIG.baseUrl).then((res) =>
-      res.ok ? res.json() : Promise.reject(`Ошибка ${res.status}`)
-    ),
+  getIngredients: () => fetch(CONFIG.ingredientsUrl).then(checkResponce),
   createOrder: (ingredientsID) => {
     const requestBody = {
       ingredients: ingredientsID,
@@ -19,8 +20,7 @@ const api = {
       },
       body: JSON.stringify(requestBody),
     };
-    return fetch(CONFIG.orderUrl, requestParams)
-      .then((res) => res.json())
+    return fetch(CONFIG.orderUrl, requestParams).then(checkResponce)
   }
 };
 

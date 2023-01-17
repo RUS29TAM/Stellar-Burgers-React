@@ -26,7 +26,7 @@ export const burgerConstructorReducer = (state = initialState, action) => {
 
       return {
         ...state,
-        filling: [...state.filling.filter((element) => element.constructorId !== constructorId)],
+        filling: state.filling.filter((element) => element.constructorId !== constructorId),
       };
     case SWAP_FILLINGS:
       const {from, to} = action.payload;
@@ -37,7 +37,7 @@ export const burgerConstructorReducer = (state = initialState, action) => {
       return {...state, filling: newFilling};
     case RESET_CONSTRUCTOR:
       return initialState;
-      default:
+    default:
       return state;
   }
 };

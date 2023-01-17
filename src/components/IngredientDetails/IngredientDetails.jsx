@@ -6,7 +6,7 @@ const IngredientDetails = ({ingredient}) => {
 
   return (
     <div className={`pt-10 pr-10 pb-10 pl-10 ${styleIngredientDetails.wrapper}`}>
-      <h1 className={`text text_type_main-large pt-2 ${styleIngredientDetails.heading}`}>Детали ингридиета</h1>
+      <h1 className={`text text_type_main-large pt-2 ${styleIngredientDetails.heading}`}>Детали ингредиента</h1>
       <img className={`m-4 ${styleIngredientDetails.imageLarge}`} src={ingredient.image_large} alt={ingredient.name}/>
       <p className={`text text_type_main-medium ${styleIngredientDetails.name}`}>{ingredient.name}</p>
       <div className={`text_color_inactive p-3 ${styleIngredientDetails.extraInfoBlock}`}>

@@ -5,6 +5,7 @@ import IngredientDetails from '../IngredientDetails/IngredientDetails';
 import ingredientType from '../../utils/types';
 import Modal from "../Modal/Modal";
 import {useDrag} from "react-dnd";
+import PropTypes from "prop-types";
 
 
 const IngredientCard = ({ingredient, getIngredientCount}) => {
@@ -47,7 +48,8 @@ const IngredientCard = ({ingredient, getIngredientCount}) => {
 
 
 IngredientCard.propTypes = {
-  ingredient: ingredientType.isRequired
+  ingredient: ingredientType.isRequired,
+  getIngredientCount: PropTypes.func.isRequired,
 };
 
 export default IngredientCard

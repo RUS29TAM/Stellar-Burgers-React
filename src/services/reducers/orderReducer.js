@@ -10,7 +10,7 @@ const initialState = {
   currentOrderContent: [],
   isLoading: false,
   isError: false,
-  createdOrders: [],
+  createdOrders: null,
   isOrderDetailsModalOpen: false,
 };
 
@@ -26,7 +26,7 @@ export const orderReducer = (state = initialState, action) => {
         ...state,
         isLoading: false,
         currentOrderContent: [],
-        createdOrders: [...state.createdOrders, { name: name, number: order.number }],
+        createdOrders: { name: name, number: order.number },
       };
     case OPEN_ORDER_DETAILS_MODAL:
       return { ...state, isOrderDetailsModalOpen: true };
