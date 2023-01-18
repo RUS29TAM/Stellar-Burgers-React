@@ -6,6 +6,8 @@ import ingredientType from '../../utils/types';
 import Modal from "../Modal/Modal";
 import {useDrag} from "react-dnd";
 import PropTypes from "prop-types";
+import {useDispatch, useSelector} from "react-redux";
+import {SET_INGREDIENT} from "../../services/actions/ingredientDetails";
 
 
 const IngredientCard = ({ingredient, getIngredientCount}) => {
@@ -17,7 +19,11 @@ const IngredientCard = ({ingredient, getIngredientCount}) => {
     item: ingredient,
   });
 
+  const dispatch = useDispatch()
+  const ingredientDetails = useSelector(state => state.ingredientDetails.ingredient)
+
   const handleIngredientsPopupOpen = () => {
+    dispatch({type: SET_INGREDIENT, payload: ingredient})
     setIngredientDetailsPopupOpen(true)
   };
 
@@ -32,20 +38,19 @@ const IngredientCard = ({ingredient, getIngredientCount}) => {
       <div className={styleCard.name}>
         <span className='text text_type_main-default'>{ingredient.name}</span>
       </div>
-        {getIngredientCount(ingredient._id) !== 0 &&
-          <Counter count={getIngredientCount(ingredient._id)} size="default"/>}
-        {isIngredientDetailsPopupOpen &&
-          <Modal
-            setOpen={handleIngredientSetOpen}
-          >
-            <IngredientDetails ingredient={ingredient}/>
-          </Modal>
-        }
+        ({getIngredientCount(ingredient._id) !== 0 &&
+        <Counter count={getIngredientCount(ingredient._id)} size="default"/>})
+        ({isIngredientDetailsPopupOpen && ingredientDetails &&
+        <Modal
+          setOpen={handleIngredientSetOpen}
+        >
+          <IngredientDetails/>
+        </Modal>
+      })
       </span>
     </div>
   );
 };
-
 
 IngredientCard.propTypes = {
   ingredient: ingredientType.isRequired,

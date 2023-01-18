@@ -1,8 +1,8 @@
-const apiUrl = 'https://norma.nomoreparties.space/api';
+const API_URL = 'https://norma.nomoreparties.space/api';
 
 const CONFIG = {
-  ingredientsUrl: `${apiUrl}/ingredients`,
-  orderUrl: `${apiUrl}/orders`,
+  ingredientsUrl: `${API_URL}/ingredients`,
+  orderUrl: `${API_URL}/orders`,
 }
 
 const checkResponce = res => res.ok ? res.json() : Promise.reject(`Ошибка ${res.status}`)
