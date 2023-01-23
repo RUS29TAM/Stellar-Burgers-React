@@ -33,7 +33,7 @@ const PageLogin = () => {
                                value={password}/>
               </div>
               <div className={styleLogin.inputBox}>
-                <Button type="submit" value="Войти" htmlType={"submit"}>Войти</Button>
+                <Button type="primary" value="Войти" htmlType={"submit"}>Войти</Button>
               </div>
               <p className={styleLogin.forget}>Вы — новый пользователь? <a href="#">Зарегистрироваться</a></p>
               <p className={styleLogin.forget}>Забыли пароль? <a href="#">Восстановить пароль</a></p>
