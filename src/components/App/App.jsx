@@ -9,6 +9,7 @@ import BurgerConstructor from '../BurgerConstructor/BurgerConstructor';
 import Downloader from '../Downloader/Downloader'
 import {getIngredients} from "../../services/actions/ingredients";
 import PreLoader from "../PreLoader/PreLoader";
+import PageLogin from "../Pages/PageLogin/PageLogin";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -22,18 +23,19 @@ const App = () => {
   return (
     <>
       <AppHeader/>
-      <div className={`${appStyle.page}`}>
-        <main className={`${appStyle.main}`}>
-          {isLoading && <Downloader type='loading'/> && <PreLoader/>}
-          {isError && <Downloader type='error'/>}
-          {(!isLoading && !isError) && (
-            <DndProvider backend={HTML5Backend}>
-              <BurgerIngredients/>
-              <BurgerConstructor/>
-            </DndProvider>
-          )}
-        </main>
-      </div>
+      <PageLogin />
+      {/*<div className={`${appStyle.page}`}>*/}
+      {/*  <main className={`${appStyle.main}`}>*/}
+      {/*    {isLoading && <Downloader type='loading'/> && <PreLoader/>}*/}
+      {/*    {isError && <Downloader type='error'/>}*/}
+      {/*    {(!isLoading && !isError) && (*/}
+      {/*      <DndProvider backend={HTML5Backend}>*/}
+      {/*        <BurgerIngredients/>*/}
+      {/*        <BurgerConstructor/>*/}
+      {/*      </DndProvider>*/}
+      {/*    )}*/}
+      {/*  </main>*/}
+      {/*</div>*/}
 
     </>
   )
