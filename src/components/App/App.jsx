@@ -10,6 +10,7 @@ import Downloader from '../Downloader/Downloader'
 import {getIngredients} from "../../services/actions/ingredients";
 import PreLoader from "../PreLoader/PreLoader";
 import PageLogin from "../../Pages/PageLogin/PageLogin";
+import PageRegistration from "../../Pages/PageRegistration/PageRegistration";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -23,7 +24,7 @@ const App = () => {
   return (
     <>
       <AppHeader/>
-      <PageLogin />
+      <PageRegistration />
       {/*<div className={`${appStyle.page}`}>*/}
       {/*  <main className={`${appStyle.main}`}>*/}
       {/*    {isLoading && <Downloader type='loading'/> && <PreLoader/>}*/}
