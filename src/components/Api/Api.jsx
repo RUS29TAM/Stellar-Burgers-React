@@ -1,8 +1,12 @@
-const API_URL = 'https://norma.nomoreparties.space/api';
+const API_URL = 'https://norma.nomoreparties.space/api'; // - базовый url
 
 const CONFIG = {
-  ingredientsUrl: `${API_URL}/ingredients`,
-  orderUrl: `${API_URL}/orders`,
+  ingredientsUrl: `${API_URL}/ingredients`, // - эндпоинт для получения ингредиентов.
+  orderUrl: `${API_URL}/orders`,            // - эндпоинт для получения заказа.
+  regUser: `${API_URL}/auth/register`,      // - эндпоинт для авторизации.
+  logIn: `${API_URL}/auth/login`,           // - эндпоинт для регистрации пользователя.
+  logOut: `${API_URL}/auth/logout`,         // - эндпоинт для выхода из системы.
+  tokenRefresh: `${API_URL}/auth/token`,    // - эндпоинт обновления токена
 }
 
 const checkResponce = res => res.ok ? res.json() : Promise.reject(`Ошибка ${res.status}`)

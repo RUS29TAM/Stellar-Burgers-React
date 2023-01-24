@@ -9,7 +9,7 @@ import BurgerConstructor from '../BurgerConstructor/BurgerConstructor';
 import Downloader from '../Downloader/Downloader'
 import {getIngredients} from "../../services/actions/ingredients";
 import PreLoader from "../PreLoader/PreLoader";
-import PageLogin from "../Pages/PageLogin/PageLogin";
+import PageLogin from "../../Pages/PageLogin/PageLogin";
 
 const App = () => {
   const dispatch = useDispatch();
