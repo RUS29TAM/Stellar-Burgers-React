@@ -13,8 +13,8 @@ const FormProfile = () => {
   return (
     <div className={styleProfile.container}>
       <form className={styleProfile.form}>
-        <Input className={styleProfile.inputIcon} type="text" placeholder="Имя" onChange={onNameChange} value={name}/>
-        <EmailInput className={styleProfile.inputIcon} type="email" placeholder="Логин" onChange={onEmailChange} value={email}/>
+        <Input className={`text text_type_main-small ${styleProfile.inputIcon}`} type="text" placeholder="Имя" onChange={onNameChange} value={name}/>
+        <EmailInput className={`text text_type_main-small ${styleProfile.inputIcon}`} type="email" placeholder="Логин" onChange={onEmailChange} value={email}/>
         <PasswordInput type="password" placeholder="Пароль" onChange={onPasswordChange} value={password}/>
         <div className={styleProfile.btnWrapper}>
           {/*<a className={`text text_type_main-default ${styleReg.link}`}*/}

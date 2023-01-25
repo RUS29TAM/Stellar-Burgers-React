@@ -31,7 +31,7 @@ const App = () => {
   return (
     <>
       <AppHeader/>
-      <FormProfile />
+      <PageProfile />
       {/*<div className={`${appStyle.page}`}>*/}
       {/*  <main className={`${appStyle.main}`}>*/}
       {/*    {isLoading && <Downloader type='loading'/> && <PreLoader/>}*/}
