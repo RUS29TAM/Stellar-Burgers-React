@@ -19,3 +19,31 @@
   gap: 24px;
 }
 
+.btnWrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  /*gap: 20px;*/
+  justify-content: flex-end;
+}
+
+.inputIcon {
+  background: url("../../../images/icon/pen.svg")right;
+  background-repeat: no-repeat;
+  border: none;
+  display: flex;
+  /*position: absolute;*/
+  right: 0;
+  color: var(--text-inactive-color);
+  font-size: 16px;
+  line-height: 24px;
+  vertical-align: Center;
+  width: 470px;
+  padding-top: 26px;
+}
+
+.inputIcon:focus {
+  border: none;
+  outline:none;
+
+}
