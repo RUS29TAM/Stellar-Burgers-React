@@ -1,10 +1,12 @@
 import React from 'react';
+import AppHeader from "../../components/AppHeader/AppHeader";
 
 const PageProfile = () => {
   return (
-    <div>
-
-    </div>
+    <>
+      <AppHeader/>
+      {/*<some page/>*/}
+    </>
   );
 };
 

@@ -14,6 +14,8 @@ import PageRegistration from "../../Pages/PageRegistration/PageRegistration";
 import FormForgotPassword from "../Forms/FormForgotPassword/FormForgotPassword";
 import FormLogin from "../Forms/FormLogin/FormLogin";
 import FormRecoveryPassword from "../Forms/FormRecoveryPassword/FormRecoveryPassword";
+import PageRecoveryPassword from "../../Pages/PageRecoveryPassword/PageRecoveryPassword";
+import PageProfile from "../../Pages/PageProfile/PageProfile";
 // import FormLogin from "../Forms/FormLogin/FormLogin";
 
 const App = () => {
@@ -28,7 +30,7 @@ const App = () => {
   return (
     <>
       <AppHeader/>
-      <FormRecoveryPassword />
+      <PageProfile />
       {/*<div className={`${appStyle.page}`}>*/}
       {/*  <main className={`${appStyle.main}`}>*/}
       {/*    {isLoading && <Downloader type='loading'/> && <PreLoader/>}*/}
