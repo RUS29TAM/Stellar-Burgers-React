@@ -8,7 +8,7 @@ const FormLogin = () => {
   const onEmailChange = e => setEmail(e.target.value)
   const onPasswordChange = e => setPassword(e.target.value)
 
-  return (
+  return (//решил немного поэксперементировать и одну из страниц сделать со своей стилистикой и анимацией, которую увидел на одном их ютуб каналов.
     <section>
       <div className={styleLogin.color}></div>
       <div className={styleLogin.color}></div>

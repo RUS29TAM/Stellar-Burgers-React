@@ -11,23 +11,15 @@ const FormRegistration = () => {
   const onNameChange = e => setName(e.target.value)
 
   return (
-    <div className={styleReg.form}>
-      <h2>Регистрация</h2>
+    <div className={styleReg.container}>
       <form>
-        <div className={styleReg.inputBox}>
-          <Input type="text" placeholder="Имя" onChange={onNameChange} value={name}/>
-        </div>
-        <div className={styleReg.inputBox}>
-          <EmailInput type="email" placeholder="E-mail" onChange={onEmailChange} value={email}/>
-        </div>
-        <div className={styleReg.inputBox}>
-          <PasswordInput type="password" placeholder="Введите пароль" onChange={onPasswordChange}
-                         value={password}/>
-        </div>
-        <div className={styleReg.inputBox}>
-          <Button type="primary" value="Войти" htmlType={"submit"}>Зарегистрироваться</Button>
-        </div>
-        <p className={styleReg.forget}>Уже зарегистрированы? <a
+        <h2 className={'text text_type_main-medium'}>Регистрация</h2>
+        <Input type="text" placeholder="Имя" onChange={onNameChange} value={name} />
+        <EmailInput type="email" placeholder="E-mail" onChange={onEmailChange} value={email} />
+        <PasswordInput type="password" placeholder="Пароль" onChange={onPasswordChange}
+                       value={password}/>
+        <Button type="primary" value="Войти" htmlType={"submit"} >Зарегистрироваться</Button>
+        <p className={`text text_type_main-default text_color_inactive ${styleReg.text}`}>Уже зарегистрированы? <a className={styleReg.link}
           href="src/Pages/PageLogin/PageLogin#">Войти</a></p>
       </form>
     </div>
