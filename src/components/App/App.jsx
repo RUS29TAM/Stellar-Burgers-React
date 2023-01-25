@@ -11,6 +11,9 @@ import {getIngredients} from "../../services/actions/ingredients";
 import PreLoader from "../PreLoader/PreLoader";
 import PageLogin from "../../Pages/PageLogin/PageLogin";
 import PageRegistration from "../../Pages/PageRegistration/PageRegistration";
+import FormForgotPassword from "../Forms/FormForgotPassword/FormForgotPassword";
+import FormLogin from "../Forms/FormLogin/FormLogin";
+// import FormLogin from "../Forms/FormLogin/FormLogin";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -24,7 +27,7 @@ const App = () => {
   return (
     <>
       <AppHeader/>
-      <PageRegistration />
+      <FormForgotPassword />
       {/*<div className={`${appStyle.page}`}>*/}
       {/*  <main className={`${appStyle.main}`}>*/}
       {/*    {isLoading && <Downloader type='loading'/> && <PreLoader/>}*/}

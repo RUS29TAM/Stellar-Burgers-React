@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import AppHeader from "../../components/AppHeader/AppHeader";
-import FormLogin from "../../components/FormLogin/FormLogin";
+import FormLogin from "../../components/Forms/FormLogin/FormLogin";
 
 const PageLogin = () => {
 

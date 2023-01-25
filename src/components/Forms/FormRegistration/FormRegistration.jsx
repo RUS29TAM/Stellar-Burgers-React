@@ -12,7 +12,7 @@ const FormRegistration = () => {
 
   return (
     <div className={styleReg.container}>
-      <form>
+      <form className={styleReg.form}>
         <h2 className={'text text_type_main-medium'}>Регистрация</h2>
         <Input type="text" placeholder="Имя" onChange={onNameChange} value={name} />
         <EmailInput type="email" placeholder="E-mail" onChange={onEmailChange} value={email} />
