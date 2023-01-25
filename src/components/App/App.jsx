@@ -31,19 +31,18 @@ const App = () => {
   return (
     <>
       <AppHeader/>
-      <PageProfile />
-      {/*<div className={`${appStyle.page}`}>*/}
-      {/*  <main className={`${appStyle.main}`}>*/}
-      {/*    {isLoading && <Downloader type='loading'/> && <PreLoader/>}*/}
-      {/*    {isError && <Downloader type='error'/>}*/}
-      {/*    {(!isLoading && !isError) && (*/}
-      {/*      <DndProvider backend={HTML5Backend}>*/}
-      {/*        <BurgerIngredients/>*/}
-      {/*        <BurgerConstructor/>*/}
-      {/*      </DndProvider>*/}
-      {/*    )}*/}
-      {/*  </main>*/}
-      {/*</div>*/}
+      <div className={`${appStyle.page}`}>
+        <main className={`${appStyle.main}`}>
+          {isLoading && <Downloader type='loading'/> && <PreLoader/>}
+          {isError && <Downloader type='error'/>}
+          {(!isLoading && !isError) && (
+            <DndProvider backend={HTML5Backend}>
+              <BurgerIngredients/>
+              <BurgerConstructor/>
+            </DndProvider>
+          )}
+        </main>
+      </div>
 
     </>
   )

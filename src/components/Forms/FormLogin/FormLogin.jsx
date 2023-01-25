@@ -9,7 +9,7 @@ const FormLogin = () => {
   const onPasswordChange = e => setPassword(e.target.value)
 
   return (//решил немного поэксперементировать и одну из страниц сделать со своей стилистикой и анимацией, которую увидел на одном их ютуб каналов.
-    <section>
+    <section className={styleLogin.section}>
       <div className={styleLogin.color}></div>
       <div className={styleLogin.color}></div>
       <div className={styleLogin.color}></div>
