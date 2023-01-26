@@ -22,6 +22,8 @@ const FormLogin = () => {
         <div className={styleLogin.square}></div>
         <div className={styleLogin.square}></div>
         <div className={styleLogin.square}></div>
+        <div className={styleLogin.square}></div>
+        <div className={styleLogin.square}></div>
         <div className={styleLogin.container}>
           <div className={styleLogin.form}>
             <h2>Вход</h2>
