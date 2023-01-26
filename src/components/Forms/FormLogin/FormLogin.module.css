@@ -13,7 +13,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 120vh;
+  min-height: 100vh;
   /*background: #131316;*/
   background: #000000;
   /*background: linear-gradient(to bottom, #49009d, #aa00ff);*/
@@ -32,7 +32,7 @@
 }
 
 .section .color:nth-child(2) {
-  bottom: -150px;
+  bottom: 50px;
   right: 100px;
   width: 900px;
   height: 600px;
@@ -186,6 +186,7 @@
 .forget a {
   color: #002bff;
   font-weight: 600;
+  text-decoration: none;
 }
 
 h2 {
