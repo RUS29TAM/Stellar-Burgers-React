@@ -20,7 +20,7 @@ const AppHeader = () => {
               </Link>
             </li>
             <li>
-              <Link to="/" className={`navigationLink ${stylesHeader.navigationLink} pt-4 pl-5`}>
+              <Link to="/orders" className={`navigationLink ${stylesHeader.navigationLink} pt-4 pl-5`}>
                 <ListIcon type="secondary"/>
                 <span className="text text_type_main-default text_color_inactive ml-2">
                                   Летна заказов

@@ -1,14 +1,16 @@
 import React from 'react';
 import styleProfileInfo from './ProfileInfo.module.css'
+import {NavLink} from "react-router-dom";
+
+const setActiveLink = ({isActive}) => isActive ? 'active-link' : 'inactive-link';
 
 const ProfileInfo = () => {
   return (
     <div className={`text text_color_primary text_type_main-medium ${styleProfileInfo.wrapper}`}>
-      <a className={styleProfileInfo.link} href={"#"} >Профиль</a>
-      <a className={styleProfileInfo.link} href={"#"}>История заказов</a>
-      <a className={styleProfileInfo.link} href={"#"}>Выход</a>
+      <NavLink className={setActiveLink}  to="/profile" >Профиль</NavLink>
+      <NavLink className={setActiveLink} to="/orders">История заказов</NavLink>
+      <NavLink className={setActiveLink} to="/">Выход</NavLink>
     </div>
-
   );
 };
 

@@ -1,0 +1,18 @@
+.wrapper {
+  display: flex;
+  justify-items: center;
+  /*align-items: center;*/
+  height: 50vh;
+  padding-top: 226px;
+  padding-left: 307px;
+
+}
+
+.orders {
+  color: #00f7ff;
+  font-size: 60px;
+  border: dotted 1px;
+
+}
+
+

@@ -21,13 +21,12 @@ import AppMain from "../AppMain/AppMain";
 import PageMain from "../../Pages/PageMain/PageMain";
 import {Route, Routes} from "react-router-dom";
 import PageForgotPassword from "../../Pages/PageForgotPassword/PageForgotPassword";
-
+import PageHistoryOrders from "../../Pages/PageHistoryOrders/PageHistoryOrders";
 
 const App = () => {
 
   return (
     <>
-      {/*<PageMain/>*/}
       <Routes>
         <Route path='/'>
           <Route index path='/' element={<PageMain/>}/>
@@ -35,6 +34,7 @@ const App = () => {
           <Route path='/login' element={<PageLogin/>}/>
           <Route path='/registration' element={<PageRegistration/>}/>
           <Route path='/forgot' element={<PageForgotPassword/>}/>
+          <Route path='/orders' element={<PageHistoryOrders/>}/>
         </Route>
       </Routes>
     </>
