@@ -15,13 +15,13 @@ code {
   monospace;
 }
 
-.active-link {
-  text-decoration: none;
-  color: #ffff;
-  cursor: default;
-}
+/*.active-link {*/
+/*  text-decoration: none;*/
+/*  color: #ffff;*/
+/*  cursor: default;*/
+/*}*/
 
-.inactive-link {
-  text-decoration: none;
-  color: #8585AD;
-}
+/*.inactive-link {*/
+/*  text-decoration: none;*/
+/*  color: #8585AD;*/
+/*}*/
