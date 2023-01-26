@@ -8,7 +8,7 @@ const ProfileInfo = () => {
   return (
     <div className={`text text_color_primary text_type_main-medium ${styleProfileInfo.wrapper}`}>
       <NavLink className={setActiveLink} to="/profile" >Профиль</NavLink>
-      <NavLink className={setActiveLink} to="/orders">История заказов</NavLink>
+      <NavLink className={setActiveLink} to="/profile/orders">История заказов</NavLink>
       <NavLink className={setActiveLink} to="/">Выход</NavLink>
     </div>
   );

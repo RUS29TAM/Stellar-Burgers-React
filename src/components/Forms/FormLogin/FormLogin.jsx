@@ -40,7 +40,7 @@ const FormLogin = () => {
               </div>
               <p className={styleLogin.forget}>Вы — новый пользователь? <Link
                 to="/registration">Зарегистрироваться</Link></p>
-              <p className={styleLogin.forget}>Забыли пароль? <Link to="/forgot" >Восстановить
+              <p className={styleLogin.forget}>Забыли пароль? <Link to="/forgot-password" >Восстановить
                 пароль</Link></p>
             </form>
           </div>

@@ -8,8 +8,6 @@ import BurgerIngredients from "../BurgerIngredients/BurgerIngredients";
 import BurgerConstructor from "../BurgerConstructor/BurgerConstructor";
 import {useDispatch, useSelector} from "react-redux";
 import {getIngredients} from "../../services/actions/ingredients";
-import {Outlet} from "react-router-dom";
-
 
 const AppMain = () => {
   const dispatch = useDispatch();

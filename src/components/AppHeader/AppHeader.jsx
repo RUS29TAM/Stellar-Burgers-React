@@ -1,8 +1,7 @@
 import {BurgerIcon, ListIcon, Logo, ProfileIcon} from '@ya.praktikum/react-developer-burger-ui-components';
 import React from 'react';
 import stylesHeader from './AppHeader.module.css';
-import {Routes, Route, Link, Outlet} from "react-router-dom";
-import PageProfile from '../../Pages/PageProfile/PageProfile';
+import {Link} from "react-router-dom";
 
 const AppHeader = () => {
 
@@ -13,10 +12,10 @@ const AppHeader = () => {
           <ul className={`${stylesHeader.navigationList} pl-3`}>
             <li>
               <Link to="/" className={`navigationLink ${stylesHeader.navigationLink} pt-4 pr-5`}>
-                <BurgerIcon type="primary"/>
-                <span className="text text_type_main-default ml-2">
+                <BurgerIcon type="secondary"/>
+                <span className="text text_type_main-default text_color_inactive ml-2">
                                   Конструктор
-                              </span>
+                </span>
               </Link>
             </li>
             <li>
@@ -24,7 +23,7 @@ const AppHeader = () => {
                 <ListIcon type="secondary"/>
                 <span className="text text_type_main-default text_color_inactive ml-2">
                                   Летна заказов
-                              </span>
+                </span>
               </Link>
             </li>
           </ul>
