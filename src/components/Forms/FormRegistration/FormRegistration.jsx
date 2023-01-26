@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import styleReg from "./FormRegistration.module.css";
 import {Button, EmailInput, Input, PasswordInput} from "@ya.praktikum/react-developer-burger-ui-components";
+import {Link} from "react-router-dom";
 
 const FormRegistration = () => {
   const [email, setEmail] = useState('');
@@ -19,8 +20,8 @@ const FormRegistration = () => {
         <PasswordInput type="password" placeholder="Пароль" onChange={onPasswordChange}
                        value={password}/>
         <Button type="primary" value="Войти" htmlType={"submit"} >Зарегистрироваться</Button>
-        <p className={`text text_type_main-default text_color_inactive ${styleReg.text}`}>Уже зарегистрированы? <a className={styleReg.link}
-          href="src/Pages/PageLogin/PageLogin#">Войти</a></p>
+        <p className={`text text_type_main-default text_color_inactive ${styleReg.text}`}>Уже зарегистрированы? <Link className={styleReg.link}
+          to="/login">Войти</Link></p>
       </form>
     </div>
   );

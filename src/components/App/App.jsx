@@ -17,33 +17,26 @@ import FormRecoveryPassword from "../Forms/FormRecoveryPassword/FormRecoveryPass
 import PageRecoveryPassword from "../../Pages/PageRecoveryPassword/PageRecoveryPassword";
 import PageProfile from "../../Pages/PageProfile/PageProfile";
 import FormProfile from "../Forms/FormProfile/FormProfile";
-// import FormLogin from "../Forms/FormLogin/FormLogin";
+import AppMain from "../AppMain/AppMain";
+import PageMain from "../../Pages/PageMain/PageMain";
+import {Route, Routes} from "react-router-dom";
+import PageForgotPassword from "../../Pages/PageForgotPassword/PageForgotPassword";
+
 
 const App = () => {
-  const dispatch = useDispatch();
-  const {isLoading, isError} = useSelector((store) => store.ingredients);
-
-  useEffect(() => {
-    dispatch(getIngredients());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   return (
     <>
-      <AppHeader/>
-      <div className={`${appStyle.page}`}>
-        <main className={`${appStyle.main}`}>
-          {isLoading && <Downloader type='loading'/> && <PreLoader/>}
-          {isError && <Downloader type='error'/>}
-          {(!isLoading && !isError) && (
-            <DndProvider backend={HTML5Backend}>
-              <BurgerIngredients/>
-              <BurgerConstructor/>
-            </DndProvider>
-          )}
-        </main>
-      </div>
-
+      {/*<PageMain/>*/}
+      <Routes>
+        <Route path='/'>
+          <Route index path='/' element={<PageMain/>}/>
+          <Route path='/profile' element={<PageProfile/>}/>
+          <Route path='/login' element={<PageLogin/>}/>
+          <Route path='/registration' element={<PageRegistration/>}/>
+          <Route path='/forgot' element={<PageForgotPassword/>}/>
+        </Route>
+      </Routes>
     </>
   )
 };

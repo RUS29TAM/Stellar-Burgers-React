@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import styleLogin from "./FormLogin.module.css";
 import {Button, EmailInput, PasswordInput} from "@ya.praktikum/react-developer-burger-ui-components";
+import {Link} from "react-router-dom";
 
 const FormLogin = () => {
   const [email, setEmail] = useState('');
@@ -35,10 +36,10 @@ const FormLogin = () => {
               <div className={styleLogin.inputBox}>
                 <Button type="primary" value="Войти" htmlType={"submit"}>Войти</Button>
               </div>
-              <p className={styleLogin.forget}>Вы — новый пользователь? <a
-                href="src/Pages/PageLogin/PageLogin#">Зарегистрироваться</a></p>
-              <p className={styleLogin.forget}>Забыли пароль? <a href="src/Pages/PageLogin/PageLogin#">Восстановить
-                пароль</a></p>
+              <p className={styleLogin.forget}>Вы — новый пользователь? <Link
+                to="/registration">Зарегистрироваться</Link></p>
+              <p className={styleLogin.forget}>Забыли пароль? <Link to="/forgot" >Восстановить
+                пароль</Link></p>
             </form>
           </div>
         </div>
