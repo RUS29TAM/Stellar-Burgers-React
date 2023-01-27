@@ -1,13 +1,13 @@
 import React from 'react';
-import PageLogin from "../../Pages/PageLogin/PageLogin";
-import PageRegistration from "../../Pages/PageRegistration/PageRegistration";
-import PageRecoveryPassword from "../../Pages/PageRecoveryPassword/PageRecoveryPassword";
-import PageProfile from "../../Pages/PageProfile/PageProfile";
-import PageMain from "../../Pages/PageMain/PageMain";
+import PageLogin from "../../pages/PageLogin/PageLogin";
+import PageRegistration from "../../pages/PageRegistration/PageRegistration";
+import PageRecoveryPassword from "../../pages/PageRecoveryPassword/PageRecoveryPassword";
+import PageProfile from "../../pages/PageProfile/PageProfile";
+import PageMain from "../../pages/PageMain/PageMain";
 import {Navigate, Route, Routes} from "react-router-dom";
-import PageForgotPassword from "../../Pages/PageForgotPassword/PageForgotPassword";
-import PageHistoryOrders from "../../Pages/PageHistoryOrders/PageHistoryOrders";
-import PageIngredientsId from "../../Pages/PageIngregientsId/PageIngredientsId";
+import PageForgotPassword from "../../pages/PageForgotPassword/PageForgotPassword";
+import PageHistoryOrders from "../../pages/PageHistoryOrders/PageHistoryOrders";
+import PageIngredientsId from "../../pages/PageIngregientsId/PageIngredientsId";
 
 const App = () => {
 
