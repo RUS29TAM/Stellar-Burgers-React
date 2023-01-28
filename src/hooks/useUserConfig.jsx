@@ -72,13 +72,9 @@ const useUserConfig = () => {
   }
 
   return {checkAuth, login, logOut, registration, resetPassword, resetPasswordAgree, getUser, updateProfileInfo}
-
 }
 
 export default useUserConfig;
-
-
-
 
 
 
