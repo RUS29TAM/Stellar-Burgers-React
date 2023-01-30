@@ -11,13 +11,13 @@ import UnauthorizedRoute from "../Routes/UnauthorizedRoute";
 import AuthorizedRoute from "../Routes/AuthorizedRoute";
 import {useDispatch} from "react-redux";
 import {resetUserAction, setUserAction} from "../../services/actions/user";
-import useUserConfig from "../../hooks/useUserConfig";
+import useUserController from "../../hooks/useUserController";
 import PageHistoryOrders from "../../pages/PageHistoryOrders/PageHistoryOrders";
 
 const App = () => {
 
   const dispatch = useDispatch()
-  const userConfig = useUserConfig()
+  const userConfig = useUserController()
 
 
   useEffect(() => {

@@ -1,7 +1,7 @@
 import api from "../components/Api/Api";
 import useToken from "./useToken";
 
-const useUserConfig = () => {
+const useUserController = () => {
   const token = useToken()
 
   const recoveryToken = () => api.updateToken(token.getRecovery())
@@ -73,7 +73,7 @@ const useUserConfig = () => {
   return {checkAuth, login, logOut, registration, resetPassword, resetPasswordAgree, getUser, updateProfileInfo}
 }
 
-export default useUserConfig;
+export default useUserController;
 
 
 
