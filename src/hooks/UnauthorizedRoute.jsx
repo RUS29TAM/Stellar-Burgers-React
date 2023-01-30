@@ -3,15 +3,15 @@ import useAuthorisation from "./useAuthorisation";
 import {Navigate} from "react-router-dom";
 import PropTypes from "prop-types";
 
-const UnauthorizedRoute = ({props}) => {
+const UnauthorizedRoute = ({children}) => {
   const {isAuth} = useAuthorisation()
   return (
-    !isAuth ? props : <Navigate to='/'/>
+    !isAuth ? children : <Navigate to='/'/>
   )
 };
 
 UnauthorizedRoute.propTypes = {
-  props: PropTypes.element.isRequired
+  children: PropTypes.element.isRequired
 }
 
 export default UnauthorizedRoute;

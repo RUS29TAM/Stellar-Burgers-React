@@ -1,11 +1,11 @@
 import {SET_USER, LOGOUT_USER} from "../actions/user";
 
-const defaultState = {
+const initialState = {
   name: null,
   email: null
 }
 
-const userReduser = (state = defaultState, action) => {
+export const userReducer = (state= initialState, action) => {
   switch (action.type) {
     case SET_USER:
       return {name: action.payload.name, email: action.payload.email}
@@ -18,4 +18,3 @@ const userReduser = (state = defaultState, action) => {
   }
 }
 
-export default userReduser;

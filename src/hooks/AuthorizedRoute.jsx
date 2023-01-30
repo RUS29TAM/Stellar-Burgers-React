@@ -1,17 +1,18 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import useAuthorisation from "./useAuthorisation";
 import {Navigate} from "react-router-dom";
 import PropTypes from "prop-types";
 
-const AuthorizedRoute = (props) => {
+const AuthorizedRoute = ({children}) => {
   const {isAuth} = useAuthorisation()
+  useEffect(() => console.log(isAuth))
   return (
-    isAuth ? props : <Navigate to='/login'/>
+    isAuth ? children : <Navigate to='/login'/>
   );
 };
 
 AuthorizedRoute.propTypes = {
-  props: PropTypes.element.isRequired
+  children: PropTypes.element.isRequired
 }
 
 export default AuthorizedRoute;

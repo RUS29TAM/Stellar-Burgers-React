@@ -5,11 +5,15 @@ import {CurrencyIcon, Button} from "@ya.praktikum/react-developer-burger-ui-comp
 import {createOrder} from "../../services/actions/order";
 import Modal from "../Modal/Modal";
 import OrderDetails from "../OrderDetails/OrderDetails";
+import useAuthorisation from "../../hooks/useAuthorisation";
+import {useNavigate} from "react-router-dom";
 
 const ConstructorTotalPrice = () => {
   const dispatch = useDispatch();
   const [modalState, setModalState] = useState(false);
   const order = useSelector(state => state.order)
+
+  const user = useAuthorisation()
 
   const {bun, filling} = useSelector((store) => store.burgerConstructor);
 
@@ -20,9 +24,15 @@ const ConstructorTotalPrice = () => {
     return priceOfBun * 2 + priceOfFilling;
   }, [filling, bun]);
 
+  const navigate = useNavigate()
+
   const handleOrderCreate = () => {
-    dispatch(createOrder(order.currentOrderContent))
-    setModalState(true)
+    if (user.isAuth) {
+      dispatch(createOrder(order.currentOrderContent))
+      setModalState(true)
+    } else {
+      navigate('/login')
+    }
   };
 
   return (

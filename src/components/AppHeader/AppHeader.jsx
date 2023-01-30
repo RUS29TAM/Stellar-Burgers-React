@@ -32,7 +32,7 @@ const AppHeader = () => {
           <Logo/>
         </div>
         <div className={`personalAccount ${stylesHeader.personalAccount} pr-8`}>
-          <Link className={`${stylesHeader.navigationLink}`} to="/login">
+          <Link className={`${stylesHeader.navigationLink}`} to="/profile">
             <ProfileIcon type="secondary"/>
             <span className="text text_type_main-default text_color_inactive ml-2">
                           Личный кабинет
