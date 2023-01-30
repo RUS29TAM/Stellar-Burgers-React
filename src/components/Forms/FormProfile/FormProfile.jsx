@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import styleProfile from './FormProfile.module.css'
 import {Button, EmailInput, Input, PasswordInput} from "@ya.praktikum/react-developer-burger-ui-components";
-import useUserConfig from "../../../hooks/useUserConfig";
+import useUserController from "../../../hooks/useUserController";
 
 const FormProfile = () => {
   const [email, setEmail] = useState('');
@@ -10,7 +10,7 @@ const FormProfile = () => {
   const onEmailChange = e => setEmail(e.target.value)
   const onPasswordChange = e => setPassword(e.target.value)
   const onNameChange = e => setName(e.target.value)
-  const userConfig = useUserConfig()
+  const userConfig = useUserController()
   const [userInfo, setUserinfo] = useState(null)
   const editUserInfo = userInfo === '' ? false : userInfo?.name !== name || userInfo.email !== email || password !== ''
 
