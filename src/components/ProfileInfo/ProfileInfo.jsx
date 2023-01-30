@@ -1,14 +1,14 @@
 import React from 'react';
 import styleProfileInfo from './ProfileInfo.module.css'
 import {NavLink, useLocation, useNavigate} from "react-router-dom";
-import useUserConfig from "../../hooks/useUserConfig";
+import useUserController from "../../hooks/useUserController";
 import {useDispatch} from "react-redux";
 import {resetUserAction} from "../../services/actions/user";
 
 const setActiveLink = ({isActive}) => isActive ? `${styleProfileInfo.link} text_color_primary` : `${styleProfileInfo.link} text_color_inactive`;
 
 const ProfileInfo = () => {
-  const userConfig = useUserConfig()
+  const userConfig = useUserController()
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const location = useLocation()
