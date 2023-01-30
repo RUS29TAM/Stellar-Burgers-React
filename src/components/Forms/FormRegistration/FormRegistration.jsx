@@ -3,7 +3,7 @@ import styleReg from "./FormRegistration.module.css";
 import {Button, EmailInput, Input, PasswordInput} from "@ya.praktikum/react-developer-burger-ui-components";
 import {Link, useNavigate} from "react-router-dom";
 import {useDispatch} from "react-redux";
-import useUserConfig from "../../../hooks/useUserConfig";
+import useUserController from "../../../hooks/useUserController";
 import {setUserAction} from "../../../services/actions/user";
 
 const FormRegistration = () => {
@@ -14,7 +14,7 @@ const FormRegistration = () => {
   const onPasswordChange = e => setPassword(e.target.value)
   const onNameChange = e => setName(e.target.value)
   const dispatch = useDispatch()
-  const userConfig = useUserConfig()
+  const userConfig = useUserController()
   const navigate = useNavigate()
 
   const onSubmit = (e) => {
