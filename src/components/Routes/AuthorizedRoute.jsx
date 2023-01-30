@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import useAuthorisation from "./useAuthorisation";
+import useAuthorisation from "../../hooks/useAuthorisation";
 import {Navigate} from "react-router-dom";
 import PropTypes from "prop-types";
 
