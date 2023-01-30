@@ -3,7 +3,7 @@ import styleLogin from "./FormLogin.module.css";
 import {Button, EmailInput, PasswordInput} from "@ya.praktikum/react-developer-burger-ui-components";
 import {Link, useNavigate} from "react-router-dom";
 import {useDispatch} from "react-redux";
-import useUserConfig from "../../../hooks/useUserConfig";
+import useUserController from "../../../hooks/useUserController";
 import {setUserAction} from "../../../services/actions/user";
 
 const FormLogin = () => {
@@ -12,7 +12,7 @@ const FormLogin = () => {
   const onEmailChange = e => setEmail(e.target.value)
   const onPasswordChange = e => setPassword(e.target.value)
   const dispatch = useDispatch()
-  const userConfig = useUserConfig()
+  const userConfig = useUserController()
   const navigate = useNavigate()
 
   const onSubmit = (e) => {
