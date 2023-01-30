@@ -2,12 +2,12 @@ import React, {useState} from 'react';
 import styleForgotPass from './FormForgotPassword.module.css'
 import {Button, EmailInput,} from "@ya.praktikum/react-developer-burger-ui-components";
 import {Link, useNavigate} from "react-router-dom";
-import useUserConfig from "../../../hooks/useUserConfig";
+import useUserController from "../../../hooks/useUserController";
 
 const FormForgotPassword = () => {
   const [email, setEmail] = useState('');
   const onEmailChange = e => setEmail(e.target.value)
-  const userConfig = useUserConfig()
+  const userConfig = useUserController()
   const navigate = useNavigate()
 
   const onSubmit = (e) => {
