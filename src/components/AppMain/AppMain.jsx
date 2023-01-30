@@ -10,17 +10,24 @@ import {getIngredients} from "../../services/actions/ingredients";
 import {useLocation} from "react-router-dom";
 import Modal from "../Modal/Modal";
 import IngredientDetails from "../IngredientDetails/IngredientDetails";
+import {SET_INGREDIENT} from "../../services/actions/ingredientDetails";
 
 const AppMain = () => {
   const dispatch = useDispatch();
   const {isLoading, isError} = useSelector((store) => store.ingredients);
   const ingredients = useSelector(state => state.ingredients)
   const location = useLocation()
-  const [ingredientStateModal, setIngredientStateModal] = useState(!!location.state?.stateModal)
-  const closeModalIngredient = () => {
-    setIngredientStateModal(false)
-    location.state.stateModal = false
-  }
+  const [isIngredientDetailsPopupOpen, setIngredientDetailsPopupOpen] = useState(false);
+  const handleIngredientSetOpen = value => setIngredientDetailsPopupOpen(value)
+  const ingredientDetails = useSelector(state => state.ingredientDetails.ingredient)
+
+
+  useEffect(() => {
+    if (location.state?.ingredient) {
+      dispatch({type: SET_INGREDIENT, payload: location.state.ingredient})
+      setIngredientDetailsPopupOpen(true)
+    }
+  }, [location.state])
 
   useEffect(() => {
     dispatch(getIngredients());
@@ -40,11 +47,13 @@ const AppMain = () => {
             </DndProvider>
           )}
         </main>
-        {ingredientStateModal &&
-          <Modal handleClose={closeModalIngredient}>
-            <IngredientDetails ingredientDetails={location.state.ingredient}/>
-          </Modal>
-        }
+        ({isIngredientDetailsPopupOpen && ingredientDetails &&
+        <Modal
+          setOpen={handleIngredientSetOpen}
+        >
+          <IngredientDetails/>
+        </Modal>
+      })
       </div>
   )
     ;
