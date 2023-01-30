@@ -105,7 +105,7 @@
   height: 100px;
   border-bottom-left-radius: 10%;
   border-bottom-right-radius: 10%;
-  border-top-left-radius: 100%;
+  border-top-left-radius: 10%;
   border-top-right-radius: 10%;
   rotate: 90deg;
 }
@@ -117,7 +117,7 @@
   width: 120px;
   height: 120px;
   z-index: 2;
-  border-radius: 50%;
+  border-radius: 10%;
   rotate: 450deg;
 }
 
@@ -138,7 +138,7 @@
   height: 80px;
   z-index: 2;
   rotate: 0deg;
-  background: url("../../../images/icon/currency-icon.svg");
+  background: url("../../../images/icon/burger.svg");
   background-repeat: no-repeat;
   background-size: cover;
 }
