@@ -1,5 +1,5 @@
 import React from 'react';
-import styleCard from '../IngredientCard/IngredientCard.module.css'
+import styleCard from '../IngredientCard/IngredientCard.module.css';
 import {CurrencyIcon, Counter} from '@ya.praktikum/react-developer-burger-ui-components';
 import ingredientType from '../../utils/types';
 import {useDrag} from "react-dnd";

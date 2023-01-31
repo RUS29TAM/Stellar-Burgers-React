@@ -1,12 +1,14 @@
 import React from 'react';
-import styleDownloader from './Downloader.module.css'
+import styleDownloader from './Downloader.module.css';
 import PropTypes from 'prop-types';
 import PreLoader from "../PreLoader/PreLoader";
 
 const Downloader = ({type}) => {
   return (
-    <> {type !== 'error' ? (
-        <PreLoader/>) :
+    <> {type !== 'error'
+      ?
+      (<PreLoader/>)
+      :
       <div className={`${styleDownloader.message}`}>
         {type === 'error' && (
           <>
@@ -14,7 +16,6 @@ const Downloader = ({type}) => {
             <p className="text text_type_main-medium">Перезагрузите страницу</p>
           </>
         )}
-
       </div>}
     </>
   );

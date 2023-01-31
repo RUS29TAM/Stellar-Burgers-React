@@ -21,7 +21,6 @@ const AppMain = () => {
   const handleIngredientSetOpen = value => setIngredientDetailsPopupOpen(value)
   const ingredientDetails = useSelector(state => state.ingredientDetails.ingredient)
 
-
   useEffect(() => {
     if (location.state?.ingredient) {
       dispatch({type: SET_INGREDIENT, payload: location.state.ingredient})
@@ -34,8 +33,10 @@ const AppMain = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return (!ingredients.isSuccess ? <Downloader type='loading'/> :
-
+  return (!ingredients.isSuccess
+      ?
+      <Downloader type='loading'/>
+      :
       <div className={`${appStyle.page}`}>
         <main className={`${appStyle.main}`}>
           {isLoading && <Downloader type='loading'/>}
@@ -46,17 +47,15 @@ const AppMain = () => {
               <BurgerConstructor/>
             </DndProvider>
           )}
+          (
         </main>
         ({isIngredientDetailsPopupOpen && ingredientDetails &&
-        <Modal
-          setOpen={handleIngredientSetOpen}
-        >
+        <Modal setOpen={handleIngredientSetOpen}>
           <IngredientDetails/>
         </Modal>
       })
       </div>
-  )
-    ;
+  );
 };
 
 export default AppMain;

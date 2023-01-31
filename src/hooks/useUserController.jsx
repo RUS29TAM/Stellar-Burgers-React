@@ -28,7 +28,6 @@ const useUserController = () => {
     .then(data => data.user)
     .catch((error) => elapsedToken(error).then(() => getUser()))
 
-
   const checkAuth = () => getUser()
 
   const login = (email, password) => api.login(email, password)
@@ -55,6 +54,7 @@ const useUserController = () => {
     })
 
   const resetPassword = (email) => api.resetPassword(email)
+
   const resetPasswordAgree = (password, code) => api.resetPasswordAgree(password, code)
 
   const updateProfileInfo = (name, email, password) => {

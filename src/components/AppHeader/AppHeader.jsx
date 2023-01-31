@@ -4,7 +4,6 @@ import stylesHeader from './AppHeader.module.css';
 import {Link} from "react-router-dom";
 
 const AppHeader = () => {
-
   return (
     <header className={`header ${stylesHeader.header}`}>
       <div className={`headerContainer ${stylesHeader.headerContainer}`}>
@@ -14,7 +13,7 @@ const AppHeader = () => {
               <Link to="/" className={`navigationLink ${stylesHeader.navigationLink} pt-4 pr-5`}>
                 <BurgerIcon type="secondary"/>
                 <span className="text text_type_main-default text_color_inactive ml-2">
-                                  Конструктор
+                  Конструктор
                 </span>
               </Link>
             </li>
@@ -22,7 +21,7 @@ const AppHeader = () => {
               <Link to="/orders" className={`navigationLink ${stylesHeader.navigationLink} pt-4 pl-5`}>
                 <ListIcon type="secondary"/>
                 <span className="text text_type_main-default text_color_inactive ml-2">
-                                  Летна заказов
+                  Летна заказов
                 </span>
               </Link>
             </li>
@@ -35,14 +34,13 @@ const AppHeader = () => {
           <Link className={`${stylesHeader.navigationLink}`} to="/profile">
             <ProfileIcon type="secondary"/>
             <span className="text text_type_main-default text_color_inactive ml-2">
-                          Личный кабинет
-                      </span>
+              Личный кабинет
+            </span>
           </Link>
         </div>
       </div>
     </header>
-  )
-    ;
+  );
 };
 
 export default AppHeader;

@@ -8,7 +8,6 @@ const PageRegistration = () => {
       <AppHeader/>
       <FormRegistration/>
     </>
-
   );
 };
 

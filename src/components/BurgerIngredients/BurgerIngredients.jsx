@@ -1,4 +1,4 @@
-import React, {useState, useMemo} from 'react';
+import React, {useState, useMemo, useEffect} from 'react';
 import {Tab} from '@ya.praktikum/react-developer-burger-ui-components';
 import styleIngredients from '../BurgerIngredients/BurgerIngredients.module.css';
 import ListIngredients from '../ListIngredients/ListIngredients';
@@ -11,7 +11,6 @@ const BurgerIngredients = ({ingredients}) => {
   const cart = useSelector(state => state.burgerConstructor)
   const ingredientReducer = useSelector(state => state.ingredients)
   const [currentTab, setCurrentTab] = useState('bun');
-
   const {data} = useSelector((store) => store.ingredients);
 
   const getSameIngredients = (type) => data.filter((ingredient) => ingredient.type === type);
@@ -38,7 +37,7 @@ const BurgerIngredients = ({ingredients}) => {
   const [sauceRef, saucesInView] = useInView({threshold: 0.1});
   const [mainRef, mainsInView] = useInView({threshold: 0.1});
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (bunsInView) {
       setCurrentTab('bun')
     } else if (saucesInView) {
@@ -48,16 +47,12 @@ const BurgerIngredients = ({ingredients}) => {
     }
   }, [bunsInView, saucesInView, mainsInView]);
 
-
   const handleTubClick = (type) => {
     setCurrentTab(type);
     document.querySelector(`#${type}`).scrollIntoView({behavior: 'smooth'})
-
   }
 
-
   return (
-
     <section className={`burgerIngredients ${styleIngredients.burgerIngredients} ml-2`}>
       <h2 className={`text text_type_main-large mt-10 mb-5`}>Соберите бургер</h2>
       <div className={`createBurger ${styleIngredients.tabs} mt-5`}>
@@ -67,8 +62,7 @@ const BurgerIngredients = ({ingredients}) => {
         <Tab value='two' active={currentTab === 'sauce'} onClick={() => handleTubClick('sauce', sauceRef)}>
           Соусы
         </Tab>
-        <Tab value='three' active={currentTab === 'main'} onClick={() => handleTubClick('main', mainRef)}
-        >
+        <Tab value='three' active={currentTab === 'main'} onClick={() => handleTubClick('main', mainRef)}>
           Начинки
         </Tab>
       </div>

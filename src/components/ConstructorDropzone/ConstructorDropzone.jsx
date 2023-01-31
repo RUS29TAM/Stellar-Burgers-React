@@ -42,7 +42,6 @@ const ConstructorDropzone = () => {
     dispatch(removeFilling(item));
   };
 
-
   return (
     <>
       {bun && <HalfBun type="top" bun={bun}/>}

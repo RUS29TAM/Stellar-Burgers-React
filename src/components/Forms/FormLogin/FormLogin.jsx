@@ -23,7 +23,6 @@ const FormLogin = () => {
           dispatch(setUserAction(user))
           navigate(-1)
         })
-
     }
   }
 
@@ -47,14 +46,21 @@ const FormLogin = () => {
             <h2>Вход</h2>
             <form onSubmit={onSubmit}>
               <div className={styleLogin.inputBox}>
-                <EmailInput type="email" placeholder="E-mail" onChange={onEmailChange} value={email}/>
+                <EmailInput type="email"
+                            placeholder="E-mail"
+                            onChange={onEmailChange}
+                            value={email}/>
               </div>
               <div className={styleLogin.inputBox}>
-                <PasswordInput type="password" placeholder="Введите пароль" onChange={onPasswordChange}
+                <PasswordInput type="password"
+                               placeholder="Введите пароль"
+                               onChange={onPasswordChange}
                                value={password}/>
               </div>
               <div className={styleLogin.inputBox}>
-                <Button type="primary" value="Войти" htmlType={"submit"}>Войти</Button>
+                <Button type="primary"
+                        value="Войти"
+                        htmlType={"submit"}>Войти</Button>
               </div>
               <p className={styleLogin.forget}>Вы — новый пользователь?
                 <Link to="/registration">Зарегистрироваться</Link>

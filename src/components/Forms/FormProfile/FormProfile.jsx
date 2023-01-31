@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import styleProfile from './FormProfile.module.css'
+import styleProfile from './FormProfile.module.css';
 import {Button, EmailInput, Input, PasswordInput} from "@ya.praktikum/react-developer-burger-ui-components";
 import useUserController from "../../../hooks/useUserController";
 
@@ -47,17 +47,22 @@ const FormProfile = () => {
   return (
     <div className={styleProfile.container}>
       <form className={styleProfile.form} onSubmit={onSubmit} onReset={resetUserInfo}>
-        <Input className={`text text_type_main-small ${styleProfile.inputIcon}`} type="text" placeholder="Имя"
-               onChange={onNameChange} value={name}/>
-        <EmailInput className={`text text_type_main-small ${styleProfile.inputIcon}`} type="email" placeholder="Логин"
-                    onChange={onEmailChange} value={email}/>
-        <PasswordInput type="password" placeholder="Пароль" onChange={onPasswordChange} value={password}/>
+        <Input className={`text text_type_main-small ${styleProfile.inputIcon}`}
+               type="text" placeholder="Имя"
+               onChange={onNameChange}
+               value={name}/>
+        <EmailInput className={`text text_type_main-small ${styleProfile.inputIcon}`}
+                    type="email"
+                    placeholder="Логин"
+                    onChange={onEmailChange}
+                    value={email}/>
+        <PasswordInput type="password"
+                       placeholder="Пароль"
+                       onChange={onPasswordChange}
+                       value={password}/>
         {editUserInfo &&
           <div className={styleProfile.btnWrapper}>
-            {/*<a className={`text text_type_main-default ${styleReg.link}`}*/}
-            {/*   href="src/pages/PageLogin/PageLogin#">Отмена</a>*/}
-            <Button type="secondary" value="Войти" htmlType={"reset"}>Отмена</Button> {/*по макету должна быть кнопка, но тогда в PixelPerfect не попадаю, шинина кнопок
-           "primary" и "secondary" не позволяет добиться совпадения*/}
+            <Button type="secondary" value="Войти" htmlType={"reset"}>Отмена</Button>
             <Button type="primary" value="Войти" htmlType={"submit"}>Сохранить</Button>
           </div>
         }

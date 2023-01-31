@@ -25,7 +25,6 @@ const FormRegistration = () => {
           dispatch(setUserAction(user))
           navigate(-1)
         })
-
     }
   }
 
@@ -33,14 +32,21 @@ const FormRegistration = () => {
     <div className={styleReg.container}>
       <form className={styleReg.form} onSubmit={onSubmit}>
         <h2 className={'text text_type_main-medium'}>Регистрация</h2>
-        <Input type="text" placeholder="Имя" onChange={onNameChange} value={name}/>
-        <EmailInput type="email" placeholder="E-mail" onChange={onEmailChange} value={email}/>
-        <PasswordInput type="password" placeholder="Пароль" onChange={onPasswordChange}
+        <Input type="text"
+               placeholder="Имя"
+               onChange={onNameChange} value={name}/>
+        <EmailInput type="email"
+                    placeholder="E-mail"
+                    onChange={onEmailChange}
+                    value={email}/>
+        <PasswordInput type="password"
+                       placeholder="Пароль"
+                       onChange={onPasswordChange}
                        value={password}/>
         <Button type="primary" value="Войти" htmlType={"submit"}>Зарегистрироваться</Button>
-        <p className={`text text_type_main-default text_color_inactive ${styleReg.text}`}>Уже зарегистрированы? <Link
-          className={styleReg.link}
-          to="/login">Войти</Link></p>
+        <p className={`text text_type_main-default text_color_inactive ${styleReg.text}`}>Уже зарегистрированы?
+          <Link className={styleReg.link} to="/login">&nbsp;Войти</Link>
+        </p>
       </form>
     </div>
   );

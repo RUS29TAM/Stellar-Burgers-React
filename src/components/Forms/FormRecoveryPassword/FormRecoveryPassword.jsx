@@ -26,10 +26,9 @@ const FormRecoveryPassword = () => {
         <PasswordInput type="password" placeholder="Введите новый пароль" onChange={onPasswordChange} value={password}/>
         <Input type="text" placeholder="Введите код из письма" onChange={onNameChange} value={code}/>
         <Button type="primary" value="Войти" htmlType={"submit"}>Сохранить</Button>
-        <p className={`text text_type_main-default text_color_inactive ${styleRecoveryPass.text}`}>Вспомнили
-          пароль? <Link
-            className={styleRecoveryPass.link}
-            to="/login">Войти</Link></p>
+        <p className={`text text_type_main-default text_color_inactive ${styleRecoveryPass.text}`}>Вспомнили пароль?
+          <Link className={styleRecoveryPass.link} to="/login">&nbsp;Войти</Link>
+        </p>
       </form>
     </div>
   );
