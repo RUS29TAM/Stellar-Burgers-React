@@ -63,3 +63,7 @@
 .navigationLink_active svg {
   fill: var(--text-primary-color);
 }
+
+.span {
+  color: inherit;
+}
