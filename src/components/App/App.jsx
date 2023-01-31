@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import PageLogin from '../../pages/PageLogin/PageLogin'
 import PageRegistration from '../../pages/PageRegistration/PageRegistration'
-import PageRecoveryPassword from '../../pages/PageRecoveryPassword/PageRecoveryPassword'//'../../Pages/PageRecoveryPassword/PageRecoveryPassword';
+import PageRecoveryPassword from '../../pages/PageRecoveryPassword/PageRecoveryPassword'//'../../pages/PageRecoveryPassword/PageRecoveryPassword';
 import PageProfile from '../../pages/PageProfile/PageProfile';
 import PageMain from '../../pages/PageMain/PageMain';
 import {Navigate, Route, Routes} from "react-router-dom";

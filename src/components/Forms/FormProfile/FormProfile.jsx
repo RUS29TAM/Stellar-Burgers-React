@@ -55,7 +55,7 @@ const FormProfile = () => {
         {editUserInfo &&
           <div className={styleProfile.btnWrapper}>
             {/*<a className={`text text_type_main-default ${styleReg.link}`}*/}
-            {/*   href="src/Pages/PageLogin/PageLogin#">Отмена</a>*/}
+            {/*   href="src/pages/PageLogin/PageLogin#">Отмена</a>*/}
             <Button type="secondary" value="Войти" htmlType={"reset"}>Отмена</Button> {/*по макету должна быть кнопка, но тогда в PixelPerfect не попадаю, шинина кнопок
            "primary" и "secondary" не позволяет добиться совпадения*/}
             <Button type="primary" value="Войти" htmlType={"submit"}>Сохранить</Button>

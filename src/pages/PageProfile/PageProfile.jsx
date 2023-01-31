@@ -13,8 +13,8 @@ const PageProfile = () => {
       <div className={pageProfile.wrapper}>
         <ProfileInfo/>
         {location.pathname === '/profile'
-        ?
-        <FormProfile/>
+          ?
+          <FormProfile/>
           :
           null
         }
