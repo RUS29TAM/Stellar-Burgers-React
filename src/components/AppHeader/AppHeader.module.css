@@ -55,3 +55,11 @@
   display: flex;
   justify-content: flex-end;
 }
+
+.navigationLink_active {
+  color: var(--text-primary-color);
+}
+
+.navigationLink_active svg {
+  fill: var(--text-primary-color);
+}
