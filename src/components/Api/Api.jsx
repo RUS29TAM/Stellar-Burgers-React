@@ -3,15 +3,15 @@
 const API_URL = 'https://norma.nomoreparties.space/api'; // - базовый url
 
 const CONFIG = {
-  ingredientsUrl: `${API_URL}/ingredients`,              // - эндпоинт для получения ингредиентов.
-  orderUrl: `${API_URL}/orders`,                   // - эндпоинт для получения заказа.
-  regUser: `${API_URL}/auth/register`,            // - эндпоинт для авторизации.
-  logIn: `${API_URL}/auth/login`,               // - эндпоинт для регистрации пользователя.
-  logOut: `${API_URL}/auth/logout`,              // - эндпоинт для выхода из системы.
-  tokenRefresh: `${API_URL}/auth/token`,               // - эндпоинт обновления токена
-  getUserInfo: `${API_URL}/auth/user`,                // - эндпоинт профиля пользователя
-  updateUserInfo: `${API_URL}/auth/user`,                // - эндпоинт обновления профиля пользователя
-  passwordReset: `${API_URL}/password-reset`,           // - эндпоинт сброса пароля
+  ingredientsUrl:      `${API_URL}/ingredients`,              // - эндпоинт для получения ингредиентов.
+  orderUrl:            `${API_URL}/orders`,                   // - эндпоинт для получения заказа.
+  regUser:             `${API_URL}/auth/register`,            // - эндпоинт для авторизации.
+  logIn:               `${API_URL}/auth/login`,               // - эндпоинт для регистрации пользователя.
+  logOut:              `${API_URL}/auth/logout`,              // - эндпоинт для выхода из системы.
+  tokenRefresh:        `${API_URL}/auth/token`,               // - эндпоинт обновления токена
+  getUserInfo:         `${API_URL}/auth/user`,                // - эндпоинт профиля пользователя
+  updateUserInfo:      `${API_URL}/auth/user`,                // - эндпоинт обновления профиля пользователя
+  passwordReset:       `${API_URL}/password-reset`,           // - эндпоинт сброса пароля
   resetPasswordAccept: `${API_URL}/password-reset/reset`      // - эндпоинт подтверждения сброса пароля
 }
 
