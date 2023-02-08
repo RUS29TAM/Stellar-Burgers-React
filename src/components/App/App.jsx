@@ -14,6 +14,7 @@ import {resetUserAction, setUserAction} from "../../services/actions/user";
 import useUserController from "../../hooks/useUserController";
 import PageHistoryOrders from "../../pages/PageHistoryOrders/PageHistoryOrders";
 import PageOrderFeed from "../../pages/PageOrderFeed/PageOrderFeed";
+import AppHeader from "../AppHeader/AppHeader";
 
 const App = () => {
 
@@ -29,6 +30,7 @@ const App = () => {
 
   return (
     <>
+      <AppHeader/>
       <Routes>
         <Route path='/'>
           <Route index path='/' element={<PageMain/>}/>
