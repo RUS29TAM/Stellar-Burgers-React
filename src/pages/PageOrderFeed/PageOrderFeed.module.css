@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  }
+ }
 
 .feeds {
   display: flex;
@@ -15,4 +15,9 @@
   align-items: center;
   color: #ee00ff;
   font-size: 25px;
+}
+.title {
+  max-width: 1240px;
+  padding-top: 130px;
+  margin: 0 auto;
 }

@@ -1,19 +1,12 @@
 import React from 'react';
-import AppHeader from "../../components/AppHeader/AppHeader";
-import styleOrderFeed from './PageOrderFeed.module.css';
-
-function OrdersFeeds() {
-  return (
-    <div className={styleOrderFeed.wrapper}>
-      <div className={styleOrderFeed.feeds}>Здесь будет лента заказов</div>
-    </div>)
-}
+import OrderList from "../../components/OrderList/OrderList";
+import styleOrderList from './PageOrderFeed.module.css'
 
 const PageOrderFeed = () => {
   return (
     <>
-      <AppHeader/>
-      <OrdersFeeds/>
+      <h1 className={`text text_type_main-large ${styleOrderList.title}`}>Лента заказов</h1>
+      <OrderList/>
     </>
   );
 };
