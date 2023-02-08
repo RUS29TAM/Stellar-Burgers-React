@@ -17,8 +17,6 @@ const useUserController = () => {
       return Promise.reject(error)
     })
 
-
-
   const elapsedToken = (error) => {
     if (error.message.includes("jwt expires")) {
       return recoveryToken()
@@ -67,6 +65,13 @@ const useUserController = () => {
       userInfo.password = password
       :
       false
+
+    // if (password !== '') {
+    //   return userInfo.password = password
+    // } else {
+    // eslint-disable-next-line no-unused-expressions
+    //    return password
+    // }
 
     return api.updateUserInfo(userInfo, token.getToken()).then(data => data.user)
       .catch((error) => elapsedToken(error).then(() => updateProfileInfo(name, email, password)))
