@@ -7,6 +7,7 @@ import Modal from "../Modal/Modal";
 import OrderDetails from "../OrderDetails/OrderDetails";
 import useAuthorisation from "../../hooks/useAuthorisation";
 import {useNavigate} from "react-router-dom";
+import useToken from "../../hooks/useToken";
 
 const ConstructorTotalPrice = () => {
   const dispatch = useDispatch();
@@ -14,6 +15,7 @@ const ConstructorTotalPrice = () => {
   const order = useSelector(state => state.order)
 
   const user = useAuthorisation()
+  const tokenStore = useToken()
 
   const {bun, filling} = useSelector((store) => store.burgerConstructor);
 
@@ -28,7 +30,7 @@ const ConstructorTotalPrice = () => {
 
   const handleOrderCreate = () => {
     if (user.isAuth) {
-      dispatch(createOrder(order.currentOrderContent))
+      dispatch(createOrder(order.currentOrderContent, tokenStore.getToken()))
       setModalState(true)
     } else {
       navigate('/login')
