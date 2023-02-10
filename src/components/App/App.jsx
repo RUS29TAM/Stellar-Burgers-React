@@ -13,7 +13,7 @@ import {useDispatch} from "react-redux";
 import {resetUserAction, setUserAction} from "../../services/actions/user";
 import useUserController from "../../hooks/useUserController";
 import PageHistoryOrders from "../../pages/PageHistoryOrders/PageHistoryOrders";
-import PageOrderFeed from "../../pages/PageOrderFeed/PageOrderFeed";
+import PageOrdersFeed from "../../pages/PageOrdersFeed/PageOrdersFeed";
 import AppHeader from "../AppHeader/AppHeader";
 
 const App = () => {
@@ -41,7 +41,7 @@ const App = () => {
           <Route path='/profile/orders' element={<AuthorizedRoute><PageHistoryOrders/></AuthorizedRoute>}/>
           <Route path='/reset-password' element={<UnauthorizedRoute><PageRecoveryPassword/></UnauthorizedRoute>}/>
           <Route path='/ingredients/:id' element={<PageIngredientsId/>}/>
-          <Route path='/feed' element={<UnauthorizedRoute><PageOrderFeed/></UnauthorizedRoute>}/>
+          <Route path='/feed' element={<UnauthorizedRoute><PageOrdersFeed/></UnauthorizedRoute>}/>
           <Route path='*' element={<Navigate to='/'/>}/>
         </Route>
       </Routes>
