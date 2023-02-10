@@ -59,20 +59,9 @@ const useUserController = () => {
 
   const updateProfileInfo = (name, email, password) => {
     const userInfo = {name, email}
-    // eslint-disable-next-line no-unused-expressions
-    password !== ''
-      ?
+    if (password) {
       userInfo.password = password
-      :
-      false
-
-    // if (password !== '') {
-    //   return userInfo.password = password
-    // } else {
-    // eslint-disable-next-line no-unused-expressions
-    //    return password
-    // }
-
+    }
     return api.updateUserInfo(userInfo, token.getToken()).then(data => data.user)
       .catch((error) => elapsedToken(error).then(() => updateProfileInfo(name, email, password)))
   }
