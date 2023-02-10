@@ -12,9 +12,9 @@ export const updateCurrentOrderContent = (payload) => ({
   payload,
 });
 
-export const createOrder = (ingredientsID) => (dispatch) => {
+export const createOrder = (ingredientsID, token) => (dispatch) => {
   dispatch({type: CREATE_ORDER_REQUEST});
-  api.createOrder(ingredientsID)
+  api.createOrder(ingredientsID, token)
     .then((json) => {
       dispatch({type: CREATE_ORDER_SUCCESS, payload: json});
       dispatch({type: OPEN_ORDER_DETAILS_MODAL});
