@@ -7,7 +7,7 @@ import BurgerIngredients from "../BurgerIngredients/BurgerIngredients";
 import BurgerConstructor from "../BurgerConstructor/BurgerConstructor";
 import {useDispatch, useSelector} from "react-redux";
 import {getIngredients} from "../../services/actions/ingredients";
-import {useLocation} from "react-router-dom";
+import {useLocation, useNavigate} from "react-router-dom";
 import Modal from "../Modal/Modal";
 import IngredientDetails from "../IngredientDetails/IngredientDetails";
 import {SET_INGREDIENT} from "../../services/actions/ingredientDetails";
@@ -18,7 +18,11 @@ const AppMain = () => {
   const ingredients = useSelector(state => state.ingredients)
   const location = useLocation()
   const [isIngredientDetailsPopupOpen, setIngredientDetailsPopupOpen] = useState(false);
-  const handleIngredientSetOpen = value => setIngredientDetailsPopupOpen(value)
+  const navigate = useNavigate()
+  const handleIngredientSetOpen = value => {
+    setIngredientDetailsPopupOpen(value)
+    navigate('/')
+  }
   const ingredientDetails = useSelector(state => state.ingredientDetails.ingredient)
 
   useEffect(() => {
