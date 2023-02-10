@@ -41,7 +41,7 @@ const App = () => {
           <Route path='/profile/orders' element={<AuthorizedRoute><PageHistoryOrders/></AuthorizedRoute>}/>
           <Route path='/reset-password' element={<UnauthorizedRoute><PageRecoveryPassword/></UnauthorizedRoute>}/>
           <Route path='/ingredients/:id' element={<PageIngredientsId/>}/>
-          <Route path='/feed' element={<UnauthorizedRoute><PageOrdersFeed/></UnauthorizedRoute>}/>
+          <Route path='/feed' element={<PageOrdersFeed/>}/>
           <Route path='*' element={<Navigate to='/'/>}/>
         </Route>
       </Routes>

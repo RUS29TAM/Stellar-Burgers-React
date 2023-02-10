@@ -35,7 +35,7 @@ const createRequest = (endpoint, method, body = null, auth = null) => {
 
 const api = {
   getIngredients: () => createRequest(CONFIG.ingredientsUrl, "GET"),
-  createOrder: (ingredientsID) => createRequest(CONFIG.orderUrl, 'POST', {ingredients: ingredientsID}),
+  createOrder: (ingredientsID, token) => createRequest(CONFIG.orderUrl, 'POST', {ingredients: ingredientsID}, token),
   registrationUser: (name, email, password) => createRequest(CONFIG.regUser, 'POST', {name, email, password}),
   updateUserInfo: (userInfo, token) => createRequest(CONFIG.updateUserInfo, "PATCH", userInfo, token),
   resetPassword: (email) => createRequest(CONFIG.passwordReset, 'POST', {email}),
