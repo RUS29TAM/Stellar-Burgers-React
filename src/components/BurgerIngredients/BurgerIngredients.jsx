@@ -27,8 +27,7 @@ const BurgerIngredients = ({ingredients}) => {
     const ingredientsCount = {}
     if (ingredientReducer.isError || ingredientReducer.isLoading) return ingredientsCount;
     ingredientReducer.data.forEach((ingredient) => ingredientsCount[ingredient._id] = cart.filling.filter(cartItem => cartItem._id === ingredient._id).length)
-    // eslint-disable-next-line no-unused-expressions
-    cart.bun ? ingredientsCount[cart.bun._id] = 2 : false
+    if (cart.bun) ingredientsCount[cart.bun._id] = 2
     return ingredientsCount
   }, [ingredientReducer, cart])
   const getIngredientCount = (ingredientId) => ingredientsCounts[ingredientId]
