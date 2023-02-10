@@ -1,5 +1,4 @@
-import React, {useEffect, } from 'react';
-import AppHeader from "../../components/AppHeader/AppHeader";
+import React, {useEffect,} from 'react';
 import IngredientDetails from "../../components/IngredientDetails/IngredientDetails";
 import {useLocation, useParams} from "react-router-dom";
 import api from "../../components/Api/Api";
@@ -26,14 +25,11 @@ const PageIngredientsId = () => {
 
   return (location.state?.from === '/'
       ?
-        <PageMain/>
+      <PageMain/>
       :
       ingredient !== null
         ?
-        <>
-          <AppHeader/>
-          <IngredientDetails/>
-        </>
+        <IngredientDetails/>
         :
         'loading...'
   );

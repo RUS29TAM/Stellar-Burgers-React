@@ -1,5 +1,4 @@
 import React from 'react';
-import AppHeader from "../../components/AppHeader/AppHeader";
 import stylePageHistoryOrders from './PageHistoryOrders.module.css';
 import ProfileInfo from "../../components/ProfileInfo/ProfileInfo";
 
@@ -14,10 +13,7 @@ function OrdersHistory() {
 
 const PageHistoryOrders = () => {
   return (
-    <>
-      <AppHeader/>
-      <OrdersHistory/>
-    </>
+    <OrdersHistory/>
   );
 };
 
