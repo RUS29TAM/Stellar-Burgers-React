@@ -10,23 +10,15 @@ import PageIngredientsId from '../../pages/PageIngregientsId/PageIngredientsId';
 import UnauthorizedRoute from "../Routes/UnauthorizedRoute";
 import AuthorizedRoute from "../Routes/AuthorizedRoute";
 import {useDispatch} from "react-redux";
-import {resetUserAction, setUserAction} from "../../services/actions/user";
-import useUserController from "../../hooks/useUserController";
 import PageHistoryOrders from "../../pages/PageHistoryOrders/PageHistoryOrders";
 import PageOrdersFeed from "../../pages/PageOrdersFeed/PageOrdersFeed";
 import AppHeader from "../AppHeader/AppHeader";
+import {checkAuthorizedThunk} from "../../services/actions/checkAuthorizedThunk";
 
 const App = () => {
 
   const dispatch = useDispatch()
-  const userConfig = useUserController()
-
-
-  useEffect(() => {
-    userConfig.checkAuth()
-      .then((user) => dispatch(setUserAction(user)))
-      .catch(() => dispatch(resetUserAction()))
-  }, [])
+  useEffect(() => dispatch(checkAuthorizedThunk()), [])
 
   return (
     <>
