@@ -1,13 +1,13 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import useAuthorisation from "../../hooks/useAuthorisation";
 import {Navigate} from "react-router-dom";
 import PropTypes from "prop-types";
+import PreLoader from "../PreLoader/PreLoader";
 
 const AuthorizedRoute = ({children}) => {
-  const {isAuth} = useAuthorisation()
-  useEffect(() => console.log(isAuth))
+  const {isAuth, accept} = useAuthorisation()
   return (
-    isAuth ? children : <Navigate to='/login'/>
+    !accept ? <PreLoader/> : isAuth ? children : <Navigate to='/login'/>
   );
 };
 
