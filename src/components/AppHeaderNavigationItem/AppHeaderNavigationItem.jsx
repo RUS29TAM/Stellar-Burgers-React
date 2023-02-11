@@ -29,7 +29,7 @@ const AppHeaderNavigationItem = ({to, children, iconComponentName}) => {
 
 AppHeaderNavigationItem.propTypes = {
   to: PropTypes.string.isRequired,
-  children: PropTypes.element.isRequired,
+  children: PropTypes.string.isRequired,
   iconComponentName: PropTypes.oneOf(['BurgerIcon','ListIcon', 'ProfileIcon']).isRequired,
 }
 export default AppHeaderNavigationItem;
