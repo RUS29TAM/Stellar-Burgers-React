@@ -17,12 +17,13 @@ const useUserController = () => {
       return Promise.reject(error)
     })
 
-  const elapsedToken = (error) => {
-    if (error.message.includes("jwt expires")) {
+  const elapsedToken = (error) => error.then(error => {
+    if (error.message.includes("jwt expired")) {
       return recoveryToken()
     }
     return Promise.reject(error)
-  }
+  })
+
 
   const getUser = () => api.getUser(token.getToken())
     .then(data => data.user)
