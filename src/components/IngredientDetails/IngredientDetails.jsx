@@ -1,6 +1,7 @@
 import React from 'react';
 import styleIngredientDetails from '../IngredientDetails/IngredientDetails.module.css';
 import {useSelector} from "react-redux";
+import PropTypes from "prop-types";
 
 const IngredientDetails = ({extraClass, isModal = true}) => {
   const ingredient = useSelector(state => state.ingredientDetails.ingredient)
@@ -35,5 +36,10 @@ const IngredientDetails = ({extraClass, isModal = true}) => {
     </div>
   );
 };
+
+IngredientDetails.propTypes = {
+  extraClass: PropTypes.string.isRequired,
+  isModal: PropTypes.bool,
+}
 
 export default IngredientDetails

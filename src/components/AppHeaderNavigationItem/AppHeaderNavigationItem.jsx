@@ -2,6 +2,7 @@ import React from 'react';
 import {NavLink, useMatch} from "react-router-dom";
 import {BurgerIcon, ListIcon, ProfileIcon} from "@ya.praktikum/react-developer-burger-ui-components";
 import stylesHeader from "../AppHeader/AppHeader.module.css";
+import PropTypes from "prop-types";
 
 const AppHeaderNavigationItem = ({to, children, iconComponentName}) => {
   const isActive = useMatch(to)
@@ -26,4 +27,9 @@ const AppHeaderNavigationItem = ({to, children, iconComponentName}) => {
   </NavLink>);
 };
 
+AppHeaderNavigationItem.propTypes = {
+  to: PropTypes.string.isRequired,
+  children: PropTypes.element.isRequired,
+  iconComponentName: PropTypes.oneOf(['BurgerIcon','ListIcon', 'ProfileIcon']).isRequired,
+}
 export default AppHeaderNavigationItem;
