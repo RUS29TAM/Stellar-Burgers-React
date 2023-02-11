@@ -1,5 +1,3 @@
-// @ts-ignore
-
 const API_URL = 'https://norma.nomoreparties.space/api'; // - базовый url
 
 const CONFIG = {
