@@ -15,7 +15,7 @@ const CONFIG = {
   resetPasswordAccept: `${API_URL}/password-reset/reset`      // - эндпоинт подтверждения сброса пароля
 }
 
-const checkResponce = res => res.ok ? res.json() : Promise.reject(`Ошибка ${res.status}`)
+const checkResponce = res => res.ok ? res.json() : Promise.reject(res.json())
 
 const createRequest = (endpoint, method, body = null, auth = null) => {
   const settings = {
