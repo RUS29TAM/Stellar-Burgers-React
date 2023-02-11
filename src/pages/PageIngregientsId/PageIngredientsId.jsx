@@ -29,7 +29,7 @@ const PageIngredientsId = () => {
       :
       ingredient !== null
         ?
-        <IngredientDetails/>
+        <IngredientDetails extraClass={'mt-30'} isModal={false}/>
         :
         'loading...'
   );
