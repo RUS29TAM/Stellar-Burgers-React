@@ -1,27 +1,12 @@
 .wrapper {
   display: flex;
-  justify-content: center;
-  padding-right: 416px;
+  justify-content: space-between;
+  padding-left: 331px;
+  max-width: 1224px;
   box-sizing: border-box;
   align-items: start;
-
 }
 
-.orders {
-  display: flex;
-  flex-direction: column;
-  gap: 36px;
-  padding-right: 60px;
-  padding-bottom: 120px;
-  margin-top: 225px;
-  width: 400px;
-  border: dotted 1px #00f7ff;
-  height: 320px;
-  align-items: center;
-  color: #00f7ff;
-  font-size: 25px;
-
-
+.container {
+  margin-top: 162px;
 }
-
-
