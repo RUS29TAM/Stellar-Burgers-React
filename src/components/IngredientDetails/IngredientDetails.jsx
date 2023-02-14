@@ -38,7 +38,7 @@ const IngredientDetails = ({extraClass, isModal = true}) => {
 };
 
 IngredientDetails.propTypes = {
-  extraClass: PropTypes.string.isRequired,
+  extraClass: PropTypes.string,
   isModal: PropTypes.bool,
 }
 
