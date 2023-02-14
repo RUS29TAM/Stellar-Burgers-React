@@ -172,30 +172,3 @@ const PreLoader = () => {
 };
 
 export default PreLoader;
-
-{/*<svg className={stylePreLoader.preLoader} xmlns="http://www.w3.org/2000/svg" width="24" height="24"*/
-}
-{/*     viewBox="0 0 24 24"*/
-}
-{/*>*/
-}
-{/*  <circle cx="12" cy="20" r="1" className={stylePreLoader.a}></circle>*/
-}
-{/*  <circle cx="12" cy="4" r="1" className={stylePreLoader.b}></circle>*/
-}
-{/*  <circle cx="6.343" cy="17.657" r="1" className={stylePreLoader.c}></circle>*/
-}
-{/*  <circle cx="17.657" cy="6.343" r="1" className={stylePreLoader.d}></circle>*/
-}
-{/*  <circle cx="4" cy="12" r="1.001" className={stylePreLoader.e}></circle>*/
-}
-{/*  <circle cx="20" cy="12" r="1" className={stylePreLoader.f}></circle>*/
-}
-{/*  <circle cx="6.343" cy="6.344" r="1" className={stylePreLoader.g}></circle>*/
-}
-{/*  <circle cx="17.657" cy="17.658" r="1" className={stylePreLoader.h}></circle>*/
-}
-{/*</svg>*/
-}
-{/*<img className={`${stylePreLoader.preLoader}`} src={preLoader} alt='Загрузка'/>*/
-}
