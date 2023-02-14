@@ -9,9 +9,7 @@ import PropTypes from "prop-types";
 
 const DragConstructorCard = (props) => {
   const {index, data, handleRemove} = props;
-
   const dispatch = useDispatch();
-
   const ref = useRef(null);
 
   const [{isDragging}, dragRef] = useDrag({
@@ -29,13 +27,9 @@ const DragConstructorCard = (props) => {
     }),
     hover: (item) => {
       if (!ref.current) return;
-
       const [dragIndex, hoverIndex] = [item.index, index];
-
       if (dragIndex === hoverIndex) return;
-
       dispatch(swapFillings({from: dragIndex, to: hoverIndex}));
-
       item.index = hoverIndex;
     },
   });
@@ -43,20 +37,14 @@ const DragConstructorCard = (props) => {
   dragRef(dropRef(ref));
 
   return (
-    <div
-      ref={ref}
-      className={`mr-2 ${styles.wrapper} ${isDragging ? styles.dragging : ''}`}
-      style={{opacity: isHovered ? 0.1 : 1}}
-    >
+    <div ref={ref}
+         className={`mr-2 ${styles.wrapper} ${isDragging ? styles.dragging : ''}`}
+         style={{opacity: isHovered ? 0.1 : 1}}>
       <div className={`${styles.dragIcon} mr-2`}>
         <DragIcon type="primary"/>
       </div>
-      <ConstructorElement
-        text={data.name}
-        price={data.price}
-        thumbnail={data.image}
-        handleClose={() => handleRemove(data)}
-      />
+      <ConstructorElement text={data.name} price={data.price} thumbnail={data.image}
+                          handleClose={() => handleRemove(data)}/>
     </div>
   );
 };
@@ -68,4 +56,3 @@ DragConstructorCard.propTypes = {
 };
 
 export default DragConstructorCard
-

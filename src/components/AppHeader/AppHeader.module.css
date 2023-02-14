@@ -1,4 +1,6 @@
 .header {
+  position: absolute;
+  z-index: 1000;
   background-color: #1C1C21;
   box-shadow: 0 24px 32px rgba(0, 0, 0, 0.04), 0 16px 24px rgba(0, 0, 0, 0.04), 0 4px 8px rgba(0, 0, 0, 0.04), 0 0 1px rgba(0, 0, 0, 0.04);
   width: 100%;
@@ -52,4 +54,16 @@
 .personalAccount {
   display: flex;
   justify-content: flex-end;
+}
+
+.navigationLink_active {
+  color: var(--text-primary-color);
+}
+
+.navigationLink_active svg {
+  fill: var(--text-primary-color);
+}
+
+.span {
+  color: inherit;
 }

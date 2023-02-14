@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import stylesListBasket from './ListIngredients.module.css'
+import stylesListBasket from './ListIngredients.module.css';
 import IngredientCard from '../IngredientCard/IngredientCard';
 import ingredientType from '../../utils/types';
 
@@ -12,7 +12,9 @@ const ListIngredients = ({heading, list, getIngredientCount}) => {
       </h3>
       <div className={`${stylesListBasket.list} ml-4 mr-2`}>
         {list.map((item) => (
-          <IngredientCard getIngredientCount={getIngredientCount} key={item._id} ingredient={item}/>
+          <IngredientCard getIngredientCount={getIngredientCount}
+                          key={item._id}
+                          ingredient={item}/>
         ))}
       </div>
     </>

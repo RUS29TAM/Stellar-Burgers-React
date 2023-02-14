@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 78vh;
+
+}
+
+.form {
+  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  height: 320px;
+}
+
+.btnWrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.inputIcon {
+  background: url("../../../images/icon/pen.svg")right;
+  background-repeat: no-repeat;
+  border: none;
+  display: flex;
+  right: 0;
+  color: var(--text-inactive-color);
+  font-size: 16px;
+  line-height: 24px;
+  vertical-align: Center;
+  width: 470px;
+  padding-top: 26px;
+}
+
+.inputIcon:focus {
+  border: none;
+  outline:none;
+
+}

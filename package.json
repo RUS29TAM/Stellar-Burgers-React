@@ -1,7 +1,7 @@
 {
   "name": "stellar-burgers-react",
   "version": "0.1.0",
-  "homepage": "https://rus29tam.github.io/Stellar-Burgers-React",
+  "homepage": "./",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.1",
@@ -22,6 +22,7 @@
     "react-dom": "^18.2.0",
     "react-intersection-observer": "^9.4.1",
     "react-redux": "^8.0.5",
+    "react-router-dom": "^6.7.0",
     "react-scripts": "5.0.1",
     "redux": "^4.2.0",
     "redux-devtools-extension": "^2.13.9",

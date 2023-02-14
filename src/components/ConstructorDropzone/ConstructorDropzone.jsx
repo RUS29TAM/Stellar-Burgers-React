@@ -42,7 +42,6 @@ const ConstructorDropzone = () => {
     dispatch(removeFilling(item));
   };
 
-
   return (
     <>
       {bun && <HalfBun type="top" bun={bun}/>}
@@ -53,15 +52,36 @@ const ConstructorDropzone = () => {
         } ${isHovered && !filling.length ? styles.hoveredCleanDropzone : ''}`}
       >
         {!bun && (
-          <p className={`text text_type_main-default ${isHovered ? '' : 'text_color_inactive'}`}>
-            Перенесите сюда булку
-          </p>
+          <>
+          <span className={`text text_type_main-default ${styles.span} ${isHovered ? '' : 'text_color_inactive'}`}>П</span>
+            <span className={`text text_type_main-default ${styles.span} ${isHovered ? '' : 'text_color_inactive'}`}>е</span>
+            <span className={`text text_type_main-default ${styles.span} ${isHovered ? '' : 'text_color_inactive'}`}>р</span>
+            <span className={`text text_type_main-default ${styles.span} ${isHovered ? '' : 'text_color_inactive'}`}>е</span>
+            <span className={`text text_type_main-default ${styles.span} ${isHovered ? '' : 'text_color_inactive'}`}>н</span>
+            <span className={`text text_type_main-default ${styles.span} ${isHovered ? '' : 'text_color_inactive'}`}>е</span>
+            <span className={`text text_type_main-default ${styles.span} ${isHovered ? '' : 'text_color_inactive'}`}>с</span>
+            <span className={`text text_type_main-default ${styles.span} ${isHovered ? '' : 'text_color_inactive'}`}>и</span>
+            <span className={`text text_type_main-default ${styles.span} ${isHovered ? '' : 'text_color_inactive'}`}>т</span>
+            <span className={`text text_type_main-default ${styles.span} ${isHovered ? '' : 'text_color_inactive'}`}>e</span>
+            <span className={`text text_type_main-default ${styles.span} ${isHovered ? '' : 'text_color_inactive'}`}>&nbsp;с</span>
+            <span className={`text text_type_main-default ${styles.span} ${isHovered ? '' : 'text_color_inactive'}`}>ю</span>
+            <span className={`text text_type_main-default ${styles.span} ${isHovered ? '' : 'text_color_inactive'}`}>д</span>
+            <span className={`text text_type_main-default ${styles.span} ${isHovered ? '' : 'text_color_inactive'}`}>а&nbsp;</span>
+            <span className={`text text_type_main-default ${styles.span} ${isHovered ? '' : 'text_color_inactive'}`}>б</span>
+            <span className={`text text_type_main-default ${styles.span} ${isHovered ? '' : 'text_color_inactive'}`}>у</span>
+            <span className={`text text_type_main-default ${styles.span} ${isHovered ? '' : 'text_color_inactive'}`}>л</span>
+            <span className={`text text_type_main-default ${styles.span} ${isHovered ? '' : 'text_color_inactive'}`}>к</span>
+            <span className={`text text_type_main-default ${styles.span} ${isHovered ? '' : 'text_color_inactive'}`}>у</span>
+            <span></span>
+          </>
         )}
         {bun && !filling.length && (
-          <p className={`text text_type_main-default ${isHovered ? '' : 'text_color_inactive'}`}>
+            <span className={`text text_type_main-default ${styles.spanN} ${isHovered ? '' : 'text_color_inactive'}`}>
             Перенесите сюда как можно больше начинок и соусов
-          </p>
+          </span>
+
         )}
+
         {filling.map((item, index) => (
           <DragConstructorCard
             key={index}
