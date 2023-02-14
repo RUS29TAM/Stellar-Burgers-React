@@ -53,11 +53,11 @@ const AppMain = () => {
           )}
           (
         </main>
-        ({isIngredientDetailsPopupOpen && ingredientDetails &&
+        {isIngredientDetailsPopupOpen && ingredientDetails &&
         <Modal setOpen={handleIngredientSetOpen}>
           <IngredientDetails/>
         </Modal>
-      })
+      }
       </div>
   );
 };
