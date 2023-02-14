@@ -1,4 +1,4 @@
-import api from '../../components/Api/Api'
+import api from '../../Api/Api'
 import {RESET_CONSTRUCTOR} from './burgerConstructor';
 
 export const UPDATE_CURRENT_ORDER_CONTENT = 'UPDATE_CURRENT_ORDER_CONTENT';

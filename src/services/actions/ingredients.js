@@ -1,4 +1,4 @@
-import api from "../../components/Api/Api";
+import api from "../../Api/Api";
 
 export const GET_INGREDIENTS_REQUEST = 'GET_INGREDIENTS';
 export const GET_INGREDIENTS_SUCCESS = 'GET_INGREDIENTS_SUCCESS';

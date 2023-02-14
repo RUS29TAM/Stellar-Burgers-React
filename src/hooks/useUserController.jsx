@@ -1,4 +1,4 @@
-import api from "../components/Api/Api";
+import api from "../Api/Api";
 import useToken from "./useToken";
 
 const useUserController = () => {
