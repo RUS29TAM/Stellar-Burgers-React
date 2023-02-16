@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import {useEffect} from 'react';
 import PageLogin from '../../pages/PageLogin/PageLogin';
 import PageRegistration from '../../pages/PageRegistration/PageRegistration';
 import PageRecoveryPassword from '../../pages/PageRecoveryPassword/PageRecoveryPassword';
@@ -14,6 +14,7 @@ import PageHistoryOrders from "../../pages/PageHistoryOrders/PageHistoryOrders";
 import PageOrdersFeed from "../../pages/PageOrdersFeed/PageOrdersFeed";
 import AppHeader from "../AppHeader/AppHeader";
 import {checkAuthorizedThunk} from "../../services/actions/checkAuthorizedThunk";
+import Layout from "../Layout/Layout";
 
 const App = () => {
 
@@ -24,7 +25,7 @@ const App = () => {
     <>
       <AppHeader/>
       <Routes>
-        <Route path='/'>
+        <Route path='/' element={<Layout/>}>
           <Route index path='/' element={<PageMain/>}/>
           <Route path='/profile' element={<AuthorizedRoute><PageProfile/></AuthorizedRoute>}/>
           <Route path='/login' element={<UnauthorizedRoute><PageLogin/></UnauthorizedRoute>}/>
