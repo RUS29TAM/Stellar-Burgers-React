@@ -1,4 +1,5 @@
 const API_URL = 'https://norma.nomoreparties.space/api'; // - базовый url
+const WS_URL = 'wss://norma.nomoreparties.space';        //надстройка над протоколом для передачи зашифрованных сообщений
 
 const CONFIG = {
   ingredientsUrl:      `${API_URL}/ingredients`,              // - эндпоинт для получения ингредиентов.
@@ -11,6 +12,11 @@ const CONFIG = {
   updateUserInfo:      `${API_URL}/auth/user`,                // - эндпоинт обновления профиля пользователя
   passwordReset:       `${API_URL}/password-reset`,           // - эндпоинт сброса пароля
   resetPasswordAccept: `${API_URL}/password-reset/reset`      // - эндпоинт подтверждения сброса пароля
+}
+
+export const WS_CONFIG = {
+  feedsUrl: `${WS_URL}/orders/all`,
+  userUrl: (token) => `${WS_URL}/orders?token=${token}`
 }
 
 const checkResponce = res => res.ok ? res.json() : Promise.reject(res.json())
