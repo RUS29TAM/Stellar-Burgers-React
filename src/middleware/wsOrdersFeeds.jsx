@@ -1,17 +1,17 @@
 import {
   WS_ORDERS_FEEDS_CONNECT,
-  WS_ORDERS_FEEDS_DISCONNECT,
   wsOrdersFeedsConnectingAction,
-  wsOrdersFeedsConnectedAction,
-  wsOrdersFeedsConnectAction,
-  wsOrdersFeedDisconnectAction,
+  WS_ORDERS_FEEDS_DISCONNECT,
   wsOrdersFeedsDisconnectingAction,
+  wsOrdersFeedsErrAction,
   wsOrdersFeedsGetMessageAction,
+
 } from '../services/actions/wsOrdersFeedsAction'
 
 const wsOrdersFeeds = () => store => {
   let socket = null
-  return subsequent => action => {
+  return next => action => {
+    console.log('websocket open', store)
     const {dispatch} = store
     const {type, payload} = action
 
@@ -20,17 +20,26 @@ const wsOrdersFeeds = () => store => {
     }
 
     if (socket) {
-      socket.onopen = e => dispatch(wsOrdersFeedsConnectAction(e))
-      socket.onclose = e => dispatch(wsOrdersFeedDisconnectAction(e))
-      socket.onerror = e => dispatch(wsOrdersFeedsDisconnectingAction(e))
-      socket.onmessage = e => dispatch(wsOrdersFeedsGetMessageAction(JSON.parse(e.data)))
+      socket.onopen = host => dispatch(wsOrdersFeedsConnectingAction(host))
+      socket.onclose = host => dispatch(wsOrdersFeedsDisconnectingAction(host))
+      socket.onerror = host => dispatch(wsOrdersFeedsErrAction(host))
+      socket.onmessage = host => dispatch(wsOrdersFeedsGetMessageAction(JSON.parse(host.data)))
 
       if (type === WS_ORDERS_FEEDS_DISCONNECT && socket.readyState === 1) {
-        socket.close(1000, "работа закончена")
+        socket.close(1000, "работа закончена по умолчанию - нормальное закрытие")
+        socket = null
+      } else if (type === WS_ORDERS_FEEDS_DISCONNECT && socket.readyState === 1) {
+        socket.close(1006, "соединение было потеряно")
+        socket = null
+      } else if (type === WS_ORDERS_FEEDS_DISCONNECT && socket.readyState === 1) {
+        socket.close(1001, "сервер выключен или пользователь покинул страницу")
+        socket = null
+      } else if (type === WS_ORDERS_FEEDS_DISCONNECT && socket.readyState === 1) {
+        socket.close(10011, "сервер столкнулся с непредвиденным обстоятельством, которое помешало ему в выполнение запроса")
         socket = null
       }
     }
-    subsequent(action)
+    next(action)
   }
 }
 
