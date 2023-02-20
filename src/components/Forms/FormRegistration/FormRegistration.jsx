@@ -4,7 +4,7 @@ import {Button, EmailInput, Input, PasswordInput} from "@ya.praktikum/react-deve
 import {Link, useNavigate} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import useUserController from "../../../hooks/useUserController";
-import {setUserAction} from "../../../services/actions/user";
+import {setUserAction} from "../../../services/actions/userAction";
 
 const FormRegistration = () => {
   const [email, setEmail] = useState('');

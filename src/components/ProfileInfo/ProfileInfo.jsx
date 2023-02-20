@@ -3,7 +3,7 @@ import styleProfileInfo from './ProfileInfo.module.css'
 import {NavLink, useLocation, useNavigate} from "react-router-dom";
 import useUserController from "../../hooks/useUserController";
 import {useDispatch} from "react-redux";
-import {resetUserAction} from "../../services/actions/user";
+import {resetUserAction} from "../../services/actions/userAction";
 
 const setActiveLink = ({isActive}) => isActive ? `${styleProfileInfo.link} text_color_primary` : `${styleProfileInfo.link} text_color_inactive`;
 

@@ -11,12 +11,12 @@ import {
 const wsOrdersFeeds = () => store => {
   let socket = null
   return next => action => {
-    console.log('websocket open', store)
     const {dispatch} = store
     const {type, payload} = action
 
     if (type === WS_ORDERS_FEEDS_CONNECT) {
       socket = new WebSocket(payload)
+      console.log('websocket open', store)
     }
 
     if (socket) {
@@ -44,6 +44,8 @@ const wsOrdersFeeds = () => store => {
 }
 
 export default wsOrdersFeeds
+
+
 /*
 Чтобы получить состояние соединения, существует дополнительное свойство socket.readyState со значениями:
 0 – «CONNECTING»: соединение ещё не установлено,

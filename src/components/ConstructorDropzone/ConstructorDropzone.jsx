@@ -2,10 +2,10 @@ import styles from '../ConstructorDropzone/ConstructorDropzone.module.css';
 import {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {useDrop} from "react-dnd";
-import {addBun, addFilling, removeFilling} from "../../services/actions/burgerConstructor";
+import {addBun, addFilling, removeFilling} from "../../services/actions/burgerConstructorAction";
 import HalfBun from "../HalfBun/HalfBun";
 import DragConstructorCard from '../DragConstructorCard/DragConsrtuctorCard';
-import {updateCurrentOrderContent} from '../../services/actions/order';
+import {updateCurrentOrderContent} from '../../services/actions/orderAction';
 
 const ConstructorDropzone = () => {
   const dispatch = useDispatch();

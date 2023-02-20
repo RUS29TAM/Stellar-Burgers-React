@@ -4,7 +4,7 @@ import {
   CREATE_ORDER_SUCCESS,
   OPEN_ORDER_DETAILS_MODAL,
   CREATE_ORDER_FAIL,
-} from '../actions/order';
+} from '../actions/orderAction';
 
 const initialState = {
   currentOrderContent: [],

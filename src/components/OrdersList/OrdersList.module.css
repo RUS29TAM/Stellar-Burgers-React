@@ -21,3 +21,17 @@
   background: var(--background-element);
 }
 
+.wrapper {
+  display: block;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding-top: 130px;
+}
+
+.container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+

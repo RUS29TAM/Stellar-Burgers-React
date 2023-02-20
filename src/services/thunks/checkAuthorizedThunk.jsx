@@ -1,5 +1,5 @@
 import useUserController from "../../hooks/useUserController";
-import {userAcceptAction, userErrorAction, userLoadingAction} from "./user";
+import {userAcceptAction, userErrorAction, userLoadingAction} from "../actions/userAction";
 
 export const checkAuthorizedThunk = () => (dispatch) => {
   const userController = useUserController()

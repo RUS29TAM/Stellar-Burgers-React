@@ -13,7 +13,7 @@ import {useDispatch} from "react-redux";
 import PageHistoryOrders from "../../pages/PageHistoryOrders/PageHistoryOrders";
 import PageOrdersFeed from "../../pages/PageOrdersFeed/PageOrdersFeed";
 import AppHeader from "../AppHeader/AppHeader";
-import {checkAuthorizedThunk} from "../../services/actions/checkAuthorizedThunk";
+import {checkAuthorizedThunk} from "../../services/thunks/checkAuthorizedThunk";
 import Layout from "../Layout/Layout";
 
 const App = () => {

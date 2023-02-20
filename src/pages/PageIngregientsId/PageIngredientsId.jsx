@@ -4,7 +4,7 @@ import {useLocation, useParams} from "react-router-dom";
 import api from "../../Api/Api";
 import PageMain from "../PageMain/PageMain";
 import {useDispatch, useSelector} from "react-redux";
-import {SET_INGREDIENT} from "../../services/actions/ingredientDetails";
+import {SET_INGREDIENT} from "../../services/actions/ingredientDetailsAction";
 
 const PageIngredientsId = () => {
   const location = useLocation()

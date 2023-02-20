@@ -2,7 +2,7 @@ import styles from '../ConstructorTotalPrice/ConstructorTotalPrice.module.css';
 import {useMemo, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {CurrencyIcon, Button} from "@ya.praktikum/react-developer-burger-ui-components";
-import {createOrder} from "../../services/actions/order";
+import {createOrder} from "../../services/actions/orderAction";
 import Modal from "../Modal/Modal";
 import OrderDetails from "../OrderDetails/OrderDetails";
 import useAuthorisation from "../../hooks/useAuthorisation";

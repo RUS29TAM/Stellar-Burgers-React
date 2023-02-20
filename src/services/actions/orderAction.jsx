@@ -1,5 +1,5 @@
 import api from '../../Api/Api'
-import {RESET_CONSTRUCTOR} from './burgerConstructor';
+import {RESET_CONSTRUCTOR} from './burgerConstructorAction';
 
 export const UPDATE_CURRENT_ORDER_CONTENT = 'UPDATE_CURRENT_ORDER_CONTENT';
 export const CREATE_ORDER_REQUEST = 'CREATE_ORDER_REQUEST';

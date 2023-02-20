@@ -1,4 +1,4 @@
-import {GET_INGREDIENTS_FAIL, GET_INGREDIENTS_REQUEST, GET_INGREDIENTS_SUCCESS,} from './ingredients'
+import {GET_INGREDIENTS_FAIL, GET_INGREDIENTS_REQUEST, GET_INGREDIENTS_SUCCESS,} from '../actions/ingredientsAction'
 import api from "../../Api/Api";
 
 export const ingredientsThunk = () => dispatch => {

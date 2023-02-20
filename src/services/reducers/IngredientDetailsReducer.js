@@ -1,4 +1,4 @@
-import {SET_INGREDIENT} from "../actions/ingredientDetails";
+import {SET_INGREDIENT} from "../actions/ingredientDetailsAction";
 
 const initialState = {
   ingredient: null,

@@ -6,11 +6,11 @@ import {HTML5Backend} from "react-dnd-html5-backend";
 import BurgerIngredients from "../BurgerIngredients/BurgerIngredients";
 import BurgerConstructor from "../BurgerConstructor/BurgerConstructor";
 import {useDispatch, useSelector} from "react-redux";
-import {getIngredients} from "../../services/actions/ingredients";
+import {getIngredients} from "../../services/actions/ingredientsAction";
 import {useLocation, useNavigate} from "react-router-dom";
 import Modal from "../Modal/Modal";
 import IngredientDetails from "../IngredientDetails/IngredientDetails";
-import {SET_INGREDIENT} from "../../services/actions/ingredientDetails";
+import {SET_INGREDIENT} from "../../services/actions/ingredientDetailsAction";
 
 const AppMain = () => {
   const dispatch = useDispatch();

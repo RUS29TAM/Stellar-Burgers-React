@@ -5,7 +5,7 @@ import {
   REMOVE_FILLING,
   RESET_CONSTRUCTOR,
   SWAP_FILLINGS,
-} from '../actions/burgerConstructor';
+} from '../actions/burgerConstructorAction';
 
 const initialState = {
   bun: null,

@@ -1,4 +1,4 @@
-import {SET_USER, LOGOUT_USER, USER_LOADING, USER_ACCEPT, USER_ERROR} from "../actions/user";
+import {SET_USER, LOGOUT_USER, USER_LOADING, USER_ACCEPT, USER_ERROR} from "../actions/userAction";
 
 const initialState = {
   name: null,

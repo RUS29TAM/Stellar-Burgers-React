@@ -2,7 +2,7 @@ import {combineReducers} from "redux";
 import {ingredientsReducer} from "./ingredientsReducer";
 import {burgerConstructorReducer} from "./burgerConstructorReducer";
 import {orderReducer} from "./orderReducer";
-import {ingredientDetailsReducer} from "./IngredientDetailsReducers";
+import {ingredientDetailsReducer} from "./IngredientDetailsReducer";
 import {userReducer} from "./userReducer";
 import {wsOrdersFeedReducer} from "./wsOrdersFeedReducer";
 
@@ -12,7 +12,7 @@ const rootReducer = combineReducers({
   order: orderReducer,
   ingredientDetails: ingredientDetailsReducer,
   userReducer: userReducer,
-  wsOrdersReducer: wsOrdersFeedReducer,
+  // wsOrdersReducer: wsOrdersFeedReducer,
 });
 
 export default rootReducer;
