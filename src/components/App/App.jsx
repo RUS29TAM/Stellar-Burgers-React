@@ -10,7 +10,7 @@ import PageIngredientsId from '../../pages/PageIngregientsId/PageIngredientsId';
 import UnauthorizedRoute from "../Routes/UnauthorizedRoute";
 import AuthorizedRoute from "../Routes/AuthorizedRoute";
 import {useDispatch} from "react-redux";
-import PageHistoryOrders from "../../pages/PageHistoryOrders/PageHistoryOrders";
+import ProfileHistoryOrders from "../ProfileHistoryOrders/ProfileHistoryOrders";
 import PageOrdersFeed from "../../pages/PageOrdersFeed/PageOrdersFeed";
 import AppHeader from "../AppHeader/AppHeader";
 import {checkAuthorizedThunk} from "../../services/thunks/checkAuthorizedThunk";
@@ -31,7 +31,7 @@ const App = () => {
           <Route path='/login' element={<UnauthorizedRoute><PageLogin/></UnauthorizedRoute>}/>
           <Route path='/registration' element={<UnauthorizedRoute><PageRegistration/></UnauthorizedRoute>}/>
           <Route path='/forgot-password' element={<UnauthorizedRoute><PageForgotPassword/></UnauthorizedRoute>}/>
-          <Route path='/profile/orders' element={<AuthorizedRoute><PageHistoryOrders/></AuthorizedRoute>}/>
+          <Route path='/profile/orders' element={<AuthorizedRoute><ProfileHistoryOrders/></AuthorizedRoute>}/>
           <Route path='/reset-password' element={<UnauthorizedRoute><PageRecoveryPassword/></UnauthorizedRoute>}/>
           <Route path='/ingredients/:id' element={<PageIngredientsId/>}/>
           <Route path='/feed' element={<PageOrdersFeed/>}/>

@@ -16,14 +16,13 @@ const wsOrdersFeeds = () => store => {
 
     if (type === WS_ORDERS_FEEDS_CONNECT) {
       socket = new WebSocket(payload)
-      console.log('websocket open', store)
     }
 
     if (socket) {
-      socket.onopen = host => dispatch(wsOrdersFeedsConnectingAction(host))
-      socket.onclose = host => dispatch(wsOrdersFeedsDisconnectingAction(host))
-      socket.onerror = host => dispatch(wsOrdersFeedsErrAction(host))
-      socket.onmessage = host => dispatch(wsOrdersFeedsGetMessageAction(JSON.parse(host.data)))
+      socket.onopen = e => dispatch(wsOrdersFeedsConnectingAction(e))
+      socket.onclose = e => dispatch(wsOrdersFeedsDisconnectingAction(e))
+      socket.onerror = e => dispatch(wsOrdersFeedsErrAction(e))
+      socket.onmessage = e => dispatch(wsOrdersFeedsGetMessageAction(JSON.parse(e.data)))
 
       if (type === WS_ORDERS_FEEDS_DISCONNECT && socket.readyState === 1) {
         socket.close(1000, "работа закончена по умолчанию - нормальное закрытие")

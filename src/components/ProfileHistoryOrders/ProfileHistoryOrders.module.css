@@ -1,0 +1,33 @@
+/*.wrapper {*/
+/*  display: flex;*/
+/*  justify-content: space-between;*/
+/*  padding-left: 331px;*/
+/*  max-width: 1224px;*/
+/*  box-sizing: border-box;*/
+/*  align-items: start;*/
+/*}*/
+
+/*.container {*/
+/*  margin-top: 162px;*/
+/*}*/
+
+.feed {
+  display: flex;
+  flex-direction: column;
+  min-width: 608px;
+  gap: 24px;
+
+  max-height: 868px;
+  overflow-y: scroll;
+  background: #801AB2;
+}
+
+.feed::-webkit-scrollbar {
+  width: 8px;
+  background-color: #2F2F37;
+}
+
+.feed::-webkit-scrollbar-thumb {
+  height: 250px;
+  background: #8585AD;
+}

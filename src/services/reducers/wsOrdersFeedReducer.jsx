@@ -32,5 +32,6 @@ export const wsOrdersFeedReducer = (state = initialState, action) => {
       return {
         ...state, openConnection: true, error: false, errorMessage: null, orders: action.payload.orders, total: action.payload.total, totalToday: action.payload.totalToday,
       }
+    default: return state
   }
 }

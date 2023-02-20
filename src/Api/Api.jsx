@@ -16,7 +16,7 @@ const CONFIG = {
 
 export const WS_CONFIG = {
   feedsUrl: `${WS_URL}/orders/all`,
-  userUrl: (token) => `${WS_URL}/orders?token=${token}`
+  userUrl: (token) => `${WS_URL}/orders?token=${token}`,
 }
 
 const checkResponce = res => res.ok ? res.json() : Promise.reject(res.json())

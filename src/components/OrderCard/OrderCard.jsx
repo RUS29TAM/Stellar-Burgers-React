@@ -1,17 +1,52 @@
-import React from 'react';
+import React, {useCallback, useMemo} from 'react';
 import styleOrderCard from "./OrderCard.module.css";
+import {useIngredientsData} from "../../hooks/useIngredientsData";
+import {Link} from "react-router-dom";
+import {getDate, getStatus} from "../../utils/getStatus";
+import currencyIcon from '../../images/icon/currency-icon.svg'
+import PropTypes from "prop-types";
 
-const OrderCard = () => {
+const OrderCard = ({elementPosition,orderInfo}) => {
+  const ingredientsData = useIngredientsData()
+  const price = useMemo(() => orderInfo.ingredients.reduce((a,ingredientId) => ingredientId ? a + ingredientsData.getIngredientPrice(ingredientId) : a,0),[ingredientsData, orderInfo])
+
+  const getLink = useCallback((linkPos) => linkPos === "feed" ? `/feed/${orderInfo._id}` : `/profile/orders/${orderInfo._id}`,[orderInfo])
+
   return (
-    <div className={styleOrderCard.wrapper}>
-      <div className={styleOrderCard.idCaption}>
-        <p className={`text text_type_digits-default`}>#</p>
-        <p className={`text text_type_main-default text_color_inactive`}>15:20</p>
+    <Link to={getLink(elementPosition)} className={styleOrderCard.link} state={{from: elementPosition,order: orderInfo}}>
+
+      <div className={`pt-6 pb-6 pl-6 pr-6 ${styleOrderCard.card}`}>
+        <div className={styleOrderCard.info}>
+          <p className={"text text_type_main-default text_color_primary"}>#{orderInfo.number}</p>
+          <p className={"text text_type_main-default text_color_inactive"}>{getDate(orderInfo.createdAt)}</p>
+        </div>
+        <p className={`text text_type_main-medium text_color_primary mt-6 ${styleOrderCard.title}`}>{orderInfo.name}</p>
+        {orderInfo.status && <p className={orderInfo.status === "done" ? "text text_type_main-small mt-2 text_color_success" : orderInfo.status === "created" ? "text text_type_main-small mt-2 text_color_primary" :  "text text_type_main-small mt-2 text_color_accent"}>{getStatus(orderInfo.status)}</p>}
+        <div className={`${styleOrderCard.info} mt-6`}>
+          <div className={styleOrderCard.ingredientsContainer}>
+            {
+              orderInfo.ingredients.slice(0,6)
+                .map((ingredientId,index) => ingredientId && <div className={styleOrderCard.ingredientImageContainer} data-count={`+${orderInfo.ingredients.slice(6).length}`} key={`${orderInfo._id}-${index}-${ingredientId}`}><img src={ingredientsData.getIngredientImage(ingredientId)} className={styleOrderCard.ingredientImage} alt={"Картинка ингредиента"}/></div>)
+            }
+          </div>
+          <div className={styleOrderCard.price}>
+            <p className={"text text_type_main-default text_color_primary"}>{price}</p>
+            <img src={currencyIcon} alt="Иконка денег" className={styleOrderCard.priceIcon}/>
+          </div>
+        </div>
       </div>
-      <p className={`text text_type_main-medium`}>Name</p>
-      <p className={`text text_type_main-default ${styleOrderCard.status}`}>Status</p>
-    </div>
+    </Link>
   );
 };
+
+OrderCard.propTypes = PropTypes.shape( {
+  createdAt: PropTypes.string.isRequired,
+  ingredients: PropTypes.arrayOf(PropTypes.string.isRequired),
+  name: PropTypes.string.isRequired,
+  number: PropTypes.number.isRequired,
+  status: PropTypes.string.isRequired,
+  _id: PropTypes.string.isRequired,
+  elementPosition: PropTypes.oneOf(["feed","profile"]).isRequired,
+})
 
 export default OrderCard;

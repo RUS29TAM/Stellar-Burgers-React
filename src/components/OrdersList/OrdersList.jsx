@@ -1,36 +1,28 @@
 import React from 'react';
-import OrderCard from "../OrderCard/OrderCard";
 import styleOrderList from "./OrdersList.module.css";
+import PropTypes from "prop-types";
 
-const OrdersList = () => {
+const OrdersList = ({completeOrdersId,inWorkOrdersId}) => {
   return (
-    // <div className={styleOrderList.wrapper}>
-    <div className={styleOrderList.wrapper}>
-      <h1 className={`text text_type_main-large`}>Лента заказов</h1>
-      <div className={styleOrderList.container}>
-
-        <OrderCard/>
-        <OrderCard/>
-        <OrderCard/>
-        <OrderCard/>
-        <OrderCard/>
-        <OrderCard/>
-        <OrderCard/>
-        <OrderCard/>
-        <OrderCard/>
-        <OrderCard/>
-        <OrderCard/>
-        <OrderCard/>
-        <OrderCard/>
-        <OrderCard/>
-        <OrderCard/>
-        <OrderCard/>
-
-
+    <div className={`${styleOrderList.ordersWorkInfo}`}>
+      <div className={styleOrderList.completeContainer}>
+        <p className={'text text_type_main-medium text_color_primary'}>Готовы:</p>
+        <ul className={styleOrderList.flexContainer}>
+          {completeOrdersId.map(orderId => <li className={"text text_type_main-medium text_color_success"} key={orderId}>{orderId}</li>)}
+        </ul>
       </div>
-    </div>
-    // </div>
-  )
+      <div className={styleOrderList.workContainer}>
+        <p className={'text text_type_main-medium text_color_primary'}>В работе:</p>
+        <ul className={`${styleOrderList.flexContainer}`}>
+          {inWorkOrdersId.map(orderId => <li className={"text text_type_main-medium text_color_primary"} key={orderId}>{orderId}</li>)}
+        </ul>
+      </div>
+    </div>)
 };
+
+OrdersList.propTypes = {
+  completeOrdersId: PropTypes.number.isRequired,
+  inWorkOrdersId: PropTypes.number.isRequired,
+}
 
 export default OrdersList;
