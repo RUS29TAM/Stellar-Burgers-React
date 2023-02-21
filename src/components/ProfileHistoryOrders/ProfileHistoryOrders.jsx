@@ -10,13 +10,14 @@ import {WS_CONFIG} from "../../Api/Api";
 import {ingredientsThunk} from "../../services/thunks/ingredientsThunk";
 import Modal from "../Modal/Modal";
 import OrderData from "../OrderData/OrderData";
+import {ingredientsSelectorModified} from "../../services/selectors/ingredientsSelectors";
 
 
 const ProfileHistoryOrders = () => {
   const dispatch = useDispatch()
   const location = useLocation()
   const token = useToken()
-  const ingredients = useSelector(state => state.ingredients)
+  const ingredients = useSelector(ingredientsSelectorModified)
   const navigate = useNavigate()
   const orders = useSelector(wsUserOrderSelectorModified)
   const [orderInfoModalState, setOrderInfoModalState] = useState(location.state?.from === 'profile')
