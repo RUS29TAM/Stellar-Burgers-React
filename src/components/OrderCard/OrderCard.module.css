@@ -102,4 +102,7 @@
 
 .link {
   text-decoration: none;
+  margin: 0 auto;
+  width: 550px;
+
 }

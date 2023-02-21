@@ -11,6 +11,7 @@ import {useLocation, useNavigate} from "react-router-dom";
 import Modal from "../Modal/Modal";
 import IngredientDetails from "../IngredientDetails/IngredientDetails";
 import {SET_INGREDIENT} from "../../services/actions/ingredientDetailsAction";
+import {ingredientsThunk} from "../../services/thunks/ingredientsThunk";
 
 const AppMain = () => {
   const dispatch = useDispatch();
@@ -33,7 +34,7 @@ const AppMain = () => {
   }, [location.state])
 
   useEffect(() => {
-    dispatch(getIngredients());
+    dispatch(ingredientsThunk());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

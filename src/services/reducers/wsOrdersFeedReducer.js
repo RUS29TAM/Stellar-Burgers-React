@@ -1,22 +1,23 @@
 import {
-  WS_ORDERS_USER_ERR,
-  WS_ORDERS_USER_GET_MESSAGE,
-  WS_ORDERS_USER_DISCONNECTING,
-  WS_ORDERS_USER_CONNECTING,
-} from '../actions/wsUserOrdersAction'
+  WS_ORDERS_FEEDS_CONNECTING,
+  WS_ORDERS_FEEDS_GET_MESSAGE,
+  WS_ORDERS_FEEDS_DISCONNECTING,
+  WS_ORDERS_FEEDS_ERR
+} from "../actions/wsOrdersFeedsAction";
 
 const initialState = {
   orders: [],
+  total: 0,
+  totalToday: 0,
   openConnection: false,
   error: false,
   errorMessage: null,
 }
 
-
-export const wsUserOrderReducer = (state = initialState, action) => {
+export const wsOrdersFeedReducer = (state = initialState, action) => {
   switch (action.type) {
 
-    case WS_ORDERS_USER_CONNECTING:
+    case WS_ORDERS_FEEDS_CONNECTING:
       return {
         ...state,
         openConnection: true,
@@ -24,7 +25,7 @@ export const wsUserOrderReducer = (state = initialState, action) => {
         errorMessage: null,
       }
 
-    case WS_ORDERS_USER_DISCONNECTING:
+    case WS_ORDERS_FEEDS_DISCONNECTING:
       return {
         ...state,
         openConnection: false,
@@ -32,7 +33,7 @@ export const wsUserOrderReducer = (state = initialState, action) => {
         errorMessage: null,
       }
 
-    case WS_ORDERS_USER_ERR:
+    case WS_ORDERS_FEEDS_ERR:
       return {
         ...state,
         openConnection: false,
@@ -40,14 +41,16 @@ export const wsUserOrderReducer = (state = initialState, action) => {
         errorMessage: action.payload,
       }
 
-    case WS_ORDERS_USER_GET_MESSAGE:
+    case WS_ORDERS_FEEDS_GET_MESSAGE:
       return {
+        ...state,
         openConnection: true,
         error: false,
         errorMessage: null,
         orders: action.payload.orders,
+        total: action.payload.total,
+        totalToday: action.payload.totalToday,
       }
-
     default:
       return state
   }

@@ -2,7 +2,6 @@ import {SET_INGREDIENT} from "../actions/ingredientDetailsAction";
 
 const initialState = {
   ingredient: null,
-
 }
 
 export const ingredientDetailsReducer = (state = initialState, action) => {

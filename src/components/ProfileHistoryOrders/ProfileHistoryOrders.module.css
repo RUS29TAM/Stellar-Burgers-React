@@ -19,7 +19,7 @@
 
   max-height: 868px;
   overflow-y: scroll;
-  background: #801AB2;
+  padding-top: 200px;
 }
 
 .feed::-webkit-scrollbar {

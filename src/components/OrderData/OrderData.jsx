@@ -5,7 +5,7 @@ import {useIngredientsCountData} from "../../hooks/useIngredientsCountData";
 import OrderDetailsItem from "../OrderDetailsItem/OrderDetailsItem";
 import {getDate, getStatus} from "../../utils/getStatus";
 import currencyIcon from '../../images/icon/currency-icon.svg'
-import PropTypes from "prop-types";
+import {orderDataTypes} from '../../utils/orderDataTypes'
 
 const OrderData = ({orderInfo}) => {
   const {getIngredientPrice,getIngredientData} = useIngredientsData()
@@ -34,12 +34,7 @@ const OrderData = ({orderInfo}) => {
 };
 
 OrderData.propTypes = {
-  createdAt: PropTypes.string.isRequired,
-  ingredients: PropTypes.arrayOf(PropTypes.string.isRequired),
-  name: PropTypes.string.isRequired,
-  number: PropTypes.number.isRequired,
-  status: PropTypes.string.isRequired,
-  _id: PropTypes.string.isRequired
+  orderInfo: orderDataTypes.isRequired
 }
 
 export default OrderData;

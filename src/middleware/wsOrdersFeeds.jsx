@@ -1,7 +1,7 @@
 import {
   WS_ORDERS_FEEDS_CONNECT,
-  wsOrdersFeedsConnectingAction,
   WS_ORDERS_FEEDS_DISCONNECT,
+  wsOrdersFeedsConnectingAction,
   wsOrdersFeedsDisconnectingAction,
   wsOrdersFeedsErrAction,
   wsOrdersFeedsGetMessageAction,
@@ -27,7 +27,8 @@ const wsOrdersFeeds = () => store => {
       if (type === WS_ORDERS_FEEDS_DISCONNECT && socket.readyState === 1) {
         socket.close(1000, "работа закончена по умолчанию - нормальное закрытие")
         socket = null
-      } else if (type === WS_ORDERS_FEEDS_DISCONNECT && socket.readyState === 1) {
+      }
+      else if (type === WS_ORDERS_FEEDS_DISCONNECT && socket.readyState === 1) {
         socket.close(1006, "соединение было потеряно")
         socket = null
       } else if (type === WS_ORDERS_FEEDS_DISCONNECT && socket.readyState === 1) {

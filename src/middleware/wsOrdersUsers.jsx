@@ -1,10 +1,6 @@
 import {
   WS_ORDERS_USER_CONNECT,
-  WS_ORDERS_USER_CONNECTING,
   WS_ORDERS_USER_DISCONNECT,
-  WS_ORDERS_USER_DISCONNECTING,
-  WS_ORDERS_USER_ERR,
-  WS_ORDERS_USER_GET_MESSAGE,
   wsOrdersUserConnectingAction,
   wsOrdersUserDisconnectingAction,
   wsOrdersUserErrAction,

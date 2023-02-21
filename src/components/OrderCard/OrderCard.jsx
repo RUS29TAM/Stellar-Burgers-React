@@ -5,6 +5,7 @@ import {Link} from "react-router-dom";
 import {getDate, getStatus} from "../../utils/getStatus";
 import currencyIcon from '../../images/icon/currency-icon.svg'
 import PropTypes from "prop-types";
+import {orderInfoType} from "../../utils/orderInfoTypes";
 
 const OrderCard = ({elementPosition,orderInfo}) => {
   const ingredientsData = useIngredientsData()
@@ -39,14 +40,9 @@ const OrderCard = ({elementPosition,orderInfo}) => {
   );
 };
 
-OrderCard.propTypes = PropTypes.shape( {
-  createdAt: PropTypes.string.isRequired,
-  ingredients: PropTypes.arrayOf(PropTypes.string.isRequired),
-  name: PropTypes.string.isRequired,
-  number: PropTypes.number.isRequired,
-  status: PropTypes.string.isRequired,
-  _id: PropTypes.string.isRequired,
+OrderCard.propTypes = {
   elementPosition: PropTypes.oneOf(["feed","profile"]).isRequired,
-})
+  orderInfo: orderInfoType.isRequired,
+}
 
 export default OrderCard;
