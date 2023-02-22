@@ -1,7 +1,7 @@
 import React, {useMemo} from 'react';
 import styles from './OrderData.module.css'
 import {useIngredientsData} from "../../hooks/useIngredientsData";
-import {useIngredientsCountData} from "../../hooks/useIngredientsCountData";
+import {useDataCount} from "../../hooks/useDataCount";
 import OrderDetailsItem from "../OrderDetailsItem/OrderDetailsItem";
 import {getDate, getStatus} from "../../utils/getStatus";
 import currencyIcon from '../../images/icon/currency-icon.svg'
@@ -10,7 +10,7 @@ import {orderDataTypes} from '../../utils/orderDataTypes'
 const OrderData = ({orderInfo}) => {
   const {getIngredientPrice,getIngredientData} = useIngredientsData()
   const orderIngredients = useMemo(() => orderInfo.ingredients.map(ingredientId => getIngredientData(ingredientId)),[getIngredientData, orderInfo])
-  const {getIngredientCount} = useIngredientsCountData(orderIngredients)
+  const {getIngredientCount} = useDataCount(orderIngredients)
   const orderPrice = useMemo(() => orderInfo.ingredients.reduce((prev,ingredientId) => prev + getIngredientPrice(ingredientId),0),[getIngredientPrice,orderInfo])
 
   return (

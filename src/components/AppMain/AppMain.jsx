@@ -6,7 +6,6 @@ import {HTML5Backend} from "react-dnd-html5-backend";
 import BurgerIngredients from "../BurgerIngredients/BurgerIngredients";
 import BurgerConstructor from "../BurgerConstructor/BurgerConstructor";
 import {useDispatch, useSelector} from "react-redux";
-import {getIngredients} from "../../services/actions/ingredientsAction";
 import {useLocation, useNavigate} from "react-router-dom";
 import Modal from "../Modal/Modal";
 import IngredientDetails from "../IngredientDetails/IngredientDetails";
@@ -38,7 +37,8 @@ const AppMain = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return (!ingredients.isSuccess
+  return (
+    !ingredients.success
       ?
       <Downloader type='loading'/>
       :
