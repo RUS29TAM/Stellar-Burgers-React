@@ -44,7 +44,7 @@ const {total,totalToday,orders} = useSelector(wsOrdersFeedReducerSelectorModifie
     ingredients.length && orders.length
       ?
       <div className={stylesTape.content}>
-        <h2 className={"text text_type_main-large text_color_primary mt-10 mb-5"}>Лента заказов</h2>
+        <h2 className={"text text_type_main-large text_color_primary mb-5"}>Лента заказов</h2>
         <div className={stylesTape.feedContainer}>
           <div className={`${stylesTape.feeds} pr-4`}>
             {orders.map(order => <OrderCard elementPosition={"feed"} orderInfo={order} key={order._id}/>)}

@@ -38,6 +38,7 @@ const ProfileHistoryOrders = () => {
     }
     // eslint-disable-next-line
   },[])
+
   return (
     <div className={styleProfileHistoryOrders.feed + " pr-4"}>
       {orders.map(order => <OrderCard elementPosition={"profile"} orderInfo={order} key={order._id}/>)}
@@ -49,7 +50,6 @@ const ProfileHistoryOrders = () => {
         </Modal>
       }
     </div>
-
   );
 };
 

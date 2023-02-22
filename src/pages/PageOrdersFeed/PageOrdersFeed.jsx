@@ -12,6 +12,7 @@ import OrderData from "../../components/OrderData/OrderData";
 import {ingredientsSelectorModified} from "../../services/selectors/ingredientsSelectors";
 import {wsOrdersFeedSelectorModified} from "../../services/selectors/wsOrdersFeedSelector";
 import {wsUserOrderSelectorModified} from "../../services/selectors/wsUserOrdersSelector";
+import {wsOrdersUserConnectAction, wsOrdersUserDisconnectAction} from "../../services/actions/wsUserOrdersAction";
 
 const PageOrdersFeed = () => {
 
@@ -33,15 +34,18 @@ const PageOrdersFeed = () => {
       if (location.pathname.includes('feed')) {
         dispatch(wsOrdersFeedsConnectAction(WS_CONFIG.feedsUrl))
       } else {
-        dispatch(wsOrdersFeedsConnectAction(WS_CONFIG.userUrl(token.getToken().replace('Bearer', ''))))
+        dispatch(wsOrdersUserConnectAction(WS_CONFIG.userUrl(token.getToken().replace('Bearer', ''))))
       }
+
       if (location.pathname.includes('feed')) {
         return () => dispatch(wsOrdersFeedDisconnectAction())
+      } else {
+        return () => dispatch(wsOrdersUserDisconnectAction())
       }
     }
   }, [orders, location, dispatch, token])
 
-  return (location.state?.from === 'feed'
+  return (location.state?.from !== 'feed'
       ?
       <PageTape/>
       :
