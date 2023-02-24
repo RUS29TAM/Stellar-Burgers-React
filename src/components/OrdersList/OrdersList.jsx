@@ -21,8 +21,8 @@ const OrdersList = ({completeOrdersId,inWorkOrdersId}) => {
 };
 
 OrdersList.propTypes = {
-  completeOrdersId: PropTypes.number.isRequired,
-  inWorkOrdersId: PropTypes.number.isRequired,
+  completeOrdersId: PropTypes.arrayOf(PropTypes.number.isRequired),
+  inWorkOrdersId: PropTypes.arrayOf(PropTypes.number.isRequired),
 }
 
 export default OrdersList;
