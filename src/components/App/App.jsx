@@ -27,13 +27,14 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Layout/>}>
           <Route index path='/' element={<PageMain/>}/>
-          <Route path='/profile' element={<AuthorizedRoute><PageProfile/></AuthorizedRoute>}/>
+          <Route path='/profile' element={<AuthorizedRoute><PageProfile/></AuthorizedRoute>}>
+            <Route path='orders' element={<AuthorizedRoute><ProfileHistoryOrders/></AuthorizedRoute>}/>
+            <Route path=':id' element={<PageIngredientsId/>}/>
+          </Route>
           <Route path='/login' element={<UnauthorizedRoute><PageLogin/></UnauthorizedRoute>}/>
           <Route path='/registration' element={<UnauthorizedRoute><PageRegistration/></UnauthorizedRoute>}/>
           <Route path='/forgot-password' element={<UnauthorizedRoute><PageForgotPassword/></UnauthorizedRoute>}/>
-          <Route path='/profile/orders' element={<AuthorizedRoute><ProfileHistoryOrders/></AuthorizedRoute>}/>
           <Route path='/reset-password' element={<UnauthorizedRoute><PageRecoveryPassword/></UnauthorizedRoute>}/>
-          <Route path='/ingredients/:id' element={<PageIngredientsId/>}/>
           <Route path='/feed' element={<PageOrdersFeed/>}/>
           <Route path='*' element={<Navigate to='/'/>}/>
         </Route>

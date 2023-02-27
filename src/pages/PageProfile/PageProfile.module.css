@@ -1,7 +1,8 @@
 .wrapper {
   display: flex;
   justify-content: center;
-  padding-right: 377px;
+  /*padding-right: 377px;*/
   box-sizing: border-box;
   align-items: start;
+  position: relative;
 }

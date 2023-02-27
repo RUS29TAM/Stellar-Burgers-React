@@ -1,11 +1,11 @@
 .content {
   margin: 0 auto;
   max-width: 1240px;
-  padding: 150px;
+  padding: 130px 0;
 }
 
 .title {
-  text-align: start;
+  justify-content: start;
 }
 
 .feeds {

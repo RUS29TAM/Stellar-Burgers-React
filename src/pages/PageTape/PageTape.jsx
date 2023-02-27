@@ -1,7 +1,7 @@
 import React, {useCallback, useEffect, useMemo, useState} from 'react';
-import stylesTape from './PageTape.module.css'
-import OrdersList from "../../components/OrdersList/OrdersList";
+import stylesTape from './PageTape.module.css';
 import OrdersStatus from "../../components/OrdersStatus/OrdersStatus";
+import OrdersAllCompleted from "../../components/OrdersAllCompleted/OrdersAllCompleted";
 import PreLoader from "../../components/PreLoader/PreLoader";
 import {useDispatch, useSelector} from "react-redux";
 import {useLocation, useNavigate} from "react-router-dom";
@@ -14,7 +14,7 @@ import {ingredientsThunk} from "../../services/thunks/ingredientsThunk";
 import {wsOrdersFeedDisconnectAction, wsOrdersFeedsConnectAction} from "../../services/actions/wsOrdersFeedsAction";
 import {WS_CONFIG} from "../../Api/Api";
 
-const PageTape = () => {
+  const PageTape = () => {
 const dispatch = useDispatch()
 const location = useLocation()
 const navigate = useNavigate()
@@ -44,15 +44,15 @@ const {total,totalToday,orders} = useSelector(wsOrdersFeedReducerSelectorModifie
     ingredients.length && orders.length
       ?
       <div className={stylesTape.content}>
-        <h2 className={"text text_type_main-large text_color_primary mb-5"}>Лента заказов</h2>
+        <h2 className={` text text_type_main-large text_color_primary mb-5 ${stylesTape.title}`}>Лента заказов</h2>
         <div className={stylesTape.feedContainer}>
           <div className={`${stylesTape.feeds} pr-4`}>
             {orders.map(order => <OrderCard elementPosition={"feed"} orderInfo={order} key={order._id}/>)}
           </div>
           <div className={"ml-15"}>
-            <OrdersList completeOrdersId={completeOrdersList} inWorkOrdersId={inWorkOrdersList}/>
-            <OrdersStatus title={"Выполнено за все время:"} count={total} className={"mt-15"} key={"complete_all_time"}/>
-            <OrdersStatus title={"Выполнено за сегодня:"} count={totalToday} className={"mt-15"} key={"complete_today"}/>
+            <OrdersStatus completeOrdersId={completeOrdersList} inWorkOrdersId={inWorkOrdersList}/>
+            <OrdersAllCompleted title={"Выполнено за все время:"} count={total} className={"mt-15"} key={"complete_all_time"}/>
+            <OrdersAllCompleted title={"Выполнено за сегодня:"} count={totalToday} className={"mt-15"} key={"complete_today"}/>
           </div>
         </div>
         {orderInfoModalState &&

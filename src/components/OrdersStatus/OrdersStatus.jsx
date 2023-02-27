@@ -1,13 +1,28 @@
 import React from 'react';
-import styleOrderStatus from "./OrdersStatus.module.css";
+import styleOrderList from "./OrdersStatus.module.css";
+import PropTypes from "prop-types";
 
-const OrdersStatus = ({className, title, count}) => {
+const OrdersStatus = ({completeOrdersId,inWorkOrdersId}) => {
   return (
-    <div className={className}>
-      <p className={`text text_type_main-medium text_color_primary ${styleOrderStatus.shadow}`}>{title}</p>
-      <p className={`text text_type_digits-large text_color_primary ${styleOrderStatus.shadow}`}>{count}</p>
-    </div>
-  );
+    <div className={`${styleOrderList.ordersWorkInfo}`}>
+      <div className={styleOrderList.completeContainer}>
+        <p className={'text text_type_main-medium text_color_primary'}>Готовы:</p>
+        <ul className={styleOrderList.flexContainer}>
+          {completeOrdersId.map(orderId => <li className={"text text_type_main-medium text_color_success"} key={orderId}>{orderId}</li>)}
+        </ul>
+      </div>
+      <div className={styleOrderList.workContainer}>
+        <p className={'text text_type_main-medium text_color_primary'}>В работе:</p>
+        <ul className={`${styleOrderList.flexContainer}`}>
+          {inWorkOrdersId.map(orderId => <li className={"text text_type_main-medium text_color_primary"} key={orderId}>{orderId}</li>)}
+        </ul>
+      </div>
+    </div>)
 };
+
+OrdersStatus.propTypes = {
+  completeOrdersId: PropTypes.arrayOf(PropTypes.number.isRequired),
+  inWorkOrdersId: PropTypes.arrayOf(PropTypes.number.isRequired),
+}
 
 export default OrdersStatus;
