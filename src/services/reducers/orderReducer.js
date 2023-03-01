@@ -8,8 +8,8 @@ import {
 
 const initialState = {
   currentOrderContent: [],
-  isLoading: false,
-  isError: false,
+  loading: false,
+  error: false,
   createdOrders: null,
   isOrderDetailsModalOpen: false,
 };
@@ -19,19 +19,19 @@ export const orderReducer = (state = initialState, action) => {
     case UPDATE_CURRENT_ORDER_CONTENT:
       return { ...state, currentOrderContent: action.payload };
     case CREATE_ORDER_REQUEST:
-      return { ...state, isLoading: true };
+      return { ...state, loading: true };
     case CREATE_ORDER_SUCCESS:
       const { name, order } = action.payload;
       return {
         ...state,
-        isLoading: false,
+        loading: false,
         currentOrderContent: [],
         createdOrders: { name: name, number: order.number },
       };
     case OPEN_ORDER_DETAILS_MODAL:
       return { ...state, isOrderDetailsModalOpen: true };
     case CREATE_ORDER_FAIL:
-      return { ...state, isLoading: false, isError: true };
+      return { ...state, loading: false, error: true };
     default:
       return state;
   }

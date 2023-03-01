@@ -14,13 +14,13 @@ import {ingredientsThunk} from "../../services/thunks/ingredientsThunk";
 
 const AppMain = () => {
   const dispatch = useDispatch();
-  const {isLoading, isError} = useSelector((store) => store.ingredients);
+  const {loading, error} = useSelector((store) => store.ingredients);
   const ingredients = useSelector(state => state.ingredients)
   const location = useLocation()
-  const [isIngredientDetailsPopupOpen, setIngredientDetailsPopupOpen] = useState(false);
+  const [ingredientDetailsModalState, setIngredientDetailsModalState] = useState(false);
   const navigate = useNavigate()
   const handleIngredientSetOpen = value => {
-    setIngredientDetailsPopupOpen(value)
+    setIngredientDetailsModalState(value)
     navigate('/')
   }
   const ingredientDetails = useSelector(state => state.ingredientDetails.ingredient)
@@ -28,7 +28,7 @@ const AppMain = () => {
   useEffect(() => {
     if (location.state?.ingredient) {
       dispatch({type: SET_INGREDIENT, payload: location.state.ingredient})
-      setIngredientDetailsPopupOpen(true)
+      setIngredientDetailsModalState(true)
     }
   }, [location.state])
 
@@ -44,9 +44,9 @@ const AppMain = () => {
       :
       <div className={`${appStyle.page}`}>
         <main className={`${appStyle.main}`}>
-          {isLoading && <Downloader type='loading'/>}
-          {isError && <Downloader type='error'/>}
-          {(!isLoading && !isError) && (
+          {loading && <Downloader type='loading'/>}
+          {error && <Downloader type='error'/>}
+          {(!loading && !error) && (
             <DndProvider backend={HTML5Backend}>
               <BurgerIngredients/>
               <BurgerConstructor/>
@@ -54,9 +54,9 @@ const AppMain = () => {
           )}
           (
         </main>
-        {isIngredientDetailsPopupOpen && ingredientDetails &&
+        {ingredientDetailsModalState && ingredientDetails &&
         <Modal setOpen={handleIngredientSetOpen}>
-          <IngredientDetails/>
+          <IngredientDetails />
         </Modal>
       }
       </div>

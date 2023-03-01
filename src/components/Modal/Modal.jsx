@@ -42,8 +42,7 @@ const Modal = ({setOpen, children}) => {
 };
 
 Modal.propsTypes = {
-  isOpenPopup: PropTypes.bool.isRequired,
-  setOpenPopup: PropTypes.func.isRequired,
+  setOpen: PropTypes.func.isRequired,
   children: PropTypes.element.isRequired,
 }
 
