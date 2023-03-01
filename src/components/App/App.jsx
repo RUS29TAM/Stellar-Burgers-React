@@ -15,6 +15,7 @@ import PageOrdersFeed from "../../pages/PageOrdersFeed/PageOrdersFeed";
 import AppHeader from "../AppHeader/AppHeader";
 import {checkAuthorizedThunk} from "../../services/thunks/checkAuthorizedThunk";
 import Layout from "../Layout/Layout";
+import PageTape from "../../pages/PageTape/PageTape";
 
 const App = () => {
 
@@ -28,14 +29,18 @@ const App = () => {
         <Route path='/' element={<Layout/>}>
           <Route index path='/' element={<PageMain/>}/>
           <Route path='/profile' element={<AuthorizedRoute><PageProfile/></AuthorizedRoute>}>
-            <Route path='orders' element={<AuthorizedRoute><ProfileHistoryOrders/></AuthorizedRoute>}/>
-            <Route path=':id' element={<PageIngredientsId/>}/>
+            <Route path='orders' element={<AuthorizedRoute><ProfileHistoryOrders/></AuthorizedRoute>}>
+              <Route path=':id' element={<PageOrdersFeed/>}/>
+            </Route>
           </Route>
           <Route path='/login' element={<UnauthorizedRoute><PageLogin/></UnauthorizedRoute>}/>
           <Route path='/registration' element={<UnauthorizedRoute><PageRegistration/></UnauthorizedRoute>}/>
           <Route path='/forgot-password' element={<UnauthorizedRoute><PageForgotPassword/></UnauthorizedRoute>}/>
           <Route path='/reset-password' element={<UnauthorizedRoute><PageRecoveryPassword/></UnauthorizedRoute>}/>
-          <Route path='/feed' element={<PageOrdersFeed/>}/>
+          <Route path='/feed' element={<PageTape/>}>
+            <Route path=':id' element={<PageOrdersFeed/>}/>
+          </Route>
+          <Route path='/ingredients/:id' element={<PageIngredientsId/>}/>
           <Route path='*' element={<Navigate to='/'/>}/>
         </Route>
       </Routes>
