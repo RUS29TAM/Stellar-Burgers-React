@@ -45,14 +45,15 @@ const PageOrdersFeed = () => {
     }
   }, [orders, location, dispatch, token])
 
-  return (location.state?.from === 'feed'
-      ?
-      <PageTape/>
-      :
-      location.state?.from === "profile"
-        ?
-        <PageProfile/>
-        :
+  return (
+      // location.state?.from === 'feed'
+      // ?
+      // <PageTape/>
+      // :
+      // location.state?.from === "profile"
+      //   ?
+      //   <PageProfile/>
+      //   :
         order
           ?
           <div className={"mt-10"}>
