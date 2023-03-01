@@ -34,7 +34,7 @@ const PageOrdersFeed = () => {
       if (location.pathname.includes('feed')) {
         dispatch(wsOrdersFeedsConnectAction(WS_CONFIG.feedsUrl))
       } else {
-        dispatch(wsOrdersUserConnectAction(WS_CONFIG.userUrl(token.getToken().replace('Bearer', ''))))
+        dispatch(wsOrdersUserConnectAction(WS_CONFIG.userUrl(token.getToken().replace('Bearer ', ''))))
       }
 
       if (location.pathname.includes('feed')) {
@@ -45,7 +45,7 @@ const PageOrdersFeed = () => {
     }
   }, [orders, location, dispatch, token])
 
-  return (location.state?.from !== 'feed'
+  return (location.state?.from === 'feed'
       ?
       <PageTape/>
       :
