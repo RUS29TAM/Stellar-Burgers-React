@@ -1,11 +1,11 @@
 import React from 'react';
-import styles from './OrderDetailsItem.module.css'
+import styles from './OrderElement.module.css'
 import currencyIcon from '../../images/icon/currency-icon.svg'
 
-const OrderDetailsItem = ({ingredient,count}) => {
+const OrderElement = ({ingredient,count}) => {
   return (
-    <div className={styles.container}>
-      <div className={styles.imageContainer}>
+    <div className={styles.wrapper}>
+      <div className={styles.imageWrapper}>
         <img src={ingredient.image} alt="ингредиент" className={styles.image}/>
       </div>
       <p className={`${styles.title} text text_type_main-small text_color_primary ml-4`}>{ingredient.name}</p>
@@ -15,4 +15,4 @@ const OrderDetailsItem = ({ingredient,count}) => {
   );
 };
 
-export default OrderDetailsItem;
+export default OrderElement;
