@@ -12,7 +12,6 @@ import Modal from "../Modal/Modal";
 import OrderData from "../OrderData/OrderData";
 import {ingredientsSelectorModified} from "../../services/selectors/ingredientsSelectors";
 
-
 const ProfileHistoryOrders = () => {
   const dispatch = useDispatch()
   const location = useLocation()
@@ -20,14 +19,13 @@ const ProfileHistoryOrders = () => {
   const ingredients = useSelector(ingredientsSelectorModified)
   const navigate = useNavigate()
   const orders = useSelector(wsUserOrderSelectorModified)
-  const [orderInfoModalState, setOrderInfoModalState] = useState(location.state?.from === 'profile')
+  const [orderModalState, setOrderModalState] = useState(location.state?.from === 'profile')
 
-  const handleCloseInfoModal = useCallback(() => {
-    setOrderInfoModalState(false)
+  const closeModal = useCallback(() => {
+    setOrderModalState(false)
     navigate("/profile/orders")
   },[navigate])
 
-  // eslint-disable-next-line
   useEffect(() => {!ingredients.length && dispatch(ingredientsThunk())},[ingredients])
 
   useEffect(() => {
@@ -40,10 +38,10 @@ const ProfileHistoryOrders = () => {
   },[])
 
   return (
-    <div className={styleProfileHistoryOrders.feed + " pr-4"}>
-      {orders.map(order => <OrderCard elementPosition={"profile"} orderInfo={order} key={order._id}/>)}
-      {orderInfoModalState && orders.length &&
-        <Modal handleClose={handleCloseInfoModal}>
+    <div className={styleProfileHistoryOrders.feed}>
+      {orders.map(order => <OrderCard elementLocation={"profile"} orderInfo={order} key={order._id}/>)}
+      {orderModalState && orders.length &&
+        <Modal setOpen={closeModal}>
           <div className={"mt-15 mb-15"}>
             <OrderData orderInfo={orders.find(order => order._id === location.state.order._id)}/>
           </div>

@@ -22,12 +22,17 @@ const ingredients = useSelector(ingredientsSelectorModified)
 const {total,totalToday,orders} = useSelector(wsOrdersFeedReducerSelectorModified)
 
   const [orderInfoModalState,setOrderInfoModalState] = useState(location.state?.from === 'feed')
-  const handleCloseInfoModal = useCallback(() => {
+  const closeModal = useCallback(() => {
     setOrderInfoModalState(false)
     navigate('/feed')
   },[navigate])
 
-  const {completeOrdersList,inWorkOrdersList} = useMemo(() => orders.reduce((prev,order) => order.status === "done" ? {...prev, completeOrdersList: [...prev.completeOrdersList,order.number]} : {...prev, inWorkOrdersList: [...prev.inWorkOrdersList,order.number]},{completeOrdersList: [],inWorkOrdersList: []}),[orders])
+  const {listComplete,listInWork} = useMemo(() => orders.reduce((previous,order) => order.status === "done"
+    ?
+    {...previous, listComplete: [...previous.listComplete,order.number]}
+    :
+    {...previous, listInWork: [...previous.listInWork,order.number]},{listComplete: [],listInWork: []}),
+    [orders])
 
   useEffect(() => {
     if (!ingredients.length) dispatch(ingredientsThunk())
@@ -47,16 +52,16 @@ const {total,totalToday,orders} = useSelector(wsOrdersFeedReducerSelectorModifie
         <h2 className={` text text_type_main-large text_color_primary mb-5 ${stylesTape.title}`}>Лента заказов</h2>
         <div className={stylesTape.feedContainer}>
           <div className={`${stylesTape.feeds} pr-4`}>
-            {orders.map(order => <OrderCard elementPosition={"feed"} orderInfo={order} key={order._id}/>)}
+            {orders.map(order => <OrderCard elementLocation={"feed"} orderInfo={order} key={order._id}/>)}
           </div>
           <div className={"ml-15"}>
-            <OrdersStatus completeOrdersId={completeOrdersList} inWorkOrdersId={inWorkOrdersList}/>
-            <OrdersAllCompleted title={"Выполнено за все время:"} count={total} className={"mt-15"} key={"complete_all_time"}/>
-            <OrdersAllCompleted title={"Выполнено за сегодня:"} count={totalToday} className={"mt-15"} key={"complete_today"}/>
+            <OrdersStatus listComplete={listComplete} listInWork={listInWork}/>
+            <OrdersAllCompleted title={"Выполнено за все время:"} count={total} className={"mt-15"} key={"all-completed"}/>
+            <OrdersAllCompleted title={"Выполнено за сегодня:"} count={totalToday} className={"mt-15"} key={"today-completed"}/>
           </div>
         </div>
         {orderInfoModalState &&
-          <Modal handleClose={handleCloseInfoModal}>
+          <Modal setOpen={closeModal}>
             <div className={"mt-15 mb-15"}>
               <OrderData  orderInfo={orders.find(order => order._id === location.state.order._id)}/>
             </div>

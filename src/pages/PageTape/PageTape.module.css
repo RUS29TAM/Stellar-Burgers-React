@@ -2,6 +2,7 @@
   margin: 0 auto;
   max-width: 1240px;
   padding: 130px 0;
+  height: calc(100vh - 260px);
 }
 
 .title {
@@ -9,17 +10,13 @@
 }
 
 .feeds {
-  max-height: 870px;
-  min-height: 870px;
+  height: calc(100vh - 248px);
   min-width: 584px;
   width: fit-content;
   overflow-y: scroll;
-
-
   display: flex;
   flex-direction: column;
   gap: 16px;
-
 }
 
 .feeds::-webkit-scrollbar {

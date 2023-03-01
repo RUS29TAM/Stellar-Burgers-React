@@ -5,16 +5,23 @@ import {ingredientsSelectorModified} from "../services/selectors/ingredientsSele
 export const useIngredientsData = () => {
   const ingredients = useSelector(ingredientsSelectorModified)
 
-  const ingredientsDataDict = useMemo(() => {
+  const listIngredientsData = useMemo(() => {
     const ingredientsData = {}
     ingredients.forEach(ingredient => ingredientsData[ingredient._id] = ingredient)
     return ingredientsData
   }, [ingredients])
 
-  const getIngredientImage = useCallback(ingredientId => ingredientsDataDict[ingredientId].image,[ingredientsDataDict])
-  const getIngredientPrice = useCallback(ingredientId => ingredientsDataDict[ingredientId].price,[ingredientsDataDict])
-  const getIngredientData = useCallback(ingredientId => ingredientsDataDict[ingredientId],[ingredientsDataDict])
-  const calculateIngredientsPriceFromIdList = useCallback((ingredientsIdList) => ingredientsIdList.reduce((prev,ingredientId) => prev + getIngredientPrice(ingredientId),0),[getIngredientPrice])
+  const getIngredientImage = useCallback(ingredientId => listIngredientsData[ingredientId].image, [listIngredientsData])
+  const getIngredientPrice = useCallback(ingredientId => listIngredientsData[ingredientId].price, [listIngredientsData])
+  const getIngredientData = useCallback(ingredientId => listIngredientsData[ingredientId], [listIngredientsData])
+  const priceCalculationById = useCallback((ingredientsIdList) => ingredientsIdList.reduce((prev, ingredientId) => prev + getIngredientPrice(ingredientId), 0), [getIngredientPrice])
 
-  return useMemo(() => ({ingredientsDataDict,getIngredientPrice,getIngredientImage,getIngredientData,calculateIngredientsPriceFromIdList}),[calculateIngredientsPriceFromIdList, getIngredientData, getIngredientImage, getIngredientPrice, ingredientsDataDict])
+  return useMemo(() => ({
+      listIngredientsData,
+      getIngredientPrice,
+      getIngredientImage,
+      getIngredientData,
+      priceCalculationById
+    }),
+    [priceCalculationById, getIngredientData, getIngredientImage, getIngredientPrice, listIngredientsData])
 }

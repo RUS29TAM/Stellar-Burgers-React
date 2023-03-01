@@ -16,10 +16,9 @@
   flex-direction: column;
   min-width: 608px;
   gap: 24px;
-
-  max-height: 868px;
+  height: calc(100vh - 248px);
   overflow-y: scroll;
-  padding-top: 200px;
+  margin-top: 200px;
 }
 
 .feed::-webkit-scrollbar {
