@@ -1,7 +1,7 @@
 import React from 'react';
 import styleCard from '../IngredientCard/IngredientCard.module.css';
 import {CurrencyIcon, Counter} from '@ya.praktikum/react-developer-burger-ui-components';
-import ingredientType from '../../utils/types';
+import ingredientType from '../../utils/ingredientType';
 import {useDrag} from "react-dnd";
 import PropTypes from "prop-types";
 import {Link} from "react-router-dom";
@@ -14,7 +14,7 @@ const IngredientCard = ({ingredient, getIngredientCount}) => {
 
   return (
     <div ref={dragRef} className={styleCard.card}>
-      <Link to={`/ingredients/${ingredient._id}`} className={"text_color_primary"} replace={true}
+      <Link to={`/ingredients/${ingredient._id}`} className={"text_color_primary"}
             state={{ingredient: ingredient, from: '/', stateModal: true}}>
       <span className={styleCard.span}>
       <img className={`mr-4 ml-4`} src={ingredient.image} alt={ingredient.name}/>
