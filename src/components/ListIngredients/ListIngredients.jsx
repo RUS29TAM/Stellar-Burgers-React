@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import stylesListBasket from './ListIngredients.module.css';
 import IngredientCard from '../IngredientCard/IngredientCard';
-import ingredientType from '../../utils/types';
+import ingredientType from '../../utils/ingredientType';
 
 const ListIngredients = ({heading, list, getIngredientCount}) => {
   return (
