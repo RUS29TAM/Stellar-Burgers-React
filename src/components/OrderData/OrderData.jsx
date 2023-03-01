@@ -2,7 +2,7 @@ import React, {useMemo} from 'react';
 import styles from './OrderData.module.css'
 import {useIngredientsData} from "../../hooks/useIngredientsData";
 import {useDataCount} from "../../hooks/useDataCount";
-import OrderDetailsItem from "../OrderDetailsItem/OrderDetailsItem";
+import OrderElement from "../OrderElement/OrderElement";
 import {getDate, getStatus} from "../../utils/getStatus";
 import currencyIcon from '../../images/icon/currency-icon.svg'
 import {orderDataTypes} from '../../utils/orderDataTypes'
@@ -20,7 +20,7 @@ const OrderData = ({orderInfo}) => {
       <p className={orderInfo.status === "done" ? "text text_type_main-small mt-3 text_color_success" : orderInfo.status === "created" ? "text text_type_main-small mt-3 text_color_primary" : "text text_type_main-small mt-3 text_color_accent"}>{getStatus(orderInfo.status)}</p>
       <p className={"text text_type_main-medium text_color_primary mt-15"}>Состав:</p>
       <div className={`${styles.ingredientsContainer} mt-6 pr-4`}>
-        {[...new Set(orderIngredients)].map(ingredient => <OrderDetailsItem key={ingredient._id} ingredient={ingredient} count={getIngredientCount(ingredient._id)}/>)}
+        {[...new Set(orderIngredients)].map(ingredient => <OrderElement key={ingredient._id} ingredient={ingredient} count={getIngredientCount(ingredient._id)}/>)}
       </div>
       <div className={`${styles.infoContainer} mt-10`}>
         <p className={"text text_type_main-small text_color_inactive"}>{getDate(orderInfo.createdAt)}</p>
