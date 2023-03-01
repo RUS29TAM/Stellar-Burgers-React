@@ -4,7 +4,7 @@ import PageRegistration from '../../pages/PageRegistration/PageRegistration';
 import PageRecoveryPassword from '../../pages/PageRecoveryPassword/PageRecoveryPassword';
 import PageProfile from '../../pages/PageProfile/PageProfile';
 import PageMain from '../../pages/PageMain/PageMain';
-import {Navigate, Route, Routes} from "react-router-dom";
+import {Navigate, Route, Routes, useLocation, useNavigate} from "react-router-dom";
 import PageForgotPassword from '../../pages/PageForgotPassword/PageForgotPassword';
 import PageIngredientsId from '../../pages/PageIngregientsId/PageIngredientsId';
 import UnauthorizedRoute from "../Routes/UnauthorizedRoute";
@@ -16,10 +16,15 @@ import AppHeader from "../AppHeader/AppHeader";
 import {checkAuthorizedThunk} from "../../services/thunks/checkAuthorizedThunk";
 import Layout from "../Layout/Layout";
 import PageTape from "../../pages/PageTape/PageTape";
+import Modal from "../Modal/Modal";
+import IngredientDetails from "../IngredientDetails/IngredientDetails";
+import ModalIngredientsDetails from "../ModalIngredientsDetails/ModalIngredientsDetails";
 
 const App = () => {
-
+  const navigate = useNavigate()
+  const location = useLocation()
   const dispatch = useDispatch()
+
   useEffect(() => dispatch(checkAuthorizedThunk()), [])
 
   return (
@@ -27,7 +32,12 @@ const App = () => {
       <AppHeader/>
       <Routes>
         <Route path='/' element={<Layout/>}>
-          <Route index path='/' element={<PageMain/>}/>
+          <Route path='/' element={<PageMain/>}>
+            {
+                location.state?.from === '/' &&
+                <Route index path='ingredients/:id' element={<ModalIngredientsDetails ingredientDetails={location.state.ingredient}/>}/>
+            }
+          </Route>
           <Route path='/profile' element={<AuthorizedRoute><PageProfile/></AuthorizedRoute>}>
             <Route path='orders' element={<AuthorizedRoute><ProfileHistoryOrders/></AuthorizedRoute>}>
               <Route path=':id' element={<PageOrdersFeed/>}/>
