@@ -4,7 +4,7 @@ import styleIngredients from '../BurgerIngredients/BurgerIngredients.module.css'
 import ListIngredients from '../ListIngredients/ListIngredients';
 import PropTypes from 'prop-types';
 import {useInView} from 'react-intersection-observer';
-import ingredientType from "../../utils/types";
+import ingredientType from "../../utils/ingredientType";
 import {useSelector} from "react-redux";
 
 const BurgerIngredients = ({ingredients}) => {
