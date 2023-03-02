@@ -19,7 +19,7 @@ const IngredientCard = ({ingredient, getIngredientCount}) => {
       <span className={styleCard.span}>
       <img className={`mr-4 ml-4`} src={ingredient.image} alt={ingredient.name}/>
       <div className={`mt-1 mb-1 ${styleCard.price}`}>
-        <span className='text text_type_digits-default'>{ingredient.price}</span>
+        <span className={`text text_type_digits-default ${styleCard.nbsp}`}>{ingredient.price}</span>
         <CurrencyIcon type="primary"/>
       </div>
       <div className={styleCard.name}>

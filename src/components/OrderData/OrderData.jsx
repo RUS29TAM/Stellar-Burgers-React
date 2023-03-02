@@ -9,7 +9,7 @@ import {orderDataTypes} from '../../utils/orderDataTypes'
 import {Outlet} from "react-router-dom";
 import PropTypes from "prop-types";
 
-const OrderData = ({orderData}) => {
+const OrderData = ({orderData, extraClass, isModal = true}) => {
     const {getIngredientPrice, getIngredientData} = useIngredientsData()
     const orderIngredients = useMemo(() => orderData.ingredients.map(ingredientId => getIngredientData(ingredientId)), [getIngredientData, orderData])
     const {getCount} = useDataCount(orderIngredients)
@@ -18,7 +18,7 @@ const OrderData = ({orderData}) => {
     return (
         <>
             <div className={`${styles.container}`}>
-                <p className={`text text_type_main-default text_color_primary ${styles.id}`}>#{orderData.number}</p>
+                <p className={`text text_type_main-default text_color_primary  ${styles.id} ${extraClass} ${!isModal && styles.idCentre}` }>#{orderData.number}</p>
                 <p className={`text text_type_main-medium text_color_primary mt-10 ${styles.title}`}>{orderData.name}</p>
                 <p className={orderData.status === "done" ? "text text_type_main-small mt-3 text_color_success" : orderData.status === "created" ? "text text_type_main-small mt-3 text_color_primary" : "text text_type_main-small mt-3 text_color_accent"}>{getStatus(orderData.status)}</p>
                 <p className={"text text_type_main-medium text_color_primary mt-15"}>Состав:</p>
@@ -41,6 +41,8 @@ const OrderData = ({orderData}) => {
 };
 
 OrderData.propTypes = {
-    orderData: orderDataTypes.isRequired
+    orderData: orderDataTypes.isRequired,
+    extraClass: PropTypes.string,
+    isModal: PropTypes.bool,
 }
 export default OrderData;
