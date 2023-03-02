@@ -5,8 +5,6 @@ import useToken from "../../hooks/useToken";
 import {ingredientsThunk} from "../../services/thunks/ingredientsThunk";
 import {wsOrdersFeedDisconnectAction, wsOrdersFeedsConnectAction} from "../../services/actions/wsOrdersFeedsAction";
 import {WS_CONFIG} from "../../Api/Api";
-import PageTape from "../PageTape/PageTape";
-import PageProfile from "../PageProfile/PageProfile";
 import PreLoader from "../../components/PreLoader/PreLoader";
 import OrderData from "../../components/OrderData/OrderData";
 import {ingredientsSelectorModified} from "../../services/selectors/ingredientsSelectors";
@@ -46,18 +44,11 @@ const PageOrdersFeed = () => {
   }, [orders, location, dispatch, token])
 
   return (
-      // location.state?.from === 'feed'
-      // ?
-      // <PageTape/>
-      // :
-      // location.state?.from === "profile"
-      //   ?
-      //   <PageProfile/>
-      //   :
+
         order
           ?
-          <div className={"mt-10"}>
-            <OrderData orderData={order}/>
+          <div className={"pt-30"}>
+            <OrderData extraClass={'extraClass'} isModal={false} orderData={order}/>
           </div>
           :
           <PreLoader/>
