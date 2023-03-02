@@ -17,8 +17,8 @@ import {checkAuthorizedThunk} from "../../services/thunks/checkAuthorizedThunk";
 import Layout from "../Layout/Layout";
 import PageTape from "../../pages/PageTape/PageTape";
 import Modal from "../Modal/Modal";
-import IngredientDetails from "../IngredientDetails/IngredientDetails";
 import ModalIngredientsDetails from "../ModalIngredientsDetails/ModalIngredientsDetails";
+import OrderData from "../OrderData/OrderData";
 
 const App = () => {
   const navigate = useNavigate()
@@ -39,17 +39,18 @@ const App = () => {
             }
           </Route>
           <Route path='/profile' element={<AuthorizedRoute><PageProfile/></AuthorizedRoute>}>
-            <Route path='orders' element={<AuthorizedRoute><ProfileHistoryOrders/></AuthorizedRoute>}>
-              <Route path=':id' element={<PageOrdersFeed/>}/>
+            <Route path='orders' element={<ProfileHistoryOrders/>}>
+              {location.state?.from === "profile" && <Route path=":id" element={<Modal setOpen={() => navigate(-1)} children={<OrderData orderData={location.state.order}/>}/>}/>}
             </Route>
           </Route>
+            <Route path="/profile/orders/:id" element={<AuthorizedRoute><PageOrdersFeed/></AuthorizedRoute>}/>
           <Route path='/login' element={<UnauthorizedRoute><PageLogin/></UnauthorizedRoute>}/>
           <Route path='/registration' element={<UnauthorizedRoute><PageRegistration/></UnauthorizedRoute>}/>
           <Route path='/forgot-password' element={<UnauthorizedRoute><PageForgotPassword/></UnauthorizedRoute>}/>
           <Route path='/reset-password' element={<UnauthorizedRoute><PageRecoveryPassword/></UnauthorizedRoute>}/>
           <Route path='/feed' element={<PageTape/>}>
-            <Route path=':id' element={<PageOrdersFeed/>}/>
-          </Route>
+              {location.state?.from === "feed" && <Route path=":id" element={<Modal setOpen={() => navigate(-1)} children={<OrderData orderData={location.state.order}/>}/>}/>}</Route>
+            <Route path="/feed/:id" element={<PageOrdersFeed/>}/>
           <Route path='/ingredients/:id' element={<PageIngredientsId/>}/>
           <Route path='*' element={<Navigate to='/'/>}/>
         </Route>
