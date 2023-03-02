@@ -6,5 +6,5 @@ export const orderDataTypes = PropTypes.shape({
   name: PropTypes.string.isRequired,
   number: PropTypes.number.isRequired,
   status: PropTypes.string.isRequired,
-  _id: PropTypes.string.isRequired
+  _id: PropTypes.string.isRequired,
 })

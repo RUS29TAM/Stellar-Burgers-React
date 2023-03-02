@@ -2,7 +2,7 @@ import React, {useCallback, useEffect, useState} from 'react';
 import styleProfileHistoryOrders from './ProfileHistoryOrders.module.css';
 import OrderCard from "../OrderCard/OrderCard";
 import {useDispatch, useSelector} from "react-redux";
-import {useLocation, useNavigate} from "react-router-dom";
+import {Outlet, useLocation, useNavigate} from "react-router-dom";
 import useToken from "../../hooks/useToken";
 import {wsUserOrderSelectorModified} from "../../services/selectors/wsUserOrdersSelector";
 import {wsOrdersUserConnectAction, wsOrdersUserDisconnectAction} from "../../services/actions/wsUserOrdersAction";
@@ -39,14 +39,15 @@ const ProfileHistoryOrders = () => {
 
   return (
     <div className={styleProfileHistoryOrders.feed}>
-      {orders.map(order => <OrderCard elementLocation={"profile"} orderInfo={order} key={order._id}/>)}
+      {orders.map(order => <OrderCard elementLocation={"profile"} orderData={order} key={order._id}/>)}
       {orderModalState && orders.length &&
         <Modal setOpen={closeModal}>
           <div className={"mt-15 mb-15"}>
-            <OrderData orderInfo={orders.find(order => order._id === location.state.order._id)}/>
+            <OrderData orderData={orders.find(order => order._id === location.state.order._id)}/>
           </div>
         </Modal>
       }
+      <Outlet />
     </div>
   );
 };

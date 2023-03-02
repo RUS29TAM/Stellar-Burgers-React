@@ -6,35 +6,42 @@ import OrderElement from "../OrderElement/OrderElement";
 import {getDate, getStatus} from "../../utils/getStatus";
 import currencyIcon from '../../images/icon/currency-icon.svg'
 import {orderDataTypes} from '../../utils/orderDataTypes'
+import {Outlet} from "react-router-dom";
+import PropTypes from "prop-types";
 
-const OrderData = ({orderInfo}) => {
-  const {getIngredientPrice,getIngredientData} = useIngredientsData()
-  const orderIngredients = useMemo(() => orderInfo.ingredients.map(ingredientId => getIngredientData(ingredientId)),[getIngredientData, orderInfo])
-  const {getIngredientCount} = useDataCount(orderIngredients)
-  const orderPrice = useMemo(() => orderInfo.ingredients.reduce((prev,ingredientId) => prev + getIngredientPrice(ingredientId),0),[getIngredientPrice,orderInfo])
+const OrderData = ({orderData}) => {
+    const {getIngredientPrice, getIngredientData} = useIngredientsData()
+    console.log(orderData)
+    const orderIngredients = useMemo(() => orderData.ingredients.map(ingredientId => getIngredientData(ingredientId)), [getIngredientData, orderData])
+    const {getCount} = useDataCount(orderIngredients)
+    const orderPrice = useMemo(() => orderData.ingredients.reduce((prev, ingredientId) => prev + getIngredientPrice(ingredientId), 0), [getIngredientPrice, orderData])
 
-  return (
-    <div className={`${styles.container}`}>
-      <p className={`text text_type_main-default text_color_primary ${styles.id}`}>#{orderInfo.number}</p>
-      <p className={`text text_type_main-medium text_color_primary mt-10 ${styles.title}`}>{orderInfo.name}</p>
-      <p className={orderInfo.status === "done" ? "text text_type_main-small mt-3 text_color_success" : orderInfo.status === "created" ? "text text_type_main-small mt-3 text_color_primary" : "text text_type_main-small mt-3 text_color_accent"}>{getStatus(orderInfo.status)}</p>
-      <p className={"text text_type_main-medium text_color_primary mt-15"}>Состав:</p>
-      <div className={`${styles.ingredientsContainer} mt-6 pr-4`}>
-        {[...new Set(orderIngredients)].map(ingredient => <OrderElement key={ingredient._id} ingredient={ingredient} count={getIngredientCount(ingredient._id)}/>)}
-      </div>
-      <div className={`${styles.infoContainer} mt-10`}>
-        <p className={"text text_type_main-small text_color_inactive"}>{getDate(orderInfo.createdAt)}</p>
-        <div className={styles.price}>
-          <p className={"text text_type_digits-default text_color_primary"}>{orderPrice}</p>
-          <img src={currencyIcon} alt="Иконка денег" className={styles.priceIcon}/>
-        </div>
-      </div>
-    </div>
-  );
+    return (
+        <>
+            <div className={`${styles.container}`}>
+                <p className={`text text_type_main-default text_color_primary ${styles.id}`}>#{orderData.number}</p>
+                <p className={`text text_type_main-medium text_color_primary mt-10 ${styles.title}`}>{orderData.name}</p>
+                <p className={orderData.status === "done" ? "text text_type_main-small mt-3 text_color_success" : orderData.status === "created" ? "text text_type_main-small mt-3 text_color_primary" : "text text_type_main-small mt-3 text_color_accent"}>{getStatus(orderData.status)}</p>
+                <p className={"text text_type_main-medium text_color_primary mt-15"}>Состав:</p>
+                <div className={`${styles.ingredientsContainer} mt-6 pr-4`}>
+                    {[...new Set(orderIngredients)].map(ingredient => <OrderElement key={ingredient._id}
+                                                                                    ingredient={ingredient}
+                                                                                    count={getCount(ingredient._id)}/>)}
+                </div>
+                <div className={`${styles.infoContainer} mt-10`}>
+                    <p className={"text text_type_main-small text_color_inactive"}>{getDate(orderData.createdAt)}</p>
+                    <div className={styles.price}>
+                        <p className={"text text_type_digits-default text_color_primary"}>{orderPrice}</p>
+                        <img src={currencyIcon} alt="Валюта" className={styles.priceIcon}/>
+                    </div>
+                </div>
+            </div>
+            <Outlet/>
+        </>
+    );
 };
 
 OrderData.propTypes = {
-  orderInfo: orderDataTypes.isRequired
+    orderData: orderDataTypes.isRequired
 }
-
 export default OrderData;

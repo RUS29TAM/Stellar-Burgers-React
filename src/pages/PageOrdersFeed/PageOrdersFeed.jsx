@@ -57,7 +57,7 @@ const PageOrdersFeed = () => {
         order
           ?
           <div className={"mt-10"}>
-            <OrderData orderInfo={order}/>
+            <OrderData orderData={order}/>
           </div>
           :
           <PreLoader/>
