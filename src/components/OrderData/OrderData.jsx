@@ -11,7 +11,6 @@ import PropTypes from "prop-types";
 
 const OrderData = ({orderData}) => {
     const {getIngredientPrice, getIngredientData} = useIngredientsData()
-    console.log(orderData)
     const orderIngredients = useMemo(() => orderData.ingredients.map(ingredientId => getIngredientData(ingredientId)), [getIngredientData, orderData])
     const {getCount} = useDataCount(orderIngredients)
     const orderPrice = useMemo(() => orderData.ingredients.reduce((prev, ingredientId) => prev + getIngredientPrice(ingredientId), 0), [getIngredientPrice, orderData])
