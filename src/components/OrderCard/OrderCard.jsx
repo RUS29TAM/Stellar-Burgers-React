@@ -42,7 +42,7 @@ const OrderCard = ({elementLocation ,orderData}) => {
 
 OrderCard.propTypes = {
   elementLocation: PropTypes.oneOf(["feed","profile"]).isRequired,
-    orderData: orderInfoType.isRequired,
+  orderData: orderInfoType.isRequired,
 }
 
 export default OrderCard;
