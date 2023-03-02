@@ -15,7 +15,7 @@ const IngredientCard = ({ingredient, getIngredientCount}) => {
   return (
     <div ref={dragRef} className={styleCard.card}>
       <Link to={`/ingredients/${ingredient._id}`} className={"text_color_primary"}
-            state={{ingredient: ingredient, from: '/', stateModal: true}}>
+            state={{ingredient: ingredient, from: '/'}}>
       <span className={styleCard.span}>
       <img className={`mr-4 ml-4`} src={ingredient.image} alt={ingredient.name}/>
       <div className={`mt-1 mb-1 ${styleCard.price}`}>

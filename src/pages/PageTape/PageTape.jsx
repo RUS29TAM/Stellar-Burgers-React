@@ -4,11 +4,9 @@ import OrdersStatus from "../../components/OrdersStatus/OrdersStatus";
 import OrdersAllCompleted from "../../components/OrdersAllCompleted/OrdersAllCompleted";
 import PreLoader from "../../components/PreLoader/PreLoader";
 import {useDispatch, useSelector} from "react-redux";
-import {useLocation, useNavigate} from "react-router-dom";
+import {Outlet, useLocation, useNavigate} from "react-router-dom";
 import {wsOrdersFeedReducerSelectorModified} from "../../services/selectors/wsOrdersFeedSelector";
 import OrderCard from "../../components/OrderCard/OrderCard";
-import Modal from "../../components/Modal/Modal";
-import OrderData from "../../components/OrderData/OrderData";
 import {ingredientsSelectorModified} from "../../services/selectors/ingredientsSelectors";
 import {ingredientsThunk} from "../../services/thunks/ingredientsThunk";
 import {wsOrdersFeedDisconnectAction, wsOrdersFeedsConnectAction} from "../../services/actions/wsOrdersFeedsAction";
@@ -52,7 +50,7 @@ const {total,totalToday,orders} = useSelector(wsOrdersFeedReducerSelectorModifie
         <h2 className={` text text_type_main-large text_color_primary mb-5 ${stylesTape.title}`}>Лента заказов</h2>
         <div className={stylesTape.feedContainer}>
           <div className={`${stylesTape.feeds} pr-4`}>
-            {orders.map(order => <OrderCard elementLocation={"feed"} orderInfo={order} key={order._id}/>)}
+            {orders.map(order => <OrderCard elementLocation={"feed"} orderData={order} key={order._id}/>)}
           </div>
           <div className={"ml-15"}>
             <OrdersStatus listComplete={listComplete} listInWork={listInWork}/>
@@ -60,13 +58,7 @@ const {total,totalToday,orders} = useSelector(wsOrdersFeedReducerSelectorModifie
             <OrdersAllCompleted title={"Выполнено за сегодня:"} count={totalToday} className={"mt-15"} key={"today-completed"}/>
           </div>
         </div>
-        {orderInfoModalState &&
-          <Modal setOpen={closeModal}>
-            <div className={"mt-15 mb-15"}>
-              <OrderData  orderInfo={orders.find(order => order._id === location.state.order._id)}/>
-            </div>
-          </Modal>
-        }
+          <Outlet />
       </div>
       :
       <PreLoader/>

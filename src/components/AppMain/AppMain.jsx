@@ -7,8 +7,6 @@ import BurgerIngredients from "../BurgerIngredients/BurgerIngredients";
 import BurgerConstructor from "../BurgerConstructor/BurgerConstructor";
 import {useDispatch, useSelector} from "react-redux";
 import {Outlet, useLocation, useNavigate} from "react-router-dom";
-import Modal from "../Modal/Modal";
-import IngredientDetails from "../IngredientDetails/IngredientDetails";
 import {SET_INGREDIENT} from "../../services/actions/ingredientDetailsAction";
 import {ingredientsThunk} from "../../services/thunks/ingredientsThunk";
 
@@ -54,11 +52,6 @@ const AppMain = () => {
           )}
           <Outlet/>
         </main>
-      {/*  {ingredientDetailsModalState && ingredientDetails &&*/}
-      {/*  <Modal setOpen={handleIngredientSetOpen}>*/}
-      {/*    <IngredientDetails />*/}
-      {/*  </Modal>*/}
-      {/*}*/}
       </div>
   );
 };
