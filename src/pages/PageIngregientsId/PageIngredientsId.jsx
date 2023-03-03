@@ -5,6 +5,7 @@ import api from "../../Api/Api";
 import PageMain from "../PageMain/PageMain";
 import {useDispatch, useSelector} from "react-redux";
 import {SET_INGREDIENT} from "../../services/actions/ingredientDetailsAction";
+import PreLoader from "../../components/PreLoader/PreLoader";
 
 const PageIngredientsId = () => {
   const location = useLocation()
@@ -31,7 +32,7 @@ const PageIngredientsId = () => {
         ?
         <IngredientDetails extraClass={'mt-30'} isModal={false}/>
         :
-        'loading...'
+        <PreLoader />
   );
 };
 
