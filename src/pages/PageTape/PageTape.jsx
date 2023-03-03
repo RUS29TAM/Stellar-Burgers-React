@@ -51,7 +51,7 @@ const PageTape = () => {
             <div className={stylesTape.content}>
                 <h2 className={` text text_type_main-large text_color_primary mb-5 ${stylesTape.title}`}>Лента
                     заказов</h2>
-                <div className={stylesTape.feedContainer} extraClass={'extraClass'} pageProfile={false}>
+                <div className={stylesTape.feedContainer} extraclass={'extraClass'} ispageprofile={false}>
                     <div className={`${stylesTape.feeds} pr-4`}>
                         {orders.map(order => <OrderCard elementLocation={"feed"} orderData={order} key={order._id}/>)}
                     </div>

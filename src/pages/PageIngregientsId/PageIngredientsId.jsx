@@ -30,7 +30,7 @@ const PageIngredientsId = () => {
       :
       ingredient !== null
         ?
-        <IngredientDetails extraClass={'mt-30'} isModal={false}/>
+        <IngredientDetails extraclass={'mt-30'} isModal={false}/>
         :
         <PreLoader />
   );

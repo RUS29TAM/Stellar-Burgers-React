@@ -48,7 +48,7 @@ const PageOrdersFeed = () => {
         order
           ?
           <div className={"pt-30"}>
-            <OrderData extraClass={'extraClass'} isModal={false} orderData={order}/>
+            <OrderData extraclass={'extraClass'} isModal={false} orderData={order}/>
           </div>
           :
           <PreLoader/>

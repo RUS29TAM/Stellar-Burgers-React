@@ -11,8 +11,9 @@ import {ingredientsThunk} from "../../services/thunks/ingredientsThunk";
 import Modal from "../Modal/Modal";
 import OrderData from "../OrderData/OrderData";
 import {ingredientsSelectorModified} from "../../services/selectors/ingredientsSelectors";
+import PropTypes from "prop-types";
 
-const ProfileHistoryOrders = ({extraClass, pageProfile = true}) => {
+const ProfileHistoryOrders = ({extraClass, ispageprofile = true}) => {
     const dispatch = useDispatch()
     const location = useLocation()
     const token = useToken()
@@ -41,8 +42,8 @@ const ProfileHistoryOrders = ({extraClass, pageProfile = true}) => {
 
     return (
         <div
-            className={`${styleProfileHistoryOrders.feed} ${extraClass} ${pageProfile && styleProfileHistoryOrders.feedExtra}`}>
-            {orders.map(order => <OrderCard extraClass={'extraClass'} pageProfile={true} elementLocation={"profile"}
+            className={`${styleProfileHistoryOrders.feed} ${extraClass} ${ispageprofile && styleProfileHistoryOrders.feedExtra}`}>
+            {orders.map(order => <OrderCard extraclass={'extraClass'} ispageprofile={true} elementLocation={"profile"}
                                             orderData={order} key={order._id}/>)}
             {orderModalState && orders.length &&
                 <Modal setOpen={closeModal}>
@@ -55,5 +56,10 @@ const ProfileHistoryOrders = ({extraClass, pageProfile = true}) => {
         </div>
     );
 };
+
+ProfileHistoryOrders.propTypes = {
+    extraClass: PropTypes.string,
+    ispageprofile: PropTypes.bool,
+}
 
 export default ProfileHistoryOrders;
