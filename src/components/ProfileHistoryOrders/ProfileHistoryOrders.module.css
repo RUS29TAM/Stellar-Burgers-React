@@ -1,0 +1,26 @@
+.feed {
+    display: flex;
+    flex-direction: column;
+    min-width: 608px;
+    max-width: 880px;
+    gap: 24px;
+    height: calc(100vh - 248px);
+    overflow-y: scroll;
+}
+
+.feed::-webkit-scrollbar {
+    width: 8px;
+    background-color: #2F2F37;
+}
+
+.feed::-webkit-scrollbar-thumb {
+    height: 250px;
+    background: #8585AD;
+}
+
+.feedExtra {
+    text-decoration: none;
+    margin: 0 auto;
+    width: 880px;
+    overflow-x: hidden;
+}

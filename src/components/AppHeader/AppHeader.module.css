@@ -1,69 +1,69 @@
 .header {
-  position: absolute;
-  z-index: 1000;
-  background-color: #1C1C21;
-  box-shadow: 0 24px 32px rgba(0, 0, 0, 0.04), 0 16px 24px rgba(0, 0, 0, 0.04), 0 4px 8px rgba(0, 0, 0, 0.04), 0 0 1px rgba(0, 0, 0, 0.04);
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    position: absolute;
+    z-index: 10;
+    background-color: #1C1C21;
+    box-shadow: 0 24px 32px rgba(0, 0, 0, 0.04), 0 16px 24px rgba(0, 0, 0, 0.04), 0 4px 8px rgba(0, 0, 0, 0.04), 0 0 1px rgba(0, 0, 0, 0.04);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .headerContainer {
-  width: 1280px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  user-select: none;
+    width: 1280px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
 }
 
 .headerContainer > * {
-  flex: 1;
+    flex: 1;
 }
 
 .navigationList {
-  display: flex;
-  list-style: none;
-  gap: 8px;
+    display: flex;
+    list-style: none;
+    gap: 8px;
 }
 
 .navigationLink {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
 }
 
 .navigationLink:hover span {
-  color: var(--text-primary-color);
+    color: var(--text-primary-color);
 }
 
 .navigationLink:hover svg {
-  fill: var(--text-primary-color);
+    fill: var(--text-primary-color);
 }
 
 .navigationLink:visited {
-  color: unset;
+    color: unset;
 }
 
 .personalAccount {
-  display: flex;
-  justify-content: flex-end;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .navigationLink_active {
-  color: var(--text-primary-color);
+    color: var(--text-primary-color);
 }
 
 .navigationLink_active svg {
-  fill: var(--text-primary-color);
+    fill: var(--text-primary-color);
 }
 
 .span {
-  color: inherit;
+    color: inherit;
 }

@@ -8,43 +8,42 @@ import ModalOverlay from '../ModalOverlay/ModalOverlay';
 const modalNode = document.getElementById('modal');
 
 const Modal = ({setOpen, children}) => {
-  const closeModal = (event) => {
-    event.stopPropagation();
-    setOpen(false);
-  };
-
-  useEffect(() => {
-    const handleCloseEscape = (event) => {
-      if (event.key === 'Escape') {
-        closeModal(event);
-      }
+    const closeModal = (event) => {
+        event.stopPropagation();
+        setOpen(false);
     };
 
-    document.addEventListener('keydown', handleCloseEscape);
+    useEffect(() => {
+        const handleCloseEscape = (event) => {
+            if (event.key === 'Escape') {
+                closeModal(event);
+            }
+        };
 
-    return () => document.removeEventListener('keydown', handleCloseEscape);
-    // eslint-disable-next-line
-  }, []);
+        document.addEventListener('keydown', handleCloseEscape);
+
+        return () => document.removeEventListener('keydown', handleCloseEscape);
+        // eslint-disable-next-line
+    }, []);
 
 
-  const modal = (
-    <div>
-      <ModalOverlay onClick={closeModal}/>
-      <div className={` ${styleModal.popup}`}>
-        <button className={`${styleModal.closeBtn}`} onClick={closeModal}>
-          <CloseIcon type="primary"/>
-        </button>
-        {children}
-      </div>
-    </div>
-  );
-  return ReactDOM.createPortal(modal, modalNode);
+    const modal = (
+        <div>
+            <ModalOverlay onClick={closeModal}/>
+            <div className={` ${styleModal.popup}`}>
+                <button className={`${styleModal.closeBtn}`} onClick={closeModal}>
+                    <CloseIcon type="primary"/>
+                </button>
+                {children}
+            </div>
+        </div>
+    );
+    return ReactDOM.createPortal(modal, modalNode);
 };
 
 Modal.propsTypes = {
-  isOpenPopup: PropTypes.bool.isRequired,
-  setOpenPopup: PropTypes.func.isRequired,
-  children: PropTypes.element.isRequired,
+    setOpen: PropTypes.func.isRequired,
+    children: PropTypes.element.isRequired,
 }
 
 export default Modal
