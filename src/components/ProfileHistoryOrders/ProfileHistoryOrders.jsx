@@ -12,44 +12,48 @@ import Modal from "../Modal/Modal";
 import OrderData from "../OrderData/OrderData";
 import {ingredientsSelectorModified} from "../../services/selectors/ingredientsSelectors";
 
-const ProfileHistoryOrders = () => {
-  const dispatch = useDispatch()
-  const location = useLocation()
-  const token = useToken()
-  const ingredients = useSelector(ingredientsSelectorModified)
-  const navigate = useNavigate()
-  const orders = useSelector(wsUserOrderSelectorModified)
-  const [orderModalState, setOrderModalState] = useState(location.state?.from === 'profile')
+const ProfileHistoryOrders = ({extraClass, pageProfile = true}) => {
+    const dispatch = useDispatch()
+    const location = useLocation()
+    const token = useToken()
+    const ingredients = useSelector(ingredientsSelectorModified)
+    const navigate = useNavigate()
+    const orders = useSelector(wsUserOrderSelectorModified)
+    const [orderModalState, setOrderModalState] = useState(location.state?.from === 'profile')
 
-  const closeModal = useCallback(() => {
-    setOrderModalState(false)
-    navigate("/profile/orders")
-  },[navigate])
+    const closeModal = useCallback(() => {
+        setOrderModalState(false)
+        navigate("/profile/orders")
+    }, [navigate])
 
-  useEffect(() => {!ingredients.length && dispatch(ingredientsThunk())},[ingredients])
+    useEffect(() => {
+        !ingredients.length && dispatch(ingredientsThunk())
+    }, [ingredients])
 
-  useEffect(() => {
-    dispatch(wsOrdersUserConnectAction(WS_CONFIG.userUrl(token.getToken().split(" ")[1])))
+    useEffect(() => {
+        dispatch(wsOrdersUserConnectAction(WS_CONFIG.userUrl(token.getToken().split(" ")[1])))
 
-    return () => {
-      dispatch(wsOrdersUserDisconnectAction())
-    }
-    // eslint-disable-next-line
-  },[])
+        return () => {
+            dispatch(wsOrdersUserDisconnectAction())
+        }
+        // eslint-disable-next-line
+    }, [])
 
-  return (
-    <div className={styleProfileHistoryOrders.feed}>
-      {orders.map(order => <OrderCard elementLocation={"profile"} orderData={order} key={order._id}/>)}
-      {orderModalState && orders.length &&
-        <Modal setOpen={closeModal}>
-          <div className={"mt-15 mb-15"}>
-            <OrderData orderData={orders.find(order => order._id === location.state.order._id)}/>
-          </div>
-        </Modal>
-      }
-      <Outlet />
-    </div>
-  );
+    return (
+        <div
+            className={`${styleProfileHistoryOrders.feed} ${extraClass} ${pageProfile && styleProfileHistoryOrders.feedExtra}`}>
+            {orders.map(order => <OrderCard extraClass={'extraClass'} pageProfile={true} elementLocation={"profile"}
+                                            orderData={order} key={order._id}/>)}
+            {orderModalState && orders.length &&
+                <Modal setOpen={closeModal}>
+                    <div className={"mt-15 mb-15"}>
+                        <OrderData orderData={orders.find(order => order._id === location.state.order._id)}/>
+                    </div>
+                </Modal>
+            }
+            <Outlet/>
+        </div>
+    );
 };
 
 export default ProfileHistoryOrders;
