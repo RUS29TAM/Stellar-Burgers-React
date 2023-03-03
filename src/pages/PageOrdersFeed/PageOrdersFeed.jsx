@@ -14,45 +14,45 @@ import {wsOrdersUserConnectAction, wsOrdersUserDisconnectAction} from "../../ser
 
 const PageOrdersFeed = () => {
 
-  const dispatch = useDispatch()
-  const location = useLocation()
-  const {id} = useParams()
-  const token = useToken()
-  const ingredients = useSelector(ingredientsSelectorModified)
-  const orders = useSelector(location.pathname.includes('feed') ? wsOrdersFeedSelectorModified : wsUserOrderSelectorModified)
+    const dispatch = useDispatch()
+    const location = useLocation()
+    const {id} = useParams()
+    const token = useToken()
+    const ingredients = useSelector(ingredientsSelectorModified)
+    const orders = useSelector(location.pathname.includes('feed') ? wsOrdersFeedSelectorModified : wsUserOrderSelectorModified)
 
-  const order = location.state?.order || orders.find(order => order._id === id)
+    const order = location.state?.order || orders.find(order => order._id === id)
 
-  useEffect(() => {
-    if (!ingredients.length) dispatch(ingredientsThunk())
-  }, [ingredients, dispatch])
+    useEffect(() => {
+        if (!ingredients.length) dispatch(ingredientsThunk())
+    }, [ingredients, dispatch])
 
-  useEffect(() => {
-    if (!orders.length) {
-      if (location.pathname.includes('feed')) {
-        dispatch(wsOrdersFeedsConnectAction(WS_CONFIG.feedsUrl))
-      } else {
-        dispatch(wsOrdersUserConnectAction(WS_CONFIG.userUrl(token.getToken().replace('Bearer ', ''))))
-      }
+    useEffect(() => {
+        if (!orders.length) {
+            if (location.pathname.includes('feed')) {
+                dispatch(wsOrdersFeedsConnectAction(WS_CONFIG.feedsUrl))
+            } else {
+                dispatch(wsOrdersUserConnectAction(WS_CONFIG.userUrl(token.getToken().replace('Bearer ', ''))))
+            }
 
-      if (location.pathname.includes('feed')) {
-        return () => dispatch(wsOrdersFeedDisconnectAction())
-      } else {
-        return () => dispatch(wsOrdersUserDisconnectAction())
-      }
-    }
-  }, [orders, location, dispatch, token])
+            if (location.pathname.includes('feed')) {
+                return () => dispatch(wsOrdersFeedDisconnectAction())
+            } else {
+                return () => dispatch(wsOrdersUserDisconnectAction())
+            }
+        }
+    }, [orders, location, dispatch, token])
 
-  return (
+    return (
 
         order
-          ?
-          <div className={"pt-30"}>
-            <OrderData extraclass={'extraClass'} isModal={false} orderData={order}/>
-          </div>
-          :
-          <PreLoader/>
-  );
+            ?
+            <div className={"pt-30"}>
+                <OrderData extraclass={'extraClass'} isModal={false} orderData={order}/>
+            </div>
+            :
+            <PreLoader/>
+    );
 };
 
 export default PageOrdersFeed;

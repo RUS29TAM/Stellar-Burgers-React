@@ -1,20 +1,20 @@
 .popup {
-  position: fixed;
-  width: 720px;
-  top: 50%;
-  left: 50%;
-  border-radius: 40px;
-  background-color: #1C1C21;
-  transform: translate(-50%, -50%);
-  z-index: 50;
-  overflow: hidden;
+    position: fixed;
+    width: 720px;
+    top: 50%;
+    left: 50%;
+    border-radius: 40px;
+    background-color: #1C1C21;
+    transform: translate(-50%, -50%);
+    z-index: 50;
+    overflow: hidden;
 }
 
 .closeBtn {
-  right: 40px;
-  top: 54px;
-  position: absolute;
-  border: none;
-  cursor: pointer;
-  background-color: transparent;
+    right: 40px;
+    top: 54px;
+    position: absolute;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
 }

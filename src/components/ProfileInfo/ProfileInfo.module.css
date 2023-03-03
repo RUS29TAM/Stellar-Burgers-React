@@ -1,12 +1,12 @@
 .wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 36px;
-  width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    width: 320px;
 }
 
 .link {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 

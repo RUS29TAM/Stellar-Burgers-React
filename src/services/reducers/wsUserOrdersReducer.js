@@ -1,54 +1,54 @@
 import {
-  WS_ORDERS_USER_ERR,
-  WS_ORDERS_USER_GET_MESSAGE,
-  WS_ORDERS_USER_DISCONNECTING,
-  WS_ORDERS_USER_CONNECTING,
+    WS_ORDERS_USER_ERR,
+    WS_ORDERS_USER_GET_MESSAGE,
+    WS_ORDERS_USER_DISCONNECTING,
+    WS_ORDERS_USER_CONNECTING,
 } from '../actions/wsUserOrdersAction'
 
 const initialState = {
-  orders: [],
-  openConnection: false,
-  error: false,
-  errorMessage: null,
+    orders: [],
+    openConnection: false,
+    error: false,
+    errorMessage: null,
 }
 
 
 export const wsUserOrderReducer = (state = initialState, action) => {
-  switch (action.type) {
+    switch (action.type) {
 
-    case WS_ORDERS_USER_CONNECTING:
-      return {
-        ...state,
-        openConnection: true,
-        error: false,
-        errorMessage: null,
-      }
+        case WS_ORDERS_USER_CONNECTING:
+            return {
+                ...state,
+                openConnection: true,
+                error: false,
+                errorMessage: null,
+            }
 
-    case WS_ORDERS_USER_DISCONNECTING:
-      return {
-        ...state,
-        openConnection: false,
-        error: false,
-        errorMessage: null,
-      }
+        case WS_ORDERS_USER_DISCONNECTING:
+            return {
+                ...state,
+                openConnection: false,
+                error: false,
+                errorMessage: null,
+            }
 
-    case WS_ORDERS_USER_ERR:
-      return {
-        ...state,
-        openConnection: false,
-        error: true,
-        errorMessage: action.payload,
-      }
+        case WS_ORDERS_USER_ERR:
+            return {
+                ...state,
+                openConnection: false,
+                error: true,
+                errorMessage: action.payload,
+            }
 
-    case WS_ORDERS_USER_GET_MESSAGE:
-      return {
-        openConnection: true,
-        error: false,
-        errorMessage: null,
-        orders: action.payload.orders,
-      }
+        case WS_ORDERS_USER_GET_MESSAGE:
+            return {
+                openConnection: true,
+                error: false,
+                errorMessage: null,
+                orders: action.payload.orders,
+            }
 
-    default:
-      return state
-  }
+        default:
+            return state
+    }
 }

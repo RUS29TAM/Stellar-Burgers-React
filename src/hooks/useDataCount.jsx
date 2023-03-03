@@ -3,15 +3,15 @@ import {useSelector} from "react-redux";
 import {useCallback, useMemo} from "react";
 
 export const useDataCount = (arrayCount) => {
-  const ingredients = useSelector(ingredientsSelectorReducerModified)
+    const ingredients = useSelector(ingredientsSelectorReducerModified)
 
-  const ingredientsCountData = useMemo(() => {
-    const ingredientsCount = {}
-    if (!ingredients.isSuccess) return ingredientsCount
-    ingredients.ingredients.forEach((ingredient) => ingredientsCount[ingredient._id] = arrayCount.filter(arrayItem => arrayItem._id === ingredient._id).length)
-    return ingredientsCount
-  }, [ingredients, arrayCount])
+    const ingredientsCountData = useMemo(() => {
+        const ingredientsCount = {}
+        if (!ingredients.isSuccess) return ingredientsCount
+        ingredients.ingredients.forEach((ingredient) => ingredientsCount[ingredient._id] = arrayCount.filter(arrayItem => arrayItem._id === ingredient._id).length)
+        return ingredientsCount
+    }, [ingredients, arrayCount])
 
-  const getCount = useCallback((ingredientId) => ingredientsCountData[ingredientId],[ingredientsCountData])
-  return useMemo(() => ({ingredientsCountData, getCount}),[getCount, ingredientsCountData])
+    const getCount = useCallback((ingredientId) => ingredientsCountData[ingredientId], [ingredientsCountData])
+    return useMemo(() => ({ingredientsCountData, getCount}), [getCount, ingredientsCountData])
 }

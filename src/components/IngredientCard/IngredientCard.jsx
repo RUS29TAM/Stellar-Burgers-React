@@ -7,15 +7,15 @@ import PropTypes from "prop-types";
 import {Link} from "react-router-dom";
 
 const IngredientCard = ({ingredient, getIngredientCount}) => {
-  const [, dragRef] = useDrag({
-    type: 'ingredientCard',
-    item: ingredient,
-  });
+    const [, dragRef] = useDrag({
+        type: 'ingredientCard',
+        item: ingredient,
+    });
 
-  return (
-    <div ref={dragRef} className={styleCard.card}>
-      <Link to={`/ingredients/${ingredient._id}`} className={"text_color_primary"}
-            state={{ingredient: ingredient, from: '/'}}>
+    return (
+        <div ref={dragRef} className={styleCard.card}>
+            <Link to={`/ingredients/${ingredient._id}`} className={"text_color_primary"}
+                  state={{ingredient: ingredient, from: '/'}}>
       <span className={styleCard.span}>
       <img className={`mr-4 ml-4`} src={ingredient.image} alt={ingredient.name}/>
       <div className={`mt-1 mb-1 ${styleCard.price}`}>
@@ -25,17 +25,17 @@ const IngredientCard = ({ingredient, getIngredientCount}) => {
       <div className={styleCard.name}>
         <span className='text text_type_main-default'>{ingredient.name}</span>
       </div>
-        {getIngredientCount(ingredient._id) !== 0 &&
-        <Counter count={getIngredientCount(ingredient._id)} size="default"/>}
+          {getIngredientCount(ingredient._id) !== 0 &&
+              <Counter count={getIngredientCount(ingredient._id)} size="default"/>}
       </span>
-      </Link>
-    </div>
-  );
+            </Link>
+        </div>
+    );
 };
 
 IngredientCard.propTypes = {
-  ingredient: ingredientType.isRequired,
-  getIngredientCount: PropTypes.func.isRequired,
+    ingredient: ingredientType.isRequired,
+    getIngredientCount: PropTypes.func.isRequired,
 };
 
 export default IngredientCard

@@ -1,45 +1,45 @@
 .card {
-  background-color: var(--background);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04), 0 0 2px rgba(0, 0, 0, 0.06), 0 0 1px rgba(0, 0, 0, 0.04);
-  border-radius: 40px;
-  max-width: 854px;
+    background-color: var(--background);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04), 0 0 2px rgba(0, 0, 0, 0.06), 0 0 1px rgba(0, 0, 0, 0.04);
+    border-radius: 40px;
+    max-width: 854px;
 }
 
 .info {
-  display: flex;
-  justify-content: space-between;
-  margin: 0;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
 }
 
 .title {
-  max-width: 500px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+    max-width: 500px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .ingredientsContainer {
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 436px;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 436px;
 }
 
 .imageWrapper {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  margin-left: -12px;
-  margin-top: 5px;
-  background: linear-gradient(64deg, #801AB2, #4C4CFF);
-  color: #ffffff;
-  font-family: 'Iceland', serif;
-  font-weight: normal;
-  font-size: 24px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    margin-left: -12px;
+    margin-top: 5px;
+    background: linear-gradient(64deg, #801AB2, #4C4CFF);
+    color: #ffffff;
+    font-family: 'Iceland', serif;
+    font-weight: normal;
+    font-size: 24px;
 }
 
 .imageWrapper::before {
@@ -53,24 +53,24 @@
 }
 
 .imageWrapper:nth-of-type(1) {
-  z-index: 6;
-  margin-left: 0;
+    z-index: 6;
+    margin-left: 0;
 }
 
 .imageWrapper:nth-of-type(2) {
-  z-index: 5;
+    z-index: 5;
 }
 
 .imageWrapper:nth-of-type(3) {
-  z-index: 4;
+    z-index: 4;
 }
 
 .imageWrapper:nth-of-type(4) {
-  z-index: 3;
+    z-index: 3;
 }
 
 .imageWrapper:nth-of-type(5) {
-  z-index: 2;
+    z-index: 2;
 }
 
 .imageWrapper:nth-of-type(6):after {
@@ -88,27 +88,27 @@
 }
 
 .ingredientImage {
-  height: 50px;
+    height: 50px;
     z-index: 1;
 }
 
 .price {
-  display: flex;
-  align-items: center;
-  gap: 9px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
 }
 
 .priceIcon {
-  width: 22px;
-  height: 22px;
+    width: 22px;
+    height: 22px;
 }
 
 .link {
-  text-decoration: none;
-  margin: 0 auto;
-  width: 550px;
+    text-decoration: none;
+    margin: 0 auto;
+    width: 550px;
 
- }
+}
 
 .linkExtra {
     width: 856px;

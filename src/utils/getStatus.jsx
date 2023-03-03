@@ -4,27 +4,27 @@ export const getStatus = (status) => {
     switch (status) {
         case "created":
             return <>
-                    <span className={`${styles.spanCreated}`}>С</span>
-                    <span className={`${styles.spanCreated}`}>О</span>
-                    <span className={`${styles.spanCreated}`}>З</span>
-                    <span className={`${styles.spanCreated}`}>Д</span>
-                    <span className={`${styles.spanCreated}`}>А</span>
-                    <span className={`${styles.spanCreated}`}>Н</span>
-                </>
+                <span className={`${styles.spanCreated}`}>С</span>
+                <span className={`${styles.spanCreated}`}>О</span>
+                <span className={`${styles.spanCreated}`}>З</span>
+                <span className={`${styles.spanCreated}`}>Д</span>
+                <span className={`${styles.spanCreated}`}>А</span>
+                <span className={`${styles.spanCreated}`}>Н</span>
+            </>
 
 
         case "pending":
             return <>
-                    <span className={`${styles.spanPending}`}>Г</span>
-                    <span className={`${styles.spanPending}`}>О</span>
-                    <span className={`${styles.spanPending}`}>Т</span>
-                    <span className={`${styles.spanPending}`}>О</span>
-                    <span className={`${styles.spanPending}`}>В</span>
-                    <span className={`${styles.spanPending}`}>И</span>
-                    <span className={`${styles.spanPending}`}>Т</span>
-                    <span className={`${styles.spanPending}`}>С</span>
-                    <span className={`${styles.spanPending}`}>Я</span>
-                </>
+                <span className={`${styles.spanPending}`}>Г</span>
+                <span className={`${styles.spanPending}`}>О</span>
+                <span className={`${styles.spanPending}`}>Т</span>
+                <span className={`${styles.spanPending}`}>О</span>
+                <span className={`${styles.spanPending}`}>В</span>
+                <span className={`${styles.spanPending}`}>И</span>
+                <span className={`${styles.spanPending}`}>Т</span>
+                <span className={`${styles.spanPending}`}>С</span>
+                <span className={`${styles.spanPending}`}>Я</span>
+            </>
 
 
         case "done":

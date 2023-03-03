@@ -10,53 +10,53 @@ import {useNavigate} from "react-router-dom";
 import useToken from "../../hooks/useToken";
 
 const ConstructorTotalPrice = () => {
-  const dispatch = useDispatch();
-  const [modalState, setModalState] = useState(false);
-  const order = useSelector(state => state.order)
+    const dispatch = useDispatch();
+    const [modalState, setModalState] = useState(false);
+    const order = useSelector(state => state.order)
 
-  const user = useAuthorisation()
-  const tokenStore = useToken()
+    const user = useAuthorisation()
+    const tokenStore = useToken()
 
-  const {bun, filling} = useSelector((store) => store.burgerConstructor);
+    const {bun, filling} = useSelector((store) => store.burgerConstructor);
 
-  const priceOfBurger = useMemo(() => {
-    const priceOfBun = bun?.price || 0;
-    const priceOfFilling = filling.reduce((acc, item) => acc + item.price, 0);
+    const priceOfBurger = useMemo(() => {
+        const priceOfBun = bun?.price || 0;
+        const priceOfFilling = filling.reduce((acc, item) => acc + item.price, 0);
 
-    return priceOfBun * 2 + priceOfFilling;
-  }, [filling, bun]);
+        return priceOfBun * 2 + priceOfFilling;
+    }, [filling, bun]);
 
-  const navigate = useNavigate()
+    const navigate = useNavigate()
 
-  const handleOrderCreate = () => {
-    if (user.isAuth) {
-      dispatch(createOrder(order.currentOrderContent, tokenStore.getToken()))
-      setModalState(true)
-    } else {
-      navigate('/login')
-    }
-  };
+    const handleOrderCreate = () => {
+        if (user.isAuth) {
+            dispatch(createOrder(order.currentOrderContent, tokenStore.getToken()))
+            setModalState(true)
+        } else {
+            navigate('/login')
+        }
+    };
 
-  return (
-    <>
-      {bun && (
-        <div className={`${styles.totalPrice} mt-10`}>
-          <div className="mr-10">
-            <span className="text text_type_digits-medium">{priceOfBurger}</span>
-            <CurrencyIcon type="primary"/>
-          </div>
-          {filling.length !== 0 && bun &&
-            <Button type="primary" size="large" onClick={handleOrderCreate} htmlType={'button'}>
-              Оформить заказ
-            </Button>
-          }
-        </div>
-      )}
-      {modalState && order.createdOrders && <Modal setOpen={setModalState}>
-        <OrderDetails lastOrder={order.createdOrders}/>
-      </Modal>}
-    </>
-  );
+    return (
+        <>
+            {bun && (
+                <div className={`${styles.totalPrice} mt-10`}>
+                    <div className="mr-10">
+                        <span className="text text_type_digits-medium">{priceOfBurger}</span>
+                        <CurrencyIcon type="primary"/>
+                    </div>
+                    {filling.length !== 0 && bun &&
+                        <Button type="primary" size="large" onClick={handleOrderCreate} htmlType={'button'}>
+                            Оформить заказ
+                        </Button>
+                    }
+                </div>
+            )}
+            {modalState && order.createdOrders && <Modal setOpen={setModalState}>
+                <OrderDetails lastOrder={order.createdOrders}/>
+            </Modal>}
+        </>
+    );
 };
 
 export default ConstructorTotalPrice;
