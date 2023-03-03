@@ -3,7 +3,7 @@ import {useRef} from "react";
 import {useDispatch} from "react-redux";
 import {useDrop, useDrag} from "react-dnd";
 import {DragIcon, ConstructorElement} from "@ya.praktikum/react-developer-burger-ui-components";
-import ingredientType from "../../utils/ingredientType";
+import ingredientType from "../../types/ingredientType";
 import {swapFillings} from "../../services/actions/burgerConstructorAction";
 import PropTypes from "prop-types";
 

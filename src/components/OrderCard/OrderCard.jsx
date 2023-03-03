@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 import {getDate, getStatus} from "../../utils/getStatus";
 import currencyIcon from '../../images/icon/currency-icon.svg'
 import PropTypes from "prop-types";
-import {orderInfoType} from "../../utils/orderInfoTypes";
+import {orderInfoType} from "../../types/orderInfoTypes";
 
 const OrderCard = ({elementLocation, orderData, extraClass, ispageprofile = false}) => {
     const ingredientsData = useIngredientsData()

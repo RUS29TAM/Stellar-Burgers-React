@@ -1,7 +1,7 @@
 import React from 'react';
 import {ConstructorElement} from '@ya.praktikum/react-developer-burger-ui-components';
 import PropTypes from 'prop-types';
-import ingredientType from '../../utils/ingredientType';
+import ingredientType from '../../types/ingredientType';
 
 const HalfBun = ({type, bun}) => {
 

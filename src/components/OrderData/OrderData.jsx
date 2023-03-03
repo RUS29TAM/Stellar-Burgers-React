@@ -5,7 +5,7 @@ import {useDataCount} from "../../hooks/useDataCount";
 import OrderElement from "../OrderElement/OrderElement";
 import {getDate, getStatus} from "../../utils/getStatus";
 import currencyIcon from '../../images/icon/currency-icon.svg'
-import {orderDataTypes} from '../../utils/orderDataTypes'
+import {orderDataTypes} from '../../types/orderDataTypes'
 import {Outlet} from "react-router-dom";
 import PropTypes from "prop-types";
 
