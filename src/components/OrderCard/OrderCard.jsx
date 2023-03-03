@@ -7,14 +7,14 @@ import currencyIcon from '../../images/icon/currency-icon.svg'
 import PropTypes from "prop-types";
 import {orderInfoType} from "../../utils/orderInfoTypes";
 
-const OrderCard = ({elementLocation ,orderData}) => {
+const OrderCard = ({elementLocation ,orderData, extraClass, pageProfile = false}) => {
   const ingredientsData = useIngredientsData()
   const price = useMemo(() => orderData.ingredients.reduce((a,ingredientId) => ingredientId ? a + ingredientsData.getIngredientPrice(ingredientId) : a,0),[ingredientsData, orderData])
 
   const getLink = useCallback((linkPos) => linkPos === "feed" ? `/feed/${orderData._id}` : `/profile/orders/${orderData._id}`,[orderData])
 
   return (
-    <Link to={getLink(elementLocation)} className={styleOrderCard.link} state={{from: elementLocation,order: orderData}}>
+    <Link to={getLink(elementLocation)} className={`${styleOrderCard.link} ${extraClass} ${pageProfile && styleOrderCard.linkExtra}`} state={{from: elementLocation,order: orderData}}>
 
       <div className={`pt-6 pb-6 pl-6 pr-6 ${styleOrderCard.card}`}>
         <div className={styleOrderCard.info}>
@@ -27,7 +27,7 @@ const OrderCard = ({elementLocation ,orderData}) => {
           <div className={styleOrderCard.ingredientsContainer}>
             {
               orderData.ingredients.slice(0,6)
-                .map((ingredientId,index) => ingredientId && <div className={styleOrderCard.ingredientImageContainer} data-count={`+${orderData.ingredients.slice(6).length}`} key={`${orderData._id}-${index}-${ingredientId}`}><img src={ingredientsData.getIngredientImage(ingredientId)} className={styleOrderCard.ingredientImage} alt={"ингредиент"}/></div>)
+                .map((ingredientId,index) => ingredientId && <div className={styleOrderCard.imageWrapper} data-count={`+${orderData.ingredients.slice(6).length}`} key={`${orderData._id}-${index}-${ingredientId}`}><img src={ingredientsData.getIngredientImage(ingredientId)} className={styleOrderCard.ingredientImage} alt={"ингредиент"}/></div>)
             }
           </div>
           <div className={styleOrderCard.price}>
@@ -43,6 +43,8 @@ const OrderCard = ({elementLocation ,orderData}) => {
 OrderCard.propTypes = {
   elementLocation: PropTypes.oneOf(["feed","profile"]).isRequired,
   orderData: orderInfoType.isRequired,
+  extraClass: PropTypes.string,
+  pageProfile: PropTypes.bool,
 }
 
 export default OrderCard;
