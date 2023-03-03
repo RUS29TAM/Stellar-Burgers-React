@@ -1,9 +1,18 @@
 .wrapper {
-  display: flex;
-  justify-content: space-evenly;
-  box-sizing: border-box;
-  position: relative;
-  padding-top: 208px;
-  max-width: 1920px;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    position: relative;
+    max-width: 100%;
+}
+
+.container {
+    width: 1280px;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    position: relative;
+    padding-top: 208px;
+    gap: 60px;
 
 }
