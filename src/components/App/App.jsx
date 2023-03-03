@@ -21,42 +21,51 @@ import ModalIngredientsDetails from "../ModalIngredientsDetails/ModalIngredients
 import OrderData from "../OrderData/OrderData";
 
 const App = () => {
-  const navigate = useNavigate()
-  const location = useLocation()
-  const dispatch = useDispatch()
+    const navigate = useNavigate()
+    const location = useLocation()
+    const dispatch = useDispatch()
 
-  useEffect(() => dispatch(checkAuthorizedThunk()), [])
+    useEffect(() => dispatch(checkAuthorizedThunk()), [])
 
-  return (
-    <>
-      <AppHeader/>
-      <Routes>
-        <Route path='/' element={<Layout/>}>
-          <Route path='/' element={<PageMain/>}>
-            {
-                location.state?.from === '/' &&
-                <Route index path='ingredients/:id' element={<ModalIngredientsDetails ingredientDetails={location.state.ingredient}/>}/>
-            }
-          </Route>
-          <Route path='/profile' element={<AuthorizedRoute><PageProfile/></AuthorizedRoute>}>
-            <Route path='orders' element={<ProfileHistoryOrders/>}>
-              {location.state?.from === "profile" && <Route path=":id" element={<Modal setOpen={() => navigate(-1)} children={<OrderData orderData={location.state.order}/>}/>}/>}
-            </Route>
-          </Route>
-            <Route path="/profile/orders/:id" element={<AuthorizedRoute><PageOrdersFeed/></AuthorizedRoute>}/>
-          <Route path='/login' element={<UnauthorizedRoute><PageLogin/></UnauthorizedRoute>}/>
-          <Route path='/registration' element={<UnauthorizedRoute><PageRegistration/></UnauthorizedRoute>}/>
-          <Route path='/forgot-password' element={<UnauthorizedRoute><PageForgotPassword/></UnauthorizedRoute>}/>
-          <Route path='/reset-password' element={<UnauthorizedRoute><PageRecoveryPassword/></UnauthorizedRoute>}/>
-          <Route path='/feed' element={<PageTape/>}>
-              {location.state?.from === "feed" && <Route path=":id" element={<Modal setOpen={() => navigate(-1)} children={<OrderData orderData={location.state.order}/>}/>}/>}</Route>
-            <Route path="/feed/:id" element={<PageOrdersFeed/>}/>
-          <Route path='/ingredients/:id' element={<PageIngredientsId/>}/>
-          <Route path='*' element={<Navigate to='/'/>}/>
-        </Route>
-      </Routes>
-    </>
-  )
+    return (
+        <>
+            <AppHeader/>
+            <Routes>
+                <Route path='/' element={<Layout/>}>
+                    <Route path='/' element={<PageMain/>}>
+                        {
+                            location.state?.from === '/' &&
+                            <Route index path='ingredients/:id'
+                                   element={<ModalIngredientsDetails ingredientDetails={location.state.ingredient}/>}/>
+                        }
+                    </Route>
+                    <Route path='/profile' element={<AuthorizedRoute><PageProfile/></AuthorizedRoute>}>
+                        <Route path='orders' element={<ProfileHistoryOrders/>}>
+                            {location.state?.from === "profile" && <Route path=":id"
+                                                                          element={<Modal setOpen={() => navigate(-1)}
+                                                                                          children={<OrderData
+                                                                                              orderData={location.state.order}/>}/>}/>}
+                        </Route>
+                    </Route>
+                    <Route path="/profile/orders/:id" element={<AuthorizedRoute><PageOrdersFeed/></AuthorizedRoute>}/>
+                    <Route path='/login' element={<UnauthorizedRoute><PageLogin/></UnauthorizedRoute>}/>
+                    <Route path='/registration' element={<UnauthorizedRoute><PageRegistration/></UnauthorizedRoute>}/>
+                    <Route path='/forgot-password'
+                           element={<UnauthorizedRoute><PageForgotPassword/></UnauthorizedRoute>}/>
+                    <Route path='/reset-password'
+                           element={<UnauthorizedRoute><PageRecoveryPassword/></UnauthorizedRoute>}/>
+                    <Route path='/feed' element={<PageTape/>}>
+                        {location.state?.from === "feed" && <Route path=":id"
+                                                                   element={<Modal setOpen={() => navigate(-1)}
+                                                                                   children={<OrderData
+                                                                                       orderData={location.state.order}/>}/>}/>}</Route>
+                    <Route path="/feed/:id" element={<PageOrdersFeed/>}/>
+                    <Route path='/ingredients/:id' element={<PageIngredientsId/>}/>
+                    <Route path='*' element={<Navigate to='/'/>}/>
+                </Route>
+            </Routes>
+        </>
+    )
 };
 
 export default App
