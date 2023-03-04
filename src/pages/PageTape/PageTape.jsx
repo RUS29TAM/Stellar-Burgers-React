@@ -32,10 +32,10 @@ const PageTape = () => {
             {...previous, listInWork: [...previous.listInWork, order.number]}, {listComplete: [], listInWork: []}),
         [orders])
 
-    useEffect(() => {
-        if (!ingredients.length) dispatch(ingredientsThunk())
-        // eslint-disable-next-line
-    }, [ingredients])
+    // useEffect(() => {
+    //     if (!ingredients.length) dispatch(ingredientsThunk())
+    //     // eslint-disable-next-line
+    // }, [ingredients])
 
     useEffect(() => {
         dispatch(wsOrdersFeedsConnectAction(WS_CONFIG.feedsUrl))

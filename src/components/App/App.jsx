@@ -19,6 +19,7 @@ import PageTape from "../../pages/PageTape/PageTape";
 import Modal from "../Modal/Modal";
 import ModalIngredientsDetails from "../ModalIngredientsDetails/ModalIngredientsDetails";
 import OrderData from "../OrderData/OrderData";
+import {ingredientsThunk} from "../../services/thunks/ingredientsThunk";
 
 const App = () => {
     const navigate = useNavigate()
@@ -26,6 +27,7 @@ const App = () => {
     const dispatch = useDispatch()
 
     useEffect(() => dispatch(checkAuthorizedThunk()), [])
+    useEffect(() => dispatch(ingredientsThunk()), [])
 
     return (
         <>

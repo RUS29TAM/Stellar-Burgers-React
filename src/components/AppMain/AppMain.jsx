@@ -30,10 +30,10 @@ const AppMain = () => {
         }
     }, [location.state])
 
-    useEffect(() => {
-        dispatch(ingredientsThunk());
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    // useEffect(() => {
+    //     dispatch(ingredientsThunk());
+    //     // eslint-disable-next-line react-hooks/exhaustive-deps
+    // }, []);
 
     return (
         !ingredients.success

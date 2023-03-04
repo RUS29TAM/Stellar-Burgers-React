@@ -27,9 +27,9 @@ const ProfileHistoryOrders = ({extraClass, ispageprofile = true}) => {
         navigate("/profile/orders")
     }, [navigate])
 
-    useEffect(() => {
-        !ingredients.length && dispatch(ingredientsThunk())
-    }, [ingredients])
+    // useEffect(() => {
+    //     !ingredients.length && dispatch(ingredientsThunk())
+    // }, [ingredients])
 
     useEffect(() => {
         dispatch(wsOrdersUserConnectAction(WS_CONFIG.userUrl(token.getToken().split(" ")[1])))

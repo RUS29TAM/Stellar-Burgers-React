@@ -23,9 +23,9 @@ const PageOrdersFeed = () => {
 
     const order = location.state?.order || orders.find(order => order._id === id)
 
-    useEffect(() => {
-        if (!ingredients.length) dispatch(ingredientsThunk())
-    }, [ingredients, dispatch])
+    // useEffect(() => {
+    //     if (!ingredients.length) dispatch(ingredientsThunk())
+    // }, [ingredients, dispatch])
 
     useEffect(() => {
         if (!orders.length) {
