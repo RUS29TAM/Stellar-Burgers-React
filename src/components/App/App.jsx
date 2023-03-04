@@ -35,11 +35,9 @@ const App = () => {
             <Routes>
                 <Route path='/' element={<Layout/>}>
                     <Route path='/' element={<PageMain/>}>
-                        {
-                            location.state?.from === '/' &&
+                            {location.state?.from === '/' &&
                             <Route index path='ingredients/:id'
-                                   element={<ModalIngredientsDetails ingredientDetails={location.state.ingredient}/>}/>
-                        }
+                                   element={<ModalIngredientsDetails ingredientDetails={location.state.ingredient}/>}/>}
                     </Route>
                     <Route path='/profile' element={<AuthorizedRoute><PageProfile/></AuthorizedRoute>}>
                         <Route path='orders' element={<ProfileHistoryOrders/>}>
