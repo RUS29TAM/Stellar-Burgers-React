@@ -6,7 +6,6 @@ import OrderElement from "../OrderElement/OrderElement";
 import {getDate, getStatus} from "../../utils/getStatus";
 import currencyIcon from '../../images/icon/currency-icon.svg'
 import {orderDataTypes} from '../../types/orderDataTypes'
-import {Outlet} from "react-router-dom";
 import PropTypes from "prop-types";
 
 const OrderData = ({orderData, extraClass, isModal = true}) => {
@@ -35,7 +34,6 @@ const OrderData = ({orderData, extraClass, isModal = true}) => {
                     </div>
                 </div>
             </div>
-            <Outlet/>
         </>
     );
 };
