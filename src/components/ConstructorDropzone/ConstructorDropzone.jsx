@@ -6,6 +6,7 @@ import {addBun, addFilling, removeFilling} from "../../services/actions/burgerCo
 import HalfBun from "../HalfBun/HalfBun";
 import DragConstructorCard from '../DragConstructorCard/DragConsrtuctorCard';
 import {updateCurrentOrderContent} from '../../services/actions/orderAction';
+import {nanoid} from "nanoid";
 
 const ConstructorDropzone = () => {
     const dispatch = useDispatch();
@@ -100,9 +101,9 @@ const ConstructorDropzone = () => {
             Перенесите сюда как можно больше начинок и соусов
           </span>
                 )}
-                {filling.map((item, index) => (
+                {filling.map((item, index, constructorId) => (
                     <DragConstructorCard
-                        key={index}
+                        key={constructorId}
                         index={index}
                         data={item}
                         handleRemove={handleRemoveFillingFromConstructor}
