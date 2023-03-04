@@ -7,8 +7,8 @@ export const useDataCount = (arrayCount) => {
 
     const ingredientsCountData = useMemo(() => {
         const ingredientsCount = {}
-        if (!ingredients.isSuccess) return ingredientsCount
-        ingredients.ingredients.forEach((ingredient) => ingredientsCount[ingredient._id] = arrayCount.filter(arrayItem => arrayItem._id === ingredient._id).length)
+        if (!ingredients.success) return ingredientsCount
+        ingredients.data.forEach((ingredient) => ingredientsCount[ingredient._id] = arrayCount.filter(arrayItem => arrayItem._id === ingredient._id).length)
         return ingredientsCount
     }, [ingredients, arrayCount])
 
