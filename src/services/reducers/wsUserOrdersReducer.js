@@ -45,7 +45,7 @@ export const wsUserOrderReducer = (state = initialState, action) => {
                 openConnection: true,
                 error: false,
                 errorMessage: null,
-                orders: action.payload.orders,
+                orders: action.payload.orders.reverse(),
             }
 
         default:
