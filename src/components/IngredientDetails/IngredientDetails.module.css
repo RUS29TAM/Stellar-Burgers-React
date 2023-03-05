@@ -1,43 +1,44 @@
 .wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  user-select: none;
-  width: fit-content;
-  margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    user-select: none;
+    width: fit-content;
+    margin: 0 auto;
 }
 
 .textCentre {
-  text-align: center;
+    text-align: center;
+    margin-top: 120px;
 }
 
 .heading {
- width: 100%;
+    width: 100%;
 }
 
 .extraInfoBlock {
-  display: flex;
-  gap: 20px;
+    display: flex;
+    gap: 20px;
 }
 
 .extraInfo {
-  text-align: center;
+    text-align: center;
 }
 
 .imageLarge {
-  max-width: 520px;
-  min-height: 240px;
-  max-height: 240px;
+    max-width: 520px;
+    min-height: 240px;
+    max-height: 240px;
 }
 
 .extraInfoWrapper {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
 }
 
 .name {
-  max-width: 600px;
-  overflow: hidden;
-  text-overflow: ellipsis;
+    max-width: 600px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

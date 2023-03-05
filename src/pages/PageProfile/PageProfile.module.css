@@ -1,7 +1,18 @@
 .wrapper {
-  display: flex;
-  justify-content: center;
-  padding-right: 377px;
-  box-sizing: border-box;
-  align-items: start;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    position: relative;
+    max-width: 100%;
+}
+
+.container {
+    width: 1280px;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    position: relative;
+    padding-top: 208px;
+    gap: 60px;
+
 }

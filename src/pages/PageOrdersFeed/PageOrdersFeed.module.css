@@ -1,13 +1,13 @@
 .wrapper {
-  display: block;
-  max-width: 1240px;
-  margin: 0 auto;
-  padding-top: 130px;
+    display: block;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding-top: 130px;
 }
 
 .container {
-  margin-top: 20px;
-  display: flex;
-  gap: 60px;
+    margin-top: 20px;
+    display: flex;
+    gap: 60px;
 }
 
