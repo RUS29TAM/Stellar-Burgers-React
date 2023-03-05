@@ -19,7 +19,7 @@ export const burgerConstructorReducer = (state = initialState, action) => {
         case ADD_FILLING:
             return {
                 ...state,
-                filling: [...state.filling, {...action.payload, constructorId: nanoid()}],
+                filling: [...state.filling, {...action.payload, uniqueId: action.id, constructorId: nanoid()}],
             };
         case REMOVE_FILLING:
             const {constructorId} = action.payload;
