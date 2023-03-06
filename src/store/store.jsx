@@ -2,7 +2,7 @@ import {applyMiddleware, createStore} from 'redux';
 import {composeWithDevTools} from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 import rootReducer from "../services/reducers/rootReducer";
-import socketMiddleware from "../middleware/socketMiddleware ";
+import socketMiddleware from "../middleware/socketMiddleware";
 import {createWSActions} from "../utils/createWSActions";
 import {
     WS_ORDERS_FEEDS_CONNECT, WS_ORDERS_FEEDS_DISCONNECT,
