@@ -8,7 +8,6 @@ import BurgerConstructor from "../BurgerConstructor/BurgerConstructor";
 import {useDispatch, useSelector} from "react-redux";
 import {Outlet, useLocation, useNavigate} from "react-router-dom";
 import {SET_INGREDIENT} from "../../services/actions/ingredientDetailsAction";
-import {ingredientsThunk} from "../../services/thunks/ingredientsThunk";
 
 const AppMain = () => {
     const dispatch = useDispatch();
@@ -21,7 +20,6 @@ const AppMain = () => {
         setIngredientDetailsModalState(value)
         navigate('/')
     }
-    const ingredientDetails = useSelector(state => state.ingredientDetails.ingredient)
 
     useEffect(() => {
         if (location.state?.ingredient) {
@@ -29,11 +27,6 @@ const AppMain = () => {
             setIngredientDetailsModalState(true)
         }
     }, [location.state])
-
-    // useEffect(() => {
-    //     dispatch(ingredientsThunk());
-    //     // eslint-disable-next-line react-hooks/exhaustive-deps
-    // }, []);
 
     return (
         !ingredients.success
