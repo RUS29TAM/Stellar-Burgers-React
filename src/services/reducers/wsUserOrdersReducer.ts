@@ -1,22 +1,17 @@
-import {
-    WS_ORDERS_USER_ERR,
-    WS_ORDERS_USER_GET_MESSAGE,
-    WS_ORDERS_USER_DISCONNECTING,
-    WS_ORDERS_USER_CONNECTING,
-} from '../actions/wsUserOrdersAction'
+import {TwsUserOrders, wsUserOrdersActions} from "../../types/wsUserOrders";
+import {IwsUserOrdersReduser} from '../../interfaces/userOrdersReduser'
 
-const initialState = {
+const initialState: IwsUserOrdersReduser = {
     orders: [],
     openConnection: false,
     error: false,
     errorMessage: null,
 }
 
-
-export const wsUserOrderReducer = (state = initialState, action) => {
+export const wsUserOrderReducer = (state = initialState, action: wsUserOrdersActions): IwsUserOrdersReduser => {
     switch (action.type) {
 
-        case WS_ORDERS_USER_CONNECTING:
+        case TwsUserOrders.WS_ORDERS_USER_CONNECTING:
             return {
                 ...state,
                 openConnection: true,
@@ -24,7 +19,7 @@ export const wsUserOrderReducer = (state = initialState, action) => {
                 errorMessage: null,
             }
 
-        case WS_ORDERS_USER_DISCONNECTING:
+        case TwsUserOrders.WS_ORDERS_USER_DISCONNECTING:
             return {
                 ...state,
                 openConnection: false,
@@ -32,7 +27,7 @@ export const wsUserOrderReducer = (state = initialState, action) => {
                 errorMessage: null,
             }
 
-        case WS_ORDERS_USER_ERR:
+        case TwsUserOrders.WS_ORDERS_USER_ERR:
             return {
                 ...state,
                 openConnection: false,
@@ -40,7 +35,7 @@ export const wsUserOrderReducer = (state = initialState, action) => {
                 errorMessage: action.payload,
             }
 
-        case WS_ORDERS_USER_GET_MESSAGE:
+        case TwsUserOrders.WS_ORDERS_USER_GET_MESSAGE:
             return {
                 openConnection: true,
                 error: false,
