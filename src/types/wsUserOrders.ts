@@ -29,7 +29,7 @@ export type TwsOrdersUserConnectingAction = (e: Event) => wsUserOrdersActions
 export type TwsOrdersUserDisconnectAction = () => wsUserOrdersActions
 export type TwsOrdersUserDisconnectingAction = (e: Event) => wsUserOrdersActions
 export type TwsOrdersUserErrAction = (e: Event) => wsUserOrdersActions
-export type TwsOrdersUserGetMessageAction = (e: Event) => wsUserOrdersActions
+export type TwsOrdersUserGetMessageAction = (data: object) => wsUserOrdersActions
 
 
 
