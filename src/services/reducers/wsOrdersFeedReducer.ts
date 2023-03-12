@@ -1,11 +1,7 @@
-import {
-    WS_ORDERS_FEEDS_CONNECTING,
-    WS_ORDERS_FEEDS_GET_MESSAGE,
-    WS_ORDERS_FEEDS_DISCONNECTING,
-    WS_ORDERS_FEEDS_ERR
-} from "../actions/wsOrdersFeedsAction";
+import {TwsOrdersFeeds, wsOrdersFeedsActions} from "../../types/wsOrdersFeeds";
+import {IwsOrdersFeedsReduser} from '../../interfaces/ordersFeedsReduser'
 
-const initialState = {
+const initialState: IwsOrdersFeedsReduser = {
     orders: [],
     total: 0,
     totalToday: 0,
@@ -14,10 +10,10 @@ const initialState = {
     errorMessage: null,
 }
 
-export const wsOrdersFeedReducer = (state = initialState, action) => {
+export const wsOrdersFeedReducer = (state = initialState, action: wsOrdersFeedsActions): IwsOrdersFeedsReduser => {
     switch (action.type) {
 
-        case WS_ORDERS_FEEDS_CONNECTING:
+        case TwsOrdersFeeds.WS_ORDERS_FEEDS_CONNECTING:
             return {
                 ...state,
                 openConnection: true,
@@ -25,7 +21,7 @@ export const wsOrdersFeedReducer = (state = initialState, action) => {
                 errorMessage: null,
             }
 
-        case WS_ORDERS_FEEDS_DISCONNECTING:
+        case TwsOrdersFeeds.WS_ORDERS_FEEDS_DISCONNECTING:
             return {
                 ...state,
                 openConnection: false,
@@ -33,7 +29,7 @@ export const wsOrdersFeedReducer = (state = initialState, action) => {
                 errorMessage: null,
             }
 
-        case WS_ORDERS_FEEDS_ERR:
+        case TwsOrdersFeeds.WS_ORDERS_FEEDS_ERR:
             return {
                 ...state,
                 openConnection: false,
@@ -41,7 +37,7 @@ export const wsOrdersFeedReducer = (state = initialState, action) => {
                 errorMessage: action.payload,
             }
 
-        case WS_ORDERS_FEEDS_GET_MESSAGE:
+        case TwsOrdersFeeds.WS_ORDERS_FEEDS_GET_MESSAGE:
             return {
                 ...state,
                 openConnection: true,
