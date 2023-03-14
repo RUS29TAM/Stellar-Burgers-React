@@ -1,6 +1,6 @@
-import {IorderInfoType} from "./orders";
+import {IorderInfoType} from "./ordersInfo";
 
-export interface IwsUserOrdersReduser {
+export interface IwsUserOrdersReducer {
     orders: IorderInfoType[],
     openConnection: boolean,
     error: boolean,
