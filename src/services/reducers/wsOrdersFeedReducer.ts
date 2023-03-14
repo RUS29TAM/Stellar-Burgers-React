@@ -1,7 +1,7 @@
 import {TwsOrdersFeeds, wsOrdersFeedsActions} from "../../types/wsOrdersFeeds";
-import {IwsOrdersFeedsReduser} from '../../interfaces/ordersFeedsReduser'
+import {IwsOrdersFeedsReducer} from '../../interfaces/ordersFeedsReducer'
 
-const initialState: IwsOrdersFeedsReduser = {
+const initialState: IwsOrdersFeedsReducer = {
     orders: [],
     total: 0,
     totalToday: 0,
@@ -10,7 +10,7 @@ const initialState: IwsOrdersFeedsReduser = {
     errorMessage: null,
 }
 
-export const wsOrdersFeedReducer = (state = initialState, action: wsOrdersFeedsActions): IwsOrdersFeedsReduser => {
+export const wsOrdersFeedReducer = (state = initialState, action: wsOrdersFeedsActions): IwsOrdersFeedsReducer => {
     switch (action.type) {
 
         case TwsOrdersFeeds.WS_ORDERS_FEEDS_CONNECTING:
