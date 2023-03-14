@@ -1,6 +1,6 @@
-import {IorderInfoType} from "./orders";
+import {IorderInfoType} from "./ordersInfo";
 
-export interface IwsOrdersFeedsReduser {
+export interface IwsOrdersFeedsReducer {
     orders: IorderInfoType[],
     total: number,
     totalToday: number,
