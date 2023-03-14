@@ -1,5 +1,5 @@
 import {TUserAction, userAction} from "../../types/user";
-import {IUserReducer} from '../../interfaces/userReduser'
+import {IUserReducer} from '../../interfaces/userReducer'
 
 const initialState: IUserReducer = {
     name: null,
