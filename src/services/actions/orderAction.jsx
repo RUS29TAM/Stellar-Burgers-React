@@ -1,5 +1,6 @@
 import api from '../../Api/Api'
 import {RESET_CONSTRUCTOR} from './burgerConstructorAction';
+import {TBurgerConstructor} from '../../types/burgerConstructor'
 
 export const UPDATE_CURRENT_ORDER_CONTENT = 'UPDATE_CURRENT_ORDER_CONTENT';
 export const CREATE_ORDER_REQUEST = 'CREATE_ORDER_REQUEST';
@@ -18,7 +19,7 @@ export const createOrder = (ingredientsID, token) => (dispatch) => {
         .then((json) => {
             dispatch({type: CREATE_ORDER_SUCCESS, payload: json});
             dispatch({type: OPEN_ORDER_DETAILS_MODAL});
-            dispatch({type: RESET_CONSTRUCTOR});
+            dispatch({type: TBurgerConstructor.RESET_CONSTRUCTOR});
         })
         .catch(() => dispatch({type: CREATE_ORDER_FAIL}));
 };
