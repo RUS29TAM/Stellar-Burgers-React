@@ -16,7 +16,7 @@ export enum TwsOrdersFeeds {
     WS_ORDERS_FEEDS_GET_MESSAGE = 'WS_ORDERS_FEEDS_GET_MESSAGE',         //получить сообщение
 }
 
-export type wsOrdersFeedsActions =
+export type TwsOrdersFeedsActions =
     IwsOrdersFeedsConnectAction
     | IwsOrdersFeedsConnectingAction
     | IwsOrdersFeedDisconnectAction
@@ -24,12 +24,12 @@ export type wsOrdersFeedsActions =
     | IwsOrdersFeedsErrAction
     | IwsOrdersFeedsGetMessageAction
 
-export type TwsOrdersFeedsConnectAction = (url: string) => wsOrdersFeedsActions
-export type TwsOrdersFeedsConnectingAction = (e: Event) => wsOrdersFeedsActions
-export type TwsOrdersFeedDisconnectAction = () => wsOrdersFeedsActions
-export type TwsOrdersFeedsDisconnectingAction = (e: Event) => wsOrdersFeedsActions
-export type TwsOrdersFeedsErrAction = (e: Event) => wsOrdersFeedsActions
-export type TwsOrdersFeedsGetMessageAction = (data: object) => wsOrdersFeedsActions
+export type TwsOrdersFeedsConnectAction = (url: string) => TwsOrdersFeedsActions
+export type TwsOrdersFeedsConnectingAction = (e: Event) => TwsOrdersFeedsActions
+export type TwsOrdersFeedDisconnectAction = () => TwsOrdersFeedsActions
+export type TwsOrdersFeedsDisconnectingAction = (e: Event) => TwsOrdersFeedsActions
+export type TwsOrdersFeedsErrAction = (e: Event) => TwsOrdersFeedsActions
+export type TwsOrdersFeedsGetMessageAction = (data: object) => TwsOrdersFeedsActions
 
 
 
