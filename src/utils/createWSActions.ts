@@ -1,12 +1,12 @@
 import {wsOrdersFeedsActions,TwsOrdersFeeds,} from "../types/TwsOrdersFeeds";
-import {wsUserOrdersActions,TwsUserOrders,} from "../types/TwsUserOrders";
+import {TwsUserOrdersActions,TwsUserOrders,} from "../types/TwsUserOrders";
 
 export const createWSActions = (
-    onErrorAction: { (e: Event): wsOrdersFeedsActions; (e: Event): wsUserOrdersActions; },
-    onOpenAction: { (e: Event): wsOrdersFeedsActions; (e: Event): wsUserOrdersActions; },
+    onErrorAction: { (e: Event): wsOrdersFeedsActions; (e: Event): TwsUserOrdersActions; },
+    onOpenAction: { (e: Event): wsOrdersFeedsActions; (e: Event): TwsUserOrdersActions; },
     connectStartType: TwsOrdersFeeds | TwsUserOrders,
-    onCloseAction: { (e: Event): wsOrdersFeedsActions; (e: Event): wsUserOrdersActions; },
-    onMassageAction: { (data: object): wsOrdersFeedsActions; (data: object): wsUserOrdersActions; },
+    onCloseAction: { (e: Event): wsOrdersFeedsActions; (e: Event): TwsUserOrdersActions; },
+    onMassageAction: { (data: object): wsOrdersFeedsActions; (data: object): TwsUserOrdersActions; },
     connectStopType: TwsOrdersFeeds | TwsUserOrders) => ({
     onError: onErrorAction,
     connectStart: connectStartType,
