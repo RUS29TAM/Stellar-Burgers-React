@@ -1,5 +1,5 @@
-import {wsOrdersFeedsActions,TwsOrdersFeeds,} from "../types/wsOrdersFeeds";
-import {wsUserOrdersActions,TwsUserOrders,} from "../types/wsUserOrders";
+import {wsOrdersFeedsActions,TwsOrdersFeeds,} from "../types/TwsOrdersFeeds";
+import {wsUserOrdersActions,TwsUserOrders,} from "../types/TwsUserOrders";
 
 export const createWSActions = (
     onErrorAction: { (e: Event): wsOrdersFeedsActions; (e: Event): wsUserOrdersActions; },
