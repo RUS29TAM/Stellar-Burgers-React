@@ -1,6 +1,6 @@
 import {IUserInfo} from "../interfaces/IUserInfo";
-import {UpdateUserInfoResp} from "../interfaces/UpdateUserInfoResp";
-import {Methods} from "../interfaces/Methods";
+import {IUpdateUserInfoResp} from "../interfaces/IUpdateUserInfoResp";
+import {IMethods} from "../interfaces/IMethods";
 
 const API_URL = 'https://norma.nomoreparties.space/api';    // - базовый url
 const WS_URL = 'wss://norma.nomoreparties.space';           //надстройка над протоколом для передачи зашифрованных сообщений
@@ -25,7 +25,7 @@ export const WS_CONFIG = {
 
 const checkResponce = (res: Response) => res.ok ? res.json() : Promise.reject(res.json())
 
-const createRequest = (endpoint: string, method: Methods, body: null | any = null, auth: null | string = null) => {
+const createRequest = (endpoint: string, method: IMethods, body: null | any = null, auth: null | string = null) => {
     const settings: any = {
         method: method,
         headers: {
@@ -42,16 +42,16 @@ const createRequest = (endpoint: string, method: Methods, body: null | any = nul
 }
 
 const api = {
-    getIngredients: () => createRequest(CONFIG.ingredientsUrl, Methods.GET),
-    createOrder: (ingredientsID: string[], token: string) => createRequest(CONFIG.orderUrl, Methods.POST, {ingredients: ingredientsID}, token),
-    registrationUser: (name: string, email: string, password: string) => createRequest(CONFIG.regUser, Methods.POST, {name, email, password}),
-    updateUserInfo: (userInfo: IUserInfo, token: string):Promise<UpdateUserInfoResp> => createRequest(CONFIG.updateUserInfo, Methods.PATCH, userInfo, token),
-    resetPassword: (email: string) => createRequest(CONFIG.passwordReset, Methods.POST, {email}),
-    resetPasswordAgree: (password: string, code: string) => createRequest(CONFIG.resetPasswordAccept, Methods.POST, {password, token: code}),
-    logOut: (recovery: string) => createRequest(CONFIG.logOut, Methods.POST, {token: recovery}),
-    login: (email: string, password: string) => createRequest(CONFIG.logIn, Methods.POST, {email, password}),
-    getUser: (token: string) => createRequest(CONFIG.getUserInfo, Methods.GET, null, token),
-    updateToken: (recovery: string) => createRequest(CONFIG.tokenRefresh, Methods.POST, {token: recovery})
+    getIngredients: () => createRequest(CONFIG.ingredientsUrl, IMethods.GET),
+    createOrder: (ingredientsID: string[], token: string) => createRequest(CONFIG.orderUrl, IMethods.POST, {ingredients: ingredientsID}, token),
+    registrationUser: (name: string, email: string, password: string) => createRequest(CONFIG.regUser, IMethods.POST, {name, email, password}),
+    updateUserInfo: (userInfo: IUserInfo, token: string):Promise<IUpdateUserInfoResp> => createRequest(CONFIG.updateUserInfo, IMethods.PATCH, userInfo, token),
+    resetPassword: (email: string) => createRequest(CONFIG.passwordReset, IMethods.POST, {email}),
+    resetPasswordAgree: (password: string, code: string) => createRequest(CONFIG.resetPasswordAccept, IMethods.POST, {password, token: code}),
+    logOut: (recovery: string) => createRequest(CONFIG.logOut, IMethods.POST, {token: recovery}),
+    login: (email: string, password: string) => createRequest(CONFIG.logIn, IMethods.POST, {email, password}),
+    getUser: (token: string) => createRequest(CONFIG.getUserInfo, IMethods.GET, null, token),
+    updateToken: (recovery: string) => createRequest(CONFIG.tokenRefresh, IMethods.POST, {token: recovery})
 };
 
 export default api

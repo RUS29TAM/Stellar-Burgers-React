@@ -1,5 +1,5 @@
 import {nanoid} from "nanoid";
-import {IBurgerConstructorActions, TBurgerConstructor} from "../../types/burgerConstructor";
+import {IBurgerConstructorActions, TBurgerConstructor} from "../../types/TBurgerConstructor";
 
 export const addBun = (payload: unknown): { payload: unknown; type: TBurgerConstructor.ADD_BUN } => ({type: TBurgerConstructor.ADD_BUN, payload});
 export const addFilling = (payload: unknown): IBurgerConstructorActions => ({type: TBurgerConstructor.ADD_FILLING, id: nanoid(), payload});

@@ -1,6 +1,6 @@
 import api from "../Api/Api";
 import useToken from "./useToken";
-
+import {IUserInfo} from "../interfaces/IUserInfo";
 const useUserController = () => {
     const token = useToken()
 
@@ -17,7 +17,7 @@ const useUserController = () => {
             return Promise.reject(error)
         })
 
-    const elapsedToken = (error) => error.then(error => {
+    const elapsedToken = (error: any) => error.then((error: { message: string | string[]; }) => {
         if (error.message.includes("jwt expired")) {
             return recoveryToken()
         }
@@ -25,13 +25,13 @@ const useUserController = () => {
     })
 
 
-    const getUser = () => api.getUser(token.getToken())
+    const getUser = ():Promise<IUserInfo> => api.getUser(token.getToken())
         .then(data => data.user)
         .catch((error) => elapsedToken(error).then(() => getUser()))
 
     const checkAuth = () => getUser()
 
-    const login = (email, password) => api.login(email, password)
+    const login = (email: string, password: string) => api.login(email, password)
         .then(data => {
             const {user, accessToken, refreshToken} = data
             token.setRecoveryToken(refreshToken)
@@ -46,7 +46,7 @@ const useUserController = () => {
             return null
         })
 
-    const registration = (name, email, password) => api.registrationUser(name, email, password)
+    const registration = (name: string, email: string, password: string) => api.registrationUser(name, email, password)
         .then(data => {
             const {user, accessToken, refreshToken} = data
             token.setRecoveryToken(refreshToken)
@@ -54,17 +54,17 @@ const useUserController = () => {
             return user
         })
 
-    const resetPassword = (email) => api.resetPassword(email)
+    const resetPassword = (email: string) => api.resetPassword(email)
 
-    const resetPasswordAgree = (password, code) => api.resetPasswordAgree(password, code)
+    const resetPasswordAgree = (password: string, code: string) => api.resetPasswordAgree(password, code)
 
-    const updateProfileInfo = (name, email, password) => {
-        const userInfo = {name, email}
+    const updateProfileInfo = (email: string, password: string | null, name:string):Promise<IUserInfo> => {
+        const userInfo: IUserInfo = {name, email}
         if (password) {
             userInfo.password = password
         }
         return api.updateUserInfo(userInfo, token.getToken()).then(data => data.user)
-            .catch((error) => elapsedToken(error).then(() => updateProfileInfo(name, email, password)))
+            .catch((error) => elapsedToken(error).then(() => updateProfileInfo(email, password, name)))
     }
 
     return {checkAuth, login, logOut, registration, resetPassword, resetPasswordAgree, getUser, updateProfileInfo}

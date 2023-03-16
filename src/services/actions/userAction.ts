@@ -1,4 +1,4 @@
-import {TUserAction, userAction} from "../../types/user";
+import {TUserAction, userAction} from "../../types/TUser";
 
 export const setUserAction = ({name, email}: {email: string, name: string}): userAction => ({type: TUserAction.SET_USER, payload: {name, email}})
 export const resetUserAction = (): userAction => ({type: TUserAction.LOGOUT_USER})

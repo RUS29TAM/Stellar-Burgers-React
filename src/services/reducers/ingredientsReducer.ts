@@ -1,5 +1,5 @@
-import {IIngredientsReducer} from "../../interfaces/ingredientsReducer";
-import {ingredientsAction, TIngredientsAction} from "../../types/ingredients";
+import {IIngredientsReducer} from "../../interfaces/IIngredientsReducer";
+import {ingredientsAction, TIngredientsAction} from "../../types/TIngredients";
 
 const initialState: IIngredientsReducer = {
     loading: false,
