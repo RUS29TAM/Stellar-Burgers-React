@@ -1,7 +1,9 @@
 import useUserController from "../../hooks/useUserController";
 import {userAcceptAction, userErrorAction, userLoadingAction} from "../actions/userAction";
+import {TAppThunk} from "./TAppThunk";
+import {userAction} from "../../types/TUser";
 
-export const checkAuthorizedThunk = () => (dispatch) => {
+export const checkAuthorizedThunk = (): TAppThunk<userAction> => (dispatch) => {
     const userController = useUserController()
     dispatch(userLoadingAction())
     userController.checkAuth()

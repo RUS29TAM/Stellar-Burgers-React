@@ -1,12 +1,12 @@
 import {
-    GET_INGREDIENTS_FAIL,
-    GET_INGREDIENTS_REQUEST,
-    GET_INGREDIENTS_SUCCESS, ingredientsFailAction,
+    ingredientsFailAction,
     ingredientsRequestAction, ingredientsSuccessAction,
 } from '../actions/ingredientsAction'
 import api from "../../Api/Api";
+import {TAppThunk} from "./TAppThunk";
+import {TIngredientsAction} from "../../types/TIngredients";
 
-export const ingredientsThunk = () => dispatch => {
+export const ingredientsThunk = ():  TAppThunk<TIngredientsAction> => (dispatch) => {
     dispatch(ingredientsRequestAction())
     api.getIngredients()
         .then(data => dispatch(ingredientsSuccessAction(data.data)))
