@@ -1,4 +1,4 @@
-import {TwsOrdersFeeds} from "../types/wsOrdersFeeds";
+import {TwsOrdersFeeds} from "../types/TwsOrdersFeeds";
 
 export interface IwsOrdersFeedsConnectAction {
     type: TwsOrdersFeeds.WS_ORDERS_FEEDS_CONNECT
@@ -28,5 +28,6 @@ export interface IwsOrdersFeedsGetMessageAction {
     type: TwsOrdersFeeds.WS_ORDERS_FEEDS_GET_MESSAGE
     payload: any
 }
+
 
 

@@ -1,9 +1,9 @@
-import {TBurgerConstructor} from "../types/burgerConstructor";
+import {TBurgerConstructor} from "../types/TBurgerConstructor";
 
 export interface IBurgerConstructorReducer {
     bun: null,
     filling: any[],
-};
+}
 
 export interface IAddBun {
     payload: null;

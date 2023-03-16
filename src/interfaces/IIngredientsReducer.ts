@@ -1,4 +1,4 @@
-import {IIngredients} from "./ingredients";
+import {IIngredients} from "./IIngredients";
 
 export interface IIngredientsReducer {
     loading: boolean,

@@ -1,4 +1,4 @@
-import {TOrder} from "../types/order";
+import {TOrder} from "../types/TOrder";
 
 interface IUpdateCurrentOrderContent {
     type: TOrder.UPDATE_CURRENT_ORDER_CONTENT

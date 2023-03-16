@@ -1,4 +1,4 @@
-import {ingredientsAction} from "../types/ingredients";
+import {ingredientsAction} from "../types/TIngredients";
 
 export interface IIngredients {
     _id: string,

@@ -1,4 +1,4 @@
-import {IorderInfoType} from "./ordersInfo";
+import {IorderInfoType} from "./IOrdersInfo";
 
 export interface IwsOrdersFeedsReducer {
     orders: IorderInfoType[],
