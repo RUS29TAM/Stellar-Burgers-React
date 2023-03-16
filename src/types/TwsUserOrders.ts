@@ -5,7 +5,7 @@ import {
     IwsOrdersUserDisconnectingAction,
     IwsOrdersUserErrAction,
     IwsOrdersUserGetMessageAction
-} from "../interfaces/wsUserOrders";
+} from "../interfaces/IwsUserOrders";
 
 export enum TwsUserOrders {
     WS_ORDERS_USER_CONNECT = 'WS_ORDERS_FEEDS_CONNECT',                 //соединять

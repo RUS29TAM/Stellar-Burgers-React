@@ -5,7 +5,7 @@ import {
     IwsOrdersFeedsDisconnectingAction,
     IwsOrdersFeedsErrAction,
     IwsOrdersFeedsGetMessageAction
-} from "../interfaces/wsOrdersFeeds";
+} from "../interfaces/IwsOrdersFeeds";
 
 export enum TwsOrdersFeeds {
     WS_ORDERS_FEEDS_CONNECT = 'WS_ORDERS_FEEDS_CONNECT',                 //соединять

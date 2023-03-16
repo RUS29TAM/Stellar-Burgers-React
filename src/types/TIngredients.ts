@@ -1,4 +1,4 @@
-import {IIngredientsFailAction, IIngredientsRequestAction, IIngredientsSuccessAction} from "../interfaces/ingredients";
+import {IIngredientsFailAction, IIngredientsRequestAction, IIngredientsSuccessAction} from "../interfaces/IIngredients";
 
 export enum ingredientsAction {
 GET_INGREDIENTS_REQUEST = 'GET_INGREDIENTS',
