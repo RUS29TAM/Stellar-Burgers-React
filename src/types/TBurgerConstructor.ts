@@ -13,7 +13,7 @@ export enum TBurgerConstructor {
     SWAP_FILLINGS = 'SWAP_FILLINGS',
     RESET_CONSTRUCTOR = 'RESET_CONSTRUCTOR',
 }
-export type IBurgerConstructorActions = IAddBun
+export type TBurgerConstructorActions = IAddBun
     | IAddFilling
     | IRemoveFilling
     | ISwapFillings
