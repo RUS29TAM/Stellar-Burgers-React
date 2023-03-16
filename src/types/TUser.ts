@@ -6,7 +6,7 @@ import {
     IUserLoadingAction
 } from "../interfaces/IUser";
 
-export enum TUserAction {
+export enum TUser {
     SET_USER = 'SET_USER',
     LOGOUT_USER = 'LOGOUT_USER',
     USER_LOADING = 'USER_LOADING',
@@ -14,7 +14,7 @@ export enum TUserAction {
     USER_ERROR = 'USER_ERROR',
 }
 
-export type userAction = ISetUserAction
+export type TUserAction = ISetUserAction
     | IResetUserAction
     | IUserLoadingAction
     | IUserAcceptAction
