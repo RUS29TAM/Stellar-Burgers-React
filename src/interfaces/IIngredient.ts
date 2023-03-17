@@ -1,4 +1,4 @@
-import {TIngredients} from "../types/TIngredients";
+import {TIngredient} from "../types/TIngredient";
 
 export interface IIngredient {
     _id: string,
@@ -16,13 +16,13 @@ export interface IIngredient {
 }
 
 export interface IIngredientRequestAction {
-type: TIngredients.GET_INGREDIENTS_REQUEST
+type: TIngredient.GET_INGREDIENTS_REQUEST
 }
 
 export interface IIngredientSuccessAction {
-    type: TIngredients.GET_INGREDIENTS_SUCCESS
+    type: TIngredient.GET_INGREDIENTS_SUCCESS
     payload: IIngredient[]
 }
 export interface IIngredientFailAction {
-    type: TIngredients.GET_INGREDIENTS_FAIL
+    type: TIngredient.GET_INGREDIENTS_FAIL
 }
