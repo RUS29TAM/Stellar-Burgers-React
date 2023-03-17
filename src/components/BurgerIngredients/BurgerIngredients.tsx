@@ -1,19 +1,23 @@
-import React, {useState, useMemo, useEffect} from 'react';
+import React, {useState, useMemo, useEffect, FC} from 'react';
 import {Tab} from '@ya.praktikum/react-developer-burger-ui-components';
 import styleIngredients from '../BurgerIngredients/BurgerIngredients.module.css';
 import ListIngredients from '../ListIngredients/ListIngredients';
-import PropTypes from 'prop-types';
 import {useInView} from 'react-intersection-observer';
-import ingredientType from "../../types/ingredientType";
-import {useSelector} from "react-redux";
+import {IIngredient} from "../../interfaces/IIngredient";
+import {AppSelector} from "../../hooks/appSelector";
+import {RootState} from "../../store/store";
 
-const BurgerIngredients = ({ingredients}) => {
-    const cart = useSelector(state => state.burgerConstructor)
-    const ingredientReducer = useSelector(state => state.ingredients)
+interface IProps {
+    ingredients: IIngredient[]
+}
+
+const BurgerIngredients:FC<IProps> = ({ingredients}) => {
+    const cart = AppSelector((state:RootState) => state.burgerConstructor)
+    const ingredientReducer = AppSelector((state:RootState) => state.ingredients)
     const [currentTab, setCurrentTab] = useState('bun');
-    const {data} = useSelector((store) => store.ingredients);
+    const {data} = AppSelector((store:RootState) => store.ingredients);
 
-    const getSameIngredients = (type) => data.filter((ingredient) => ingredient.type === type);
+    const getSameIngredients = (type: string) => data.filter((ingredient) => ingredient.type === type);
 
     const {buns, sauces, filling} = useMemo(() => {
         return {
@@ -24,13 +28,18 @@ const BurgerIngredients = ({ingredients}) => {
     }, [ingredients]);
 
     const ingredientsCounts = useMemo(() => {
-        const ingredientsCount = {}
-        if (ingredientReducer.isError || ingredientReducer.isLoading) return ingredientsCount;
+        const ingredientsCount: any = {}
+        if (ingredientReducer.error || ingredientReducer.loading) return ingredientsCount;
+
         ingredientReducer.data.forEach((ingredient) => ingredientsCount[ingredient._id] = cart.filling.filter(cartItem => cartItem._id === ingredient._id).length)
-        if (cart.bun) ingredientsCount[cart.bun._id] = 2
+        if (cart.bun) {
+            // @ts-ignore
+            ingredientsCount[cart.bun._id] = 2
+        }
         return ingredientsCount
     }, [ingredientReducer, cart])
-    const getIngredientCount = (ingredientId) => ingredientsCounts[ingredientId]
+
+    const getIngredientCount = (ingredientId: string | number) => ingredientsCounts[ingredientId]
 
     const [bunRef, bunsInView] = useInView({threshold: 0.1});
     const [sauceRef, saucesInView] = useInView({threshold: 0.1});
@@ -46,8 +55,9 @@ const BurgerIngredients = ({ingredients}) => {
         }
     }, [bunsInView, saucesInView, mainsInView]);
 
-    const handleTubClick = (type) => {
+    const handleTubClick = (type: React.SetStateAction<string>) => {
         setCurrentTab(type);
+        // @ts-ignore
         document.querySelector(`#${type}`).scrollIntoView({behavior: 'smooth'})
     }
 
@@ -55,13 +65,13 @@ const BurgerIngredients = ({ingredients}) => {
         <section className={`burgerIngredients ${styleIngredients.burgerIngredients} ml-2`}>
             <h2 className={`text text_type_main-large mt-10 mb-5`}>Соберите бургер</h2>
             <div className={`createBurger ${styleIngredients.tabs} mt-5`}>
-                <Tab value='one' active={currentTab === 'bun'} onClick={() => handleTubClick('bun', bunRef)}>
+                <Tab value='one' active={currentTab === 'bun'} onClick={() => handleTubClick('bun')}>
                     Булки
                 </Tab>
-                <Tab value='two' active={currentTab === 'sauce'} onClick={() => handleTubClick('sauce', sauceRef)}>
+                <Tab value='two' active={currentTab === 'sauce'} onClick={() => handleTubClick('sauce')}>
                     Соусы
                 </Tab>
-                <Tab value='three' active={currentTab === 'main'} onClick={() => handleTubClick('main', mainRef)}>
+                <Tab value='three' active={currentTab === 'main'} onClick={() => handleTubClick('main')}>
                     Начинки
                 </Tab>
             </div>
@@ -86,8 +96,8 @@ const BurgerIngredients = ({ingredients}) => {
     );
 };
 
-BurgerIngredients.propTypes = {
-    ingredients: PropTypes.arrayOf(ingredientType.isRequired)
-};
+// BurgerIngredients.propTypes = {
+//     ingredients: PropTypes.arrayOf(ingredientType.isRequired)
+// };
 
 export default BurgerIngredients

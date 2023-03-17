@@ -24,7 +24,7 @@ const AppMain = () => {
                     {error && <Downloader type='error'/>}
                     {(!loading && !error) && (
                         <DndProvider backend={HTML5Backend}>
-                            <BurgerIngredients />
+                            <BurgerIngredients ingredients={[]}/>
                             <BurgerConstructor/>
                         </DndProvider>
                     )}
