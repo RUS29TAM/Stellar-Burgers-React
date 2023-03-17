@@ -1,4 +1,4 @@
-import {IIngredientsFailAction, IIngredientsRequestAction, IIngredientsSuccessAction} from "../interfaces/IIngredients";
+import {IIngredientFailAction, IIngredientRequestAction, IIngredientSuccessAction} from "../interfaces/IIngredient";
 
 export enum ingredientsAction {
 GET_INGREDIENTS_REQUEST = 'GET_INGREDIENTS',
@@ -6,4 +6,4 @@ GET_INGREDIENTS_SUCCESS = 'GET_INGREDIENTS_SUCCESS',
 GET_INGREDIENTS_FAIL = 'GET_INGREDIENTS_FAIL',
 }
 
-export type TIngredientsAction = IIngredientsRequestAction | IIngredientsSuccessAction | IIngredientsFailAction
+export type TIngredientsAction = IIngredientRequestAction | IIngredientSuccessAction | IIngredientFailAction
