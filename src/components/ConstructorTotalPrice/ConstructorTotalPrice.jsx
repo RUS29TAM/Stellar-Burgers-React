@@ -1,6 +1,6 @@
 import styles from '../ConstructorTotalPrice/ConstructorTotalPrice.module.css';
 import {useMemo, useState} from "react";
-import {useDispatch, useSelector} from "react-redux";
+import {useSelector} from "react-redux";
 import {CurrencyIcon, Button} from "@ya.praktikum/react-developer-burger-ui-components";
 import {createOrder} from "../../services/actions/orderAction";
 import Modal from "../Modal/Modal";
@@ -8,9 +8,10 @@ import OrderDetails from "../OrderDetails/OrderDetails";
 import useAuthorisation from "../../hooks/useAuthorisation";
 import {useNavigate} from "react-router-dom";
 import useToken from "../../hooks/useToken";
+import {AppDispatch} from "../../hooks/appDispatch";
 
 const ConstructorTotalPrice = () => {
-    const dispatch = useDispatch();
+    const dispatch = AppDispatch();
     const [modalState, setModalState] = useState(false);
     const order = useSelector(state => state.order)
 
