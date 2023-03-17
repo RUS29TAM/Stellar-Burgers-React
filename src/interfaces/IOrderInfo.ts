@@ -1,4 +1,4 @@
-export interface IorderInfoType {
+export interface IOrderInfo {
     createdAt: string,
     ingredients: string[],
     name: string,
