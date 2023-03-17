@@ -9,7 +9,6 @@ import PageForgotPassword from '../../pages/PageForgotPassword/PageForgotPasswor
 import PageIngredientsId from '../../pages/PageIngregientsId/PageIngredientsId';
 import UnauthorizedRoute from "../Routes/UnauthorizedRoute";
 import AuthorizedRoute from "../Routes/AuthorizedRoute";
-import {useDispatch} from "react-redux";
 import ProfileHistoryOrders from "../ProfileHistoryOrders/ProfileHistoryOrders";
 import PageOrdersFeed from "../../pages/PageOrdersFeed/PageOrdersFeed";
 import AppHeader from "../AppHeader/AppHeader";
@@ -20,13 +19,16 @@ import Modal from "../Modal/Modal";
 import ModalIngredientsDetails from "../ModalIngredientsDetails/ModalIngredientsDetails";
 import OrderData from "../OrderData/OrderData";
 import {ingredientsThunk} from "../../services/thunks/ingredientsThunk";
+import {AppDispatch} from "../../hooks/appDispatch";
 
 const App = () => {
     const navigate = useNavigate()
     const location = useLocation()
-    const dispatch = useDispatch()
+    const dispatch = AppDispatch()
 
+    // @ts-ignore
     useEffect(() => dispatch(checkAuthorizedThunk()), [])
+    // @ts-ignore
     useEffect(() => dispatch(ingredientsThunk()), [])
 
     return (
