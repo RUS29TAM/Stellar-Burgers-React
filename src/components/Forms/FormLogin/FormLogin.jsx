@@ -2,16 +2,16 @@ import React, {useState} from 'react';
 import styleLogin from "./FormLogin.module.css";
 import {Button, EmailInput, PasswordInput} from "@ya.praktikum/react-developer-burger-ui-components";
 import {Link, useNavigate} from "react-router-dom";
-import {useDispatch} from "react-redux";
 import useUserController from "../../../hooks/useUserController";
 import {setUserAction} from "../../../services/actions/userAction";
+import {AppDispatch} from "../../../hooks/appDispatch";
 
 const FormLogin = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('')
     const onEmailChange = e => setEmail(e.target.value)
     const onPasswordChange = e => setPassword(e.target.value)
-    const dispatch = useDispatch()
+    const dispatch = AppDispatch()
     const userConfig = useUserController()
     const navigate = useNavigate()
 

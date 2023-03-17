@@ -1,15 +1,15 @@
 import styles from '../DragConstructorCard/DragConsrtuctorCard.module.css';
 import {useRef} from "react";
-import {useDispatch} from "react-redux";
 import {useDrop, useDrag} from "react-dnd";
 import {DragIcon, ConstructorElement} from "@ya.praktikum/react-developer-burger-ui-components";
 import ingredientType from "../../types/ingredientType";
 import {swapFillings} from "../../services/actions/burgerConstructorAction";
 import PropTypes from "prop-types";
+import {AppDispatch} from "../../hooks/appDispatch";
 
 const DragConstructorCard = (props) => {
     const {index, data, handleRemove} = props;
-    const dispatch = useDispatch();
+    const dispatch = AppDispatch();
     const ref = useRef(null);
 
     const [{isDragging}, dragRef] = useDrag({

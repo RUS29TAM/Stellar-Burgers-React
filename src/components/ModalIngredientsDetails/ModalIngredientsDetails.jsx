@@ -1,13 +1,14 @@
 import React, {useEffect} from 'react';
-import {useDispatch, useSelector} from "react-redux";
+import {useSelector} from "react-redux";
 import {SET_INGREDIENT} from "../../services/actions/ingredientDetailsAction";
 import Modal from "../Modal/Modal";
 import IngredientDetails from "../IngredientDetails/IngredientDetails";
 import {useNavigate} from "react-router-dom";
+import {AppDispatch} from "../../hooks/appDispatch";
 
 
 const ModalIngredientsDetails = ({ingredientDetails}) => {
-    const dispatch = useDispatch()
+    const dispatch = AppDispatch()
     const navigate = useNavigate()
     const ingredient = useSelector(state => state.ingredientDetails.ingredient)
 

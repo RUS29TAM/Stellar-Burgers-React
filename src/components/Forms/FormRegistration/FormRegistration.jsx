@@ -2,9 +2,9 @@ import React, {useState} from 'react';
 import styleReg from "./FormRegistration.module.css";
 import {Button, EmailInput, Input, PasswordInput} from "@ya.praktikum/react-developer-burger-ui-components";
 import {Link, useNavigate} from "react-router-dom";
-import {useDispatch} from "react-redux";
 import useUserController from "../../../hooks/useUserController";
 import {setUserAction} from "../../../services/actions/userAction";
+import {AppDispatch} from "../../../hooks/appDispatch";
 
 const FormRegistration = () => {
     const [email, setEmail] = useState('');
@@ -13,7 +13,7 @@ const FormRegistration = () => {
     const onEmailChange = e => setEmail(e.target.value)
     const onPasswordChange = e => setPassword(e.target.value)
     const onNameChange = e => setName(e.target.value)
-    const dispatch = useDispatch()
+    const dispatch = AppDispatch()
     const userConfig = useUserController()
     const navigate = useNavigate()
 
