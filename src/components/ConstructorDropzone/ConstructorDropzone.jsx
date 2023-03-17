@@ -1,14 +1,15 @@
 import styles from '../ConstructorDropzone/ConstructorDropzone.module.css';
 import {useEffect} from "react";
-import {useDispatch, useSelector} from "react-redux";
+import {useSelector} from "react-redux";
 import {useDrop} from "react-dnd";
 import {addBun, addFilling, removeFilling} from "../../services/actions/burgerConstructorAction";
 import HalfBun from "../HalfBun/HalfBun";
 import DragConstructorCard from '../DragConstructorCard/DragConsrtuctorCard';
 import {updateCurrentOrderContent} from '../../services/actions/orderAction';
+import {AppDispatch} from "../../hooks/appDispatch";
 
 const ConstructorDropzone = () => {
-    const dispatch = useDispatch();
+    const dispatch = AppDispatch();
 
     const {bun, filling} = useSelector((store) => store.burgerConstructor);
 
