@@ -1,17 +1,21 @@
 import {ingredientsSelectorReducerModified} from "../services/selectors/ingredientsSelectors";
-import {useSelector} from "react-redux";
 import {useCallback, useMemo} from "react";
+import {IIngredient} from "../interfaces/IIngredient";
+import {IDataCount} from "../interfaces/IDataCount";
+import {AppSelector} from "./appSelector";
 
-export const useDataCount = (arrayCount) => {
-    const ingredients = useSelector(ingredientsSelectorReducerModified)
+
+
+export const useDataCount = (arrayCount: IIngredient[]) => {
+    const ingredients = AppSelector(ingredientsSelectorReducerModified)
 
     const ingredientsCountData = useMemo(() => {
-        const ingredientsCount = {}
+        const ingredientsCount: IDataCount = {}
         if (!ingredients.success) return ingredientsCount
         ingredients.data.forEach((ingredient) => ingredientsCount[ingredient._id] = arrayCount.filter(arrayItem => arrayItem._id === ingredient._id).length)
         return ingredientsCount
     }, [ingredients, arrayCount])
 
-    const getCount = useCallback((ingredientId) => ingredientsCountData[ingredientId], [ingredientsCountData])
+    const getCount = useCallback((ingredientId: string) => ingredientsCountData[ingredientId], [ingredientsCountData])
     return useMemo(() => ({ingredientsCountData, getCount}), [getCount, ingredientsCountData])
 }
