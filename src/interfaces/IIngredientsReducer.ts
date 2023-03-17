@@ -1,8 +1,8 @@
-import {IIngredients} from "./IIngredients";
+import {IIngredient} from "./IIngredient";
 
 export interface IIngredientsReducer {
     loading: boolean,
     error: boolean,
     success: boolean,
-    data: IIngredients[],
+    data: IIngredient[],
 }
