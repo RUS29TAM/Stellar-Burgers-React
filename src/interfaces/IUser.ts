@@ -1,24 +1,24 @@
-import {TUserAction} from "../types/TUser";
+import {TUser} from "../types/TUser";
 
 export interface ISetUserAction {
-    type: TUserAction.SET_USER;
+    type: TUser.SET_USER;
     payload: { email: string, name: string };
 }
 
 export interface IResetUserAction {
-    type: TUserAction.LOGOUT_USER;
+    type: TUser.LOGOUT_USER;
 }
 
 export interface IUserLoadingAction {
-    type: TUserAction.USER_LOADING;
+    type: TUser.USER_LOADING;
 }
 
 export interface IUserAcceptAction {
-    type: TUserAction.USER_ACCEPT;
+    type: TUser.USER_ACCEPT;
     payload: { email: string, name: string }
 }
 
 export interface IUserErrorAction {
-    type: TUserAction.USER_ERROR;
+    type: TUser.USER_ERROR;
     payload: string;
 }

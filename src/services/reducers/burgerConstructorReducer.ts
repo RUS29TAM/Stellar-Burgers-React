@@ -1,13 +1,13 @@
 import {nanoid} from 'nanoid';
 import {IBurgerConstructorReducer} from "../../interfaces/IBurgerConstructorReducer";
-import {TBurgerConstructor, IBurgerConstructorActions} from "../../types/TBurgerConstructor";
+import {TBurgerConstructor, TBurgerConstructorActions} from "../../types/TBurgerConstructor";
 
 const initialState: IBurgerConstructorReducer = {
     bun: null,
     filling: [],
 };
 
-export const burgerConstructorReducer = (state = initialState, action: IBurgerConstructorActions): IBurgerConstructorReducer => {
+export const burgerConstructorReducer = (state = initialState, action: TBurgerConstructorActions): IBurgerConstructorReducer => {
     switch (action.type) {
         case TBurgerConstructor.ADD_BUN:
             return {...state, bun: action.payload};
