@@ -1,9 +1,9 @@
 
-import {TIngredients, TIngredientsAction} from "../../types/TIngredients";
+import {TIngredient, TIngredientsAction} from "../../types/TIngredient";
 import {IIngredient} from "../../interfaces/IIngredient";
 
-export const ingredientsRequestAction = (): TIngredientsAction => ({type: TIngredients.GET_INGREDIENTS_REQUEST})
-export const ingredientsSuccessAction = (data: IIngredient[]): TIngredientsAction => ({type: TIngredients.GET_INGREDIENTS_SUCCESS, payload: data})
-export const ingredientsFailAction = (): TIngredientsAction => ({type: TIngredients.GET_INGREDIENTS_FAIL})
+export const ingredientsRequestAction = (): TIngredientsAction => ({type: TIngredient.GET_INGREDIENTS_REQUEST})
+export const ingredientsSuccessAction = (data: IIngredient[]): TIngredientsAction => ({type: TIngredient.GET_INGREDIENTS_SUCCESS, payload: data})
+export const ingredientsFailAction = (): TIngredientsAction => ({type: TIngredient.GET_INGREDIENTS_FAIL})
 
 

@@ -4,7 +4,7 @@ import {
 } from '../actions/ingredientsAction'
 import api from "../../Api/Api";
 import {TAppThunk} from "../../types/TAppThunk";
-import {TIngredientsAction} from "../../types/TIngredients";
+import {TIngredientsAction} from "../../types/TIngredient";
 
 export const ingredientsThunk = (): TAppThunk<TIngredientsAction> => (dispatch) => {
     dispatch(ingredientsRequestAction())
