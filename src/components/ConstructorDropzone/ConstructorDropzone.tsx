@@ -1,22 +1,23 @@
 import styles from '../ConstructorDropzone/ConstructorDropzone.module.css';
 import {useEffect} from "react";
-import {useSelector} from "react-redux";
-import {useDrop} from "react-dnd";
+import {DropTargetMonitor, useDrop} from "react-dnd";
 import {addBun, addFilling, removeFilling} from "../../services/actions/burgerConstructorAction";
 import HalfBun from "../HalfBun/HalfBun";
 import DragConstructorCard from '../DragConstructorCard/DragConsrtuctorCard';
 import {updateCurrentOrderContent} from '../../services/actions/orderAction';
 import {AppDispatch} from "../../hooks/appDispatch";
+import {AppSelector} from "../../hooks/appSelector";
+import {RootState} from "../../store/store";
 
 const ConstructorDropzone = () => {
     const dispatch = AppDispatch();
 
-    const {bun, filling} = useSelector((store) => store.burgerConstructor);
+    const {bun, filling} = AppSelector((store:RootState) => store.burgerConstructor);
 
     const [{isHovered}, dropRef] = useDrop({
         accept: 'ingredientCard',
 
-        drop: (item) => {
+        drop: (item: DragEvent) => {
             if (bun && item.type !== 'bun') {
                 return dispatch(addFilling(item))
             }
@@ -25,7 +26,7 @@ const ConstructorDropzone = () => {
             }
 
         },
-        collect: (monitor) => ({
+        collect: (monitor:DropTargetMonitor) => ({
             isHovered: monitor.isOver(),
         }),
     });
@@ -33,13 +34,13 @@ const ConstructorDropzone = () => {
     useEffect(() => {
 
         const orderIngredientsIDs = filling.length && bun
-            ? [bun._id, ...filling.map((item) => item._id), bun._id]
+            ? [bun, ...filling.map((item) => item._id), bun]
             : [];
 
         dispatch(updateCurrentOrderContent(orderIngredientsIDs));
     }, [bun, filling]);
 
-    const handleRemoveFillingFromConstructor = (item) => {
+    const handleRemoveFillingFromConstructor = (item: any) => {
         dispatch(removeFilling(item));
     };
 
