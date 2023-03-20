@@ -5,4 +5,4 @@ export const addBun = (payload: unknown): { payload: unknown; type: TBurgerConst
 export const addFilling = (payload: unknown): TBurgerConstructorActions => ({type: TBurgerConstructor.ADD_FILLING, id: nanoid(), payload});
 export const removeFilling = (payload: any): TBurgerConstructorActions => ({type: TBurgerConstructor.REMOVE_FILLING, payload});
 export const swapFillings = (payload: { from: any; to: any; }): TBurgerConstructorActions => ({type: TBurgerConstructor.SWAP_FILLINGS, payload});
-//export const resetConstructor = (payload: any): IBurgerConstructorActions => ({type: TBurgerConstructor.RESET_CONSTRUCTOR, payload});
+// export const resetConstructor = (payload: any): TBurgerConstructorActions => ({type: TBurgerConstructor.RESET_CONSTRUCTOR, payload});
