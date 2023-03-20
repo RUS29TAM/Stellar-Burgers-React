@@ -15,3 +15,13 @@ export interface ICreateOrderSuccess {
     payload: any,
 }
 
+export interface ICreateOrderFail {
+    type: TOrder.CREATE_ORDER_FAIL;
+    payload: any,
+}
+
+export interface ICreateOrderResetConstructor {
+    type: TOrder.RESET_CONSTRUCTOR;
+    payload: any,
+}
+
