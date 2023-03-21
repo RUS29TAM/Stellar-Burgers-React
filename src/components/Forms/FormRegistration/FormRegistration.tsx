@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {ChangeEvent, FormEvent, useState} from 'react';
 import styleReg from "./FormRegistration.module.css";
 import {Button, EmailInput, Input, PasswordInput} from "@ya.praktikum/react-developer-burger-ui-components";
 import {Link, useNavigate} from "react-router-dom";
@@ -10,14 +10,14 @@ const FormRegistration = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('')
     const [name, setName] = useState('')
-    const onEmailChange = e => setEmail(e.target.value)
-    const onPasswordChange = e => setPassword(e.target.value)
-    const onNameChange = e => setName(e.target.value)
+    const onEmailChange = (e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)
+    const onPasswordChange = (e: ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)
+    const onNameChange = (e: ChangeEvent<HTMLInputElement>) => setName(e.target.value)
     const dispatch = AppDispatch()
     const userConfig = useUserController()
     const navigate = useNavigate()
 
-    const onSubmit = (e) => {
+    const onSubmit = (e: FormEvent) => {
         e.preventDefault()
         if (name && email && password) {
             userConfig.registration(name, email, password)
@@ -35,12 +35,10 @@ const FormRegistration = () => {
                 <Input type="text"
                        placeholder="Имя"
                        onChange={onNameChange} value={name}/>
-                <EmailInput type="email"
-                            placeholder="E-mail"
+                <EmailInput placeholder="E-mail"
                             onChange={onEmailChange}
                             value={email}/>
-                <PasswordInput type="password"
-                               placeholder="Пароль"
+                <PasswordInput placeholder="Пароль"
                                onChange={onPasswordChange}
                                value={password}/>
                 <Button type="primary" value="Войти" htmlType={"submit"}>Зарегистрироваться</Button>
