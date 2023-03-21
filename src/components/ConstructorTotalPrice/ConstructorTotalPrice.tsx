@@ -1,6 +1,5 @@
 import styles from '../ConstructorTotalPrice/ConstructorTotalPrice.module.css';
 import {useMemo, useState} from "react";
-import {useSelector} from "react-redux";
 import {CurrencyIcon, Button} from "@ya.praktikum/react-developer-burger-ui-components";
 import {createOrder} from "../../services/actions/orderAction";
 import Modal from "../Modal/Modal";
@@ -9,25 +8,27 @@ import useAuthorisation from "../../hooks/useAuthorisation";
 import {useNavigate} from "react-router-dom";
 import useToken from "../../hooks/useToken";
 import {AppDispatch} from "../../hooks/appDispatch";
+import {AppSelector} from "../../hooks/appSelector";
+import {RootState} from "../../store/store";
 
 const ConstructorTotalPrice = () => {
     const dispatch = AppDispatch();
+    const navigate = useNavigate()
     const [modalState, setModalState] = useState(false);
-    const order = useSelector(state => state.order)
+    const order = AppSelector((state:RootState) => state.order)
 
     const user = useAuthorisation()
     const tokenStore = useToken()
 
-    const {bun, filling} = useSelector((store) => store.burgerConstructor);
+    const {bun, filling} = AppSelector((store:RootState) => store.burgerConstructor);
 
     const priceOfBurger = useMemo(() => {
+        // @ts-ignore
         const priceOfBun = bun?.price || 0;
         const priceOfFilling = filling.reduce((acc, item) => acc + item.price, 0);
 
         return priceOfBun * 2 + priceOfFilling;
     }, [filling, bun]);
-
-    const navigate = useNavigate()
 
     const handleOrderCreate = () => {
         if (user.isAuth) {

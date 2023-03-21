@@ -1,6 +1,6 @@
 import styles from "./getStatus.module.css";
 
-export const getStatus = (status) => {
+export const getStatus = (status: string) => {
     switch (status) {
         case "created":
             return <>
@@ -44,7 +44,7 @@ export const getStatus = (status) => {
     }
 }
 
-export const getDate = (date) => {
+export const getDate = (date: string) => {
     let DAY;
     const orderDate = new Date(Date.parse(date))
     const timeZone = -orderDate.getTimezoneOffset() / 60
