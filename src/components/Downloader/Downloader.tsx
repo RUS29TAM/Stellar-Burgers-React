@@ -1,11 +1,14 @@
-import React from 'react';
+import React, {FC} from 'react';
 import styleDownloader from './Downloader.module.css';
-import PropTypes from 'prop-types';
 import PreLoader from "../PreLoader/PreLoader";
 
-const Downloader = ({type}) => {
+interface IProps {
+    type: 'loading' | 'error'
+}
+const Downloader: FC<IProps> = ({type}) => {
     return (
-        <> {type !== 'error'
+        <>
+            {type !== 'error'
             ?
             (<PreLoader/>)
             :
@@ -20,10 +23,6 @@ const Downloader = ({type}) => {
         </>
     );
 };
-
-Downloader.propTypes = {
-    type: PropTypes.oneOf(['loading', 'error']).isRequired
-}
 
 export default Downloader
 
