@@ -1,14 +1,18 @@
 import styles from '../DragConstructorCard/DragConsrtuctorCard.module.css';
-import {useRef} from "react";
+import {FC, useRef} from "react";
 import {useDrop, useDrag} from "react-dnd";
 import {DragIcon, ConstructorElement} from "@ya.praktikum/react-developer-burger-ui-components";
-import ingredientType from "../../types/ingredientType";
 import {swapFillings} from "../../services/actions/burgerConstructorAction";
-import PropTypes from "prop-types";
 import {AppDispatch} from "../../hooks/appDispatch";
+import {IIngredient} from "../../interfaces/IIngredient";
 
-const DragConstructorCard = (props) => {
-    const {index, data, handleRemove} = props;
+interface IProps {
+    data: IIngredient,
+    index?: number,
+    handleRemove: (data: IIngredient) => void
+}
+
+const DragConstructorCard: FC<IProps> = ({index, data, handleRemove}) => {
     const dispatch = AppDispatch();
     const ref = useRef(null);
 
@@ -27,9 +31,11 @@ const DragConstructorCard = (props) => {
         }),
         hover: (item) => {
             if (!ref.current) return;
+            // @ts-ignore
             const [dragIndex, hoverIndex] = [item.index, index];
             if (dragIndex === hoverIndex) return;
             dispatch(swapFillings({from: dragIndex, to: hoverIndex}));
+            // @ts-ignore
             item.index = hoverIndex;
         },
     });
@@ -49,10 +55,5 @@ const DragConstructorCard = (props) => {
     );
 };
 
-DragConstructorCard.propTypes = {
-    data: ingredientType.isRequired,
-    index: PropTypes.number.isRequired,
-    handleRemove: PropTypes.func.isRequired,
-};
 
 export default DragConstructorCard
