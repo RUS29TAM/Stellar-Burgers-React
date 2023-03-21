@@ -22,6 +22,7 @@ const ConstructorDropzone = () => {
                 return dispatch(addFilling(item))
             }
             if (item.type === 'bun') {
+                // @ts-ignore
                 return dispatch(addBun(item))
             }
 

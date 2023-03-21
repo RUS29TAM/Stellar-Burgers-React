@@ -4,8 +4,8 @@ import {useLocation, useParams} from "react-router-dom";
 import api from "../../Api/Api";
 import PageMain from "../PageMain/PageMain";
 import {useDispatch, useSelector} from "react-redux";
-import {SET_INGREDIENT} from "../../services/actions/ingredientDetailsAction";
 import PreLoader from "../../components/PreLoader/PreLoader";
+import {TIngredientDetails} from "../../types/TIngredientDetails";
 
 const PageIngredientsId = () => {
     const location = useLocation()
@@ -18,7 +18,7 @@ const PageIngredientsId = () => {
             api.getIngredients()
                 .then(ingredients => {
                     const ingredient = ingredients.data.filter(ingredient => ingredient._id === id)[0]
-                    dispatch({type: SET_INGREDIENT, payload: ingredient})
+                    dispatch({type: TIngredientDetails.SET_INGREDIENT, payload: ingredient})
                 })
                 .catch(error => console.log(error))
         }
