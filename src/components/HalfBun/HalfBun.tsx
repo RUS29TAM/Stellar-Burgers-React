@@ -1,9 +1,12 @@
-import React from 'react';
+import React, {FC} from 'react';
 import {ConstructorElement} from '@ya.praktikum/react-developer-burger-ui-components';
-import PropTypes from 'prop-types';
-import ingredientType from '../../types/ingredientType';
+import {IIngredient} from "../../interfaces/IIngredient";
 
-const HalfBun = ({type, bun}) => {
+interface IProps {
+    type: 'top' | 'bottom',
+    bun: IIngredient
+}
+const HalfBun: FC<IProps> = ({type, bun}) => {
 
     return (
         <div className='ml-8 mr-4'>
@@ -16,12 +19,6 @@ const HalfBun = ({type, bun}) => {
             />
         </div>
     );
-};
-
-
-HalfBun.propTypes = {
-    type: PropTypes.oneOf(['top', 'bottom']).isRequired,
-    bun: ingredientType.isRequired
 };
 
 export default HalfBun
