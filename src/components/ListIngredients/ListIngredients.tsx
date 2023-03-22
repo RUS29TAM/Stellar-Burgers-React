@@ -1,10 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, {FC} from 'react';
 import stylesListBasket from './ListIngredients.module.css';
 import IngredientCard from '../IngredientCard/IngredientCard';
-import ingredientType from '../../types/ingredientType';
+import {IIngredient} from "../../interfaces/data/IIngredient";
 
-const ListIngredients = ({heading, list, getIngredientCount}) => {
+
+interface IListIngredients {
+    heading: string,
+    list: IIngredient[],
+    getIngredientCount: (ingredientId: string | number) => number
+}
+const ListIngredients: FC<IListIngredients> = ({heading, list, getIngredientCount}) => {
     return (
         <>
             <h3 className='text text_type_main-medium mt-10 mb-6'>
@@ -19,12 +24,6 @@ const ListIngredients = ({heading, list, getIngredientCount}) => {
             </div>
         </>
     );
-};
-
-ListIngredients.propTypes = {
-    heading: PropTypes.string.isRequired,
-    list: PropTypes.arrayOf(ingredientType.isRequired),
-    getIngredientCount: PropTypes.func.isRequired,
 };
 
 export default ListIngredients
