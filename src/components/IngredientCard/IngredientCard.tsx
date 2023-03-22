@@ -1,12 +1,15 @@
-import React from 'react';
+import React, {FC} from 'react';
 import styleCard from '../IngredientCard/IngredientCard.module.css';
 import {CurrencyIcon, Counter} from '@ya.praktikum/react-developer-burger-ui-components';
-import ingredientType from '../../types/ingredientType';
 import {useDrag} from "react-dnd";
-import PropTypes from "prop-types";
 import {Link} from "react-router-dom";
+import {IIngredient} from "../../interfaces/data/IIngredient";
 
-const IngredientCard = ({ingredient, getIngredientCount}) => {
+interface IIngredientCard {
+    ingredient: IIngredient,
+    getIngredientCount: (ingredientId: string | number) => number
+}
+const IngredientCard: FC<IIngredientCard> = ({ingredient, getIngredientCount}) => {
     const [, dragRef] = useDrag({
         type: 'ingredientCard',
         item: ingredient,
@@ -31,11 +34,6 @@ const IngredientCard = ({ingredient, getIngredientCount}) => {
             </Link>
         </div>
     );
-};
-
-IngredientCard.propTypes = {
-    ingredient: ingredientType.isRequired,
-    getIngredientCount: PropTypes.func.isRequired,
 };
 
 export default IngredientCard
