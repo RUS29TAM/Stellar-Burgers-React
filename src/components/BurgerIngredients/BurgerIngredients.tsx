@@ -7,11 +7,11 @@ import {IIngredient} from "../../interfaces/data/IIngredient";
 import {AppSelector} from "../../hooks/appSelector";
 import {RootState} from "../../store/store";
 
-interface IProps {
+interface IBurgerIngredients {
     ingredients: IIngredient[]
 }
 
-const BurgerIngredients:FC<IProps> = ({ingredients}) => {
+const BurgerIngredients:FC<IBurgerIngredients> = ({ingredients}) => {
     const cart = AppSelector((state:RootState) => state.burgerConstructor)
     const ingredientReducer = AppSelector((state:RootState) => state.ingredients)
     const [currentTab, setCurrentTab] = useState('bun');
