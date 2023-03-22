@@ -3,7 +3,7 @@ import {NavLink, useMatch} from "react-router-dom";
 import {BurgerIcon, ListIcon, ProfileIcon} from "@ya.praktikum/react-developer-burger-ui-components";
 import stylesHeader from "../AppHeader/AppHeader.module.css";
 
-interface IProps {
+interface IAppHeaderNavigationItem {
     to: string,
     children: string,
     iconComponentName?: TIconComponentName,
@@ -11,10 +11,10 @@ interface IProps {
 
 type TIconComponentName = 'BurgerIcon' | 'ListIcon' | 'ProfileIcon'
 
-const AppHeaderNavigationItem: FC<IProps> = ({to, children, iconComponentName}) => {
+const AppHeaderNavigationItem: FC<IAppHeaderNavigationItem> = ({to, children, iconComponentName}) => {
     const isActive = useMatch(to)
-    // @ts-ignore
-    const setActiveLink = ({isActive}) => isActive ? `${stylesHeader.navigationLink} pt-4 pr-5 text_color_primary` : `${stylesHeader.navigationLink} pt-4 pr-5 text_color_inactive`;
+
+    const setActiveLink = ({isActive}: any) => isActive ? `${stylesHeader.navigationLink} pt-4 pr-5 text_color_primary` : `${stylesHeader.navigationLink} pt-4 pr-5 text_color_inactive`;
     const getIcon = () => {
         if (iconComponentName === 'BurgerIcon') {
             return <BurgerIcon type={isActive ? "primary" : "secondary"}/>
