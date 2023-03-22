@@ -3,7 +3,7 @@ import {
     ICreateOrderRequest, ICreateOrderResetConstructor,
     ICreateOrderSuccess,
     IUpdateCurrentOrderContent
-} from "../interfaces/IOrder";
+} from "../interfaces/data/IOrder";
 
 export enum TOrder {
     UPDATE_CURRENT_ORDER_CONTENT = 'UPDATE_CURRENT_ORDER_CONTENT',

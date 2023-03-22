@@ -1,4 +1,4 @@
-import {IIngredientsReducer} from "../../interfaces/IIngredientsReducer";
+import {IIngredientsReducer} from "../../interfaces/data/IIngredientsReducer";
 import {TIngredient, TIngredientsAction} from "../../types/TIngredient";
 
 const initialState: IIngredientsReducer = {

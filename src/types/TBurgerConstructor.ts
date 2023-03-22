@@ -4,7 +4,7 @@ import {
     IRemoveFilling,
     ISwapFillings,
     IResetConstructor
-} from "../interfaces/IBurgerConstructorReducer";
+} from "../interfaces/data/IBurgerConstructorReducer";
 
 export enum TBurgerConstructor {
     ADD_BUN = 'ADD_BUN',

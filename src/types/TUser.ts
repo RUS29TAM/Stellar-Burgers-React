@@ -4,7 +4,7 @@ import {
     IUserAcceptAction,
     IUserErrorAction,
     IUserLoadingAction
-} from "../interfaces/IUser";
+} from "../interfaces/data/IUser";
 
 export enum TUser {
     SET_USER = 'SET_USER',

@@ -1,4 +1,4 @@
-import {TwsOrdersFeeds} from "../types/TwsOrdersFeeds";
+import {TwsOrdersFeeds} from "../../types/TwsOrdersFeeds";
 
 export interface IwsOrdersFeedsConnectAction {
     type: TwsOrdersFeeds.WS_ORDERS_FEEDS_CONNECT

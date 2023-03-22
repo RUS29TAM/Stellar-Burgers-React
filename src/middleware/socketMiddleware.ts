@@ -1,5 +1,5 @@
 import {Middleware} from "redux";
-import {ICreateWSActions} from "../interfaces/ICreateWSActions";
+import {ICreateWSActions} from "../interfaces/data/ICreateWSActions";
 
 const socketMiddleware = (wsActions: ICreateWSActions):Middleware => store => {
     let socket: WebSocket | null = null

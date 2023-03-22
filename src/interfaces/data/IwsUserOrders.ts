@@ -1,4 +1,4 @@
-import {TwsUserOrders} from "../types/TwsUserOrders";
+import {TwsUserOrders} from "../../types/TwsUserOrders";
 
 export interface IwsOrdersUserConnectAction {
     type: TwsUserOrders.WS_ORDERS_USER_CONNECT

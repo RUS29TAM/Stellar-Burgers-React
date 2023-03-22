@@ -1,5 +1,5 @@
 import {TIngredientDetails, TIngredientDetailsAction} from "../../types/TIngredientDetails";
-import {IIngredientDetailsReducer} from "../../interfaces/IIngredientDetailsReducer";
+import {IIngredientDetailsReducer} from "../../interfaces/data/IIngredientDetailsReducer";
 
 const initialState: IIngredientDetailsReducer = {
     ingredient: null,

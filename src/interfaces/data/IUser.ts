@@ -1,4 +1,4 @@
-import {TUser} from "../types/TUser";
+import {TUser} from "../../types/TUser";
 
 export interface ISetUserAction {
     type: TUser.SET_USER;

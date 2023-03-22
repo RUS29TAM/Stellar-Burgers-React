@@ -1,4 +1,4 @@
-import {IIngredientDetailsAction} from "../interfaces/IIngredientDetails";
+import {IIngredientDetailsAction} from "../interfaces/data/IIngredientDetails";
 
 export type TIngredientDetailsAction = IIngredientDetailsAction
 
