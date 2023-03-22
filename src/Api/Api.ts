@@ -1,4 +1,4 @@
-import {IUserInfo} from "../interfaces/IUserInfo";
+import {IUserInfo} from "../interfaces/data/IUserInfo";
 import {IUpdateUserInfoResp} from "../interfaces/api/IUpdateUserInfoResp";
 import {IMethods} from "../interfaces/api/IMethods";
 import {IGetIngredientsResp} from "../interfaces/api/IGetIngredientsResp";

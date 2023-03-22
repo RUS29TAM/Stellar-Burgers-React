@@ -2,13 +2,13 @@ import {
     TwsOrdersFeeds,
     TwsOrdersFeedsConnectingAction,
     TwsOrdersFeedsDisconnectingAction, TwsOrdersFeedsErrAction, TwsOrdersFeedsGetMessageAction
-} from "../types/TwsOrdersFeeds";
+} from "../../types/TwsOrdersFeeds";
 import {
     TwsOrdersUserConnectingAction, TwsOrdersUserDisconnectingAction,
     TwsOrdersUserErrAction,
     TwsOrdersUserGetMessageAction,
     TwsUserOrders
-} from "../types/TwsUserOrders";
+} from "../../types/TwsUserOrders";
 
 export interface ICreateWSActions {
     connectStartType: TwsOrdersFeeds.WS_ORDERS_FEEDS_CONNECT | TwsUserOrders.WS_ORDERS_USER_CONNECT,

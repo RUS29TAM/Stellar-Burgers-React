@@ -1,5 +1,5 @@
 import {nanoid} from 'nanoid';
-import {IBurgerConstructorReducer} from "../../interfaces/IBurgerConstructorReducer";
+import {IBurgerConstructorReducer} from "../../interfaces/data/IBurgerConstructorReducer";
 import {TBurgerConstructor, TBurgerConstructorActions} from "../../types/TBurgerConstructor";
 
 const initialState: IBurgerConstructorReducer = {

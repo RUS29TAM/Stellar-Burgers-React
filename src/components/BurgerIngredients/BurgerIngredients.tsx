@@ -3,7 +3,7 @@ import {Tab} from '@ya.praktikum/react-developer-burger-ui-components';
 import styleIngredients from '../BurgerIngredients/BurgerIngredients.module.css';
 import ListIngredients from '../ListIngredients/ListIngredients';
 import {useInView} from 'react-intersection-observer';
-import {IIngredient} from "../../interfaces/IIngredient";
+import {IIngredient} from "../../interfaces/data/IIngredient";
 import {AppSelector} from "../../hooks/appSelector";
 import {RootState} from "../../store/store";
 
@@ -96,8 +96,5 @@ const BurgerIngredients:FC<IProps> = ({ingredients}) => {
     );
 };
 
-// BurgerIngredients.propTypes = {
-//     ingredients: PropTypes.arrayOf(ingredientType.isRequired)
-// };
 
 export default BurgerIngredients

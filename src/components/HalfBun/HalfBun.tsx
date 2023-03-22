@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import {ConstructorElement} from '@ya.praktikum/react-developer-burger-ui-components';
-import {IIngredient} from "../../interfaces/IIngredient";
+import {IIngredient} from "../../interfaces/data/IIngredient";
 
 interface IProps {
     type: 'top' | 'bottom',

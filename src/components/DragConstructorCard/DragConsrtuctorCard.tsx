@@ -4,7 +4,7 @@ import {useDrop, useDrag} from "react-dnd";
 import {DragIcon, ConstructorElement} from "@ya.praktikum/react-developer-burger-ui-components";
 import {swapFillings} from "../../services/actions/burgerConstructorAction";
 import {AppDispatch} from "../../hooks/appDispatch";
-import {IIngredient} from "../../interfaces/IIngredient";
+import {IIngredient} from "../../interfaces/data/IIngredient";
 
 interface IProps {
     data: IIngredient,
