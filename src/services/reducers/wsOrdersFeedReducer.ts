@@ -1,5 +1,5 @@
 import {TwsOrdersFeeds, TwsOrdersFeedsActions} from "../../types/TwsOrdersFeeds";
-import {IwsOrdersFeedsReducer} from '../../interfaces/IOrdersFeedsReducer'
+import {IwsOrdersFeedsReducer} from '../../interfaces/data/IOrdersFeedsReducer'
 
 const initialState: IwsOrdersFeedsReducer = {
     orders: [],

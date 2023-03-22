@@ -4,7 +4,7 @@ import {
     TwsOrdersUserDisconnectingAction, TwsOrdersUserErrAction, TwsOrdersUserGetMessageAction,
     TwsUserOrders
 } from "../../types/TwsUserOrders";
-import {ICreateWSActions} from "../../interfaces/ICreateWSActions";
+import {ICreateWSActions} from "../../interfaces/data/ICreateWSActions";
 
 export const wsOrdersUserConnectAction: TwsOrdersUserConnectAction = (url: string) => ({type: TwsUserOrders.WS_ORDERS_USER_CONNECT, payload: url})
 export const wsOrdersUserConnectingAction: TwsOrdersUserConnectingAction = (e: Event) => ({type: TwsUserOrders.WS_ORDERS_USER_CONNECTING, payload: e})

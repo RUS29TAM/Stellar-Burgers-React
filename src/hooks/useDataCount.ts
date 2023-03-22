@@ -1,7 +1,7 @@
 import {ingredientsSelectorReducerModified} from "../services/selectors/ingredientsSelectors";
 import {useCallback, useMemo} from "react";
-import {IIngredient} from "../interfaces/IIngredient";
-import {IDataCount} from "../interfaces/IDataCount";
+import {IIngredient} from "../interfaces/data/IIngredient";
+import {IDataCount} from "../interfaces/data/IDataCount";
 import {AppSelector} from "./appSelector";
 
 

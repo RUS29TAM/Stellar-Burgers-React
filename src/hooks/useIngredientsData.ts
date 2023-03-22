@@ -1,7 +1,7 @@
 import {useCallback, useMemo} from "react";
 import {ingredientsSelectorModified} from "../services/selectors/ingredientsSelectors";
 import {AppSelector} from "./appSelector";
-import {IIngredients} from '../interfaces/IIngredients'
+import {IIngredients} from '../interfaces/data/IIngredients'
 
 export const useIngredientsData = () => {
     const ingredients = AppSelector(ingredientsSelectorModified)

@@ -1,5 +1,5 @@
 import {TwsUserOrders, TwsUserOrdersActions} from "../../types/TwsUserOrders";
-import {IwsUserOrdersReducer} from '../../interfaces/IUserOrdersReducer'
+import {IwsUserOrdersReducer} from '../../interfaces/data/IUserOrdersReducer'
 
 const initialState: IwsUserOrdersReducer = {
     orders: [],

@@ -1,6 +1,7 @@
 import api from "../Api/Api";
 import useToken from "./useToken";
-import {IUserInfo} from "../interfaces/IUserInfo";
+import {IUserInfo} from "../interfaces/data/IUserInfo";
+
 const useUserController = () => {
     const token = useToken()
 

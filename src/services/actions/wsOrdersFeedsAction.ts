@@ -7,7 +7,7 @@ import {
     TwsOrdersFeedsErrAction,
     TwsOrdersFeedsGetMessageAction
 } from "../../types/TwsOrdersFeeds";
-import {ICreateWSActions} from "../../interfaces/ICreateWSActions";
+import {ICreateWSActions} from "../../interfaces/data/ICreateWSActions";
 
 export const wsOrdersFeedsConnectAction: TwsOrdersFeedsConnectAction = (url: string) => ({type: TwsOrdersFeeds.WS_ORDERS_FEEDS_CONNECT, payload: url})
 export const wsOrdersFeedsConnectingAction: TwsOrdersFeedsConnectingAction = (e: Event) => ({type: TwsOrdersFeeds.WS_ORDERS_FEEDS_CONNECTING, payload: e})
