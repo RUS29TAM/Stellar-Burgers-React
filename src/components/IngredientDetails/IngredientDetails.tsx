@@ -1,10 +1,17 @@
-import React from 'react';
+import React, {FC} from 'react';
 import styleIngredientDetails from '../IngredientDetails/IngredientDetails.module.css';
-import {useSelector} from "react-redux";
-import PropTypes from "prop-types";
+import {AppSelector} from "../../hooks/appSelector";
+import {RootState} from "../../store/store";
+import {IIngredient} from "../../interfaces/data/IIngredient";
 
-const IngredientDetails = ({extraClass, isModal = true}) => {
-    const ingredient = useSelector(state => state.ingredientDetails.ingredient)
+interface IIngredientDetails {
+    extraClass: string,
+    isModal: boolean,
+}
+
+const IngredientDetails: FC<IIngredientDetails> = ({extraClass, isModal = true}) => {
+    // @ts-ignore
+    const ingredient: IIngredient = AppSelector((state: RootState) => state.ingredientDetails.ingredient)
 
     return (
         <div className={`pt-10 pr-10 pb-10 pl-10 ${styleIngredientDetails.wrapper}`}>
@@ -37,10 +44,5 @@ const IngredientDetails = ({extraClass, isModal = true}) => {
         </div>
     );
 };
-
-IngredientDetails.propTypes = {
-    extraClass: PropTypes.string,
-    isModal: PropTypes.bool,
-}
 
 export default IngredientDetails
