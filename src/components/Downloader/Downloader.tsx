@@ -2,10 +2,10 @@ import React, {FC} from 'react';
 import styleDownloader from './Downloader.module.css';
 import PreLoader from "../PreLoader/PreLoader";
 
-interface IProps {
+interface IDownloader {
     type: 'loading' | 'error'
 }
-const Downloader: FC<IProps> = ({type}) => {
+const Downloader: FC<IDownloader> = ({type}) => {
     return (
         <>
             {type !== 'error'
