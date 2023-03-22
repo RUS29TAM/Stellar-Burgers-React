@@ -42,10 +42,10 @@ const App = () => {
                                    element={<ModalIngredientsDetails ingredientDetails={location.state.ingredient}/>}/>}
                     </Route>
                     <Route path='/profile' element={<AuthorizedRoute><PageProfile/></AuthorizedRoute>}>
-                        <Route path='orders' element={<ProfileHistoryOrders/>}>
+                        <Route path='orders' element={<ProfileHistoryOrders ispageprofile={true} extraClass={''}/>}>
                             {location.state?.from === "profile" && <Route path=":id"
                                                                           element={<Modal setOpen={() => navigate(-1)}
-                                                                                          children={<OrderData
+                                                                                          children={<OrderData isModal={true} extraClass={''} key={''}
                                                                                               orderData={location.state.order}/>}/>}/>}
                         </Route>
                     </Route>
@@ -59,7 +59,7 @@ const App = () => {
                     <Route path='/feed' element={<PageTape/>}>
                         {location.state?.from === "feed" && <Route path=":id"
                                                                    element={<Modal setOpen={() => navigate(-1)}
-                                                                                   children={<OrderData
+                                                                                   children={<OrderData isModal={true} extraClass={''} key={''}
                                                                                        orderData={location.state.order}/>}/>}/>}</Route>
                     <Route path="/feed/:id" element={<PageOrdersFeed/>}/>
                     <Route path='/ingredients/:id' element={<PageIngredientsId/>}/>
