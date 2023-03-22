@@ -6,13 +6,13 @@ import {swapFillings} from "../../services/actions/burgerConstructorAction";
 import {AppDispatch} from "../../hooks/appDispatch";
 import {IIngredient} from "../../interfaces/data/IIngredient";
 
-interface IProps {
+interface IDragConstructorCard {
     data: IIngredient,
     index?: number,
     handleRemove: (data: IIngredient) => void
 }
 
-const DragConstructorCard: FC<IProps> = ({index, data, handleRemove}) => {
+const DragConstructorCard: FC<IDragConstructorCard> = ({index, data, handleRemove}) => {
     const dispatch = AppDispatch();
     const ref = useRef(null);
 
