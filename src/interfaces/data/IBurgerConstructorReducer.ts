@@ -1,4 +1,4 @@
-import {TBurgerConstructor} from "../types/TBurgerConstructor";
+import {TBurgerConstructor} from "../../types/TBurgerConstructor";
 
 export interface IBurgerConstructorReducer {
     bun: null,
