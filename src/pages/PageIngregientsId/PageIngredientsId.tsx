@@ -3,21 +3,24 @@ import IngredientDetails from "../../components/IngredientDetails/IngredientDeta
 import {useLocation, useParams} from "react-router-dom";
 import api from "../../Api/Api";
 import PageMain from "../PageMain/PageMain";
-import {useDispatch, useSelector} from "react-redux";
 import PreLoader from "../../components/PreLoader/PreLoader";
 import {TIngredientDetails} from "../../types/TIngredientDetails";
+import {AppDispatch} from "../../hooks/appDispatch";
+import {AppSelector} from "../../hooks/appSelector";
+import {RootState} from "../../store/store";
 
 const PageIngredientsId = () => {
     const location = useLocation()
     const {id} = useParams()
-    const dispatch = useDispatch()
-    const ingredient = useSelector(state => state.ingredientDetails.ingredient)
+    const dispatch = AppDispatch()
+    const ingredient = AppSelector((state: RootState) => state.ingredientDetails.ingredient)
 
     useEffect(() => {
         if (location.state?.from !== '/') {
             api.getIngredients()
                 .then(ingredients => {
                     const ingredient = ingredients.data.filter(ingredient => ingredient._id === id)[0]
+                    // @ts-ignore
                     dispatch({type: TIngredientDetails.SET_INGREDIENT, payload: ingredient})
                 })
                 .catch(error => console.log(error))
@@ -30,7 +33,7 @@ const PageIngredientsId = () => {
             :
             ingredient !== null
                 ?
-                <IngredientDetails extraclass={'mt-30'} isModal={false}/>
+                <IngredientDetails extraClass={'mt-30'} isModal={false}/>
                 :
                 <PreLoader/>
     );

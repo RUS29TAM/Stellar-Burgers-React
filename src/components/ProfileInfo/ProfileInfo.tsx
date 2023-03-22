@@ -5,7 +5,8 @@ import useUserController from "../../hooks/useUserController";
 import {resetUserAction} from "../../services/actions/userAction";
 import {AppDispatch} from "../../hooks/appDispatch";
 
-const setActiveLink = ({isActive}) => isActive ? `${styleProfileInfo.link} text_color_primary` : `${styleProfileInfo.link} text_color_inactive`;
+
+const setActiveLink = ({isActive}: any) => isActive ? `${styleProfileInfo.link} text_color_primary` : `${styleProfileInfo.link} text_color_inactive`;
 
 const ProfileInfo = () => {
     const userConfig = useUserController()
@@ -24,6 +25,7 @@ const ProfileInfo = () => {
                      to="/profile/orders" replace={true}>История заказов</NavLink>
             <NavLink className={setActiveLink} onClick={logOut} to="/">Выход</NavLink>
         </div>
+
     );
 };
 

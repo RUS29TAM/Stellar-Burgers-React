@@ -1,7 +1,12 @@
-import React from 'react';
+import React, {FC} from 'react';
 import styleOrderStatus from "./OrdersAllCompleted.module.css";
 
-const OrdersAllCompleted = ({className, title, count}) => {
+interface IOrdersAllCompleted {
+    className: string,
+    title: string,
+    count: number,
+}
+const OrdersAllCompleted:FC<IOrdersAllCompleted> = ({className, title, count}) => {
     return (
         <div className={className}>
             <p className={`text text_type_main-medium text_color_primary ${styleOrderStatus.text}`}>{title}</p>

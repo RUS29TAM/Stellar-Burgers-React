@@ -11,13 +11,12 @@ import {wsOrdersFeedDisconnectAction, wsOrdersFeedsConnectAction} from "../../se
 import {WS_CONFIG} from "../../Api/Api";
 import {AppDispatch} from "../../hooks/appDispatch";
 import {AppSelector} from "../../hooks/appSelector";
-import {IOrderInfo} from "../../interfaces/IOrderInfo";
+import {IOrderInfo} from "../../interfaces/data/IOrderInfo";
 
 const PageTape = () => {
     const dispatch = AppDispatch()
     const ingredients = AppSelector(ingredientsSelectorModified)
     const {total, totalToday, orders} = AppSelector(wsOrdersFeedReducerSelectorModified)
-
 
     // @ts-ignore
     const {listComplete, listInWork} = useMemo(() => orders.reduce((previous, order: IOrderInfo) => order.status === "done"
@@ -43,7 +42,7 @@ const PageTape = () => {
                     заказов</h2>
                 <div className={stylesTape.feedContainer}>
                     <div className={`${stylesTape.feeds} pr-4`}>
-                        {orders.map(order => <OrderCard elementLocation={"feed"} orderData={order} key={order._id}/>)}
+                        {orders.map(order => <OrderCard ispageprofile={false} extraClass={''} elementLocation={"feed"} orderData={order} key={order._id}/>)}
                     </div>
                     <div className={"ml-15"}>
                         <OrdersStatus listComplete={listComplete} listInWork={listInWork}/>

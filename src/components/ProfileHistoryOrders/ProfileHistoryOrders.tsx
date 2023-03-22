@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {FC, useEffect} from 'react';
 import styleProfileHistoryOrders from './ProfileHistoryOrders.module.css';
 import OrderCard from "../OrderCard/OrderCard";
 import {useSelector} from "react-redux";
@@ -8,10 +8,13 @@ import {wsUserOrderSelectorModified} from "../../services/selectors/wsUserOrders
 import {wsOrdersUserConnectAction, wsOrdersUserDisconnectAction} from "../../services/actions/wsUserOrdersAction";
 import {WS_CONFIG} from "../../Api/Api";
 import {ingredientsSelectorModified} from "../../services/selectors/ingredientsSelectors";
-import PropTypes from "prop-types";
 import {AppDispatch} from "../../hooks/appDispatch";
 
-const ProfileHistoryOrders = ({extraClass, ispageprofile = true}) => {
+interface IProfileHistoryOrders {
+    extraClass: string,
+    ispageprofile: boolean,
+}
+const ProfileHistoryOrders: FC<IProfileHistoryOrders> = ({extraClass, ispageprofile = true}) => {
     const dispatch = AppDispatch()
     const token = useToken()
     const ingredients = useSelector(ingredientsSelectorModified)
@@ -29,7 +32,7 @@ const ProfileHistoryOrders = ({extraClass, ispageprofile = true}) => {
     return (
         <div
             className={`${styleProfileHistoryOrders.feed} ${extraClass} ${ispageprofile && styleProfileHistoryOrders.feedExtra}`}>
-            {orders.map(order => <OrderCard extraclass={'extraClass'} ispageprofile={true} elementLocation={"profile"}
+            {orders.map(order => <OrderCard extraClass={'extraClass'} ispageprofile={true} elementLocation={"profile"}
                                             orderData={order} key={order._id}/>)}
             {ingredients.length && <Outlet/>}
         </div>
@@ -37,8 +40,7 @@ const ProfileHistoryOrders = ({extraClass, ispageprofile = true}) => {
 };
 
 ProfileHistoryOrders.propTypes = {
-    extraClass: PropTypes.string,
-    ispageprofile: PropTypes.bool,
+
 }
 
 export default ProfileHistoryOrders;

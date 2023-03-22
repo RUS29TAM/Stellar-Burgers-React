@@ -1,12 +1,15 @@
-import React from 'react';
+import React, {FC} from 'react';
 import styleOrderDetails from './OrderDetails.module.css';
 import orderAcceptedDone from '../../images/icon/order-accepted-done.svg';
-import PropTypes from "prop-types";
+import {IOrderInfo} from "../../interfaces/data/IOrderInfo";
 
-const OrderDetails = ({lastOrder}) => {
+interface IOrderDetails {
+    lastOrder:IOrderInfo['number']
+}
+const OrderDetails: FC<IOrderDetails> = ({lastOrder}) => {
     return (
         <div className={`pt-30 pb-30 ${styleOrderDetails.wrapper}`}>
-            <p className={`text text_type_digits-large mb-8 ${styleOrderDetails.numOrder}`}>{lastOrder?.number}</p>
+            <p className={`text text_type_digits-large mb-8 ${styleOrderDetails.numOrder}`}>{lastOrder}</p>
             <p className="text text_type_main-medium mb-15">Идентификатор заказа</p>
             <img className="mb-15" src={orderAcceptedDone} alt='Ваш заказ начали готовить'/>
             <p className="text text_type_main-default mb-2">Ваш заказ начали готовить</p>
@@ -14,10 +17,6 @@ const OrderDetails = ({lastOrder}) => {
                 станции</p>
         </div>
     );
-};
-
-OrderDetails.propTypes = {
-    lastOrder: PropTypes.shape({number: PropTypes.number.isRequired}).isRequired
 };
 
 export default OrderDetails

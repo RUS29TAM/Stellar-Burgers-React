@@ -1,8 +1,11 @@
-import React from 'react';
+import React, {FC} from 'react';
 import styleOrderList from "./OrdersStatus.module.css";
-import PropTypes from "prop-types";
 
-const OrdersStatus = ({listComplete, listInWork}) => {
+interface IOrdersStatus {
+    listComplete: number[],
+    listInWork: number[],
+}
+const OrdersStatus: FC<IOrdersStatus> = ({listComplete, listInWork}) => {
     return (
         <div className={`${styleOrderList.ordersStat}`}>
             <div className={styleOrderList.completeContainer}>
@@ -21,10 +24,5 @@ const OrdersStatus = ({listComplete, listInWork}) => {
             </div>
         </div>)
 };
-
-OrdersStatus.propTypes = {
-    listComplete: PropTypes.arrayOf(PropTypes.number.isRequired),
-    listInWork: PropTypes.arrayOf(PropTypes.number.isRequired),
-}
 
 export default OrdersStatus;

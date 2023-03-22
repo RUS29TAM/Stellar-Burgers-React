@@ -15,7 +15,7 @@ const PageProfile = () => {
                     ?
                     <FormProfile/>
                     :
-                    <ProfileHistoryOrders/>
+                    <ProfileHistoryOrders ispageprofile={true} extraClass={''}/>
                 }
             </div>
         </div>

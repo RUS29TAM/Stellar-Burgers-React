@@ -1,14 +1,19 @@
-import React, {useMemo} from 'react';
+import React, {FC, useMemo} from 'react';
 import styles from './OrderData.module.css'
 import {useIngredientsData} from "../../hooks/useIngredientsData";
 import {useDataCount} from "../../hooks/useDataCount";
 import OrderElement from "../OrderElement/OrderElement";
 import {getDate, getStatus} from "../../utils/getStatus";
 import currencyIcon from '../../images/icon/currency-icon.svg'
-import {orderDataTypes} from '../../types/orderDataTypes'
-import PropTypes from "prop-types";
+import {IOrderInfo} from "../../interfaces/data/IOrderInfo";
+import uniqueArray from "../../utils/uniqueArray";
 
-const OrderData = ({orderData, extraClass, isModal = true}) => {
+interface IOrderData {
+    orderData: IOrderInfo,
+    extraClass: string,
+    isModal: boolean,
+}
+const OrderData: FC<IOrderData> = ({orderData, extraClass, isModal = true}) => {
     const {getIngredientPrice, getIngredientData} = useIngredientsData()
     const orderIngredients = useMemo(() => orderData.ingredients.map(ingredientId => getIngredientData(ingredientId)), [getIngredientData, orderData])
     const {getCount} = useDataCount(orderIngredients)
@@ -22,7 +27,7 @@ const OrderData = ({orderData, extraClass, isModal = true}) => {
                 <p className={orderData.status === "done" ? "text text_type_main-small mt-3 text_color_success" : orderData.status === "created" ? "text text_type_main-small mt-3 text_color_primary" : "text text_type_main-small mt-3 text_color_accent"}>{getStatus(orderData.status)}</p>
                 <p className={"text text_type_main-medium text_color_primary mt-15"}>Состав:</p>
                 <div className={`${styles.ingredientsContainer} mt-6 pr-4`}>
-                    {[...new Set(orderIngredients)].map(ingredient => <OrderElement key={ingredient._id}
+                    {uniqueArray(orderIngredients).map(ingredient => <OrderElement key={ingredient._id}
                                                                                     ingredient={ingredient}
                                                                                     count={getCount(ingredient._id)}/>)}
                 </div>
@@ -38,9 +43,4 @@ const OrderData = ({orderData, extraClass, isModal = true}) => {
     );
 };
 
-OrderData.propTypes = {
-    orderData: orderDataTypes.isRequired,
-    extraClass: PropTypes.string,
-    isModal: PropTypes.bool,
-}
 export default OrderData;

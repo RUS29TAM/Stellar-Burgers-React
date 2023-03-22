@@ -1,17 +1,22 @@
-import React, {useCallback, useMemo} from 'react';
+import React, {FC, useCallback, useMemo} from 'react';
 import styleOrderCard from "./OrderCard.module.css";
 import {useIngredientsData} from "../../hooks/useIngredientsData";
 import {Link} from "react-router-dom";
 import {getDate, getStatus} from "../../utils/getStatus";
 import currencyIcon from '../../images/icon/currency-icon.svg'
-import PropTypes from "prop-types";
-import {orderInfoType} from "../../types/orderInfoTypes";
+import {IOrderInfo} from "../../interfaces/data/IOrderInfo";
 
-const OrderCard = ({elementLocation, orderData, extraClass, ispageprofile = false}) => {
+interface IOrderCard {
+    elementLocation: "feed" | "profile",
+    orderData: IOrderInfo,
+    extraClass: string,
+    ispageprofile: boolean,
+}
+const OrderCard: FC<IOrderCard> = ({elementLocation, orderData, extraClass, ispageprofile = false}) => {
     const ingredientsData = useIngredientsData()
     const price = useMemo(() => orderData.ingredients.reduce((a, ingredientId) => ingredientId ? a + ingredientsData.getIngredientPrice(ingredientId) : a, 0), [ingredientsData, orderData])
 
-    const getLink = useCallback((linkPos) => linkPos === "feed" ? `/feed/${orderData._id}` : `/profile/orders/${orderData._id}`, [orderData])
+    const getLink = useCallback((linkPos: string) => linkPos === "feed" ? `/feed/${orderData._id}` : `/profile/orders/${orderData._id}`, [orderData])
 
     return (
         <Link to={getLink(elementLocation)}
@@ -47,12 +52,5 @@ const OrderCard = ({elementLocation, orderData, extraClass, ispageprofile = fals
         </Link>
     );
 };
-
-OrderCard.propTypes = {
-    elementLocation: PropTypes.oneOf(["feed", "profile"]).isRequired,
-    orderData: orderInfoType.isRequired,
-    extraClass: PropTypes.string,
-    ispageprofile: PropTypes.bool,
-}
 
 export default OrderCard;

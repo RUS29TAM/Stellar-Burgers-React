@@ -1,8 +1,13 @@
-import React from 'react';
+import React, {FC} from 'react';
 import styles from './OrderElement.module.css'
 import currencyIcon from '../../images/icon/currency-icon.svg'
+import {IIngredient} from "../../interfaces/data/IIngredient";
 
-const OrderElement = ({ingredient, count}) => {
+interface IOrderElement {
+    ingredient: IIngredient
+    count: number,
+}
+const OrderElement:FC<IOrderElement> = ({ingredient, count}) => {
     return (
         <div className={styles.wrapper}>
             <div className={styles.imageWrapper}>
