@@ -1,9 +1,9 @@
 import React from 'react';
 import styleProfileInfo from './profile-info.module.css'
 import {NavLink, useLocation, useNavigate} from "react-router-dom";
-import useUserController from "../../hooks/useUserController";
-import {resetUserAction} from "../../services/actions/userAction";
-import {AppDispatch} from "../../hooks/appDispatch";
+import useUserController from "../../hooks/use-user-controller";
+import {resetUserAction} from "../../services/actions/user-action";
+import {AppDispatch} from "../../hooks/app-dispatch";
 
 
 const setActiveLink = ({isActive}: any) => isActive ? `${styleProfileInfo.link} text_color_primary` : `${styleProfileInfo.link} text_color_inactive`;

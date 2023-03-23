@@ -1,16 +1,16 @@
 import React, {useEffect} from 'react';
 import {useLocation, useParams} from "react-router-dom";
-import useToken from "../../hooks/useToken";
-import {wsOrdersFeedDisconnectAction, wsOrdersFeedsConnectAction} from "../../services/actions/wsOrdersFeedsAction";
+import useToken from "../../hooks/use-token";
+import {wsOrdersFeedDisconnectAction, wsOrdersFeedsConnectAction} from "../../services/actions/ws-orders-feeds-action";
 import {WS_CONFIG} from "../../api/api";
 import PreLoader from "../../components/pre-loader/pre-loader";
 import OrderData from "../../components/order-data/order-data";
-import {wsOrdersFeedSelectorModified} from "../../services/selectors/wsOrdersFeedSelector";
-import {wsUserOrderSelectorModified} from "../../services/selectors/wsUserOrdersSelector";
-import {wsOrdersUserConnectAction, wsOrdersUserDisconnectAction} from "../../services/actions/wsUserOrdersAction";
-import {AppSelector} from "../../hooks/appSelector";
-import {AppDispatch} from "../../hooks/appDispatch";
-import {IOrderInfo} from "../../interfaces/data/IOrderInfo";
+import {wsOrdersFeedSelectorModified} from "../../services/selectors/ws-orders-feed-selector";
+import {wsUserOrderSelectorModified} from "../../services/selectors/ws-user-orders-selector";
+import {wsOrdersUserConnectAction, wsOrdersUserDisconnectAction} from "../../services/actions/ws-user-orders-action";
+import {AppSelector} from "../../hooks/app-selector";
+import {AppDispatch} from "../../hooks/app-dispatch";
+import {IOrderInfo} from "../../interfaces/data/i-orderInfo";
 
 const PageOrdersFeed = () => {
 

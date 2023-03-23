@@ -4,14 +4,14 @@ import OrdersStatus from "../../components/orders-status/orders-status";
 import OrdersAllCompleted from "../../components/orders-all-completed/orders-all-completed";
 import PreLoader from "../../components/pre-loader/pre-loader";
 import {Outlet} from "react-router-dom";
-import {wsOrdersFeedReducerSelectorModified} from "../../services/selectors/wsOrdersFeedSelector";
+import {wsOrdersFeedReducerSelectorModified} from "../../services/selectors/ws-orders-feed-selector";
 import OrderCard from "../../components/order-card/order-card";
-import {ingredientsSelectorModified} from "../../services/selectors/ingredientsSelectors";
-import {wsOrdersFeedDisconnectAction, wsOrdersFeedsConnectAction} from "../../services/actions/wsOrdersFeedsAction";
+import {ingredientsSelectorModified} from "../../services/selectors/ingredients-selectors";
+import {wsOrdersFeedDisconnectAction, wsOrdersFeedsConnectAction} from "../../services/actions/ws-orders-feeds-action";
 import {WS_CONFIG} from "../../api/api";
-import {AppDispatch} from "../../hooks/appDispatch";
-import {AppSelector} from "../../hooks/appSelector";
-import {IOrderInfo} from "../../interfaces/data/IOrderInfo";
+import {AppDispatch} from "../../hooks/app-dispatch";
+import {AppSelector} from "../../hooks/app-selector";
+import {IOrderInfo} from "../../interfaces/data/i-orderInfo";
 
 const PageTape = () => {
     const dispatch = AppDispatch()

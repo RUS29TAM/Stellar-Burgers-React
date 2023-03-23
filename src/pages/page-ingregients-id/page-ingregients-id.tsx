@@ -4,9 +4,9 @@ import {useLocation, useParams} from "react-router-dom";
 import api from "../../api/api";
 import PageMain from "../page-main/page-main";
 import PreLoader from "../../components/pre-loader/pre-loader";
-import {TIngredientDetails} from "../../types/TIngredientDetails";
-import {AppDispatch} from "../../hooks/appDispatch";
-import {AppSelector} from "../../hooks/appSelector";
+import {TIngredientDetails} from "../../types/t-ingredient-details";
+import {AppDispatch} from "../../hooks/app-dispatch";
+import {AppSelector} from "../../hooks/app-selector";
 import {RootState} from "../../store/store";
 
 const PageIngredientsId = () => {

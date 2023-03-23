@@ -1,14 +1,14 @@
 import styles from './constructor-total-price.module.css';
 import {useMemo, useState} from "react";
 import {CurrencyIcon, Button} from "@ya.praktikum/react-developer-burger-ui-components";
-import {createOrder} from "../../services/actions/orderAction";
+import {createOrder} from "../../services/actions/order-action";
 import Modal from "../modal/modal";
 import OrderDetails from "../order-details/order-details";
-import useAuthorisation from "../../hooks/useAuthorisation";
+import useAuthorisation from "../../hooks/use-authorisation";
 import {useNavigate} from "react-router-dom";
-import useToken from "../../hooks/useToken";
-import {AppDispatch} from "../../hooks/appDispatch";
-import {AppSelector} from "../../hooks/appSelector";
+import useToken from "../../hooks/use-token";
+import {AppDispatch} from "../../hooks/app-dispatch";
+import {AppSelector} from "../../hooks/app-selector";
 import {RootState} from "../../store/store";
 
 const ConstructorTotalPrice = () => {

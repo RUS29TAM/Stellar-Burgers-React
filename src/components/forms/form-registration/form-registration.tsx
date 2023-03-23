@@ -2,9 +2,9 @@ import React, {ChangeEvent, FormEvent, useState} from 'react';
 import styleReg from "./form-registration.module.css";
 import {Button, EmailInput, Input, PasswordInput} from "@ya.praktikum/react-developer-burger-ui-components";
 import {Link, useNavigate} from "react-router-dom";
-import useUserController from "../../../hooks/useUserController";
-import {setUserAction} from "../../../services/actions/userAction";
-import {AppDispatch} from "../../../hooks/appDispatch";
+import useUserController from "../../../hooks/use-user-controller";
+import {setUserAction} from "../../../services/actions/user-action";
+import {AppDispatch} from "../../../hooks/app-dispatch";
 
 const FormRegistration = () => {
     const [email, setEmail] = useState('');

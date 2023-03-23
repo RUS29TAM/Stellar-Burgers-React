@@ -2,11 +2,11 @@ import React, {FC, useEffect} from 'react';
 import Modal from "../modal/modal";
 import IngredientDetails from "../ingredient-details/ingredient-details";
 import {useNavigate} from "react-router-dom";
-import {AppDispatch} from "../../hooks/appDispatch";
-import {TIngredientDetails} from "../../types/TIngredientDetails";
-import {AppSelector} from "../../hooks/appSelector";
+import {AppDispatch} from "../../hooks/app-dispatch";
+import {TIngredientDetails} from "../../types/t-ingredient-details";
+import {AppSelector} from "../../hooks/app-selector";
 import {RootState} from "../../store/store";
-import {IIngredients} from "../../interfaces/data/IIngredients";
+import {IIngredients} from "../../interfaces/data/i-ingredients";
 
 interface IModalIngredientsDetails {
     ingredientDetails: IIngredients

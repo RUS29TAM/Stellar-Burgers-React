@@ -1,12 +1,12 @@
 import styles from './constructor-dropzone.module.css';
 import {useEffect} from "react";
 import {DropTargetMonitor, useDrop} from "react-dnd";
-import {addBun, addFilling, removeFilling} from "../../services/actions/burgerConstructorAction";
+import {addBun, addFilling, removeFilling} from "../../services/actions/burger-constructor-action";
 import HalfBun from "../half-bun/half-bun";
 import DragConstructorCard from '../drag-constructor-card/drag-constructor-card';
-import {updateCurrentOrderContent} from '../../services/actions/orderAction';
-import {AppDispatch} from "../../hooks/appDispatch";
-import {AppSelector} from "../../hooks/appSelector";
+import {updateCurrentOrderContent} from '../../services/actions/order-action';
+import {AppDispatch} from "../../hooks/app-dispatch";
+import {AppSelector} from "../../hooks/app-selector";
 import {RootState} from "../../store/store";
 
 const ConstructorDropzone = () => {

@@ -1,10 +1,10 @@
 import React, {FC, useCallback, useMemo} from 'react';
 import styleOrderCard from "./order-card.module.css";
-import {useIngredientsData} from "../../hooks/useIngredientsData";
+import {useIngredientsData} from "../../hooks/use-ingredients-data";
 import {Link} from "react-router-dom";
-import {getDate, getStatus} from "../../utils/getStatus";
+import {getDate, getStatus} from "../../utils/get-status/get-status";
 import currencyIcon from '../../images/icon/currency-icon.svg'
-import {IOrderInfo} from "../../interfaces/data/IOrderInfo";
+import {IOrderInfo} from "../../interfaces/data/i-orderInfo";
 
 interface IOrderCard {
     elementLocation: "feed" | "profile",

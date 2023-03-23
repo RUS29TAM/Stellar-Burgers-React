@@ -2,9 +2,9 @@ import styles from './drag-constructor-card.module.css';
 import {FC, useRef} from "react";
 import {useDrop, useDrag} from "react-dnd";
 import {DragIcon, ConstructorElement} from "@ya.praktikum/react-developer-burger-ui-components";
-import {swapFillings} from "../../services/actions/burgerConstructorAction";
-import {AppDispatch} from "../../hooks/appDispatch";
-import {IIngredient} from "../../interfaces/data/IIngredient";
+import {swapFillings} from "../../services/actions/burger-constructor-action";
+import {AppDispatch} from "../../hooks/app-dispatch";
+import {IIngredient} from "../../interfaces/data/i-ingredient";
 
 interface IDragConstructorCard {
     data: IIngredient,

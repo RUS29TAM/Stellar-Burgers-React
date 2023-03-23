@@ -1,8 +1,8 @@
-import {TBurgerConstructorActions} from "../../types/TBurgerConstructor";
-import {TIngredientsAction} from "../../types/TIngredient";
-import {TUserAction} from "../../types/TUser";
-import {TwsOrdersFeedsActions} from "../../types/TwsOrdersFeeds";
-import {TwsUserOrdersActions} from "../../types/TwsUserOrders";
-import {TOrderActions} from "../../types/TOrder";
+import {TBurgerConstructorActions} from "../../types/t-burger-constructor";
+import {TIngredientsAction} from "../../types/t-ingredient";
+import {TUserAction} from "../../types/t-user";
+import {TwsOrdersFeedsActions} from "../../types/t-ws-orders-feeds";
+import {TwsUserOrdersActions} from "../../types/t-ws-user-orders";
+import {TOrderActions} from "../../types/t-order";
 
 export type AppActions = TBurgerConstructorActions | TIngredientsAction | TOrderActions | TUserAction | TwsOrdersFeedsActions | TwsUserOrdersActions

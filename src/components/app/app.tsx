@@ -12,14 +12,14 @@ import AuthorizedRoute from "../routes/authorized-route";
 import ProfileHistoryOrders from "../profile-history-orders/profile-history-orders";
 import PageOrdersFeed from "../../pages/page-orders-feed/page-orders-feed";
 import AppHeader from "../app-header/app-header";
-import {checkAuthorizedThunk} from "../../services/thunks/checkAuthorizedThunk";
+import {checkAuthorizedThunk} from "../../services/thunks/check-authorized-thunk";
 import Layout from "../layout/layout";
 import PageTape from "../../pages/page-tape/page-tape";
 import Modal from "../modal/modal";
 import ModalIngredientsDetails from "../modal-ingredients-details/modal-ingredients-details";
 import OrderData from "../order-data/order-data";
-import {ingredientsThunk} from "../../services/thunks/ingredientsThunk";
-import {AppDispatch} from "../../hooks/appDispatch";
+import {ingredientsThunk} from "../../services/thunks/ingredients-thunk";
+import {AppDispatch} from "../../hooks/app-dispatch";
 
 const App = () => {
     const navigate = useNavigate()

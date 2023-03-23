@@ -1,9 +1,9 @@
 import React, {FC, ReactElement, ReactNode, useEffect} from 'react';
-import useAuthorisation from "../../hooks/useAuthorisation";
+import useAuthorisation from "../../hooks/use-authorisation";
 import {Navigate} from "react-router-dom";
 import PreLoader from "../pre-loader/pre-loader";
-import {checkAuthorizedThunk} from "../../services/thunks/checkAuthorizedThunk";
-import {AppDispatch} from "../../hooks/appDispatch";
+import {checkAuthorizedThunk} from "../../services/thunks/check-authorized-thunk";
+import {AppDispatch} from "../../hooks/app-dispatch";
 
 interface IAuthorizedRoute {
     children: ReactNode

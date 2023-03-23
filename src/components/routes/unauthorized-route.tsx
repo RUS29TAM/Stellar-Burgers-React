@@ -1,5 +1,5 @@
 import React, {FC, ReactElement, ReactNode} from 'react';
-import useAuthorisation from "../../hooks/useAuthorisation";
+import useAuthorisation from "../../hooks/use-authorisation";
 import {Navigate} from "react-router-dom";
 
 interface IUnauthorizedRoute {

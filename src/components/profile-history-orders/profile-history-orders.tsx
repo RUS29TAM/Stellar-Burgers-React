@@ -3,12 +3,12 @@ import styleProfileHistoryOrders from './profile-history-orders.module.css';
 import OrderCard from "../order-card/order-card";
 import {useSelector} from "react-redux";
 import {Outlet} from "react-router-dom";
-import useToken from "../../hooks/useToken";
-import {wsUserOrderSelectorModified} from "../../services/selectors/wsUserOrdersSelector";
-import {wsOrdersUserConnectAction, wsOrdersUserDisconnectAction} from "../../services/actions/wsUserOrdersAction";
+import useToken from "../../hooks/use-token";
+import {wsUserOrderSelectorModified} from "../../services/selectors/ws-user-orders-selector";
+import {wsOrdersUserConnectAction, wsOrdersUserDisconnectAction} from "../../services/actions/ws-user-orders-action";
 import {WS_CONFIG} from "../../api/api";
-import {ingredientsSelectorModified} from "../../services/selectors/ingredientsSelectors";
-import {AppDispatch} from "../../hooks/appDispatch";
+import {ingredientsSelectorModified} from "../../services/selectors/ingredients-selectors";
+import {AppDispatch} from "../../hooks/app-dispatch";
 
 interface IProfileHistoryOrders {
     extraClass: string,

@@ -3,8 +3,8 @@ import {Tab} from '@ya.praktikum/react-developer-burger-ui-components';
 import styleIngredients from './burger-ingredients.module.css';
 import ListIngredients from '../list-ingredients/list-ingredients';
 import {useInView} from 'react-intersection-observer';
-import {IIngredient} from "../../interfaces/data/IIngredient";
-import {AppSelector} from "../../hooks/appSelector";
+import {IIngredient} from "../../interfaces/data/i-ingredient";
+import {AppSelector} from "../../hooks/app-selector";
 import {RootState} from "../../store/store";
 
 interface IBurgerIngredients {

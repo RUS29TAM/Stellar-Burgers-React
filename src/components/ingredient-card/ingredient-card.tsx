@@ -3,7 +3,7 @@ import styleCard from './ingredient-card.module.css';
 import {CurrencyIcon, Counter} from '@ya.praktikum/react-developer-burger-ui-components';
 import {useDrag} from "react-dnd";
 import {Link} from "react-router-dom";
-import {IIngredient} from "../../interfaces/data/IIngredient";
+import {IIngredient} from "../../interfaces/data/i-ingredient";
 
 interface IIngredientCard {
     ingredient: IIngredient,

@@ -1,12 +1,12 @@
 import React, {FC, useMemo} from 'react';
 import styles from './order-data.module.css'
-import {useIngredientsData} from "../../hooks/useIngredientsData";
-import {useDataCount} from "../../hooks/useDataCount";
+import {useIngredientsData} from "../../hooks/use-ingredients-data";
+import {useDataCount} from "../../hooks/use-data-count";
 import OrderElement from "../order-element/order-element";
-import {getDate, getStatus} from "../../utils/getStatus";
+import {getDate, getStatus} from "../../utils/get-status/get-status";
 import currencyIcon from '../../images/icon/currency-icon.svg'
-import {IOrderInfo} from "../../interfaces/data/IOrderInfo";
-import uniqueArray from "../../utils/uniqueArray";
+import {IOrderInfo} from "../../interfaces/data/i-orderInfo";
+import uniqueArray from "../../utils/unique-array";
 
 interface IOrderData {
     orderData: IOrderInfo,

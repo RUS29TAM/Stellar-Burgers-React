@@ -1,8 +1,8 @@
 import React, {FC} from 'react';
 import styleIngredientDetails from './ingredient-details.module.css';
-import {AppSelector} from "../../hooks/appSelector";
+import {AppSelector} from "../../hooks/app-selector";
 import {RootState} from "../../store/store";
-import {IIngredient} from "../../interfaces/data/IIngredient";
+import {IIngredient} from "../../interfaces/data/i-ingredient";
 
 interface IIngredientDetails {
     extraClass: string,

@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import styles from './order-element.module.css'
 import currencyIcon from '../../images/icon/currency-icon.svg'
-import {IIngredient} from "../../interfaces/data/IIngredient";
+import {IIngredient} from "../../interfaces/data/i-ingredient";
 
 interface IOrderElement {
     ingredient: IIngredient

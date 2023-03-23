@@ -1,15 +1,15 @@
-import {IUserInfo} from "../interfaces/data/IUserInfo";
-import {IUpdateUserInfoResp} from "../interfaces/api/IUpdateUserInfoResp";
-import {IMethods} from "../interfaces/api/IMethods";
-import {IGetIngredientsResp} from "../interfaces/api/IGetIngredientsResp";
-import {ICreateOrderResp} from "../interfaces/api/ICreateOrderResp";
-import {IRegistrationUserResp} from "../interfaces/api/IRegistrationUserResp";
-import {IResetPasswordResp} from "../interfaces/api/IResetPasswordResp";
-import {IResetPasswordAgreeResp} from "../interfaces/api/IResetPasswordAgreeResp";
-import {ILogOutResp} from "../interfaces/api/ILogOutResp";
-import {ILoginResp} from "../interfaces/api/ILoginResp";
-import {IGetUserResp} from "../interfaces/api/IGetUserResp";
-import {IUpdateTokenResp} from "../interfaces/api/IUpdateTokenResp";
+import {IUserInfo} from "../interfaces/data/i-user-info";
+import {IUpdateUserInfoResp} from "../interfaces/api/i-update-user-info-resp";
+import {IMethods} from "../interfaces/api/i-methods";
+import {IGetIngredientsResp} from "../interfaces/api/i-get-ingredients-resp";
+import {ICreateOrderResp} from "../interfaces/api/i-create-order-resp";
+import {IRegistrationUserResp} from "../interfaces/api/i-registration-user-resp";
+import {IResetPasswordResp} from "../interfaces/api/i-reset-password-resp";
+import {IResetPasswordAgreeResp} from "../interfaces/api/i-reset-password-agree-resp";
+import {ILogoutResp} from "../interfaces/api/i-logout-resp";
+import {ILoginResp} from "../interfaces/api/i-login-resp";
+import {IGetUserResp} from "../interfaces/api/i-get-user-resp";
+import {IUpdateTokenResp} from "../interfaces/api/i-update-token-resp";
 const API_URL = 'https://norma.nomoreparties.space/api';    // - базовый url
 const WS_URL = 'wss://norma.nomoreparties.space';           //надстройка над протоколом для передачи зашифрованных сообщений
 
@@ -56,7 +56,7 @@ const api = {
     updateUserInfo: (userInfo: IUserInfo, token: string):Promise<IUpdateUserInfoResp> => createRequest(CONFIG.updateUserInfo, IMethods.PATCH, userInfo, token),
     resetPassword: (email: string):Promise<IResetPasswordResp> => createRequest(CONFIG.passwordReset, IMethods.POST, {email}),
     resetPasswordAgree: (password: string, code: string):Promise<IResetPasswordAgreeResp> => createRequest(CONFIG.resetPasswordAccept, IMethods.POST, {password, token: code}),
-    logOut: (recovery: string):Promise<ILogOutResp> => createRequest(CONFIG.logOut, IMethods.POST, {token: recovery}),
+    logOut: (recovery: string):Promise<ILogoutResp> => createRequest(CONFIG.logOut, IMethods.POST, {token: recovery}),
     login: (email: string, password: string):Promise<ILoginResp> => createRequest(CONFIG.logIn, IMethods.POST, {email, password}),
     getUser: (token: string):Promise<IGetUserResp> => createRequest(CONFIG.getUserInfo, IMethods.GET, null, token),
     updateToken: (recovery: string):Promise<IUpdateTokenResp>  => createRequest(CONFIG.tokenRefresh, IMethods.POST, {token: recovery})

@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import styleOrderDetails from './order-details.module.css';
 import orderAcceptedDone from '../../images/icon/order-accepted-done.svg';
-import {IOrderInfo} from "../../interfaces/data/IOrderInfo";
+import {IOrderInfo} from "../../interfaces/data/i-orderInfo";
 
 interface IOrderDetails {
     lastOrder:IOrderInfo['number']

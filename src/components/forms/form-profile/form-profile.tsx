@@ -1,7 +1,7 @@
 import React, {ChangeEvent, FormEvent, useEffect, useState} from 'react';
 import styleProfile from './form-profile.module.css';
 import {Button, EmailInput, Input, PasswordInput} from "@ya.praktikum/react-developer-burger-ui-components";
-import useUserController from "../../../hooks/useUserController";
+import useUserController from "../../../hooks/use-user-controller";
 
 const FormProfile = () => {
     const [email, setEmail] = useState('');

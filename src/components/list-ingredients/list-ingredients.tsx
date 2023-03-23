@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import stylesListBasket from './list-ingredients.module.css';
 import IngredientCard from '../ingredient-card/ingredient-card';
-import {IIngredient} from "../../interfaces/data/IIngredient";
+import {IIngredient} from "../../interfaces/data/i-ingredient";
 
 
 interface IListIngredients {

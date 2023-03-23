@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import {ConstructorElement} from '@ya.praktikum/react-developer-burger-ui-components';
-import {IIngredient} from "../../interfaces/data/IIngredient";
+import {IIngredient} from "../../interfaces/data/i-ingredient";
 
 interface IHalfBun {
     type: 'top' | 'bottom',

@@ -2,7 +2,7 @@ import React, {ChangeEvent, FormEvent, useState} from 'react';
 import styleForgotPass from './form-forgot-password.module.css';
 import {Button, EmailInput,} from "@ya.praktikum/react-developer-burger-ui-components";
 import {Link, useNavigate} from "react-router-dom";
-import useUserController from "../../../hooks/useUserController";
+import useUserController from "../../../hooks/use-user-controller";
 
 const FormForgotPassword = () => {
     const [email, setEmail] = useState('');

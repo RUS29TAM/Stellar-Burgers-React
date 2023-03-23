@@ -1,7 +1,7 @@
 import React, {ChangeEvent, FormEvent, useState} from 'react';
 import styleRecoveryPass from "./form-recovery-password.module.css";
 import {Button, Input, PasswordInput} from "@ya.praktikum/react-developer-burger-ui-components";
-import useUserController from "../../../hooks/useUserController";
+import useUserController from "../../../hooks/use-user-controller";
 import {Link, useNavigate} from "react-router-dom";
 
 const FormRecoveryPassword = () => {
