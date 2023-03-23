@@ -1,7 +1,6 @@
 import React, {FC, useEffect} from 'react';
 import styleProfileHistoryOrders from './profile-history-orders.module.css';
 import OrderCard from "../order-card/order-card";
-import {useSelector} from "react-redux";
 import {Outlet} from "react-router-dom";
 import useToken from "../../hooks/use-token";
 import {wsUserOrderSelectorModified} from "../../services/selectors/ws-user-orders-selector";
@@ -9,6 +8,7 @@ import {wsOrdersUserConnectAction, wsOrdersUserDisconnectAction} from "../../ser
 import {WS_CONFIG} from "../../api/api";
 import {ingredientsSelectorModified} from "../../services/selectors/ingredients-selectors";
 import {AppDispatch} from "../../hooks/app-dispatch";
+import {AppSelector} from "../../hooks/app-selector";
 
 interface IProfileHistoryOrders {
     extraClass: string,
@@ -17,8 +17,8 @@ interface IProfileHistoryOrders {
 const ProfileHistoryOrders: FC<IProfileHistoryOrders> = ({extraClass, ispageprofile = true}) => {
     const dispatch = AppDispatch()
     const token = useToken()
-    const ingredients = useSelector(ingredientsSelectorModified)
-    const orders = useSelector(wsUserOrderSelectorModified)
+    const ingredients = AppSelector(ingredientsSelectorModified)
+    const orders = AppSelector(wsUserOrderSelectorModified)
 
     useEffect(() => {
         dispatch(wsOrdersUserConnectAction(WS_CONFIG.userUrl(token.getToken().split(" ")[1])))
@@ -38,9 +38,5 @@ const ProfileHistoryOrders: FC<IProfileHistoryOrders> = ({extraClass, ispageprof
         </div>
     );
 };
-
-ProfileHistoryOrders.propTypes = {
-
-}
 
 export default ProfileHistoryOrders;
