@@ -1,5 +1,5 @@
-import {IIngredientsReducer} from "../../interfaces/ingredientsReducer";
-import {ingredientsAction, TIngredientsAction} from "../../types/ingredients";
+import {IIngredientsReducer} from "../../interfaces/data/IIngredientsReducer";
+import {TIngredient, TIngredientsAction} from "../../types/TIngredient";
 
 const initialState: IIngredientsReducer = {
     loading: false,
@@ -10,11 +10,11 @@ const initialState: IIngredientsReducer = {
 
 export const ingredientsReducer = (state = initialState, action: TIngredientsAction): IIngredientsReducer => {
     switch (action.type) {
-        case ingredientsAction.GET_INGREDIENTS_REQUEST:
+        case TIngredient.GET_INGREDIENTS_REQUEST:
             return {...state, loading: true, success: false, error: false,};
-        case ingredientsAction.GET_INGREDIENTS_SUCCESS:
+        case TIngredient.GET_INGREDIENTS_SUCCESS:
             return {...state, loading: false, data: action.payload, success: true, error: false,};
-        case ingredientsAction.GET_INGREDIENTS_FAIL:
+        case TIngredient.GET_INGREDIENTS_FAIL:
             return {...state, loading: false, error: true, success: false};
         default:
             return state;

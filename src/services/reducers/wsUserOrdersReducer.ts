@@ -1,5 +1,5 @@
-import {TwsUserOrders, wsUserOrdersActions} from "../../types/wsUserOrders";
-import {IwsUserOrdersReducer} from '../../interfaces/userOrdersReducer'
+import {TwsUserOrders, TwsUserOrdersActions} from "../../types/TwsUserOrders";
+import {IwsUserOrdersReducer} from '../../interfaces/data/IUserOrdersReducer'
 
 const initialState: IwsUserOrdersReducer = {
     orders: [],
@@ -8,7 +8,7 @@ const initialState: IwsUserOrdersReducer = {
     errorMessage: null,
 }
 
-export const wsUserOrderReducer = (state = initialState, action: wsUserOrdersActions): IwsUserOrdersReducer => {
+export const wsUserOrderReducer = (state = initialState, action: TwsUserOrdersActions): IwsUserOrdersReducer => {
     switch (action.type) {
 
         case TwsUserOrders.WS_ORDERS_USER_CONNECTING:

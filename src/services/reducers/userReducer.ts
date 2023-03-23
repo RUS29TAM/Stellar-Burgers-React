@@ -1,5 +1,5 @@
-import {TUserAction, userAction} from "../../types/user";
-import {IUserReducer} from '../../interfaces/userReducer'
+import {TUser, TUserAction} from "../../types/TUser";
+import {IUserReducer} from '../../interfaces/data/IUserReducer'
 
 const initialState: IUserReducer = {
     name: null,
@@ -10,10 +10,10 @@ const initialState: IUserReducer = {
     errorMessage: null,
 }
 
-export const userReducer = (state = initialState, action: userAction): IUserReducer => {
+export const userReducer = (state = initialState, action: TUserAction): IUserReducer => {
     switch (action.type) {
 
-        case TUserAction.SET_USER:
+        case TUser.SET_USER:
             return {
                 name: action.payload.name,
                 email: action.payload.email,
@@ -23,7 +23,7 @@ export const userReducer = (state = initialState, action: userAction): IUserRedu
                 error: false
             }
 
-        case TUserAction.USER_LOADING:
+        case TUser.USER_LOADING:
             return {
                 name: null,
                 email: null,
@@ -33,7 +33,7 @@ export const userReducer = (state = initialState, action: userAction): IUserRedu
                 errorMessage: null
             }
 
-        case TUserAction.USER_ACCEPT:
+        case TUser.USER_ACCEPT:
             return {
                 name: action.payload.name,
                 email: action.payload.email,
@@ -43,7 +43,7 @@ export const userReducer = (state = initialState, action: userAction): IUserRedu
                 errorMessage: null
             }
 
-        case TUserAction.USER_ERROR:
+        case TUser.USER_ERROR:
             return {
                 name: null,
                 email: null,
@@ -53,7 +53,7 @@ export const userReducer = (state = initialState, action: userAction): IUserRedu
                 errorMessage: action.payload
             }
 
-        case TUserAction.LOGOUT_USER:
+        case TUser.LOGOUT_USER:
             return {
                 name: null,
                 email: null,
