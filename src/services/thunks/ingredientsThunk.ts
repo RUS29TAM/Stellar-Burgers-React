@@ -2,7 +2,7 @@ import {
     ingredientsFailAction,
     ingredientsRequestAction, ingredientsSuccessAction,
 } from '../actions/ingredientsAction'
-import api from "../../Api/Api";
+import api from "../../api/api";
 import {TAppThunk} from "../../types/TAppThunk";
 import {TIngredientsAction} from "../../types/TIngredient";
 

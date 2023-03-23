@@ -1,4 +1,4 @@
-import api from '../../Api/Api'
+import api from '../../api/api'
 import {TOrder, TOrderActions} from "../../types/TOrder";
 
 export const updateCurrentOrderContent = (payload: any[]):TOrderActions => ({type: TOrder.UPDATE_CURRENT_ORDER_CONTENT, payload,});

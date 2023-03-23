@@ -1,4 +1,4 @@
-import api from "../Api/Api";
+import api from "../api/api";
 import useToken from "./useToken";
 import {IUserInfo} from "../interfaces/data/IUserInfo";
 
