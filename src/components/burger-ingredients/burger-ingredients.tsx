@@ -33,8 +33,8 @@ const BurgerIngredients:FC<IBurgerIngredients> = ({ingredients}) => {
 
         ingredientReducer.data.forEach((ingredient) => ingredientsCount[ingredient._id] = cart.filling.filter(cartItem => cartItem._id === ingredient._id).length)
         if (cart.bun) {
-            // @ts-ignore
-            ingredientsCount[cart.bun._id] = 2
+
+            ingredientsCount[cart.bun["_id"]] = 2
         }
         return ingredientsCount
     }, [ingredientReducer, cart])
@@ -95,6 +95,5 @@ const BurgerIngredients:FC<IBurgerIngredients> = ({ingredients}) => {
         </section>
     );
 };
-
 
 export default BurgerIngredients
