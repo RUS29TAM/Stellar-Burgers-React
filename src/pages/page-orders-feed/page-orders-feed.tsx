@@ -21,20 +21,22 @@ const PageOrdersFeed = () => {
     const orders = AppSelector(location.pathname.includes('feed') ? wsOrdersFeedSelectorModified : wsUserOrderSelectorModified)
     const order = location.state?.order || orders.find((order: IOrderInfo) => order._id === id)
 
-    // @ts-ignore
     useEffect(() => {
         if (!orders.length) {
-            if (location.pathname.includes('feed')) {
-                dispatch(wsOrdersFeedsConnectAction(WS_CONFIG.feedsUrl))
-            } else {
-                dispatch(wsOrdersUserConnectAction(WS_CONFIG.userUrl(token.getToken().replace('Bearer ', ''))))
-            }
+            const locationFeed = location.pathname.includes('feed')
 
+            const action = locationFeed
+                ? wsOrdersFeedsConnectAction(WS_CONFIG.feedsUrl)
+                : wsOrdersUserConnectAction(WS_CONFIG.userUrl(token.getToken().replace('Bearer ', '')))
 
-            if (location.pathname.includes('feed')) {
-                return () => dispatch(wsOrdersFeedDisconnectAction())
-            } else {
-                return () => dispatch(wsOrdersUserDisconnectAction())
+            const destructor = locationFeed
+                ? wsOrdersFeedDisconnectAction()
+                : wsOrdersUserDisconnectAction()
+
+            dispatch(action)
+
+            return () => {
+                dispatch(destructor)
             }
         }
     }, [orders, location, dispatch, token])
