@@ -23,7 +23,6 @@ const ConstructorTotalPrice = () => {
     const {bun, filling} = AppSelector((store:RootState) => store.burgerConstructor);
 
     const priceOfBurger = useMemo(() => {
-         // @ts-ignore
         const priceOfBun = bun?.price || 0;
         const priceOfFilling = filling.reduce((acc, item) => acc + item.price, 0);
 
