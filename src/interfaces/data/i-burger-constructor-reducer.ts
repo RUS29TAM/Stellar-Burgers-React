@@ -12,7 +12,7 @@ export interface IAddBun {
 }
 
 export interface IAddFilling {
-    id: any;
+    id: number | string | undefined;
     payload: any;
     type: TBurgerConstructor.ADD_FILLING
 }
