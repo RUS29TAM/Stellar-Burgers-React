@@ -24,12 +24,12 @@ export type TwsUserOrdersActions =
     | IwsOrdersUserErrAction
     | IwsOrdersUserGetMessageAction
 
-export type TwsOrdersUserConnectAction = (url: string) => TwsUserOrdersActions
-export type TwsOrdersUserConnectingAction = (e: Event) => TwsUserOrdersActions
-export type TwsOrdersUserDisconnectAction = () => TwsUserOrdersActions
-export type TwsOrdersUserDisconnectingAction = (e: Event) => TwsUserOrdersActions
-export type TwsOrdersUserErrAction = (e: Event) => TwsUserOrdersActions
-export type TwsOrdersUserGetMessageAction = (data: object) => TwsUserOrdersActions
+export type TwsOrdersUserConnectAction = (url: string) => IwsOrdersUserConnectAction
+export type TwsOrdersUserConnectingAction = (e: Event) => IwsOrdersUserConnectingAction
+export type TwsOrdersUserDisconnectAction = () => IwsOrdersUserDisconnectAction
+export type TwsOrdersUserDisconnectingAction = (e: Event) => IwsOrdersUserDisconnectingAction
+export type TwsOrdersUserErrAction = (e: Event) => IwsOrdersUserErrAction
+export type TwsOrdersUserGetMessageAction = (data: object) => IwsOrdersUserGetMessageAction
 
 
 

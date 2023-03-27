@@ -24,12 +24,12 @@ export type TwsOrdersFeedsActions =
     | IwsOrdersFeedsErrAction
     | IwsOrdersFeedsGetMessageAction
 
-export type TwsOrdersFeedsConnectAction = (url: string) => TwsOrdersFeedsActions
-export type TwsOrdersFeedsConnectingAction = (e: Event) => TwsOrdersFeedsActions
-export type TwsOrdersFeedDisconnectAction = () => TwsOrdersFeedsActions
-export type TwsOrdersFeedsDisconnectingAction = (e: Event) => TwsOrdersFeedsActions
-export type TwsOrdersFeedsErrAction = (e: Event) => TwsOrdersFeedsActions
-export type TwsOrdersFeedsGetMessageAction = (data: object) => TwsOrdersFeedsActions
+export type TwsOrdersFeedsConnectAction = (url: string) => IwsOrdersFeedsConnectAction
+export type TwsOrdersFeedsConnectingAction = (e: Event) => IwsOrdersFeedsConnectingAction
+export type TwsOrdersFeedDisconnectAction = () => IwsOrdersFeedDisconnectAction
+export type TwsOrdersFeedsDisconnectingAction = (e: Event) => IwsOrdersFeedsDisconnectingAction
+export type TwsOrdersFeedsErrAction = (e: Event) => IwsOrdersFeedsErrAction
+export type TwsOrdersFeedsGetMessageAction = (data: object) => IwsOrdersFeedsGetMessageAction
 
 
 
