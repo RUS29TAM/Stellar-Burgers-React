@@ -10,7 +10,7 @@ const initialState: IwsOrdersFeedsReducer = {
     errorMessage: null,
 }
 
-export const wsOrdersFeedReducer = (state = initialState, action: TwsOrdersFeedsActions): IwsOrdersFeedsReducer => {
+export const wsOrdersFeedReducer = (state = initialState, action: TwsOrdersFeedsActions) => {
     switch (action.type) {
 
         case TWsOrdersFeeds.WS_ORDERS_FEEDS_CONNECTING:
