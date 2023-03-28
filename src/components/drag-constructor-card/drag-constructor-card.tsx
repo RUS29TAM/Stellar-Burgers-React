@@ -29,14 +29,16 @@ const DragConstructorCard: FC<IDragConstructorCard> = ({index, data, handleRemov
         collect: (monitor) => ({
             isHovered: monitor.isOver(),
         }),
-        hover: (item) => {
+        hover: (item:{index: number}) => {
             if (!ref.current) return;
-            // @ts-ignore
+
             const [dragIndex, hoverIndex] = [item.index, index];
             if (dragIndex === hoverIndex) return;
             dispatch(swapFillings({from: dragIndex, to: hoverIndex}));
-            // @ts-ignore
-            item.index = hoverIndex;
+
+            if (hoverIndex != null) {
+                item.index = hoverIndex;
+            }
         },
     });
 
