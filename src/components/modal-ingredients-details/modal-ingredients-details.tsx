@@ -17,6 +17,7 @@ const ModalIngredientsDetails: FC<IModalIngredientsDetails> = ({ingredientDetail
     const ingredient = AppSelector((state: RootState) => state.ingredientDetails.ingredient)
 
     useEffect(() => {
+        // @ts-ignore
         dispatch({type: TIngredientDetails.SET_INGREDIENT, payload: ingredientDetails})
     }, [])
 
