@@ -2,7 +2,7 @@ import {TIngredientDetails, TIngredientDetailsAction} from "../../types/t-ingred
 import {IIngredientDetailsReducer} from "../../interfaces/data/i-ingredient-details-reducer";
 
 const initialState: IIngredientDetailsReducer = {
-    ingredient: null,
+    ingredient: [],
 }
 
 export const ingredientDetailsReducer = (state = initialState, action: TIngredientDetailsAction): IIngredientDetailsReducer => {
