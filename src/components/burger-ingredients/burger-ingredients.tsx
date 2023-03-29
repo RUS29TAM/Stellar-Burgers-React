@@ -11,11 +11,11 @@ interface IBurgerIngredients {
     ingredients: IIngredient[]
 }
 
-const BurgerIngredients:FC<IBurgerIngredients> = ({ingredients}) => {
-    const cart = AppSelector((state:RootState) => state.burgerConstructor)
-    const ingredientReducer = AppSelector((state:RootState) => state.ingredients)
+const BurgerIngredients: FC<IBurgerIngredients> = ({ingredients}) => {
+    const cart = AppSelector((state: RootState) => state.burgerConstructor)
+    const ingredientReducer = AppSelector((state: RootState) => state.ingredients)
     const [currentTab, setCurrentTab] = useState('bun');
-    const {data} = AppSelector((store:RootState) => store.ingredients);
+    const {data} = AppSelector((store: RootState) => store.ingredients);
 
     const getSameIngredients = (type: string) => data.filter((ingredient) => ingredient.type === type);
 
@@ -57,8 +57,8 @@ const BurgerIngredients:FC<IBurgerIngredients> = ({ingredients}) => {
 
     const handleTubClick = (type: React.SetStateAction<string>) => {
         setCurrentTab(type);
-        // @ts-ignore
-        document.querySelector(`#${type}`).scrollIntoView({behavior: 'smooth'})
+        const element = document.querySelector(`#${type}`)
+        if (element) element.scrollIntoView({behavior: 'smooth'})
     }
 
     return (

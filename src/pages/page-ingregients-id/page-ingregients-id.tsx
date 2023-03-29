@@ -20,7 +20,7 @@ const PageIngredientsId = () => {
             api.getIngredients()
                 .then(ingredients => {
                     const ingredient = ingredients.data.filter(ingredient => ingredient._id === id)[0]
-                    // @ts-ignore
+
                     dispatch({type: TIngredientDetails.SET_INGREDIENT, payload: ingredient})
                 })
                 .catch(error => console.log(error))
