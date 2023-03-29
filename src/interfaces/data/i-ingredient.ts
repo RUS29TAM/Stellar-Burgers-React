@@ -1,6 +1,7 @@
 import {TIngredient} from "../../types/t-ingredient";
 
 export interface IIngredient {
+    constructorId: number;
     _id: string,
     name: string,
     image: string,
@@ -13,6 +14,7 @@ export interface IIngredient {
     image_mobile: string,
     image_large: string,
     __v: number,
+    uniqueId: string | number
 }
 
 export interface IIngredientRequestAction {

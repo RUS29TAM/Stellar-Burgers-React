@@ -1,4 +1,4 @@
-import {IOrderInfo} from "../data/i-orderInfo";
+import {IOrderInfo} from "./i-orderInfo";
 
 export interface IOrderReducer {
     currentOrderContent: any[],

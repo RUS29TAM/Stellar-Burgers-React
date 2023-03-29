@@ -2,7 +2,7 @@ import {TWsUserOrders} from "../../types/t-ws-user-orders";
 
 export interface IwsOrdersUserConnectAction {
     type: TWsUserOrders.WS_ORDERS_USER_CONNECT
-    payload: any
+    payload: string
 }
 
 export interface IwsOrdersUserConnectingAction {

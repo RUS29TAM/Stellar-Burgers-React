@@ -18,12 +18,13 @@ const PageTape = () => {
     const ingredients = AppSelector(ingredientsSelectorModified)
     const {total, totalToday, orders} = AppSelector(wsOrdersFeedReducerSelectorModified)
 
-    // @ts-ignore
-    const {listComplete, listInWork} = useMemo(() => orders.reduce((previous, order: IOrderInfo) => order.status === "done"
-            ?
-            {...previous, listComplete: [...previous.listComplete, order.number]}
-            :
-            {...previous, listInWork: [...previous.listInWork, order.number]}, {listComplete: [], listInWork: []}),
+    const {listComplete, listInWork} = useMemo(() => orders.reduce((previous: {listComplete: [], listInWork: []}, order: IOrderInfo) =>
+            order.status === "done"
+                ?
+                {...previous, listComplete: [...previous.listComplete, order.number]}
+                :
+                {...previous, listInWork: [...previous.listInWork, order.number]}, {listComplete: [], listInWork: []}),
+
         [orders])
 
     useEffect(() => {
@@ -31,7 +32,7 @@ const PageTape = () => {
         return () => {
             dispatch(wsOrdersFeedDisconnectAction())
         }
-        // eslint-disable-next-line
+
     }, [])
 
     return (
@@ -42,7 +43,7 @@ const PageTape = () => {
                     заказов</h2>
                 <div className={stylesTape.feedContainer}>
                     <div className={`${stylesTape.feeds} pr-4`}>
-                        {orders.map(order => <OrderCard ispageprofile={false} extraClass={''} elementLocation={"feed"} orderData={order} key={order._id}/>)}
+                        {orders.map((order: IOrderInfo) => <OrderCard ispageprofile={false} extraClass={''} elementLocation={"feed"} orderData={order} key={order._id}/>)}
                     </div>
                     <div className={"ml-15"}>
                         <OrdersStatus listComplete={listComplete} listInWork={listInWork}/>

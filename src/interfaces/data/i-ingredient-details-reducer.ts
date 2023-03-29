@@ -1,5 +1,5 @@
-import {IIngredients} from "./i-ingredients";
+import {IIngredient} from "./i-ingredient";
 
 export interface IIngredientDetailsReducer {
-    ingredient: null | string | IIngredients
+    ingredient: null | IIngredient
 }

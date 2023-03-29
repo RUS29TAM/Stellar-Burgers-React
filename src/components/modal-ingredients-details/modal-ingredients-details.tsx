@@ -6,10 +6,10 @@ import {AppDispatch} from "../../hooks/app-dispatch";
 import {TIngredientDetails} from "../../types/t-ingredient-details";
 import {AppSelector} from "../../hooks/app-selector";
 import {RootState} from "../../store/store";
-import {IIngredients} from "../../interfaces/data/i-ingredients";
+import {IIngredient} from "../../interfaces/data/i-ingredient";
 
 interface IModalIngredientsDetails {
-    ingredientDetails: IIngredients
+    ingredientDetails: IIngredient
 }
 const ModalIngredientsDetails: FC<IModalIngredientsDetails> = ({ingredientDetails}) => {
     const dispatch = AppDispatch()
@@ -17,6 +17,7 @@ const ModalIngredientsDetails: FC<IModalIngredientsDetails> = ({ingredientDetail
     const ingredient = AppSelector((state: RootState) => state.ingredientDetails.ingredient)
 
     useEffect(() => {
+        // @ts-ignore
         dispatch({type: TIngredientDetails.SET_INGREDIENT, payload: ingredientDetails})
     }, [])
 

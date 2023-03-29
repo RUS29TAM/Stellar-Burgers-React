@@ -26,7 +26,7 @@ const Modal: FC<IModal> = ({setOpen, children}) => {
         document.addEventListener('keydown', handleCloseEscape);
 
         return () => document.removeEventListener('keydown', handleCloseEscape);
-        // eslint-disable-next-line
+
     }, []);
 
 
@@ -44,10 +44,5 @@ const Modal: FC<IModal> = ({setOpen, children}) => {
 
     return ReactDOM.createPortal(modal, modalNode as Element);
 };
-//
-// modal.propsTypes = {
-//     setOpen: PropTypes.func.isRequired,
-//     children: PropTypes.element.isRequired,
-// }
 
 export default Modal

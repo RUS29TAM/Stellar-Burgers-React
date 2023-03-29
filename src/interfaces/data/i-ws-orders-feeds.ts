@@ -2,7 +2,7 @@ import {TWsOrdersFeeds} from "../../types/t-ws-orders-feeds";
 
 export interface IwsOrdersFeedsConnectAction {
     type: TWsOrdersFeeds.WS_ORDERS_FEEDS_CONNECT
-    payload: any
+    payload: string
 }
 
 export interface IwsOrdersFeedsConnectingAction {

@@ -7,6 +7,7 @@ import {getDate, getStatus} from "../../utils/get-status/get-status";
 import currencyIcon from '../../images/icon/currency-icon.svg'
 import {IOrderInfo} from "../../interfaces/data/i-orderInfo";
 import uniqueArray from "../../utils/unique-array";
+import {IIngredient} from "../../interfaces/data/i-ingredient";
 
 interface IOrderData {
     orderData: IOrderInfo,
@@ -15,7 +16,7 @@ interface IOrderData {
 }
 const OrderData: FC<IOrderData> = ({orderData, extraClass, isModal = true}) => {
     const {getIngredientPrice, getIngredientData} = useIngredientsData()
-    const orderIngredients = useMemo(() => orderData.ingredients.map(ingredientId => getIngredientData(ingredientId)), [getIngredientData, orderData])
+    const orderIngredients: IIngredient[] = useMemo(() => orderData.ingredients.map(ingredientId => getIngredientData(ingredientId)), [getIngredientData, orderData])
     const {getCount} = useDataCount(orderIngredients)
     const orderPrice = useMemo(() => orderData.ingredients.reduce((prev, ingredientId) => prev + getIngredientPrice(ingredientId), 0), [getIngredientPrice, orderData])
 

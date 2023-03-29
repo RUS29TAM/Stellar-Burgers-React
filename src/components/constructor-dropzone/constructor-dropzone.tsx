@@ -8,6 +8,7 @@ import {updateCurrentOrderContent} from '../../services/actions/order-action';
 import {AppDispatch} from "../../hooks/app-dispatch";
 import {AppSelector} from "../../hooks/app-selector";
 import {RootState} from "../../store/store";
+import {IIngredient} from "../../interfaces/data/i-ingredient";
 
 const ConstructorDropzone = () => {
     const dispatch = AppDispatch();
@@ -17,15 +18,13 @@ const ConstructorDropzone = () => {
     const [{isHovered}, dropRef] = useDrop({
         accept: 'ingredientCard',
 
-        drop: (item: DragEvent) => {
+        drop: (item: IIngredient) => {
             if (bun && item.type !== 'bun') {
                 return dispatch(addFilling(item))
             }
             if (item.type === 'bun') {
-                // @ts-ignore
                 return dispatch(addBun(item))
             }
-
         },
         collect: (monitor:DropTargetMonitor) => ({
             isHovered: monitor.isOver(),
@@ -41,7 +40,7 @@ const ConstructorDropzone = () => {
         dispatch(updateCurrentOrderContent(orderIngredientsIDs));
     }, [bun, filling]);
 
-    const handleRemoveFillingFromConstructor = (item: any) => {
+    const handleRemoveFillingFromConstructor = (item: IIngredient) => {
         dispatch(removeFilling(item));
     };
 

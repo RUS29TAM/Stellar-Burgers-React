@@ -2,7 +2,6 @@ import React, {FC} from 'react';
 import styleIngredientDetails from './ingredient-details.module.css';
 import {AppSelector} from "../../hooks/app-selector";
 import {RootState} from "../../store/store";
-import {IIngredient} from "../../interfaces/data/i-ingredient";
 
 interface IIngredientDetails {
     extraClass: string,
@@ -10,10 +9,10 @@ interface IIngredientDetails {
 }
 
 const IngredientDetails: FC<IIngredientDetails> = ({extraClass, isModal = true}) => {
-    // @ts-ignore
-    const ingredient: IIngredient = AppSelector((state: RootState) => state.ingredientDetails.ingredient)
 
-    return (
+    const ingredient = AppSelector((state: RootState) => state.ingredientDetails.ingredient)
+
+    return (ingredient &&
         <div className={`pt-10 pr-10 pb-10 pl-10 ${styleIngredientDetails.wrapper}`}>
             <h1
                 className={`text text_type_main-large pt-2 ${styleIngredientDetails.heading} ${extraClass} ${!isModal && styleIngredientDetails.textCentre}`}>Детали
