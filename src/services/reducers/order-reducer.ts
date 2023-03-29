@@ -1,4 +1,4 @@
-import {IOrderReducer} from "../../interfaces/api/i-order-reducer";
+import {IOrderReducer} from "../../interfaces/data/i-order-reducer";
 import {TOrder, TOrderActions} from "../../types/t-order";
 
 const initialState: IOrderReducer = {
