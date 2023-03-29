@@ -23,7 +23,7 @@ export interface IRemoveFilling {
 }
 
 export interface ISwapFillings {
-    payload: any;
+    payload: {from: number, to: number};
     type: TBurgerConstructor.SWAP_FILLINGS
 }
 
