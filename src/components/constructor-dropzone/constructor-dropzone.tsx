@@ -7,13 +7,12 @@ import DragConstructorCard from '../drag-constructor-card/drag-constructor-card'
 import {updateCurrentOrderContent} from '../../services/actions/order-action';
 import {AppDispatch} from "../../hooks/app-dispatch";
 import {AppSelector} from "../../hooks/app-selector";
-import {RootState} from "../../store/store";
 import {IIngredient} from "../../interfaces/data/i-ingredient";
 
 const ConstructorDropzone = () => {
     const dispatch = AppDispatch();
 
-    const {bun, filling} = AppSelector((store:RootState) => store.burgerConstructor);
+    const {bun, filling} = AppSelector((store) => store.burgerConstructor);
 
     const [{isHovered}, dropRef] = useDrop({
         accept: 'ingredientCard',

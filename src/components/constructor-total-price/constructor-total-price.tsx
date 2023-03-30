@@ -9,18 +9,17 @@ import {useNavigate} from "react-router-dom";
 import useToken from "../../hooks/use-token";
 import {AppDispatch} from "../../hooks/app-dispatch";
 import {AppSelector} from "../../hooks/app-selector";
-import {RootState} from "../../store/store";
 
 const ConstructorTotalPrice = () => {
     const dispatch = AppDispatch();
     const navigate = useNavigate()
     const [modalState, setModalState] = useState(false);
-    const order = AppSelector((state:RootState) => state.order)
+    const order = AppSelector((state) => state.order)
 
     const user = useAuthorisation()
     const tokenStore = useToken()
 
-    const {bun, filling} = AppSelector((store:RootState) => store.burgerConstructor);
+    const {bun, filling} = AppSelector((store) => store.burgerConstructor);
 
     const priceOfBurger = useMemo(() => {
         const priceOfBun = bun?.price || 0;

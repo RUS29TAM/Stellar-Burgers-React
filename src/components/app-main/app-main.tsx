@@ -6,12 +6,11 @@ import {HTML5Backend} from "react-dnd-html5-backend";
 import BurgerIngredients from "../burger-ingredients/burger-ingredients";
 import BurgerConstructor from "../burger-constructor/burger-constructor";
 import {Outlet} from "react-router-dom";
-import {RootState} from "../../store/store";
 import {AppSelector} from '../../hooks/app-selector'
 
 const AppMain = () => {
-    const {loading, error} = AppSelector((store:RootState) => store.ingredients);
-    const ingredients = AppSelector((state:RootState) => state.ingredients)
+    const {loading, error} = AppSelector((store) => store.ingredients);
+    const ingredients = AppSelector((state) => state.ingredients)
 
     return (
         !ingredients.success

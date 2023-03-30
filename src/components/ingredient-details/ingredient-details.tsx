@@ -1,7 +1,6 @@
 import React, {FC} from 'react';
 import styleIngredientDetails from './ingredient-details.module.css';
 import {AppSelector} from "../../hooks/app-selector";
-import {RootState} from "../../store/store";
 
 interface IIngredientDetails {
     extraClass: string,
@@ -10,7 +9,7 @@ interface IIngredientDetails {
 
 const IngredientDetails: FC<IIngredientDetails> = ({extraClass, isModal = true}) => {
 
-    const ingredient = AppSelector((state: RootState) => state.ingredientDetails.ingredient)
+    const ingredient = AppSelector((state) => state.ingredientDetails.ingredient)
 
     return (ingredient &&
         <div className={`pt-10 pr-10 pb-10 pl-10 ${styleIngredientDetails.wrapper}`}>

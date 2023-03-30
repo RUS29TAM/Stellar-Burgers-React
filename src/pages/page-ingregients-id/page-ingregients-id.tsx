@@ -7,13 +7,12 @@ import PreLoader from "../../components/pre-loader/pre-loader";
 import {TIngredientDetails} from "../../types/t-ingredient-details";
 import {AppDispatch} from "../../hooks/app-dispatch";
 import {AppSelector} from "../../hooks/app-selector";
-import {RootState} from "../../store/store";
 
 const PageIngredientsId = () => {
     const location = useLocation()
     const {id} = useParams()
     const dispatch = AppDispatch()
-    const ingredient = AppSelector((state: RootState) => state.ingredientDetails.ingredient)
+    const ingredient = AppSelector((state) => state.ingredientDetails.ingredient)
 
     useEffect(() => {
         if (location.state?.from !== '/') {

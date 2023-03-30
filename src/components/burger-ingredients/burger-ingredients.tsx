@@ -5,17 +5,16 @@ import ListIngredients from '../list-ingredients/list-ingredients';
 import {useInView} from 'react-intersection-observer';
 import {IIngredient} from "../../interfaces/data/i-ingredient";
 import {AppSelector} from "../../hooks/app-selector";
-import {RootState} from "../../store/store";
 
 interface IBurgerIngredients {
     ingredients: IIngredient[]
 }
 
 const BurgerIngredients: FC<IBurgerIngredients> = ({ingredients}) => {
-    const cart = AppSelector((state: RootState) => state.burgerConstructor)
-    const ingredientReducer = AppSelector((state: RootState) => state.ingredients)
+    const cart = AppSelector((state) => state.burgerConstructor)
+    const ingredientReducer = AppSelector((state) => state.ingredients)
     const [currentTab, setCurrentTab] = useState('bun');
-    const {data} = AppSelector((store: RootState) => store.ingredients);
+    const {data} = AppSelector((store) => store.ingredients);
 
     const getSameIngredients = (type: string) => data.filter((ingredient) => ingredient.type === type);
 
