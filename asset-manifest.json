@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "./static/css/main.019d3430.css",
-    "main.js": "./static/js/main.5dea744f.js",
+    "main.css": "./static/css/main.1cf350db.css",
+    "main.js": "./static/js/main.2b3c2c45.js",
     "static/js/787.20998216.chunk.js": "./static/js/787.20998216.chunk.js",
     "static/media/JetBrainsMono-Bold.woff": "./static/media/JetBrainsMono-Bold.3914674f1cb2335acf26.woff",
     "static/media/JetBrainsMono-Regular.woff": "./static/media/JetBrainsMono-Regular.f52bee61d00ce995b89f.woff",
-    "static/media/order-accepted-done.svg": "./static/media/order-accepted-done.60f6570fef448252676645b47b6bbc4e.svg",
+    "static/media/order-accepted-done.svg": "./static/media/order-accepted-done.53166e96d94f9f52105e09351f976b26.svg",
     "static/media/JetBrainsMono-Bold.woff2": "./static/media/JetBrainsMono-Bold.c232d532ea5a5189a278.woff2",
     "static/media/JetBrainsMono-Regular.woff2": "./static/media/JetBrainsMono-Regular.b60380891bcf2eb241ca.woff2",
     "static/media/iceland.woff": "./static/media/iceland.77ad7fc2baffd9305538.woff",
@@ -14,12 +14,12 @@
     "static/media/currency-icon.svg": "./static/media/currency-icon.f44c9915097bc4a7bdc2d353e719fdd4.svg",
     "static/media/pen.svg": "./static/media/pen.fb10c412144a33785967.svg",
     "index.html": "./index.html",
-    "main.019d3430.css.map": "./static/css/main.019d3430.css.map",
-    "main.5dea744f.js.map": "./static/js/main.5dea744f.js.map",
+    "main.1cf350db.css.map": "./static/css/main.1cf350db.css.map",
+    "main.2b3c2c45.js.map": "./static/js/main.2b3c2c45.js.map",
     "787.20998216.chunk.js.map": "./static/js/787.20998216.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.019d3430.css",
-    "static/js/main.5dea744f.js"
+    "static/css/main.1cf350db.css",
+    "static/js/main.2b3c2c45.js"
   ]
 }
